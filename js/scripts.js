@@ -184,12 +184,12 @@ window.onload = function(){
                     alert("Producto fuera de stock. Intente nuevamente");
                 }
             } while (wrongValue(shopList[i]));
-            if (shopList[i] == "FIN"){
+           /*  if (shopList[i] == "FIN"){
                 break;
             } else{
                 subTotalCalc();
                 alert (`Producto agregado al carrito. Subtotal: $${subTotal}`);
-            }
+            } */
             
         }
         i--;
