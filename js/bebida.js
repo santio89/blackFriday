@@ -1,10 +1,12 @@
 class Bebida{
-    constructor(tipo, marca, contNeto, precio){
+    constructor(tipo, marca, contNeto, precio, id, stock){
         this.tipo = tipo;
         this.marca = marca;
         this.contNeto = contNeto;
         this.precio = precio;
-        this.nombre = tipo + "" + marca;
+        this.nombre = tipo + " " + marca;
+        this.id = id;
+        this.stock = stock;
     }
 
     setTipo(){
@@ -21,27 +23,34 @@ class Bebida{
 
     setPrecio(){
         this.precio = Number(prompt("Precio en pesos: \nEj: 400, 800, 1200"))
-    }  
-   
+    }
+    
+    setStock(){
+        this.stock = Number(prompt("Ingrese stock del producto: "))
+    }
 
     getTipo(){
-        console.log(tipo);
+        return (this.tipo);
     }
 
     getMarca(){
-        console.log(marca);
+        return (this.marca);
     }
 
     getContenido(){
-        console.log(contNeto);
+        return (this.contNeto);
     }
 
     getPrecio(){
-        console.log(precio);
+        return (this.precio);
     }     
 
     getNombre(){
-        console.log(nombre);
+        return (this.nombre);
+    }
+
+    getStock(){
+        return (this.stock);
     }
 }
 
