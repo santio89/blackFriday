@@ -1,5 +1,3 @@
-/* const Bebida = require('./bebida.js'); */
-
 class Bebida{
     constructor(tipo, marca, contNeto, precio, id, stock){
         this.tipo = tipo;
@@ -70,7 +68,6 @@ const tequila__sol = new Bebida("tequila", "Sol Azteca", 750, 800, 8, 10);
 
 /* INICIO USER FINAL */
 
-alert("BLACK FRIDAY - Delivery de bebidas 24hs\nElegir una bebida para agregar al carrito\n[Ingresar sólo el número correspondiente. FIN para finalizar]");
 let shopList = [];
 let subTotal = 0;
 
@@ -171,35 +168,37 @@ function outOfStock(value){
     }
 }
 
-let i = 0;
-let checkout = 0;
-
-do{
-    for (i; shopList[i-1] != "FIN"; i++){
-        do{
-            shopList[i] = addItem();
-            if (wrongValue(shopList[i])){
-                alert("Valor ingresado incorrecto. Intente nuevamente");
-            }
-            else if (outOfStock(shopList[i])){
-                alert("Producto fuera de stock. Intente nuevamente");
-            }
-        } while (wrongValue(shopList[i]));
-    }
-    i--;
-    shopList.pop();
-    subTotalCalc();
+window.onload = function(){
+    alert("BLACK FRIDAY - Delivery de bebidas 24hs\nElegir una bebida para agregar al carrito\n[Ingresar sólo el número correspondiente. FIN para finalizar]");
+    let i = 0;
+    let checkout = 0;
 
     do{
-        checkout = prompt("Total= $" + subTotal + "\nPara finalizar, ingrese 1. Para agregar más items, ingrese 0");
-    } while (checkout != 1 && checkout != 0);
-    
-} while (checkout == 0);
+        for (i; shopList[i-1] != "FIN"; i++){
+            do{
+                shopList[i] = addItem();
+                if (wrongValue(shopList[i])){
+                    alert("Valor ingresado incorrecto. Intente nuevamente");
+                }
+                else if (outOfStock(shopList[i])){
+                    alert("Producto fuera de stock. Intente nuevamente");
+                }
+            } while (wrongValue(shopList[i]));
+        }
+        i--;
+        shopList.pop();
+        subTotalCalc();
+
+        do{
+            checkout = prompt("Total= $" + subTotal + "\nPara finalizar, ingrese 1. Para agregar más items, ingrese 0");
+        } while (checkout != 1 && checkout != 0);
+        
+    } while (checkout == 0);
 
 
-alert ("Total del checkout: $" + subTotal);
-console.log(shopList);
-
+    alert ("Total del checkout: $" + subTotal);
+    console.log(shopList);
+}
 
 
 
