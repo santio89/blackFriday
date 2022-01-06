@@ -1,0 +1,203 @@
+/* css reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+    font-size: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+ul, ol, li, a, h1, h2, h3, p, body, header, section, footer, .container, .container-fluid, .row, .col{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height:100%;
+    overflow-x: hidden; 
+    line-height: 1.5;  
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+	outline: none;
+}
+
+ul{
+    list-style: none;
+}
+
+/* fin css reset */
+
+body{
+    background: black; 
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center; 
+    align-items: center;
+
+    &__title{
+        font-size: 5rem;
+        color: white;
+        padding: 2rem;
+        font-weight: bold;
+        line-height: 1;
+        text-shadow: 2px 2px 0 black, 4px 4px 0 darkorange;
+        &:hover, &:focus{
+            color: white;
+            
+        }
+    }
+
+    &__info{
+        font-size: 1.2rem;
+        align-self: end;
+        &__whatsapp{
+            margin-left: 1rem;
+            margin-right: 1rem;
+            font-size: 4rem;
+            color: darkgreen;
+            
+            &:hover{
+                color: green;
+            }
+        }
+    }
+}
+
+.nav{
+    width: 100%;
+    background: white;
+    color: black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    &__ul{
+        display: flex;
+        flex-flow: row wrap;
+        gap: 2rem;
+        font-size: 1.4rem;
+
+        &__li{
+            a{
+                color: black;
+
+                &:hover{
+                    color: darkorange;
+                }
+            }
+        }
+
+        &--footer{
+            flex-flow: column wrap;
+            gap: .2rem;
+        }
+    }
+
+    &--footer{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: start;
+        align-items: center;
+        background: black;
+
+        a{
+            color: darkgray;
+        }
+    }
+    
+}
+
+.main{
+    padding: 2rem;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    align-items: stretch;
+    gap: 1rem;
+    position: relative;
+}
+
+.ofertas{
+    width: 100%;
+    min-width: 200px;
+    min-height: 8rem;
+    border-radius: .5rem;
+    border: 2px solid white;
+    background: darkslateblue;
+}
+
+.productos{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+
+    &__producto{
+        flex-basis: 20%;
+        aspect-ratio: 3/5;
+        min-width: 100px;
+        border-radius: .5rem;
+        border: 2px solid white;
+        background: darkorange;
+    }
+}
+
+.carrito{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid white;
+    background: blue;
+    border-radius: .5rem
+}
+
+
+
+.footer{
+    border-top: 1px solid darkgray;
+    margin-top: auto;
+    padding: 1rem;
+    padding-left: 2rem;
+}
+
+@media (min-width: 900px){
+    .main{
+        flex-flow: row wrap;
+        padding: 4rem;
+    }
+    .ofertas{
+        flex: 1 1;
+    }
+    .productos{
+        flex: 5 5;
+    }
+    .footer{
+        padding-left: 4rem;
+    }
+}
