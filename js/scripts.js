@@ -73,14 +73,14 @@ let subTotal = 0;
 
 function addItem(){
     return prompt(`Agregue una bebida al carrito: [FIN para finalizar]
-        \n1- ${cerveza__quilmes.nombre} ${cerveza__quilmes.contNeto} ${cerveza__quilmes.precio} [stock: ${cerveza__quilmes.stock}]
-        \n2- ${cerveza__brahma.nombre} ${cerveza__brahma.contNeto} ${cerveza__brahma.precio} [stock: ${cerveza__brahma.stock}]
-        \n3- ${cerveza__heineken.nombre} ${cerveza__heineken.contNeto} ${cerveza__heineken.precio} [stock: ${cerveza__heineken.stock}]
-        \n4- ${vodka__smirnoff.nombre} ${vodka__smirnoff.contNeto} ${vodka__smirnoff.precio} [stock: ${vodka__smirnoff.stock}]
-        \n5- ${whisky__vat.nombre} ${whisky__vat.contNeto} ${whisky__vat.precio} [stock: ${whisky__vat.stock}]
-        \n6- ${ron__morgan.nombre} ${ron__morgan.contNeto} ${ron__morgan.precio} [stock: ${ron__morgan.stock}]
-        \n7- ${fernet__branca.nombre} ${fernet__branca.contNeto} ${fernet__branca.precio} [stock: ${fernet__branca.stock}]
-        \n8- ${tequila__sol.nombre} ${tequila__sol.contNeto} ${tequila__sol.precio} [stock: ${tequila__sol.stock}]
+        \n1- ${cerveza__quilmes.nombre} ${cerveza__quilmes.contNeto}ml $${cerveza__quilmes.precio} [stock: ${cerveza__quilmes.stock}]
+        \n2- ${cerveza__brahma.nombre} ${cerveza__brahma.contNeto}ml $${cerveza__brahma.precio} [stock: ${cerveza__brahma.stock}]
+        \n3- ${cerveza__heineken.nombre} ${cerveza__heineken.contNeto}ml $${cerveza__heineken.precio} [stock: ${cerveza__heineken.stock}]
+        \n4- ${vodka__smirnoff.nombre} ${vodka__smirnoff.contNeto}ml $${vodka__smirnoff.precio} [stock: ${vodka__smirnoff.stock}]
+        \n5- ${whisky__vat.nombre} ${whisky__vat.contNeto}ml $${whisky__vat.precio} [stock: ${whisky__vat.stock}]
+        \n6- ${ron__morgan.nombre} ${ron__morgan.contNeto}ml $${ron__morgan.precio} [stock: ${ron__morgan.stock}]
+        \n7- ${fernet__branca.nombre} ${fernet__branca.contNeto}ml $${fernet__branca.precio} [stock: ${fernet__branca.stock}]
+        \n8- ${tequila__sol.nombre} ${tequila__sol.contNeto}ml $${tequila__sol.precio} [stock: ${tequila__sol.stock}]
         \n*Ingresar el número correspondiente (ej: para cerveza Quilmes, escribir 1)\n*Para finalizar escribir FIN`);
 }
 
@@ -184,6 +184,13 @@ window.onload = function(){
                     alert("Producto fuera de stock. Intente nuevamente");
                 }
             } while (wrongValue(shopList[i]));
+            if (shopList[i] == "FIN"){
+                break;
+            } else{
+                subTotalCalc();
+                alert (`Producto agregado al carrito. Subtotal: $${subTotal}`);
+            }
+            
         }
         i--;
         shopList.pop();
