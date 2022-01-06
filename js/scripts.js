@@ -6,7 +6,7 @@ class Bebida{
         this.marca = marca;
         this.contNeto = contNeto;
         this.precio = precio;
-        this.nombre = tipo + "" + marca;
+        this.nombre = tipo + " " + marca;
         this.id = id;
         this.stock = stock;
     }
@@ -75,7 +75,16 @@ let shopList = [];
 let subTotal = 0;
 
 function addItem(){
-    return prompt(`Agregue una bebida al carrito: [FIN para finalizar] \n1- Cerveza Quilmes 1L $300 [stock: ${cerveza__quilmes.stock}]\n2- Cerveza Brahma 1L $200 [stock: ${cerveza__brahma.stock}]\n3- Cerveza Heineken 1L $400 [stock: ${cerveza__heineken.stock}]\n4-Vodka Smirnoff 750cc $1000 [stock: ${vodka__smirnoff.stock}]\n5- Whisky Vat69 750cc $1200 [stock: ${whisky__vat.stock}]\n6- Ron Captain Morgan 750cc $1200 [stock: ${ron__morgan.stock}]\n7- Fernet Branca 750cc $900 [stock: ${fernet__branca.stock}]\n8- Tequila Sol Azteca 750cc $800 [stock: ${tequila__sol.stock}]\n*Ingresar el número correspondiente (ej: para cerveza Quilmes, escribir 1)\n*Para finalizar escribir FIN`);
+    return prompt(`Agregue una bebida al carrito: [FIN para finalizar]
+        \n1- ${cerveza__quilmes.nombre} ${cerveza__quilmes.contNeto} ${cerveza__quilmes.precio} [stock: ${cerveza__quilmes.stock}
+        \n2- ${cerveza__brahma.nombre} ${cerveza__brahma.contNeto} ${cerveza__brahma.precio} [stock: ${cerveza__brahma.stock}]
+        \n3- ${cerveza__heineken.nombre} ${cerveza__heineken.contNeto} ${cerveza__heineken.precio} [stock: ${cerveza__heineken.stock}]
+        \n4- ${vodka__smirnoff.nombre} ${vodka__smirnoff.contNeto} ${vodka__smirnoff.precio} [stock: ${vodka__smirnoff.stock}]
+        \n5- ${whisky__vat.nombre} ${whisky__vat.contNeto} ${whisky__vat.precio} [stock: ${whisky__vat.stock}]
+        \n6- ${ron__morgan.nombre} ${ron__morgan.contNeto} ${ron__morgan.precio} [stock: ${ron__morgan.stock}]
+        \n7- ${fernet__branca.nombre} ${fernet__branca.contNeto} ${fernet__branca.precio} [stock: ${fernet__branca.stock}]
+        \n8- ${tequila__sol.nombre} ${tequila__sol.contNeto} ${tequila__sol.precio} [stock: ${tequila__sol.stock}]
+        \n*Ingresar el número correspondiente (ej: para cerveza Quilmes, escribir 1)\n*Para finalizar escribir FIN`);
 }
 
 function subTotalCalc(){
