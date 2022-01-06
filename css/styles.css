@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 /* css reset */
 *,
 *::before,
@@ -14,6 +15,7 @@ html {
   font-size: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+  --font-primera: 'Bebas Neue', 'sans-serif';
 }
 
 ul, ol, li, a, h1, h2, h3, p, body, header, section, footer, .container, .container-fluid, .row, .col {
@@ -33,6 +35,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-family: var(--font-primera);
 }
 
 a {
@@ -76,7 +79,7 @@ body {
 }
 
 .header__title {
-  font-size: 5rem;
+  font-size: clamp(8rem, 10vw, 40rem);
   color: white;
   padding: 2rem;
   font-weight: bold;
@@ -89,7 +92,7 @@ body {
 }
 
 .header__info {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
@@ -98,7 +101,7 @@ body {
 .header__info__whatsapp {
   margin-left: 1rem;
   margin-right: 1rem;
-  font-size: 4rem;
+  font-size: 4.2rem;
   color: darkgreen;
 }
 
@@ -134,7 +137,7 @@ body {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   gap: 2rem;
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 
 .nav__ul__li a {
@@ -239,8 +242,31 @@ body {
   width: 100px;
   height: 100px;
   border: 2px solid white;
-  background: blue;
+  background: navy;
   border-radius: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.carrito__icon {
+  font-size: 4rem;
+}
+
+.carrito:hover, .carrito:focus {
+  outline: 2px solid darkorange;
+}
+
+.carrito:hover .carrito__icon, .carrito:focus .carrito__icon {
+  -webkit-filter: drop-shadow(0 0 2rem darkorange);
+          filter: drop-shadow(0 0 2rem darkorange);
 }
 
 .footer {
