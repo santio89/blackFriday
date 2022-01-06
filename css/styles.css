@@ -9,6 +9,8 @@
 }
 
 html {
+  min-width: 100%;
+  min-height: 100%;
   font-size: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -139,7 +141,7 @@ body {
   color: black;
 }
 
-.nav__ul__li a:hover {
+.nav__ul__li a:hover, .nav__ul__li a:focus {
   color: darkorange;
 }
 

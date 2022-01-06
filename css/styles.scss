@@ -8,6 +8,8 @@
 }
 
 html{
+    min-width: 100%;
+    min-height:100%;
     font-size: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -101,7 +103,7 @@ body{
             a{
                 color: black;
 
-                &:hover{
+                &:hover, &:focus{
                     color: darkorange;
                 }
             }
