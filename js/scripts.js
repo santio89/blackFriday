@@ -73,7 +73,7 @@ let subTotal = 0;
 
 function addItem(){
     return prompt(`Agregue una bebida al carrito: [FIN para finalizar]
-        \n1- ${cerveza__quilmes.nombre} ${cerveza__quilmes.contNeto} ${cerveza__quilmes.precio} [stock: ${cerveza__quilmes.stock}
+        \n1- ${cerveza__quilmes.nombre} ${cerveza__quilmes.contNeto} ${cerveza__quilmes.precio} [stock: ${cerveza__quilmes.stock}]
         \n2- ${cerveza__brahma.nombre} ${cerveza__brahma.contNeto} ${cerveza__brahma.precio} [stock: ${cerveza__brahma.stock}]
         \n3- ${cerveza__heineken.nombre} ${cerveza__heineken.contNeto} ${cerveza__heineken.precio} [stock: ${cerveza__heineken.stock}]
         \n4- ${vodka__smirnoff.nombre} ${vodka__smirnoff.contNeto} ${vodka__smirnoff.precio} [stock: ${vodka__smirnoff.stock}]
