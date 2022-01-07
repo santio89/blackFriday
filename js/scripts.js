@@ -54,68 +54,87 @@ class Bebida{
     }
 }
 
+class shoppingCart{
+    constructor(date, id){
+        this.date = date;
+        this.id = id;
+        this.shopList = [];
+        this.subTotal = 0;
+    }
 
-const cerveza__quilmes = new Bebida("cerveza", "Quilmes", 1000, 300, 1, 10);
-const cerveza__brahma = new Bebida("cerveza", "Brahma", 1000, 200, 2, 10);
-const cerveza__heineken = new Bebida("cerveza", "Heineken", 750, 400, 3, 10);
-const vodka__smirnoff = new Bebida("vodka", "Smirnoff", 750, 1000, 4, 10);
-const whisky__vat = new Bebida("whisky", "Vat 69", 750, 1200, 5, 10);
-const ron__morgan = new Bebida("ron", "Captain Morgan", 750, 1200, 6, 10);
-const fernet__branca = new Bebida("fernet", "Branca", 750, 900, 7, 10);
-const tequila__sol = new Bebida("tequila", "Sol Azteca", 750, 800, 8, 10);
+    setDate(){
+        this.date = prompt("Ingrese fecha de compra: ")
+    }
+    
+    setId(){
+        this.id = prompt("Escriba nuevo ID: ")
+    }
 
-
-
-/* INICIO USER FINAL */
-
-let shopList = [];
-let subTotal = 0;
-
-function addItem(){
-    return prompt(`Agregue una bebida al carrito: [FIN para finalizar]
-        \n1- ${cerveza__quilmes.nombre} ${cerveza__quilmes.contNeto}ml $${cerveza__quilmes.precio} [stock: ${cerveza__quilmes.stock}]
-        \n2- ${cerveza__brahma.nombre} ${cerveza__brahma.contNeto}ml $${cerveza__brahma.precio} [stock: ${cerveza__brahma.stock}]
-        \n3- ${cerveza__heineken.nombre} ${cerveza__heineken.contNeto}ml $${cerveza__heineken.precio} [stock: ${cerveza__heineken.stock}]
-        \n4- ${vodka__smirnoff.nombre} ${vodka__smirnoff.contNeto}ml $${vodka__smirnoff.precio} [stock: ${vodka__smirnoff.stock}]
-        \n5- ${whisky__vat.nombre} ${whisky__vat.contNeto}ml $${whisky__vat.precio} [stock: ${whisky__vat.stock}]
-        \n6- ${ron__morgan.nombre} ${ron__morgan.contNeto}ml $${ron__morgan.precio} [stock: ${ron__morgan.stock}]
-        \n7- ${fernet__branca.nombre} ${fernet__branca.contNeto}ml $${fernet__branca.precio} [stock: ${fernet__branca.stock}]
-        \n8- ${tequila__sol.nombre} ${tequila__sol.contNeto}ml $${tequila__sol.precio} [stock: ${tequila__sol.stock}]
-        \n*Ingresar el número correspondiente (ej: para cerveza Quilmes, escribir 1)\n*Para finalizar escribir FIN`);
-}
-
-function subTotalCalc(){
-    subTotal = 0;
-    for (let i=0; i< shopList.length; i++){
-        switch (shopList[i]){
-            case "1": 
-                subTotal += cerveza__quilmes.getPrecio();
-                break;
-            case "2": 
-                subTotal += cerveza__brahma.getPrecio();
-                break;
-            case "3": 
-                subTotal += cerveza__brahma.getPrecio();
-                break;
-            case "4": 
-                subTotal += vodka__smirnoff.getPrecio();
-                break;
-            case "5": 
-                subTotal += whisky__vat.getPrecio();
-                break;
-            case "6": 
-                subTotal += ron__morgan.getPrecio();
-                break;
-            case "7": 
-                subTotal += fernet__branca.getPrecio();
-                break;
-            case "8": 
-                subTotal += tequila__sol.getPrecio();
-                break;
-            default:
-                alert("No se pudo calcular el subtotal. Agregue nuevamente los productos al carrito.")
-
+    subTotalCalc(){
+        this.subTotal = 0;
+        for (let items of this.shopList){
+            switch (items){
+                case "1": 
+                    this.subTotal += cerveza__quilmes.getPrecio();
+                    break;
+                case "2": 
+                    this.subTotal += cerveza__brahma.getPrecio();
+                    break;
+                case "3": 
+                    this.subTotal += cerveza__brahma.getPrecio();
+                    break;
+                case "4": 
+                    this.subTotal += vodka__smirnoff.getPrecio();
+                    break;
+                case "5": 
+                    this.subTotal += whisky__vat.getPrecio();
+                    break;
+                case "6": 
+                    this.subTotal += ron__morgan.getPrecio();
+                    break;
+                case "7": 
+                    this.subTotal += fernet__branca.getPrecio();
+                    break;
+                case "8": 
+                    this.subTotal += tequila__sol.getPrecio();
+                    break;
+                default:
+                    alert("No se pudo calcular el subtotal. Agregue nuevamente los productos al carrito.")
+    
+            }
         }
+    }
+
+    addItem(){
+        do{
+            this.shopList.push(
+                prompt(`Agregue una bebida al carrito: [FIN para finalizar]
+                \n1- ${cerveza__quilmes.nombre} ${cerveza__quilmes.contNeto}ml $${cerveza__quilmes.precio} [stock: ${cerveza__quilmes.stock}]
+                \n2- ${cerveza__brahma.nombre} ${cerveza__brahma.contNeto}ml $${cerveza__brahma.precio} [stock: ${cerveza__brahma.stock}]
+                \n3- ${cerveza__heineken.nombre} ${cerveza__heineken.contNeto}ml $${cerveza__heineken.precio} [stock: ${cerveza__heineken.stock}]
+                \n4- ${vodka__smirnoff.nombre} ${vodka__smirnoff.contNeto}ml $${vodka__smirnoff.precio} [stock: ${vodka__smirnoff.stock}]
+                \n5- ${whisky__vat.nombre} ${whisky__vat.contNeto}ml $${whisky__vat.precio} [stock: ${whisky__vat.stock}]
+                \n6- ${ron__morgan.nombre} ${ron__morgan.contNeto}ml $${ron__morgan.precio} [stock: ${ron__morgan.stock}]
+                \n7- ${fernet__branca.nombre} ${fernet__branca.contNeto}ml $${fernet__branca.precio} [stock: ${fernet__branca.stock}]
+                \n8- ${tequila__sol.nombre} ${tequila__sol.contNeto}ml $${tequila__sol.precio} [stock: ${tequila__sol.stock}]
+                \n*Ingresar el número correspondiente (ej: para cerveza Quilmes, escribir 1)\n*Para finalizar escribir FIN`)
+                );
+            if (wrongValue(this.shopList[this.shopList.length-1])){
+                alert("Valor ingresado incorrecto. Intente nuevamente");
+                this.shopList.pop();
+            }
+            else if (outOfStock(this.shopList[this.shopList.length-1])){
+                alert("Producto fuera de stock. Intente nuevamente");
+                this.shopList.pop();
+            }
+            else{
+                if (this.shopList[this.shopList.length-1] == "FIN"){
+                    break;
+                }
+                this.subTotalCalc();
+                alert (`Producto agregado al carrito. Subtotal: $${this.subTotal}`);
+            }
+        } while (wrongValue(this.shopList[this.shopList.length-1]));
     }
 }
 
@@ -168,44 +187,41 @@ function outOfStock(value){
     }
 }
 
+const cerveza__quilmes = new Bebida("cerveza", "Quilmes", 1000, 300, 1, 10);
+const cerveza__brahma = new Bebida("cerveza", "Brahma", 1000, 200, 2, 10);
+const cerveza__heineken = new Bebida("cerveza", "Heineken", 750, 400, 3, 10);
+const vodka__smirnoff = new Bebida("vodka", "Smirnoff", 750, 1000, 4, 10);
+const whisky__vat = new Bebida("whisky", "Vat 69", 750, 1200, 5, 10);
+const ron__morgan = new Bebida("ron", "Captain Morgan", 750, 1200, 6, 10);
+const fernet__branca = new Bebida("fernet", "Branca", 750, 900, 7, 10);
+const tequila__sol = new Bebida("tequila", "Sol Azteca", 750, 800, 8, 10);
+const shopCart1 = new shoppingCart(new Date(), 001);
+
+
+
+
+/* INICIO USER FINAL */
+
 window.onload = function(){
     alert("BLACK FRIDAY - Delivery de bebidas 24hs\nElegir una bebida para agregar al carrito\n[Ingresar sólo el número correspondiente. FIN para finalizar]");
-    let i = 0;
     let checkout = 0;
 
     do{
-        for (i; shopList[i-1] != "FIN"; i++){
-            do{
-                shopList[i] = addItem();
-                if (wrongValue(shopList[i])){
-                    alert("Valor ingresado incorrecto. Intente nuevamente");
-                }
-                else if (outOfStock(shopList[i])){
-                    alert("Producto fuera de stock. Intente nuevamente");
-                }
-                else{
-                    if (shopList[i] == "FIN"){
-                        break;
-                    }
-                    subTotalCalc();
-                    alert (`Producto agregado al carrito. Subtotal: $${subTotal}`);
-                }
-            } while (wrongValue(shopList[i]));
+        while (shopCart1.shopList[(shopCart1.shopList.length)-1] != "FIN"){
+            shopCart1.addItem();
         }
 
-        i--;
-        shopList.pop();
-        subTotalCalc();
+        shopCart1.shopList.pop();
+        shopCart1.subTotalCalc();
 
         do{
-            checkout = prompt("Total= $" + subTotal + "\nPara finalizar, ingrese 1. Para agregar más items, ingrese 0");
+            checkout = prompt("Total= $" + shopCart1.subTotal + "\nPara finalizar, ingrese 1. Para agregar más items, ingrese 0");
         } while (checkout != 1 && checkout != 0);
         
     } while (checkout == 0);
 
-
-    alert ("Total del checkout: $" + subTotal);
-    console.log(shopList);
+    alert ("Total del checkout: $" + shopCart1.subTotal);
+    console.log(shopCart1.shopList);
 }
 
 
