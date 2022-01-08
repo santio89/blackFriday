@@ -84,7 +84,7 @@ class ShoppingCart{
         for (const item of this.shopList){
             for (const bebida of arrayBebidas){
                 if (item == bebida.id){
-                    this.subTotal += bebida.getPrecio();
+                    this.subTotal += bebida.precio;
                     break;
                 }
             }
