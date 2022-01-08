@@ -63,7 +63,7 @@ class Bebida{
     }
 }
 
-class shoppingCart{
+class ShoppingCart{
     constructor(date, id){
         this.date = date;
         this.id = id;
@@ -173,7 +173,7 @@ const whisky__vat = new Bebida("whisky", "Vat 69", 750, 1200, 5, 10);
 const ron__morgan = new Bebida("ron", "Captain Morgan", 750, 1200, 6, 10);
 const fernet__branca = new Bebida("fernet", "Branca", 750, 900, 7, 10);
 const tequila__sol = new Bebida("tequila", "Sol Azteca", 750, 800, 8, 10);
-const shopCart1 = new shoppingCart(new Date(), 001);
+const shopCart1 = new ShoppingCart(new Date(), 001);
 
 const arrayBebidas = [];
 arrayBebidas.push(cerveza__quilmes);
