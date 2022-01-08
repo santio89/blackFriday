@@ -80,36 +80,13 @@ class ShoppingCart{
     }
 
     subTotalCalc(){
-        this.subTotal = 0;
-        for (let items of this.shopList){
-            switch (items){
-                case "1": 
-                    this.subTotal += cerveza__quilmes.getPrecio();
+        this.subTotal = 0;  
+        for (const item of this.shopList){
+            for (const bebida of arrayBebidas){
+                if (item == bebida.id){
+                    this.subTotal += bebida.getPrecio();
                     break;
-                case "2": 
-                    this.subTotal += cerveza__brahma.getPrecio();
-                    break;
-                case "3": 
-                    this.subTotal += cerveza__heineken.getPrecio();
-                    break;
-                case "4": 
-                    this.subTotal += vodka__smirnoff.getPrecio();
-                    break;
-                case "5": 
-                    this.subTotal += whisky__vat.getPrecio();
-                    break;
-                case "6": 
-                    this.subTotal += ron__morgan.getPrecio();
-                    break;
-                case "7": 
-                    this.subTotal += fernet__branca.getPrecio();
-                    break;
-                case "8": 
-                    this.subTotal += tequila__sol.getPrecio();
-                    break;
-                default:
-                    alert("No se pudo calcular el subtotal. Agregue nuevamente los productos al carrito.")
-    
+                }
             }
         }
     }
