@@ -52,6 +52,15 @@ class Bebida{
     getStock(){
         return (this.stock);
     }
+    
+    outOfStock(){
+        if (this.stock == 0){
+            return true;
+        } else{
+            this.stock--;
+            return false;
+        }
+    }
 }
 
 class shoppingCart{
@@ -81,7 +90,7 @@ class shoppingCart{
                     this.subTotal += cerveza__brahma.getPrecio();
                     break;
                 case "3": 
-                    this.subTotal += cerveza__brahma.getPrecio();
+                    this.subTotal += cerveza__heineken.getPrecio();
                     break;
                 case "4": 
                     this.subTotal += vodka__smirnoff.getPrecio();
@@ -123,16 +132,25 @@ class shoppingCart{
                 alert("Valor ingresado incorrecto. Intente nuevamente");
                 this.shopList.pop();
             }
-            else if (outOfStock(this.shopList[this.shopList.length-1])){
-                alert("Producto fuera de stock. Intente nuevamente");
-                this.shopList.pop();
+            else if (this.shopList[this.shopList.length-1] == "FIN"){
+                break;
             }
             else{
-                if (this.shopList[this.shopList.length-1] == "FIN"){
-                    break;
+                for (const bebida of arrayBebidas){
+                    if (this.shopList[this.shopList.length-1] == bebida.id){
+                        if(bebida.outOfStock()){
+                            alert("Producto fuera de stock. Intente nuevamente");
+                            this.shopList.pop();
+                            this.addItem();
+                            break;
+                        }
+                        else{
+                            this.subTotalCalc();
+                            alert (`Producto agregado al carrito. Subtotal: $${this.subTotal}`);
+                            break;
+                        }
+                    }
                 }
-                this.subTotalCalc();
-                alert (`Producto agregado al carrito. Subtotal: $${this.subTotal}`);
             }
         } while (wrongValue(this.shopList[this.shopList.length-1]));
     }
@@ -146,50 +164,10 @@ function wrongValue(value){
     }
 }
 
-function outOfStock(value){
-    switch (value){
-        case "1": 
-            if (cerveza__quilmes.getStock()>0){
-                    cerveza__quilmes.stock--;
-                    return false} else{return true};
-        case "2": 
-            if (cerveza__brahma.getStock()>0){
-                cerveza__brahma.stock--;
-                return false} else{return true};
-        case "3": 
-        if (cerveza__heineken.getStock()>0){
-            cerveza__heineken.stock--;
-            return false} else{return true};
-        case "4": 
-            if (vodka__smirnoff.getStock()>0){
-                vodka__smirnoff.stock--;
-                return false} else{return true};
-        case "5": 
-            if (whisky__vat.getStock()>0){
-                whisky__vat.stock--;
-                return false} else{return true};
-        case "6": 
-            if (ron__morgan.getStock()>0){
-                ron__morgan.stock--;
-                return false} else{return true};
-        case "7": 
-            if (fernet__branca.getStock()>0){
-                fernet__branca.stock--;
-                return false} else{return true};
-        case "8": 
-            if (tequila__sol.getStock()>0){
-                tequila__sol.stock--;
-                return false} else{return true};
-        case "FIN":
-            return false;
-        default:
-            alert("Error de input")
-    }
-}
 
 const cerveza__quilmes = new Bebida("cerveza", "Quilmes", 1000, 300, 1, 10);
 const cerveza__brahma = new Bebida("cerveza", "Brahma", 1000, 200, 2, 10);
-const cerveza__heineken = new Bebida("cerveza", "Heineken", 750, 400, 3, 10);
+const cerveza__heineken = new Bebida("cerveza", "Heineken", 1000, 400, 3, 10);
 const vodka__smirnoff = new Bebida("vodka", "Smirnoff", 750, 1000, 4, 10);
 const whisky__vat = new Bebida("whisky", "Vat 69", 750, 1200, 5, 10);
 const ron__morgan = new Bebida("ron", "Captain Morgan", 750, 1200, 6, 10);
@@ -197,7 +175,15 @@ const fernet__branca = new Bebida("fernet", "Branca", 750, 900, 7, 10);
 const tequila__sol = new Bebida("tequila", "Sol Azteca", 750, 800, 8, 10);
 const shopCart1 = new shoppingCart(new Date(), 001);
 
-
+const arrayBebidas = [];
+arrayBebidas.push(cerveza__quilmes);
+arrayBebidas.push(cerveza__brahma);
+arrayBebidas.push(cerveza__heineken);
+arrayBebidas.push(vodka__smirnoff);
+arrayBebidas.push(whisky__vat);
+arrayBebidas.push(ron__morgan);
+arrayBebidas.push(fernet__branca);
+arrayBebidas.push(tequila__sol);
 
 
 /* INICIO USER FINAL */
