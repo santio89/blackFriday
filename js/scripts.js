@@ -92,9 +92,10 @@ class ShoppingCart{
     }
 
     addItemText(){
-        let addItemText = "Agregue una bebida al carrito: [FIN para finalizar]\n";
+        let addItemText = "Agregue una bebida al carrito: [FIN para finalizar]\n\n";
+        
         for (const bebida of arrayBebidas){
-            addItemText += `1- ${bebida.nombre} ${bebida.contNeto}ml $${bebida.precio} [stock: ${bebida.stock}]\n`;
+            addItemText += `${bebida.id}- ${bebida.nombre} ${bebida.contNeto}ml $${bebida.precio} [stock: ${bebida.stock}]\n`;
         }
         return addItemText;     
     }
