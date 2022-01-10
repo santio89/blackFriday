@@ -82,7 +82,7 @@ class ShoppingCart{
     subTotalCalc(){
         this.subTotal = 0;  
         for (const item of this.shopList){
-            for (const bebida of arrayBebidas){
+            for (const bebida of stock1.arrayBebidas){
                 if (item == bebida.id){
                     this.subTotal += bebida.precio;
                     break;
@@ -94,7 +94,7 @@ class ShoppingCart{
     addItemText(){
         let addItemText = "Agregue una bebida al carrito: [FIN para finalizar/modificar el carrito]\n\n";
         
-        for (const bebida of arrayBebidas){
+        for (const bebida of stock1.arrayBebidas){
             addItemText += `${bebida.id}- ${bebida.nombre} ${bebida.contNeto}ml $${bebida.precio} [stock: ${bebida.stock}]\n`;
         }
         return addItemText;     
@@ -113,7 +113,7 @@ class ShoppingCart{
                 break;
             }
             else{
-                for (const bebida of arrayBebidas){
+                for (const bebida of stock1.arrayBebidas){
                     if (this.shopList[this.shopList.length-1] == bebida.id){
                         if(bebida.outOfStock()){
                             alert("Producto fuera de stock. Intente nuevamente");
@@ -137,7 +137,7 @@ class ShoppingCart{
         let i = 1;
 
         for (const items of this.shopList){
-            for (const bebidas of arrayBebidas){
+            for (const bebidas of stock1.arrayBebidas){
                 if (items == bebidas.id){
                     shopListString += i + "- " + bebidas.nombre + " $" + bebidas.precio + "\n";
                     i++;
@@ -162,7 +162,7 @@ class ShoppingCart{
     }
 }
 
-class stock{
+class Stock{
     constructor (date, id){
         this.date = date;
         this.id = id;
@@ -178,7 +178,7 @@ function wrongValue(value){
     }
 }
 
-
+/* agregar bebidas al stock. esta operacion, idealmente, deberia ser realizada por un usuario administrador mediante input. por el momento, al no manejar usuarios ni tener una forma de guardar los datos, inicializo el stock manualmente */
 const cerveza__quilmes = new Bebida("cerveza", "Quilmes", 1000, 300, 1, 10);
 const cerveza__brahma = new Bebida("cerveza", "Brahma", 1000, 200, 2, 10);
 const cerveza__heineken = new Bebida("cerveza", "Heineken", 1000, 400, 3, 10);
@@ -188,16 +188,17 @@ const ron__morgan = new Bebida("ron", "Captain Morgan", 750, 1200, 6, 10);
 const fernet__branca = new Bebida("fernet", "Branca", 750, 900, 7, 10);
 const tequila__sol = new Bebida("tequila", "Sol Azteca", 750, 800, 8, 10);
 const shopCart1 = new ShoppingCart(new Date(), 001);
+const stock1 = new Stock(new Date(), 001)
 
-const arrayBebidas = [];
-arrayBebidas.push(cerveza__quilmes);
-arrayBebidas.push(cerveza__brahma);
-arrayBebidas.push(cerveza__heineken);
-arrayBebidas.push(vodka__smirnoff);
-arrayBebidas.push(whisky__vat);
-arrayBebidas.push(ron__morgan);
-arrayBebidas.push(fernet__branca);
-arrayBebidas.push(tequila__sol);
+stock1.arrayBebidas.push(cerveza__quilmes);
+stock1.arrayBebidas.push(cerveza__brahma);
+stock1.arrayBebidas.push(cerveza__heineken);
+stock1.arrayBebidas.push(vodka__smirnoff);
+stock1.arrayBebidas.push(whisky__vat);
+stock1.arrayBebidas.push(ron__morgan);
+stock1.arrayBebidas.push(fernet__branca);
+stock1.arrayBebidas.push(tequila__sol);
+
 
 
 /* INICIO USER FINAL */
@@ -215,7 +216,7 @@ window.onload = function(){
         shopCart1.subTotalCalc();
 
         do{
-            checkout = prompt("TOTAL= $" + shopCart1.subTotal + "\nCarrito:\n" + shopCart1.showShopList() + "\nPara finalizar, ingrese 1. Para agregar más items, ingrese 0. Para eliminar un producto, ingrese 2");
+            checkout = prompt("TOTAL= $" + shopCart1.subTotal + "\nCarrito:\n" + shopCart1.showShopList() + "\nPara agregar más items, ingrese 0. Para finalizar, ingrese 1. Para eliminar un producto, ingrese 2");
         } while (checkout != 1 && checkout != 0 && checkout!= 2);
 
         if (checkout == 2){
