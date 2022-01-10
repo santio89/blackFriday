@@ -92,7 +92,7 @@ class ShoppingCart{
     }
 
     addItemText(){
-        let addItemText = "Agregue una bebida al carrito: [FIN para finalizar/modificar el carrito]\n\n";
+        let addItemText = "Agregue una bebida al carrito: [FIN para finalizar/modificar el carrito]\n\nFIN- Finalizar/Modificar\n";
         
         for (const bebida of stock1.arrayBebidas){
             addItemText += `${bebida.id}- ${bebida.nombre} ${bebida.contNeto}ml $${bebida.precio} [stock: ${bebida.stock}]\n`;
@@ -152,7 +152,7 @@ class ShoppingCart{
         let flag = 0;
         let itemToDelete = "";
         do{
-            itemToDelete = prompt (`Eliminar un producto del carrito (ingrese el número correspondiente a eliminar. 0 para cancelar). SUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`);
+            itemToDelete = prompt (`Eliminar un producto del carrito (ingrese el número correspondiente a eliminar. 0 para cancelar). SUBTOTAL: $${this.subTotal}\nCarrito: \n0- Cancelar\n${this.showShopList()}`);
 
             if (itemToDelete == 0){
                 break;
