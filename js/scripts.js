@@ -92,7 +92,7 @@ class ShoppingCart{
     }
 
     addItemText(){
-        let addItemText = "Agregue una bebida al carrito: [FIN para finalizar]\n\n";
+        let addItemText = "Agregue una bebida al carrito: [FIN para finalizar/modificar el carrito]\n\n";
         
         for (const bebida of arrayBebidas){
             addItemText += `${bebida.id}- ${bebida.nombre} ${bebida.contNeto}ml $${bebida.precio} [stock: ${bebida.stock}]\n`;
@@ -121,15 +121,52 @@ class ShoppingCart{
                             this.addItem();
                             break;
                         }
-                        else{
+                        else{                           
                             this.subTotalCalc();
-                            alert (`Producto agregado al carrito. Subtotal: $${this.subTotal}`);
+                            alert (`Producto agregado al carrito. SUBTOTAL: $${this.subTotal}\nCarrito:\n${this.showShopList()}`);
                             break;
                         }
                     }
                 }
             }
         } while (wrongValue(this.shopList[this.shopList.length-1]));
+    }
+
+    showShopList(){
+        let shopListString = "";
+        let i = 1;
+
+        for (const items of this.shopList){
+            for (const bebidas of arrayBebidas){
+                if (items == bebidas.id){
+                    shopListString += i + "- " + bebidas.nombre + " $" + bebidas.precio + "\n";
+                    i++;
+                    break;
+                }
+            }
+        }
+        return shopListString;
+    }
+
+    removeItem(){
+        let itemToDelete = prompt (`Eliminar un producto del carrito (ingrese el número correspondiente a eliminar). SUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`);
+
+        for (const items in this.shopList){
+            if (itemToDelete-1 == items){
+                this.shopList.splice(itemToDelete-1, 1);
+                break;
+            }
+        }
+        this.subTotalCalc();
+        alert (`Producto eliminado. SUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`)
+    }
+}
+
+class stock{
+    constructor (date, id){
+        this.date = date;
+        this.id = id;
+        this.arrayBebidas = [];
     }
 }
 
@@ -166,7 +203,7 @@ arrayBebidas.push(tequila__sol);
 /* INICIO USER FINAL */
 
 window.onload = function(){
-    alert("BLACK FRIDAY - Delivery de bebidas 24hs\nElegir una bebida para agregar al carrito\n[Ingresar sólo el número correspondiente. FIN para finalizar]");
+    alert("BLACK FRIDAY - Delivery de bebidas 24hs\nElegir una bebida para agregar al carrito\n[Ingresar sólo el número correspondiente. FIN para finalizar/modificar carrito]");
     let checkout = 0;
 
     do{
@@ -178,12 +215,16 @@ window.onload = function(){
         shopCart1.subTotalCalc();
 
         do{
-            checkout = prompt("Total= $" + shopCart1.subTotal + "\nPara finalizar, ingrese 1. Para agregar más items, ingrese 0");
-        } while (checkout != 1 && checkout != 0);
-        
-    } while (checkout == 0);
+            checkout = prompt("TOTAL= $" + shopCart1.subTotal + "\nCarrito:\n" + shopCart1.showShopList() + "\nPara finalizar, ingrese 1. Para agregar más items, ingrese 0. Para eliminar un producto, ingrese 2");
+        } while (checkout != 1 && checkout != 0 && checkout!= 2);
 
-    alert ("Total del checkout: $" + shopCart1.subTotal);
+        if (checkout == 2){
+            shopCart1.removeItem();
+        }
+        
+    } while (checkout == 0 || checkout == 2);
+
+    alert ("TOTAL del checkout: $" + shopCart1.subTotal);
     console.log(shopCart1.shopList);
 }
 
