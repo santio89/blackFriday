@@ -149,16 +149,40 @@ class ShoppingCart{
     }
 
     removeItem(){
-        let itemToDelete = prompt (`Eliminar un producto del carrito (ingrese el número correspondiente a eliminar). SUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`);
+        let flag = 0;
+        let itemToDelete = "";
+        do{
+            itemToDelete = prompt (`Eliminar un producto del carrito (ingrese el número correspondiente a eliminar. 0 para cancelar). SUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`);
 
-        for (const items in this.shopList){
-            if (itemToDelete-1 == items){
-                this.shopList.splice(itemToDelete-1, 1);
+            if (itemToDelete == 0){
                 break;
             }
-        }
+
+            for (const items in this.shopList){
+                if (itemToDelete == 0){
+                    break;
+                } else if (itemToDelete-1 == items){
+                    this.shopList.splice(itemToDelete-1, 1);
+                    flag = 1;
+                    break;
+                }
+            }
+
+            if (flag == 0){
+                alert ("Producto no encontrado. Elija otro producto a eliminar");
+            }
+
+        } while (flag == 0 && itemToDelete != 0)
+
         this.subTotalCalc();
-        alert (`Producto eliminado. SUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`)
+        
+        if (itemToDelete == 0){
+            alert (`Operación cancelada. SUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`)
+        } else{
+            alert (`Producto eliminado. SUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`)
+            this.removeItem();
+        }
+        
     }
 }
 
