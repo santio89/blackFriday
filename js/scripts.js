@@ -207,7 +207,7 @@ window.onload = function(){
         shopCart1.subTotalCalc();
 
         do{
-            checkout = prompt("CHECKOUT\nTOTAL= $" + shopCart1.subTotal + "\nCarrito:\n" + shopCart1.showShopList() + "\nPara finalizar, ingrese 0. Para agregar más productos, ingrese 1. Para eliminar productos del carrito, ingrese 2");
+            checkout = prompt("*CONFIRMAR CHECKOUT*\nTOTAL= $" + shopCart1.subTotal + "\nCarrito:\n" + shopCart1.showShopList() + "\nPara confirmar checkout y finalizar, ingrese 0.\nPara agregar más productos al carrito, ingrese 1.\nPara eliminar productos del carrito, ingrese 2");
         } while (checkout != 0 && checkout != 1 && checkout!= 2);
 
         if (checkout == 2){
