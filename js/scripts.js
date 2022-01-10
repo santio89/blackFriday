@@ -107,7 +107,7 @@ class ShoppingCart{
         let flag = 0;
         let itemToDelete = "";
         do{
-            itemToDelete = prompt (`Eliminar un producto del carrito (ingrese el número correspondiente a eliminar. 0 para cancelar). SUBTOTAL: $${this.subTotal}\nCarrito: \n0- Cancelar\n${this.showShopList()}`);
+            itemToDelete = prompt (`Eliminar un producto del carrito (ingrese el número correspondiente a eliminar. 0 para cancelar). SUBTOTAL: $${this.subTotal}\nCarrito: \n0- Cancelar y volver a la selección de productos\n${this.showShopList()}`);
 
             if (itemToDelete == 0){
                 break;
@@ -155,12 +155,18 @@ class Stock{
     }
 }
 
+
 function wrongValue(value){
-    if (value != 1 && value != 2 && value != 3 && value != 4 && value != 5 && value != 6 && value != 7 && value!= 8 && value != "FIN"){
-        return true;
-    } else{
+    if (value == "FIN"){
         return false;
+    } else{
+        for (const bebida of stock1.arrayBebidas){
+            if(value == bebida.id){
+                return false
+            }
+        }
     }
+    return true;
 }
 
 /* agregar bebidas al stock. esta operacion, idealmente, deberia ser realizada por un usuario administrador mediante input. por el momento, al no manejar usuarios ni tener una forma de guardar los datos, inicializo el stock manualmente */
