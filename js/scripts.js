@@ -102,9 +102,8 @@ class ShoppingCart{
 
     addItem(){
         do{
-            this.shopList.push(
-                prompt(this.addItemText())
-                );
+            this.shopList.push( prompt(this.addItemText()).toUpperCase() );
+            
             if (wrongValue(this.shopList[this.shopList.length-1])){
                 alert("Valor ingresado incorrecto. Intente nuevamente");
                 this.shopList.pop();
@@ -162,7 +161,13 @@ class ShoppingCart{
                 if (itemToDelete == 0){
                     break;
                 } else if (itemToDelete-1 == items){
-                    this.shopList.splice(itemToDelete-1, 1);
+                    for(const productos of stock1.arrayBebidas){
+                        if(this.shopList[items] == productos.id){
+                            productos.stock++;
+                            break;
+                        }
+                    }
+                    this.shopList.splice(items, 1);
                     flag = 1;
                     break;
                 }
@@ -179,7 +184,7 @@ class ShoppingCart{
         if (itemToDelete == 0){
             alert (`Operación cancelada. SUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`)
         } else{
-            alert (`Producto eliminado. SUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`)
+            alert (`Producto eliminado del carrito y devuelto al stock. SUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`)
             this.removeItem();
         }
         
@@ -240,7 +245,7 @@ window.onload = function(){
         shopCart1.subTotalCalc();
 
         do{
-            checkout = prompt("TOTAL= $" + shopCart1.subTotal + "\nCarrito:\n" + shopCart1.showShopList() + "\nPara agregar más items, ingrese 0. Para finalizar, ingrese 1. Para eliminar un producto, ingrese 2");
+            checkout = prompt("CHECKOUT\nTOTAL= $" + shopCart1.subTotal + "\nCarrito:\n" + shopCart1.showShopList() + "\nPara agregar más items, ingrese 0. Para finalizar, ingrese 1. Para eliminar un producto, ingrese 2");
         } while (checkout != 1 && checkout != 0 && checkout!= 2);
 
         if (checkout == 2){
