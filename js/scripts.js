@@ -201,14 +201,14 @@ window.onload = function(){
         shopCart1.subTotalCalc();
 
         do{
-            checkout = prompt("CHECKOUT\nTOTAL= $" + shopCart1.subTotal + "\nCarrito:\n" + shopCart1.showShopList() + "\nPara agregar más items, ingrese 0. Para finalizar, ingrese 1. Para eliminar productos del carrito, ingrese 2");
-        } while (checkout != 1 && checkout != 0 && checkout!= 2);
+            checkout = prompt("CHECKOUT\nTOTAL= $" + shopCart1.subTotal + "\nCarrito:\n" + shopCart1.showShopList() + "\nPara finalizar, ingrese 0. Para agregar más productos, ingrese 1. Para eliminar productos del carrito, ingrese 2");
+        } while (checkout != 0 && checkout != 1 && checkout!= 2);
 
         if (checkout == 2){
             shopCart1.removeItem();
         }
         
-    } while (checkout == 0 || checkout == 2);
+    } while (checkout == 1 || checkout == 2);
 
     alert ("TOTAL del checkout: $" + shopCart1.subTotal);
     console.log(shopCart1.shopList);
