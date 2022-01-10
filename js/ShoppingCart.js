@@ -6,14 +6,6 @@ class ShoppingCart{
         this.subTotal = 0;
     }
 
-    setDate(){
-        this.date = prompt("Ingrese fecha de compra: ")
-    }
-    
-    setId(){
-        this.id = prompt("Escriba nuevo ID: ")
-    }
-
     subTotalCalc(){
         this.subTotal = 0;  
         for (const item of this.shopList){
@@ -86,7 +78,7 @@ class ShoppingCart{
         let flag = 0;
         let itemToDelete = "";
         do{
-            itemToDelete = prompt (`Eliminar un producto del carrito (ingrese el número correspondiente a eliminar. 0 para cancelar). SUBTOTAL: $${this.subTotal}\nCarrito: \n0- Cancelar\n${this.showShopList()}`);
+            itemToDelete = prompt (`Eliminar un producto del carrito (ingrese el número correspondiente a eliminar. 0 para cancelar). SUBTOTAL: $${this.subTotal}\nCarrito: \n0- Cancelar y volver a la selección de productos\n${this.showShopList()}`);
 
             if (itemToDelete == 0){
                 break;

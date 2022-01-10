@@ -27,14 +27,6 @@ class ShoppingCart{
         this.subTotal = 0;
     }
 
-    setDate(){
-        this.date = prompt("Ingrese fecha de compra: ")
-    }
-    
-    setId(){
-        this.id = prompt("Escriba nuevo ID: ")
-    }
-
     subTotalCalc(){
         this.subTotal = 0;  
         for (const item of this.shopList){
