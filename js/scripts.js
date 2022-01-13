@@ -74,7 +74,7 @@ window.onload = function(){
     } while (checkout == 1 || checkout == 2);
 
     alert ("TOTAL del checkout: $" + shopCart1.subTotal);
-    console.log(shopCart1.shopList);
+    console.log("Shop List:\nTotal: $" + shopCart1.subTotal + "\n" + shopCart1.showShopList());
 }
 
 
