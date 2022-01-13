@@ -137,25 +137,40 @@ body{
 .main{
     padding: 2rem;
     width: 100%;
-    min-height: 50vh;
+    max-width: 1280px;
+    margin: auto;
     display: flex;
     flex-flow: column wrap;
     justify-content: start;
     align-items: stretch;
-    gap: 1rem;
+    gap: 4rem;
     position: relative;
 }
 
 .ofertas{
     width: 100%;
-    min-width: 200px;
-    min-height: 8rem;
     border-radius: .5rem;
     border: 2px solid white;
     background: darkslateblue;
 }
 
 .productos{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: center;
+    align-content: center;
+    gap: 2rem;
+
+    &__producto{   
+        aspect-ratio: 3/5;       
+        border-radius: .5rem;
+        border: 2px solid white;
+        background: darkorange;
+    }
+}
+
+/* productos con FLEX: .productos{
     width: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -171,7 +186,7 @@ body{
         border: 2px solid white;
         background: darkorange;
     }
-}
+} */
 
 .carrito{
     position: fixed;
@@ -215,10 +230,10 @@ body{
         padding: 4rem;
     }
     .ofertas{
-        flex: 1 1;
+        flex: 1;
     }
     .productos{
-        flex: 5 5;
+        flex: 3;
     }
     .footer{
         padding-left: 4rem;
