@@ -68,9 +68,10 @@ class ShoppingCart{
                             this.addItem();
                             break;
                         }
-                        else{                           
+                        else{                        
                             this.subTotalCalc();
                             alert (`Producto agregado al carrito. SUBTOTAL: $${this.subTotal}\nCarrito:\n${this.showShopList()}`);
+                            localStorage.setItem("shopList", JSON.stringify(this.shopList));
                             break;
                         }
                     }
@@ -104,20 +105,20 @@ class ShoppingCart{
             if (itemToDelete == 0){
                 break;
             }
-
-            for (const items in this.shopList){
-                if (itemToDelete == 0){
-                    break;
-                } else if (itemToDelete-1 == items){
-                    for(const productos of stock1.arrayBebidas){
-                        if(this.shopList[items] == productos.id){
-                            productos.stock++;
-                            break;
+            else{
+                for (const items in this.shopList){
+                    if (itemToDelete-1 == items){
+                        for(const productos of stock1.arrayBebidas){
+                            if(this.shopList[items] == productos.id){
+                                productos.stock++;
+                                break;
+                            }
                         }
+                        this.shopList.splice(items, 1);
+                        flag = 1;
+                        localStorage.setItem("shopList", JSON.stringify(this.shopList));
+                        break;
                     }
-                    this.shopList.splice(items, 1);
-                    flag = 1;
-                    break;
                 }
             }
 
@@ -161,7 +162,7 @@ function wrongValue(value){
     return true;
 }
 
-/* agregar bebidas al stock. esta operacion, idealmente, deberia ser realizada por un usuario administrador mediante input. por el momento, al no manejar usuarios ni tener una forma de guardar los datos, inicializo el stock manualmente */
+/* agregar bebidas al stock. esta operacion, idealmente, deberia ser realizada por un usuario administrador mediante input. por el momento, al no manejar usuarios ni tener una forma de guardar la info en una base de datos, inicializo el stock manualmente */
 const cerveza__quilmes = new Bebida("cerveza".toUpperCase(), "Quilmes".toUpperCase(), 1000, 300, 1, 10);
 const cerveza__brahma = new Bebida("cerveza".toUpperCase(), "Brahma".toUpperCase(), 1000, 200, 2, 10);
 const cerveza__heineken = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 1000, 400, 3, 10);
@@ -184,11 +185,38 @@ stock1.arrayBebidas.push(tequila__sol);
 
 
 
+
 /* INICIO USER FINAL */
 
 window.onload = function(){
     alert("BLACK FRIDAY - Delivery de bebidas 24hs\nElegir una bebida para agregar al carrito\n[Ingresar sólo el número correspondiente. FIN para finalizar/modificar carrito]");
     let checkout = 0;
+    
+    /* actualizar el carrito con los datos previamente cargados en local storage */
+    let loadList;
+    while(loadList !=1 && loadList !=0){
+        loadList = prompt("Si desea continuar con una compra anterior, ingrese 1. Para vaciar la lista de compras almacenada, ingrese 0")
+
+        if (loadList == 1){
+            shopCart1.shopList = JSON.parse(localStorage.getItem("shopList"));
+            for (const element of shopCart1.shopList){
+                for (const bebida of stock1.arrayBebidas){
+                    if (element == bebida.id){
+                        bebida.stock--;
+                    }
+                }
+            }
+
+            alert("Lista cargada:\n" + shopCart1.showShopList());
+
+        } else if (loadList == 0){
+            localStorage.removeItem("shopList");
+        }
+        
+    }
+    
+
+    /* seleccion de productos */
 
     do{
         while (shopCart1.shopList[(shopCart1.shopList.length)-1] != "FIN"){
