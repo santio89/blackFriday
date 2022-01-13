@@ -181,7 +181,7 @@ body {
 .main {
   padding: clamp(1rem, 2vw, 2rem);
   width: 100%;
-  max-width: 1280px;
+  max-width: 1400px;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -212,8 +212,8 @@ body {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  -ms-grid-columns: (minmax(130px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -296,14 +296,16 @@ body {
     padding: 4rem;
   }
   .ofertas {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-  }
-  .productos {
     -webkit-box-flex: 3;
         -ms-flex: 3;
             flex: 3;
+  }
+  .productos {
+    -webkit-box-flex: 8;
+        -ms-flex: 8;
+            flex: 8;
+    -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
   .footer {
     padding-left: 4rem;

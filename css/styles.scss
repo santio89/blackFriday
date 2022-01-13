@@ -137,7 +137,7 @@ body{
 .main{
     padding: clamp(1rem, 2vw, 2rem);
     width: 100%;
-    max-width: 1280px;
+    max-width: 1400px;
     margin: auto;
     display: flex;
     flex-flow: column wrap;
@@ -158,7 +158,7 @@ body{
 .productos{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     justify-content: center;
     align-content: center;
     gap: 2rem;
@@ -231,10 +231,11 @@ body{
         padding: 4rem;
     }
     .ofertas{
-        flex: 1;
+        flex: 3;
     }
     .productos{
-        flex: 3;
+        flex: 8;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
     .footer{
         padding-left: 4rem;
