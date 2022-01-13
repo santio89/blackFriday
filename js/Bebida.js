@@ -19,4 +19,4 @@ class Bebida{
     }
 }
 
-module.exports = Bebida;
+/* module.exports = Bebida; */

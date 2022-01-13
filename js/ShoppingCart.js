@@ -31,7 +31,7 @@ class ShoppingCart{
         do{
             this.shopList.push( prompt(this.addItemText()).toUpperCase() );
             
-            if (wrongValue(this.shopList[this.shopList.length-1])){
+            if (this.wrongValue(this.shopList[this.shopList.length-1])){
                 alert("Valor ingresado incorrecto. Intente nuevamente");
                 this.shopList.pop();
             }
@@ -47,15 +47,29 @@ class ShoppingCart{
                             this.addItem();
                             break;
                         }
-                        else{                           
+                        else{                        
                             this.subTotalCalc();
                             alert (`Producto agregado al carrito. SUBTOTAL: $${this.subTotal}\nCarrito:\n${this.showShopList()}`);
+                            localStorage.setItem("shopList", JSON.stringify(this.shopList));
                             break;
                         }
                     }
                 }
             }
-        } while (wrongValue(this.shopList[this.shopList.length-1]));
+        } while (this.wrongValue(this.shopList[this.shopList.length-1]));
+    }
+
+    wrongValue(value){
+        if (value == "FIN"){
+            return false;
+        } else{
+            for (const bebida of stock1.arrayBebidas){
+                if(value == bebida.id){
+                    return false
+                }
+            }
+        }
+        return true;
     }
 
     showShopList(){
@@ -83,20 +97,20 @@ class ShoppingCart{
             if (itemToDelete == 0){
                 break;
             }
-
-            for (const items in this.shopList){
-                if (itemToDelete == 0){
-                    break;
-                } else if (itemToDelete-1 == items){
-                    for(const productos of stock1.arrayBebidas){
-                        if(this.shopList[items] == productos.id){
-                            productos.stock++;
-                            break;
+            else{
+                for (const items in this.shopList){
+                    if (itemToDelete-1 == items){
+                        for(const productos of stock1.arrayBebidas){
+                            if(this.shopList[items] == productos.id){
+                                productos.stock++;
+                                break;
+                            }
                         }
+                        this.shopList.splice(items, 1);
+                        flag = 1;
+                        localStorage.setItem("shopList", JSON.stringify(this.shopList));
+                        break;
                     }
-                    this.shopList.splice(items, 1);
-                    flag = 1;
-                    break;
                 }
             }
 
@@ -118,4 +132,4 @@ class ShoppingCart{
     }
 }
 
-module.exports = ShoppingCart;
+/* module.exports = ShoppingCart; */
