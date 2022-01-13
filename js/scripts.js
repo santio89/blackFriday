@@ -34,17 +34,21 @@ window.onload = function(){
         loadList = prompt("Si desea continuar con una compra anterior, ingrese 1. Para vaciar la lista de compras almacenada, ingrese 0")
 
         if (loadList == 1){
-            shopCart1.shopList = JSON.parse(localStorage.getItem("shopList"));
-            for (const element of shopCart1.shopList){
-                for (const bebida of stock1.arrayBebidas){
-                    if (element == bebida.id){
-                        bebida.stock--;
+            if (localStorage.getItem("shopList") == null){
+                alert("No se encontró una compra previa para cargar");
+            } else{
+                shopCart1.shopList = JSON.parse(localStorage.getItem("shopList"));
+                for (const element of shopCart1.shopList){
+                    for (const bebida of stock1.arrayBebidas){
+                        if (element == bebida.id){
+                            bebida.stock--;
+                        }
                     }
                 }
+                shopCart1.subTotalCalc();
+                alert("Lista cargada:\nSUBTOTAL: $" + shopCart1.subTotal + "\n" + shopCart1.showShopList());
             }
-
-            shopCart1.subTotalCalc();
-            alert("Lista cargada:\nSUBTOTAL: $" + shopCart1.subTotal + "\n" + shopCart1.showShopList());
+    
 
         } else if (loadList == 0){
             localStorage.removeItem("shopList");
