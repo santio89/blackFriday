@@ -135,7 +135,7 @@ body{
 }
 
 .main{
-    padding: 2rem;
+    padding: clamp(1rem, 2vw, 2rem);
     width: 100%;
     max-width: 1280px;
     margin: auto;
@@ -143,7 +143,7 @@ body{
     flex-flow: column wrap;
     justify-content: start;
     align-items: stretch;
-    gap: 4rem;
+    gap: 2rem;
     position: relative;
 }
 
@@ -152,6 +152,7 @@ body{
     border-radius: .5rem;
     border: 2px solid white;
     background: darkslateblue;
+    min-height: 25vh;
 }
 
 .productos{
