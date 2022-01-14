@@ -80,7 +80,7 @@ body {
 }
 
 .header__title {
-  font-size: clamp(8rem, 10vw, 40rem);
+  font-size: clamp(8rem, 1rem + 10vw, 40rem);
   color: white;
   padding: 2rem;
   font-weight: bold;
@@ -212,8 +212,8 @@ body {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(130px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -227,25 +227,77 @@ body {
   border-radius: .5rem;
   border: 2px solid white;
   background: darkorange;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
 }
 
-/* productos con FLEX: .productos{
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 2rem;
+.productos__producto h1 {
+  margin: .8rem auto 0 auto;
+  text-align: center;
+  padding: .4rem;
+  line-height: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: clamp(2rem, 1.4rem + 4vw, 3.8rem);
+  text-shadow: 2px 2px 0 black, 4px 4px 0 darkorange;
+}
 
-    &__producto{
-        flex-basis: 20%;
-        aspect-ratio: 3/5;
-        min-width: 100px;
-        border-radius: .5rem;
-        border: 2px solid white;
-        background: darkorange;
-    }
-} */
+.productos__producto h2 {
+  margin-top: auto;
+  text-align: center;
+  font-size: clamp(2rem, 1.2rem + 3vw, 3.4rem);
+}
+
+.productos__producto p {
+  text-align: right;
+  font-size: clamp(1rem, .6rem + .8vw, 3rem);
+  margin-right: .4rem;
+}
+
+.productos__producto p:first-of-type {
+  text-align: right;
+  margin-left: auto;
+  margin-right: .4rem;
+  line-height: .6;
+  font-size: clamp(1.2rem, .8rem + 1.6vw, 3.2rem);
+}
+
+.productos__producto__buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: -.8rem;
+}
+
+.productos__producto__buttonContainer button {
+  cursor: pointer;
+  margin-bottom: 0;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: clamp(1.8rem, 2rem + 4vw, 10rem);
+}
+
+.productos__producto__buttonContainer button:hover {
+  color: white;
+}
+
 .carrito {
   position: fixed;
   bottom: 10px;

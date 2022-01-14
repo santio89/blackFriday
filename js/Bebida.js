@@ -10,7 +10,7 @@ class Bebida{
     }
     
     outOfStock(){
-        if (this.stock == 0){
+        if (this.stock < 1){
             return true;
         } else{
             this.stock--;
