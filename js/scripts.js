@@ -82,6 +82,8 @@ for (const bebidas of stock1.arrayBebidas){
 let carrito__numero = document.querySelector(".carrito__numero");
 carrito__numero.innerHTML = shopCart1.shopList.length;
 
+let carrito__total = document.querySelector(".carrito__total");
+carrito__total.innerHTML = `$${shopCart1.subTotal}`;
 
 
 

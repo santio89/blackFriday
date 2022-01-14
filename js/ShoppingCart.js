@@ -49,8 +49,9 @@ class ShoppingCart{
                 else{      
                     stock.innerHTML = `stock: ${bebida.stock}`;    
                     carrito__numero.innerHTML = shopCart1.shopList.length;
-
                     this.subTotalCalc();
+                    carrito__total.innerHTML = `$${shopCart1.subTotal}`;
+                    
                     alert (`Producto agregado al carrito.\nSUBTOTAL: $${this.subTotal}\nCarrito:\n${this.showShopList()}`);
                     localStorage.setItem("shopList", JSON.stringify(this.shopList));
                     break;
@@ -73,15 +74,14 @@ class ShoppingCart{
                 }               
                 this.shopList.splice(items, 1);  
                 carrito__numero.innerHTML = shopCart1.shopList.length;
-                localStorage.setItem("shopList", JSON.stringify(this.shopList));
+                this.subTotalCalc();
+                carrito__total.innerHTML = `$${shopCart1.subTotal}`;
+                alert (`Producto eliminado del carrito y devuelto al stock.\nSUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`)
 
+                localStorage.setItem("shopList", JSON.stringify(this.shopList));               
                 break;
             }
-        }
-
-        this.subTotalCalc();
-        alert (`Producto eliminado del carrito y devuelto al stock.\nSUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`)
-        
+        }  
     }
 }
 
