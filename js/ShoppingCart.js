@@ -50,7 +50,7 @@ class ShoppingCart{
                     stock.innerHTML = `stock: ${bebida.stock}`;    
 
                     this.subTotalCalc();
-                    alert (`Producto agregado al carrito. SUBTOTAL: $${this.subTotal}\nCarrito:\n${this.showShopList()}`);
+                    alert (`Producto agregado al carrito.\nSUBTOTAL: $${this.subTotal}\nCarrito:\n${this.showShopList()}`);
                     localStorage.setItem("shopList", JSON.stringify(this.shopList));
                     break;
                 }
@@ -79,7 +79,7 @@ class ShoppingCart{
         }
 
         this.subTotalCalc();
-        alert (`Producto eliminado del carrito y devuelto al stock. SUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`)
+        alert (`Producto eliminado del carrito y devuelto al stock.\nSUBTOTAL: $${this.subTotal}\nCarrito: \n${this.showShopList()}`)
         
     }
 }
