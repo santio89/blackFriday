@@ -64,7 +64,7 @@ while(loadList !=1 && loadList !=0){
 }
 
 let productos = document.getElementById("productos")
-for (bebidas of stock1.arrayBebidas){
+for (const bebidas of stock1.arrayBebidas){
     let producto = document.createElement("div");
     producto.classList.add("productos__producto");
     producto.innerHTML = 
@@ -78,6 +78,12 @@ for (bebidas of stock1.arrayBebidas){
      </div>`
      productos.appendChild(producto);
 }
+
+let carrito__numero = document.querySelector(".carrito__numero");
+carrito__numero.innerHTML = shopCart1.shopList.length;
+
+
+
 
 
 

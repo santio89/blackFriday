@@ -238,9 +238,17 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-
+    
     &__icon{
         font-size: 4rem;
+    }
+
+    &__numero{
+        position: absolute;
+        top: 45.4%;
+        left: 52%;
+        color: darkorange;  
+        transform: translate(-50%, -50%);
     }
 
     &:hover, &:focus{
