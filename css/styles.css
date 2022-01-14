@@ -234,6 +234,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  max-width: 200px;
 }
 
 .productos__producto h1 {
@@ -247,19 +248,19 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: clamp(2rem, 1.4rem + 4vw, 3.8rem);
+  font-size: clamp(2rem, .8rem + 4vw, 3.8rem);
   text-shadow: 2px 2px 0 black, 4px 4px 0 darkorange;
 }
 
 .productos__producto h2 {
   margin-top: auto;
   text-align: center;
-  font-size: clamp(2rem, 1.2rem + 3vw, 3.4rem);
+  font-size: clamp(2rem, .6rem + 4vw, 3.4rem);
 }
 
 .productos__producto p {
   text-align: right;
-  font-size: clamp(1rem, .6rem + .8vw, 3rem);
+  font-size: clamp(1rem, .2rem + 1vw, 3rem);
   margin-right: .4rem;
 }
 

@@ -170,6 +170,7 @@ body{
         background: darkorange;
         display: flex;
         flex-flow: column;
+        max-width: 200px;
 
         h1{
             margin: .8rem auto 0 auto;
@@ -178,17 +179,17 @@ body{
             line-height: 1;
             display: flex;
             justify-content: center;
-            font-size: unquote("clamp(2rem, 1.4rem + 4vw, 3.8rem)");
+            font-size: unquote("clamp(2rem, .8rem + 4vw, 3.8rem)");
             text-shadow: 2px 2px 0 black, 4px 4px 0 darkorange;
         }
         h2{
             margin-top: auto;
             text-align: center;
-            font-size: unquote("clamp(2rem, 1.2rem + 3vw, 3.4rem)");
+            font-size: unquote("clamp(2rem, .6rem + 4vw, 3.4rem)");
         }
         p{
             text-align: right;
-            font-size: unquote("clamp(1rem, .6rem + .8vw, 3rem)");
+            font-size: unquote("clamp(1rem, .2rem + 1vw, 3rem)");
             margin-right: .4rem;
         }
         p:first-of-type{
