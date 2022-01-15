@@ -40,6 +40,7 @@ for (const bebidas of stock1.arrayBebidas){
     let producto = document.createElement("div");
     producto.classList.add("productos__producto");
     producto.innerHTML = `
+    <p>${bebidas.tipo}</p>
     <h1>${bebidas.marca}</h1>
     <p>${bebidas.contNeto}ml</p>
     <p id="${bebidas.nombre}__stock">stock: ${bebidas.stock}</p>    
