@@ -313,7 +313,7 @@ body {
   text-align: right;
   margin-left: auto;
   margin-right: .4rem;
-  font-size: clamp(1rem, .2rem + 1vw, 2rem);
+  font-size: clamp(.88rem, .2rem + 1vw, 2rem);
   line-height: .4;
 }
 
