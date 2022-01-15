@@ -273,21 +273,24 @@ body{
     cursor: pointer;
     
     &__icon{
-        font-size: 4rem;
+        font-size: 5rem;
+        text-shadow: 2px 2px 0 var(--color-cuarto), 2.6px 2.6px 0 var(--color-segundo);
+        margin-top: .5rem;
     }
 
     &__numero{
         position: absolute;
-        top: 45.4%;
-        left: 52%;
+        top: 49.2%;
+        left: 52.2%;
         color: var(--color-segundo);  
         transform: translate(-50%, -50%);
     }
 
     &__total{
         position:absolute;
-        top:-42%;
+        top:-46%;
         left: 0;
+        text-shadow: 1px 1px 0 var(--color-primero), 1.6px 1.6px 0 var(--color-segundo);
     }
 
     &__lista{
@@ -307,12 +310,15 @@ body{
         overflow-y: scroll;
         -ms-overflow-style: none;  /* Internet Explorer 10+ */
         scrollbar-width: none;  /* Firefox */
+        visibility: hidden;
+
         &::-webkit-scrollbar { 
             display: none;  /* Safari and Chrome */
         }
 
         &__translated{
             transform: translateY(0%);
+            visibility: visible;
         }
 
         &__title{
