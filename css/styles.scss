@@ -252,11 +252,12 @@ body{
             }
         }
         
-    }
-
-   
+    }   
 }
 
+.visible{
+            visibility: visible !important;
+}
 
 .carrito{
     position: fixed;
@@ -307,10 +308,11 @@ body{
         flex-flow: column nowrap;
         transform: translateY(-120%);
         transition: transform 400ms;
+        visibility: hidden; /* lista de compras escondida (para facilitar navegacion por teclado cuando la lista esta cerrada). se cambia a visible mediante js al abrirla*/
+
         overflow-y: scroll;
         -ms-overflow-style: none;  /* Internet Explorer 10+ */
         scrollbar-width: none;  /* Firefox */
-        visibility: hidden;
 
         &::-webkit-scrollbar { 
             display: none;  /* Safari and Chrome */
@@ -318,7 +320,6 @@ body{
 
         &__translated{
             transform: translateY(0%);
-            visibility: visible;
         }
 
         &__title{

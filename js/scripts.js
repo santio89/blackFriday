@@ -61,8 +61,16 @@ carrito__total.innerHTML = `$${shopCart1.subTotal}`;
 /* carrito - lista de compras */
 function toggleLista(){
     let carrito__lista = document.querySelector(".carrito__lista");
-    carrito__lista.classList.toggle("carrito__lista__translated",);
+    carrito__lista.classList.toggle("carrito__lista__translated");
 
+    /* cambio la visibilidad al togglear la lista para facilitar navegacion por teclado cuando la lista esta cerrada */
+    if (carrito__lista.classList.contains("visible")){
+        setTimeout(()=>carrito__lista.classList.remove("visible"), 400);
+    } else{
+        carrito__lista.classList.add("visible");
+    }
+
+    
     let carrito__lista__ul = document.querySelector(".carrito__lista__ul");
     carrito__lista__ul.innerHTML = "";
     let shopListWithoutDuplicates = new Set (shopCart1.shopList);
