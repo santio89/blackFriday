@@ -8,16 +8,16 @@ const ron__morgan = new Bebida("ron".toUpperCase(), "Morgan".toUpperCase(), 750,
 const fernet__branca = new Bebida("fernet".toUpperCase(), "Branca".toUpperCase(), 750, 900, 7, 10);
 const tequila__sol = new Bebida("tequila".toUpperCase(), "Azteca".toUpperCase(), 750, 800, 8, 10);
 const shopCart1 = new ShoppingCart(new Date(), 001);
-const stock1 = new Stock(new Date(), 001)
+const stock1 = new Stock(new Date(), 001);
 
-stock1.arrayBebidas.push(cerveza__quilmes);
-stock1.arrayBebidas.push(cerveza__brahma);
-stock1.arrayBebidas.push(cerveza__heineken);
-stock1.arrayBebidas.push(vodka__smirnoff);
-stock1.arrayBebidas.push(whisky__vat);
-stock1.arrayBebidas.push(ron__morgan);
-stock1.arrayBebidas.push(fernet__branca);
-stock1.arrayBebidas.push(tequila__sol);
+stock1.addStockItem(cerveza__quilmes);
+stock1.addStockItem(cerveza__brahma);
+stock1.addStockItem(cerveza__heineken);
+stock1.addStockItem(vodka__smirnoff);
+stock1.addStockItem(whisky__vat);
+stock1.addStockItem(ron__morgan);
+stock1.addStockItem(fernet__branca);
+stock1.addStockItem(tequila__sol);
 
 
 if (localStorage.getItem("shopList")){
