@@ -285,7 +285,7 @@ body {
   text-align: center;
   font-size: clamp(1.8rem, .6rem + 4vw, 3.4rem);
   text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
-  line-height: .4;
+  line-height: .8;
 }
 
 .productos__producto p {
@@ -314,7 +314,7 @@ body {
   margin-left: auto;
   margin-right: .4rem;
   font-size: clamp(1rem, .2rem + 1vw, 2rem);
-  line-height: .2;
+  line-height: .4;
 }
 
 .productos__producto__buttonContainer {
@@ -332,7 +332,7 @@ body {
 
 .productos__producto__buttonContainer button {
   cursor: pointer;
-  line-height: 1;
+  line-height: .8;
   margin-bottom: 0;
   background: none;
   outline: none;
