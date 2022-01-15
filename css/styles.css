@@ -211,7 +211,7 @@ body {
 .main {
   padding: clamp(1rem, 2vw, 2rem);
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -242,8 +242,8 @@ body {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  -ms-grid-columns: (minmax(140px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   grid-auto-rows: 1fr;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -264,7 +264,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  max-width: 200px;
+  padding: .8rem;
+  max-width: 240px;
 }
 
 .productos__producto h1 {
@@ -566,7 +567,7 @@ body {
   color: var(--color-segundo);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 880px) {
   .header {
     padding: 4rem;
   }

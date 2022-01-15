@@ -169,7 +169,7 @@ body{
 .main{
     padding: clamp(1rem, 2vw, 2rem);
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
     margin: auto;
     display: flex;
     flex-flow: column wrap;
@@ -190,7 +190,7 @@ body{
 .productos{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     grid-auto-rows: 1fr;
     justify-content: center;
     align-content: center;
@@ -202,8 +202,9 @@ body{
         background: var(--color-segundo);
         display: flex;
         flex-flow: column;
-        max-width: 200px;
-        
+        padding: .8rem;
+        max-width: 240px;
+
         h1{
             margin: .8rem auto 0 auto;
             text-align: center;
@@ -443,7 +444,7 @@ body{
     }
 }
 
-@media (min-width: 900px){
+@media (min-width: 880px){
     .header{
         padding: 4rem;
     }

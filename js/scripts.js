@@ -4,9 +4,9 @@ const cerveza__brahma = new Bebida("cerveza".toUpperCase(), "Brahma".toUpperCase
 const cerveza__heineken = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 1000, 400, 3, 10);
 const vodka__smirnoff = new Bebida("vodka".toUpperCase(), "Smirnoff".toUpperCase(), 750, 1000, 4, 10);
 const whisky__vat = new Bebida("whisky".toUpperCase(), "Vat 69".toUpperCase(), 750, 1200, 5, 10);
-const ron__morgan = new Bebida("ron".toUpperCase(), "Cpt Morgan".toUpperCase(), 750, 1200, 6, 10);
+const ron__morgan = new Bebida("ron".toUpperCase(), "Morgan".toUpperCase(), 750, 1200, 6, 10);
 const fernet__branca = new Bebida("fernet".toUpperCase(), "Branca".toUpperCase(), 750, 900, 7, 10);
-const tequila__sol = new Bebida("tequila".toUpperCase(), "Sol Azteca".toUpperCase(), 750, 800, 8, 10);
+const tequila__sol = new Bebida("tequila".toUpperCase(), "Azteca".toUpperCase(), 750, 800, 8, 10);
 const shopCart1 = new ShoppingCart(new Date(), 001);
 const stock1 = new Stock(new Date(), 001)
 
