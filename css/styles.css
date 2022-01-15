@@ -248,7 +248,7 @@ body {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  gap: 2rem;
+  gap: clamp(.4rem, 2vw, 2rem);
 }
 
 .productos__producto {
@@ -262,7 +262,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  padding: .8rem;
   max-width: 240px;
 }
 
@@ -589,6 +588,13 @@ body {
 
 .footer__nav__ul__li__whatsapp:hover, .footer__nav__ul__li__whatsapp:focus {
   color: var(--color-segundo);
+}
+
+@media (min-width: 780px) {
+  .productos {
+    -ms-grid-columns: (minmax(170px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
 }
 
 @media (min-width: 880px) {
