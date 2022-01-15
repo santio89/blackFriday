@@ -133,17 +133,6 @@ body {
   line-height: 1.2;
 }
 
-.header__info__whatsapp {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  font-size: 4.2rem;
-  color: darkgreen;
-}
-
-.header__info__whatsapp:hover, .header__info__whatsapp:focus {
-  color: green;
-}
-
 .nav {
   width: 100%;
   background: white;
@@ -179,11 +168,20 @@ body {
   font-size: 2rem;
 }
 
-.nav__ul__li a {
+.nav__ul__li__a {
   color: var(--color-primero);
 }
 
-.nav__ul__li a:hover, .nav__ul__li a:focus {
+.nav__ul__li__a:hover, .nav__ul__li__a:focus {
+  color: var(--color-segundo);
+}
+
+.nav__ul__li__whatsapp {
+  text-shadow: 1px 1px 0 var(--color-segundo), 2px 2px 0 var(--color-primero);
+  color: green;
+}
+
+.nav__ul__li__whatsapp:hover, .nav__ul__li__whatsapp:focus {
   color: var(--color-segundo);
 }
 
@@ -559,11 +557,24 @@ body {
   font-size: 2rem;
 }
 
-.footer__nav__ul__li a {
+.footer__nav__ul__li {
+  text-align: left;
+}
+
+.footer__nav__ul__li__a {
   color: var(--color-tercero);
 }
 
-.footer__nav__ul__li a:hover, .footer__nav__ul__li a:focus {
+.footer__nav__ul__li__a:hover, .footer__nav__ul__li__a:focus {
+  color: var(--color-segundo);
+}
+
+.footer__nav__ul__li__whatsapp {
+  text-shadow: 1px 1px 0 var(--color-segundo), 2px 2px 0 var(--color-primero);
+  color: green;
+}
+
+.footer__nav__ul__li__whatsapp:hover, .footer__nav__ul__li__whatsapp:focus {
   color: var(--color-segundo);
 }
 
