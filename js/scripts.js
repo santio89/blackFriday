@@ -19,19 +19,6 @@ stock1.arrayBebidas.push(ron__morgan);
 stock1.arrayBebidas.push(fernet__branca);
 stock1.arrayBebidas.push(tequila__sol);
 
-/* localStorage.removeItem("shopList"); */
-
-/* if (localStorage.getItem("shopList")){
-    shopCart1.shopList = JSON.parse(localStorage.getItem("shopList"));
-
-    for (const element in shopCart1.shopList){
-        for (const bebida of stock1.arrayBebidas){
-            if (shopCart1.shopList[element] == bebida.id){
-                bebida.stock--;
-            }
-        }
-    }
-} */
 
 if (localStorage.getItem("shopList")){
     shopCart1.shopList = JSON.parse(localStorage.getItem("shopList"));
