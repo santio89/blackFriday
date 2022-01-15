@@ -42,7 +42,7 @@ class ShoppingCart{
             let stock = document.getElementById(`${bebida.nombre}__stock`);
             if (this.shopList[this.shopList.length-1] == bebida.id){
                 if(bebida.outOfStock()){
-                    alert("Producto fuera de stock. Intente nuevamente");
+                    alert("Producto fuera de stock.");
                     this.shopList.pop();
                     break;
                 }
