@@ -17,6 +17,17 @@ class Bebida{
             return false;
         }
     }
+
+    inShopList(){
+        let i = 0;
+        for (const items of shopCart1.shopList){
+            if (items == this.id){
+                i++;
+            }
+        }
+        
+        return i;
+    }
 }
 
 /* module.exports = Bebida; */

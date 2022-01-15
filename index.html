@@ -25,46 +25,29 @@
     </nav>
 
     <main class="main">
-        <div class="carrito">
+        <div class="carrito" onclick="toggleLista()" aria-label="Abrir lista">
             <i class="bi bi-cart carrito__icon"></i>
             <p class="carrito__numero"></p>
-            <p class="carrito__total"></p>
-            <!-- <div>LISTA DE COMPRA</div> -->
+            <p class="carrito__total"></p>   
         </div>
+
+        <div class="carrito__lista">
+            <h2 class="carrito__lista__title">LISTA DE COMPRA:</h2>
+            <ul class="carrito__lista__ul">     
+               
+            </ul>
+            <p class="carrito__lista__total"><span>TOTAL</span><span class="carrito__lista__total__number">$0</span></p>
+            <button class="carrito__lista__vaciar" onclick="vaciarCompra()">VACIAR COMPRA</button>
+            <button class="carrito__lista__checkout">IR AL CHECKOUT</button>
+            <button aria-label="Cerrar lista" onclick="toggleLista()" class="carrito__lista__cerrar">X</button>
+        </div>
+        
+
         <aside class="ofertas">
 
         </aside>
         <div class="productos" id="productos">
-            <!-- <div class="productos__producto">
-                <h1>Bebida</h1>
-                <h2>Precio</h2>
-                <div class="productos__producto__buttonContainer">
-                    
-                    <button id="quilmes__menos">-</button>
-                    <button id="quilmes__mas">+</button>
-                </div>
-            </div>
-            <div class="productos__producto">
-                
-            </div>
-            <div class="productos__producto">
-                
-            </div>
-            <div class="productos__producto">
-                
-            </div>
-            <div class="productos__producto">
-                
-            </div>
-            <div class="productos__producto">
-                
-            </div>
-            <div class="productos__producto">
-                
-            </div>
-            <div class="productos__producto">
-                
-            </div> -->
+          
         </div>
 
     </main>

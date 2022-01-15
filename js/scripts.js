@@ -1,7 +1,3 @@
-
-
-
-
 /* agregar bebidas al stock. esta operacion, idealmente, deberia ser realizada por un usuario administrador mediante input. por el momento, al no manejar usuarios ni tener una forma de guardar la info en una base de datos, inicializo el stock manualmente */
 const cerveza__quilmes = new Bebida("cerveza".toUpperCase(), "Quilmes".toUpperCase(), 1000, 300, 1, 10);
 const cerveza__brahma = new Bebida("cerveza".toUpperCase(), "Brahma".toUpperCase(), 1000, 200, 2, 10);
@@ -37,45 +33,33 @@ stock1.arrayBebidas.push(tequila__sol);
     }
 } */
 
-let loadList;
-while(loadList !=1 && loadList !=0){
-    loadList = prompt("Si desea continuar con una compra anterior, ingrese 1. Para vaciar la lista de compras almacenada, ingrese 0")
-
-    if (loadList == 1){
-        if (localStorage.getItem("shopList") == null){
-            alert("No se encontró una compra previa para cargar");
-        } else{
-            shopCart1.shopList = JSON.parse(localStorage.getItem("shopList"));
-            for (const element of shopCart1.shopList){
-                for (const bebida of stock1.arrayBebidas){
-                    if (element == bebida.id){
-                        bebida.stock--;
-                    }
-                }
+if (localStorage.getItem("shopList")){
+    shopCart1.shopList = JSON.parse(localStorage.getItem("shopList"));
+    for (const element of shopCart1.shopList){
+        for (const bebida of stock1.arrayBebidas){
+            if (element == bebida.id){
+                bebida.stock--;
             }
-            shopCart1.subTotalCalc();
-            alert("Lista cargada:\nSUBTOTAL: $" + shopCart1.subTotal + "\n" + shopCart1.showShopList());
         }
-
-    } else if (loadList == 0){
-        localStorage.removeItem("shopList");
     }
-    
-}
+    shopCart1.subTotalCalc();
+} 
+
 
 let productos = document.getElementById("productos")
 for (const bebidas of stock1.arrayBebidas){
     let producto = document.createElement("div");
     producto.classList.add("productos__producto");
-    producto.innerHTML = 
-    `<h1>${bebidas.marca}</h1>
-     <p>${bebidas.contNeto}ml</p>
-     <p id="${bebidas.nombre}__stock">stock: ${bebidas.stock}</p>    
-     <h2>$${bebidas.precio}</h2>
-     <div class="productos__producto__buttonContainer">
-        <button id="${bebidas.marca}__menos" onclick="shopCart1.removeItem(${bebidas.id})">-</button>
-        <button id="${bebidas.marca}__mas" onclick="shopCart1.addItem(${bebidas.id})">+</button>
-     </div>`
+    producto.innerHTML = `
+    <h1>${bebidas.marca}</h1>
+    <p>${bebidas.contNeto}ml</p>
+    <p id="${bebidas.nombre}__stock">stock: ${bebidas.stock}</p>    
+    <h2>$${bebidas.precio}</h2>
+    <div class="productos__producto__buttonContainer">
+    <button id="${bebidas.marca}__menos" onclick="shopCart1.removeItem(${bebidas.id})">-</button>
+    <button id="${bebidas.marca}__mas" onclick="shopCart1.addItem(${bebidas.id})">+</button>
+    </div>
+    `;
      productos.appendChild(producto);
 }
 
@@ -84,6 +68,39 @@ carrito__numero.innerHTML = shopCart1.shopList.length;
 
 let carrito__total = document.querySelector(".carrito__total");
 carrito__total.innerHTML = `$${shopCart1.subTotal}`;
+
+
+function toggleLista(){
+    let carrito__lista = document.querySelector(".carrito__lista");
+    carrito__lista.classList.toggle("carrito__lista__translated",);
+
+    let carrito__lista__ul = document.querySelector(".carrito__lista__ul");
+    carrito__lista__ul.innerHTML = "";
+    let shopListWithoutDuplicates = new Set (shopCart1.shopList);
+    shopListWithoutDuplicates = Array.from(shopListWithoutDuplicates);
+    
+    for (const items of shopListWithoutDuplicates){
+        for (const bebidas of stock1.arrayBebidas){
+            if (items == bebidas.id){
+                let carrito__newLi = document.createElement("li");
+                carrito__newLi.innerHTML = `
+                <span>${bebidas.nombre} ${bebidas.contNeto}</span><span>x${bebidas.inShopList()}</span><span>$${bebidas.precio}</span>
+                `;
+                carrito__lista__ul.appendChild(carrito__newLi);
+            }
+        }
+    }
+
+    shopCart1.subTotalCalc();
+    let carrito__total = document.querySelector(".carrito__lista__total__number");
+    carrito__total.innerHTML = `$${shopCart1.subTotal}`
+}
+
+function vaciarCompra(){
+    localStorage.removeItem("shopList");
+    window.location.reload();
+}
+
 
 
 
