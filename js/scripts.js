@@ -20,6 +20,7 @@ stock1.addStockItem(fernet__branca);
 stock1.addStockItem(tequila__sol);
 
 
+/* cargar shopList, si existe, del storage */
 if (localStorage.getItem("shopList")){
     shopCart1.shopList = JSON.parse(localStorage.getItem("shopList"));
     for (const element of shopCart1.shopList){
@@ -33,6 +34,7 @@ if (localStorage.getItem("shopList")){
 } 
 
 
+/* agregar las cards de productos al html, según los productos que hayan en el inventario */
 let productos = document.getElementById("productos")
 for (const bebidas of stock1.arrayBebidas){
     let producto = document.createElement("div");
@@ -56,7 +58,7 @@ carrito__numero.innerHTML = shopCart1.shopList.length;
 let carrito__total = document.querySelector(".carrito__total");
 carrito__total.innerHTML = `$${shopCart1.subTotal}`;
 
-
+/* carrito - lista de compras */
 function toggleLista(){
     let carrito__lista = document.querySelector(".carrito__lista");
     carrito__lista.classList.toggle("carrito__lista__translated",);
