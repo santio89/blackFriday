@@ -89,7 +89,7 @@ function vaciarCompra(){
 }
 
 function checkout(){
-    alert(`***CHECKOUT***\nTOTAL: $${shopCart1.subTotal}\nDirección/Medios de Pago/Confirmar`);
+    alert(`***CHECKOUT***\nTOTAL: $${shopCart1.subTotal}\nDirección -> Medios de Pago -> Confirmar`);
 }
 
 
