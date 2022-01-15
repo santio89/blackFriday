@@ -228,8 +228,7 @@ body{
         p:nth-of-type(1){
             text-align: left;
             margin-right: auto;
-            margin-left: .4rem;
-            
+            margin-left: .4rem;         
             font-size: unquote("clamp(.6rem, .2rem + 1vw, 2rem)");
             
         }
