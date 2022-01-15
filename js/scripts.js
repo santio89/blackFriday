@@ -84,7 +84,7 @@ function toggleLista(){
             if (items == bebidas.id){
                 let carrito__newLi = document.createElement("li");
                 carrito__newLi.innerHTML = `
-                <span>${bebidas.nombre} ${bebidas.contNeto}</span><span>x${bebidas.inShopList()}</span><span>$${bebidas.precio}</span>
+                <span>${bebidas.nombre} ${bebidas.contNeto}ml</span><span>x${bebidas.inShopList()}</span><span>$${bebidas.precio}</span>
                 `;
                 carrito__lista__ul.appendChild(carrito__newLi);
             }
