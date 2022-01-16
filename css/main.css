@@ -10,10 +10,14 @@
 }
 
 :root {
-  --color-primero: black;
+  --color-primero: rgb(0, 0, 0);
   --color-segundo: rgb(253, 46, 121);
-  --color-tercero: white;
+  --color-tercero: rgb(255, 255, 255);
   --color-cuarto: rgb(31, 0, 37);
+  --color-primero-rgb: 0, 0, 0;
+  --color-segundo-rgb: 253, 46, 121;
+  --color-tercero-rgb: 255, 255, 255;
+  --color-cuarto-rgb: 31, 0, 37;
 }
 
 html {
@@ -625,6 +629,37 @@ body {
   color: var(--color-segundo);
 }
 
+/* selection */
+::-moz-selection {
+  color: rgba(var(--color-primero-rgb), 0.8);
+  background: rgba(var(--color-segundo-rgb), 0.8);
+}
+::selection {
+  color: rgba(var(--color-primero-rgb), 0.8);
+  background: rgba(var(--color-segundo-rgb), 0.8);
+}
+
+/* scrollbar chrome */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-primero);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, rgba(var(--color-tercero-rgb), 0.8) 50%, rgba(var(--color-segundo-rgb), 0.8) 50%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, rgba(var(--color-tercero-rgb), 1) 50%, rgba(var(--color-segundo-rgb), 1) 50%);
+}
+
+/* fin scrollbar */
 @media (min-width: 682px) {
   .nav {
     -webkit-box-pack: center;
@@ -671,4 +706,4 @@ body {
     padding-left: 4rem;
   }
 }
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=main.css.map */

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
 /* css reset */
 *,
 *::before,
@@ -10,10 +8,14 @@
 }
 
 :root{
-    --color-primero: black;
+    --color-primero: rgb(0, 0, 0);
     --color-segundo: rgb(253, 46, 121);
-    --color-tercero: white;
+    --color-tercero: rgb(255, 255, 255);
     --color-cuarto: rgb(31, 0, 37);
+    --color-primero-rgb: 0, 0, 0;
+    --color-segundo-rgb: 253, 46, 121;
+    --color-tercero-rgb: 255, 255, 255;
+    --color-cuarto-rgb: 31, 0, 37;
 }
 
 html{
@@ -496,37 +498,33 @@ body{
     }
 }
 
-@media (min-width: 682px){
-    .nav{
-        justify-content: center;
 
-        &__ul{
-            gap: unquote("clamp(1rem, 1rem + 1vw, 2rem)");
-            margin-right: unset;
-        }
-    }   
+/* selection */
+::selection{
+    color: rgba(var(--color-primero-rgb), .8);
+    background: rgba(var(--color-segundo-rgb), .8);
 }
-@media (min-width: 780px){
-    .productos{
-        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+
+
+/* scrollbar chrome */
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--color-primero);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, rgba(var(--color-tercero-rgb), .8) 50%, rgba(var(--color-segundo-rgb), .8) 50%);
+
+    &:hover{
+        background: linear-gradient(45deg, rgba(var(--color-tercero-rgb), 1) 50%, rgba(var(--color-segundo-rgb), 1) 50%);
     }
-}
-@media (min-width: 880px){
-    .header{
-        padding: 4rem;
-    }
-    .main{
-        flex-flow: row wrap;
-        padding: 4rem;
-    }
-    .ofertas{
-        flex: 3;
-    }
-    .productos{
-        flex: 8;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    .footer{
-        padding-left: 4rem;
-    }
-}
+  }
+  
+  /* fin scrollbar */

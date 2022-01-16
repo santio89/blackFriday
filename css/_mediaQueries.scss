@@ -1,0 +1,34 @@
+@media (min-width: 682px){
+    .nav{
+        justify-content: center;
+
+        &__ul{
+            gap: unquote("clamp(1rem, 1rem + 1vw, 2rem)");
+            margin-right: unset;
+        }
+    }   
+}
+@media (min-width: 780px){
+    .productos{
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+}
+@media (min-width: 880px){
+    .header{
+        padding: 4rem;
+    }
+    .main{
+        flex-flow: row wrap;
+        padding: 4rem;
+    }
+    .ofertas{
+        flex: 3;
+    }
+    .productos{
+        flex: 8;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .footer{
+        padding-left: 4rem;
+    }
+}
