@@ -60,6 +60,10 @@ let carrito__total = document.querySelector(".carrito__total");
 carrito__total.innerHTML = `$${shopCart1.subTotal}`;
 
 /* carrito - lista de compras */
+let carrito = document.querySelector(".carrito");
+carrito.addEventListener("keydown", (e)=>{if(e.keyCode == 13){toggleLista()}});
+carrito.addEventListener("click", toggleLista);
+
 function toggleLista(){
     let carrito__lista = document.querySelector(".carrito__lista");
     carrito__lista.classList.toggle("carrito__lista__translated");

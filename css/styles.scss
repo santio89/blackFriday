@@ -388,7 +388,9 @@ body{
             background: none;
             color: darkred;
             border: none;
-            &:hover{
+            outline: none;
+
+            &:hover, &:focus {
                 color: red;
             }
         }
@@ -398,6 +400,7 @@ body{
             font-weight: bold;
             background: white;
             border: none;
+            outline: none;
             text-shadow: 2px 2px 0 white, 3px 3px 0 var(--color-primero);
             border-radius: .4rem;
             color: var(--color-primero);
@@ -405,9 +408,11 @@ body{
             
             &:hover, &:focus{ 
                 text-shadow: 2px 2px 0 white, 3px 3px 0 var(--color-segundo);
+                transform: translate(2px, 2px);
             }
+            
             &:active{
-                transform: translate(2px, 2px)
+                transform: translate(4px, 4px);
             }
         }
 
