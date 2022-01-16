@@ -34,9 +34,9 @@ if (localStorage.getItem("shopList")){
 } 
 
 
-/* agregar las cards de productos al html, según los productos que hayan en el inventario */
+/* agregar las cards de productos al html, según los productos que hayan en el inventario (uso forEach en vez de map, ya que no necesito retornar nada) */
 let productos = document.getElementById("productos")
-for (const bebidas of stock1.arrayBebidas){
+stock1.arrayBebidas.forEach(bebidas => {
     let producto = document.createElement("div");
     producto.classList.add("productos__producto");
     producto.innerHTML = `
@@ -51,7 +51,7 @@ for (const bebidas of stock1.arrayBebidas){
     </div>
     `;
      productos.appendChild(producto);
-}
+}); 
 
 let carrito__numero = document.querySelector(".carrito__numero");
 carrito__numero.innerHTML = shopCart1.shopList.length;
