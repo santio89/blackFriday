@@ -513,17 +513,17 @@ body{
     width: 8px;
   }
   
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: var(--color-primero);
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+/* track */
+::-webkit-scrollbar-track {
+background: var(--color-primero);
+}
+
+/* handle */
+::-webkit-scrollbar-thumb {
     background: 
-    linear-gradient(-135deg, transparent 6px, var(--color-segundo-dark) 6px) top,
-    linear-gradient(-135deg, var(--color-segundo-dark) 50%,var(--color-tercero-dark) 50%) center, 
-    linear-gradient(45deg, transparent 6px,var(--color-tercero-dark) 6px) bottom;
+        linear-gradient(-135deg, transparent 6px, var(--color-segundo-dark) 6px) top,
+        linear-gradient(-135deg, var(--color-segundo-dark) 50%,var(--color-tercero-dark) 50%) center, 
+        linear-gradient(45deg, transparent 6px,var(--color-tercero-dark) 6px) bottom;
     background-size:100% 48%;
     background-repeat:no-repeat;
 
@@ -535,6 +535,6 @@ body{
         background-size:100% 48%;
         background-repeat:no-repeat;
     }
-  }
+}
   
-  /* fin scrollbar */
+/* fin scrollbar */
