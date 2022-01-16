@@ -159,9 +159,9 @@ body {
   top: unset;
   left: 2%;
   font-size: 1.4em;
-  color: var(--color-segundo);
+  color: var(--color-tercero);
   font-weight: bold;
-  text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-tercero);
+  text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
   letter-spacing: .2rem;
 }
 
