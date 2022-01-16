@@ -14,8 +14,8 @@
     --color-cuarto: rgb(31, 0, 37);
     --color-primero-rgb: 0, 0, 0;
     --color-segundo-rgb: 253, 46, 121;
-    --color-tercero-rgb: 255, 255, 255;
-    --color-cuarto-rgb: 31, 0, 37;
+    --color-segundo-dark: rgb(194, 33, 92);
+    --color-tercero-dark: rgb(220, 220, 220);
 }
 
 html{
@@ -520,10 +520,20 @@ body{
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, rgba(var(--color-tercero-rgb), .8) 50%, rgba(var(--color-segundo-rgb), .8) 50%);
+    background: 
+    linear-gradient(-135deg, transparent 6px, var(--color-segundo-dark) 6px) top,
+    linear-gradient(-135deg, var(--color-segundo-dark) 50%,var(--color-tercero-dark) 50%) center, 
+    linear-gradient(45deg, transparent 6px,var(--color-tercero-dark) 6px) bottom;
+    background-size:100% 48%;
+    background-repeat:no-repeat;
 
     &:hover{
-        background: linear-gradient(45deg, rgba(var(--color-tercero-rgb), 1) 50%, rgba(var(--color-segundo-rgb), 1) 50%);
+        background: 
+        linear-gradient(-135deg, transparent 6px, var(--color-segundo) 6px) top,
+        linear-gradient(-135deg, var(--color-segundo) 50%,var(--color-tercero) 50%) center, 
+        linear-gradient(45deg, transparent 6px,var(--color-tercero) 6px) bottom;
+        background-size:100% 48%;
+        background-repeat:no-repeat;
     }
   }
   
