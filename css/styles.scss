@@ -95,10 +95,8 @@ body{
         font-weight: bold;
         line-height: 1;
         text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
-        &:hover, &:focus{
-            color: white;
-            
-        }
+        word-spacing: .8rem;
+        letter-spacing: .1rem;
     }
 
     &__info{
@@ -117,18 +115,34 @@ body{
     color: var(--color-primero);
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     position: fixed;
     top: 0;
     z-index: 1;
     height: 48px;
 
+    &__logo{
+        position: absolute;
+        top: unset;
+        left: 2%;
+        font-size: 1.4em;
+        color: var(--color-segundo);
+        font-weight: bold;       
+        text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
+        letter-spacing: .2rem;
+
+        &:hover, &:focus{
+            color: var(--color-tercero);
+        }
+    }
+
     &__ul{
         display: flex;
         flex-flow: row wrap;
-        gap: unquote("clamp(1rem, 1rem + 1vw, 2rem)");
+        gap: unquote("clamp(.4rem, .4rem + .4vw, 1.4rem)");
         font-size: 2rem;
+        margin-right: .8rem;
 
         &__li{
             &__a{
@@ -476,6 +490,17 @@ body{
             }
         }
     }
+}
+
+@media (min-width: 682px){
+    .nav{
+        justify-content: center;
+
+        &__ul{
+            gap: unquote("clamp(1rem, 1rem + 1vw, 2rem)");
+            margin-right: unset;
+        }
+    }   
 }
 @media (min-width: 780px){
     .productos{
