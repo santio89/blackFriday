@@ -1,4 +1,10 @@
-
+@media (max-width: 319px){
+    .nav__logo{
+        font-size: .8em;
+        top: .1rem;
+        left: .1rem;
+    }
+}
 
 @media (min-width: 682px){
     .nav{
@@ -40,13 +46,5 @@
     .footer{
         padding-left: 4rem;
         padding-right: 4rem;
-    }
-}
-
-@media (max-width: 319px){
-    .nav__logo{
-        font-size: .8em;
-        top: .1rem;
-        left: .1rem;
     }
 }
