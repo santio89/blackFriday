@@ -23,6 +23,7 @@ html{
     overflow-x: hidden;
     overflow-y: scroll;
     --font-primera: 'Bebas Neue', 'sans-serif';
+    scroll-behavior: smooth;
 }
 
 ul, ol, li, a, h1, h2, h3, p, body, header, section, footer, .container, .container-fluid, .row, .col{
@@ -88,12 +89,15 @@ body{
     justify-content: center; 
     align-items: center;
     margin-top: 48px;
-    padding: clamp(1rem, 2vw, 2rem);
+    padding: clamp(.8rem, 2vw, 2rem);
 
     &__title{
         font-size: unquote("clamp(8rem, 1rem + 10vw, 40rem)");
         color: white;
         padding: 2rem;
+        padding-left: clamp(.8rem, 2vw, 2rem);
+        padding-right: clamp(.8rem, 2vw, 2rem);
+
         font-weight: bold;
         line-height: 1;
         text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
@@ -123,7 +127,7 @@ body{
     top: 0;
     z-index: 1;
     height: 48px;
-
+    
     &__logo{
         position: absolute;
         top: unset;
@@ -148,7 +152,7 @@ body{
 
         &__li{
             background: var(--color-tercero);
-            
+
             &__a{
                 color: var(--color-primero);
 
@@ -184,7 +188,7 @@ body{
 }
 
 .main{
-    padding: clamp(1rem, 2vw, 2rem);
+    padding: clamp(.8rem, 2vw, 2rem);
     width: 100%;
     max-width: 1600px;
     margin: auto;
@@ -303,7 +307,8 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    
+    z-index: 1;
+
     &__icon{
         font-size: 5rem;
         text-shadow: 2px 2px 0 var(--color-cuarto), 2.6px 2.6px 0 var(--color-segundo);
@@ -459,7 +464,8 @@ body{
     border-top: 1px solid white;
     margin-top: auto;
     padding: 1rem;
-    padding-left: 2rem;
+    padding-left: clamp(.8rem, 2vw, 2rem);
+    padding-right: clamp(.8rem, 2vw, 2rem);
     background: var(--color-primero);
 
     &__nav{
@@ -495,6 +501,34 @@ body{
                         color: var(--color-segundo);
                     }
                 }
+            }
+        }
+    }
+
+    &__blackFriday{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: start;
+        align-items: center;
+        padding-top: 1rem;
+        gap: 1rem;
+
+        &__hr{
+            background: linear-gradient(270deg, var(--color-primero) , var(--color-segundo));
+            flex-basis: 100%;
+            height: 2px;
+            border-radius: calc(1vw + 1vh);            
+            opacity: .8;
+        }
+
+        &__logo{
+            font-size: 1.4em;
+            color: var(--color-tercero);
+            font-weight: bold;       
+            text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
+            letter-spacing: .2rem;
+            &:hover, &:focus{
+                color: var(--color-segundo);
             }
         }
     }
