@@ -1,10 +1,9 @@
 @media (min-width: 682px){
     .nav{
         justify-content: center;
-
+        
         &__ul{
             gap: unquote("clamp(1rem, 1rem + 1vw, 2rem)");
-            margin-right: unset;
         }
     }   
 }
@@ -14,10 +13,10 @@
     }
 }
 @media (min-width: 880px){
-    nav{
+    .nav{
         padding-left: 4rem;
         padding-right: 4rem;
-        
+
         &__logo{
             left: 4rem;
         }

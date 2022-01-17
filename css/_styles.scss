@@ -121,19 +121,19 @@ body{
     color: var(--color-primero);
     display: flex;
     flex-flow: row wrap;
-    justify-content: right;
+    justify-content: end;
     align-items: center;
     position: fixed;
     top: 0;
     z-index: 1;
-    height: 48px;
+    min-height: 48px;
     padding-left: clamp(.8rem, 2vw, 2rem);
     padding-right: clamp(.8rem, 2vw, 2rem);
 
     &__logo{
         position: absolute;
-        top: unset;
         left: clamp(.8rem, 2vw, 2rem);
+        line-height: 1;
         font-size: 1.4em;
         color: var(--color-tercero);
         font-weight: bold;       
@@ -150,11 +150,8 @@ body{
         flex-flow: row wrap;
         gap: unquote("clamp(.4rem, .4rem + .4vw, 1.4rem)");
         font-size: 2rem;
-        margin-right: .8rem;
 
         &__li{
-            background: var(--color-tercero);
-
             &__a{
                 color: var(--color-primero);
 
