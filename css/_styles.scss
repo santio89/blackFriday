@@ -127,11 +127,13 @@ body{
     top: 0;
     z-index: 1;
     height: 48px;
-    
+    padding-left: clamp(.8rem, 2vw, 2rem);
+    padding-right: clamp(.8rem, 2vw, 2rem);
+
     &__logo{
         position: absolute;
         top: unset;
-        left: 2%;
+        left: clamp(.8rem, 2vw, 2rem);
         font-size: 1.4em;
         color: var(--color-tercero);
         font-weight: bold;       

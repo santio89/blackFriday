@@ -159,12 +159,14 @@ body {
   top: 0;
   z-index: 1;
   height: 48px;
+  padding-left: clamp(0.8rem, 2vw, 2rem);
+  padding-right: clamp(0.8rem, 2vw, 2rem);
 }
 
 .nav__logo {
   position: absolute;
   top: unset;
-  left: 2%;
+  left: clamp(0.8rem, 2vw, 2rem);
   font-size: 1.4em;
   color: var(--color-tercero);
   font-weight: bold;
@@ -735,6 +737,13 @@ body {
 }
 
 @media (min-width: 880px) {
+  nav {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  nav__logo {
+    left: 4rem;
+  }
   .header {
     padding: 4rem;
   }
