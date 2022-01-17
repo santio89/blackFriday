@@ -514,7 +514,7 @@ body{
         gap: 1rem;
 
         &__hr{
-            background: linear-gradient(270deg, var(--color-primero) , var(--color-segundo));
+            background: linear-gradient(270deg, var(--color-primero) , var(--color-segundo-dark));
             flex-basis: 100%;
             height: 2px;
             border-radius: calc(1vw + 1vh);            

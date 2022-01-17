@@ -657,8 +657,8 @@ body {
 }
 
 .footer__blackFriday__hr {
-  background: -webkit-gradient(linear, right top, left top, from(var(--color-primero)), to(var(--color-segundo)));
-  background: linear-gradient(270deg, var(--color-primero), var(--color-segundo));
+  background: -webkit-gradient(linear, right top, left top, from(var(--color-primero)), to(var(--color-segundo-dark)));
+  background: linear-gradient(270deg, var(--color-primero), var(--color-segundo-dark));
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   height: 2px;
