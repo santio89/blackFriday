@@ -148,9 +148,11 @@ body{
     &__ul{
         display: flex;
         flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
         gap: unquote("clamp(.4rem, .4rem + .4vw, 1.4rem)");
         font-size: 2rem;
-
+        
         &__li{
             &__a{
                 color: var(--color-primero);
