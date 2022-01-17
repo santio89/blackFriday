@@ -147,6 +147,8 @@ body{
         margin-right: .8rem;
 
         &__li{
+            background: var(--color-tercero);
+            
             &__a{
                 color: var(--color-primero);
 

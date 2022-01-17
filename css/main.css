@@ -186,6 +186,10 @@ body {
   margin-right: .8rem;
 }
 
+.nav__ul__li {
+  background: var(--color-tercero);
+}
+
 .nav__ul__li__a {
   color: var(--color-primero);
 }
