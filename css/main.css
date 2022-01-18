@@ -413,7 +413,6 @@ body {
           flex: 1;
   border-bottom: 4px dashed var(--color-segundo);
   padding-left: clamp(0.8rem, 2vw, 2rem);
-  padding-top: clamp(0.8rem, 2vw, 2rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
