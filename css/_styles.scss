@@ -494,6 +494,9 @@ body{
 
                 &:first-of-type{
                     text-align: left;
+                    span{
+                        color: var(--color-segundo);
+                    }
                 }
                 &:nth-of-type(2){
                     text-align: right;

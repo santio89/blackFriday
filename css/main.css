@@ -648,6 +648,10 @@ body {
   text-align: left;
 }
 
+.carrito__lista li span:first-of-type span {
+  color: var(--color-segundo);
+}
+
 .carrito__lista li span:nth-of-type(2) {
   text-align: right;
 }
