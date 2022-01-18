@@ -312,6 +312,16 @@ body{
     transform: translateY(-120%);
     transition: 400ms;
     visibility: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: 6px;  /* Firefox */
+
+    &::-webkit-scrollbar { 
+        width: 6px;
+        &-track{
+            background: transparent;  /* Safari and Chrome */
+        }
+    }
 
     &__title{
         flex: 1;
@@ -332,6 +342,8 @@ body{
             font-size: unquote("clamp(8rem, 1rem + 10vw, 40rem)");
         }
     }
+
+    
 }
 
 .visible{
@@ -388,14 +400,16 @@ body{
         flex-flow: column nowrap;
         transform: translateY(-120%);
         transition: transform 400ms;
-        visibility: hidden; /* lista de compras escondida, ademas de trasladada, (para facilitar navegacion por teclado cuando la lista esta cerrada). se cambia a visible mediante js al abrirla*/
-
+        visibility: hidden; /* lista de compras escondida, ademas de trasladada, para facilitar navegacion por teclado cuando la lista esta cerrada. se cambia a visible mediante js al abrirla*/
+        overflow-x: hidden;
         overflow-y: scroll;
-        -ms-overflow-style: none;  /* Internet Explorer 10+ */
-        scrollbar-width: none;  /* Firefox */
+        scrollbar-width: 6px;  /* Firefox */
 
         &::-webkit-scrollbar { 
-            display: none;  /* Safari and Chrome */
+            width: 6px;
+            &-track{
+                background: transparent;  /* Safari and Chrome */
+            }
         }
 
         &__translated{

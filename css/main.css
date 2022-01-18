@@ -405,6 +405,19 @@ body {
   -webkit-transition: 400ms;
   transition: 400ms;
   visibility: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: 6px;
+  /* Firefox */
+}
+
+.ofertasPage::-webkit-scrollbar, .productosPage::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ofertasPage::-webkit-scrollbar-track, .productosPage::-webkit-scrollbar-track {
+  background: transparent;
+  /* Safari and Chrome */
 }
 
 .ofertasPage__title, .productosPage__title {
@@ -514,16 +527,19 @@ body {
   transition: transform 400ms;
   transition: transform 400ms, -webkit-transform 400ms;
   visibility: hidden;
-  /* lista de compras escondida, ademas de trasladada, (para facilitar navegacion por teclado cuando la lista esta cerrada). se cambia a visible mediante js al abrirla*/
+  /* lista de compras escondida, ademas de trasladada, para facilitar navegacion por teclado cuando la lista esta cerrada. se cambia a visible mediante js al abrirla*/
+  overflow-x: hidden;
   overflow-y: scroll;
-  -ms-overflow-style: none;
-  /* Internet Explorer 10+ */
-  scrollbar-width: none;
+  scrollbar-width: 6px;
   /* Firefox */
 }
 
 .carrito__lista::-webkit-scrollbar {
-  display: none;
+  width: 6px;
+}
+
+.carrito__lista::-webkit-scrollbar-track {
+  background: transparent;
   /* Safari and Chrome */
 }
 
