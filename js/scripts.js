@@ -111,6 +111,24 @@ function checkout(){
 }
 
 
+function toggleOfertas(){
+    let ofertas = document.querySelector(".ofertasPage");
+    ofertas.classList.toggle("carrito__lista__translated");
+    if (ofertas.classList.contains("visible")){
+        setTimeout(()=>ofertas.classList.remove("visible"), 400);
+    } else{
+        ofertas.classList.add("visible");
+    }
+}
+function toggleProductos(){
+    let productos = document.querySelector(".productosPage");
+    productos.classList.toggle("carrito__lista__translated");
+    if (productos.classList.contains("visible")){
+        setTimeout(()=>productos.classList.remove("visible"), 400);
+    } else{
+        productos.classList.add("visible");
+    }
+}
 
 
 

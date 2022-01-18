@@ -22,8 +22,8 @@
     <nav class="nav">
         <a href="index.html" class="nav__logo">BF</a>
         <ul class="nav__ul">
-            <li class="nav__ul__li"><a href="#" class="nav__ul__li__a">Ofertas</a></li>
-            <li class="nav__ul__li"><a href="#" class="nav__ul__li__a">Productos</a></li>
+            <li class="nav__ul__li"><button class="nav__ul__li__a" onclick="toggleOfertas()">Ofertas</button></li>
+            <li class="nav__ul__li"><button class="nav__ul__li__a" onclick="toggleProductos()">Productos</button></li>
             <li class="nav__ul__li"><a href="https://wa.me/541199999999" target="_blank" rel="noopener" class="nav__ul__li__whatsapp"><i class="bi bi-whatsapp"></i></a></li>
         </ul>
     </nav>
@@ -56,6 +56,22 @@
         </aside>
         <div class="productos" id="productos">
           
+        </div>
+        <div class="ofertasPage">
+            <div class="ofertasPage__title">
+                <h2 class="header__title header__title--pages">BLACK FRIDAY</h2>
+                <h3 class="header__title header__title--pages">OFERTAS</h3>
+            </div>
+            <button aria-label="Cerrar lista" class="carrito__lista__cerrar" onclick="toggleOfertas()">X</button>
+        </div>
+
+        <div class="productosPage">
+            <div class="productosPage__title">
+                <h2 class="header__title header__title--pages">BLACK FRIDAY</h2>
+                <h3 class="header__title header__title--pages">PRODUCTOS</h3>
+            </div>
+            <button aria-label="Cerrar lista" class="carrito__lista__cerrar" onclick="toggleProductos()">X</button>
+            </div>
         </div>
 
     </main>

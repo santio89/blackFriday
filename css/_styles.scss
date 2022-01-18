@@ -97,12 +97,15 @@ body{
         padding: 2rem;
         padding-left: clamp(.8rem, 2vw, 2rem);
         padding-right: clamp(.8rem, 2vw, 2rem);
-
         font-weight: bold;
         line-height: 1;
         text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
         word-spacing: .8rem;
         letter-spacing: .1rem;
+
+        &--pages{
+            font-size: unquote("clamp(6rem, 1rem + 6vw, 30rem)");
+        }
     }
 
     &__info{
@@ -125,7 +128,7 @@ body{
     align-items: center;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     min-height: 48px;
     padding-left: clamp(.8rem, 2vw, 2rem);
     padding-right: clamp(.8rem, 2vw, 2rem);
@@ -156,7 +159,10 @@ body{
         &__li{
             &__a{
                 color: var(--color-primero);
-
+                background: none;
+                border: none;
+                outline: none;
+                
                 &:hover, &:focus{
                     color: var(--color-segundo);
                 }
@@ -206,7 +212,6 @@ body{
     border-radius: .5rem;
     border: 2px solid white;
     background: var(--color-cuarto);
-    min-height: 25vh;
 }
 
 .productos{
@@ -291,6 +296,45 @@ body{
     }   
 }
 
+.ofertasPage, .productosPage{
+    position: fixed;
+    top: 48px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 48px);
+    height: calc(100vh - 48px);
+    background: var(--color-primero);
+    z-index: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    align-items: start;
+    transform: translateY(-120%);
+    transition: 400ms;
+    /* visibility: hidden; */
+
+    &__title{
+        flex: 1;
+        border-bottom: 4px dashed var(--color-segundo);
+        padding-left: clamp(.8rem, 2vw, 2rem);
+        padding-top: clamp(.8rem, 2vw, 2rem);
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: start;
+        align-items: start;
+
+        h2{
+            color: white;
+        }
+        h3{
+            align-self: center;
+            padding: 0;
+            color: var(--color-segundo);
+            font-size: unquote("clamp(8rem, 1rem + 10vw, 40rem)");
+        }
+    }
+}
+
 .visible{
             visibility: visible !important;
 }
@@ -308,7 +352,7 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
 
     &__icon{
         font-size: 5rem;
@@ -343,10 +387,9 @@ body{
         box-shadow: 0 0 0 4px var(--color-segundo), 0 0 0 8px white;
         display: flex;
         flex-flow: column nowrap;
-        z-index: 1;
         transform: translateY(-120%);
         transition: transform 400ms;
-        visibility: hidden; /* lista de compras escondida (para facilitar navegacion por teclado cuando la lista esta cerrada). se cambia a visible mediante js al abrirla*/
+        visibility: hidden; /* lista de compras escondida, ademas de trasladada, (para facilitar navegacion por teclado cuando la lista esta cerrada). se cambia a visible mediante js al abrirla*/
 
         overflow-y: scroll;
         -ms-overflow-style: none;  /* Internet Explorer 10+ */
