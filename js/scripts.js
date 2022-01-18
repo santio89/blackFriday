@@ -86,7 +86,8 @@ function toggleLista(){
             if (items == bebidas.id){
                 let carrito__newLi = document.createElement("li");
                 carrito__newLi.innerHTML = `
-                <span>${bebidas.nombre} ${bebidas.contNeto}ml</span>
+                <span>◖${bebidas.nombre}</span>
+                <span>${bebidas.contNeto}ml</span>
                 <span>$${bebidas.precio}</span>
                 <span>(x${bebidas.inShopList()})</span>
                 <span>$${bebidas.precio * bebidas.inShopList()}</span>
