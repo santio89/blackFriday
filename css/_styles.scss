@@ -311,7 +311,7 @@ body{
     align-items: start;
     transform: translateY(-120%);
     transition: 400ms;
-    /* visibility: hidden; */
+    visibility: hidden;
 
     &__title{
         flex: 1;

@@ -404,7 +404,7 @@ body {
           transform: translateY(-120%);
   -webkit-transition: 400ms;
   transition: 400ms;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 .ofertasPage__title, .productosPage__title {
