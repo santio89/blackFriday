@@ -114,20 +114,36 @@ function checkout(){
 function toggleOfertas(){
     let ofertas = document.querySelector(".ofertasPage");
     ofertas.classList.toggle("carrito__lista__translated");
+
     if (ofertas.classList.contains("visible")){
         setTimeout(()=>ofertas.classList.remove("visible"), 400);
     } else{
         ofertas.classList.add("visible");
     }
+
+    let productos = document.querySelector(".productosPage");
+    if (productos.classList.contains("carrito__lista__translated")){
+        productos.classList.toggle("carrito__lista__translated");
+        setTimeout(()=>productos.classList.remove("visible"), 400);
+    }
 }
+
 function toggleProductos(){
     let productos = document.querySelector(".productosPage");
     productos.classList.toggle("carrito__lista__translated");
+
     if (productos.classList.contains("visible")){
         setTimeout(()=>productos.classList.remove("visible"), 400);
     } else{
         productos.classList.add("visible");
     }
+
+    let ofertas = document.querySelector(".ofertasPage");
+    if (ofertas.classList.contains("carrito__lista__translated")){
+        ofertas.classList.toggle("carrito__lista__translated");
+        setTimeout(()=>ofertas.classList.remove("visible"), 400);
+    }
+
 }
 
 
