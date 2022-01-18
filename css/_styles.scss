@@ -486,7 +486,7 @@ body{
             display: flex;
             justify-content: space-between;
             width: 100%;
-            font-size: unquote("clamp(.6em, .6em + 1vw, 1em)") !important;
+            font-size: unquote("clamp(.6em, .6em + 1vw, 1em)");
 
             span{
                 flex: 1;

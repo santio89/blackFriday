@@ -634,7 +634,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  font-size: clamp(.6em, .6em + 1vw, 1em) !important;
+  font-size: clamp(.6em, .6em + 1vw, 1em);
 }
 
 .carrito__lista li span {
