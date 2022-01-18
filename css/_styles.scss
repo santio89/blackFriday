@@ -102,10 +102,6 @@ body{
         text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
         word-spacing: .8rem;
         letter-spacing: .1rem;
-
-        &--pages{
-            font-size: unquote("clamp(6rem, 1rem + 6vw, 30rem)");
-        }
     }
 
     &__info{
@@ -310,16 +306,16 @@ body{
     justify-content: start;
     align-items: start;
     transform: translateY(-120%);
-    transition: 400ms;
+    transition: transform 400ms;
     visibility: hidden;
-    overflow-x: hidden;
+
     overflow-y: scroll;
     scrollbar-width: 6px;  /* Firefox */
 
     &::-webkit-scrollbar { 
-        width: 6px;
-        &-track{
-            background: transparent;  /* Safari and Chrome */
+        width: 6px;  /* Safari and Chrome */
+        &-track {
+            background: transparent;
         }
     }
 
@@ -334,16 +330,16 @@ body{
 
         h2{
             color: white;
+            font-size: unquote("clamp(4rem, 1rem + 4vw, 30rem)");
+        
         }
         h3{
             align-self: center;
             padding: 0;
             color: var(--color-segundo);
-            font-size: unquote("clamp(8rem, 1rem + 10vw, 40rem)");
+            font-size: unquote("clamp(6rem, 1rem + 6vw, 40rem)");
         }
     }
-
-    
 }
 
 .visible{
@@ -398,18 +394,17 @@ body{
         box-shadow: 0 0 0 4px var(--color-segundo), 0 0 0 8px white;
         display: flex;
         flex-flow: column nowrap;
-        z-index: 2;
         transform: translateY(-120%);
         transition: transform 400ms;
-        visibility: hidden; /* lista de compras escondida, ademas de trasladada, para facilitar navegacion por teclado cuando la lista esta cerrada. se cambia a visible mediante js al abrirla*/
-        overflow-x: hidden;
+        visibility: hidden; /* lista de compras escondida, ademas de trasladada, (para facilitar navegacion por teclado cuando la lista esta cerrada). se cambia a visible mediante js al abrirla*/
+
         overflow-y: scroll;
         scrollbar-width: 6px;  /* Firefox */
 
         &::-webkit-scrollbar { 
-            width: 6px;
-            &-track{
-                background: transparent;  /* Safari and Chrome */
+            width: 6px;  /* Safari and Chrome */
+            &-track {
+                background: transparent;
             }
         }
 

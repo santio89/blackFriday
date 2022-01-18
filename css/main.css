@@ -127,10 +127,6 @@ body {
   letter-spacing: .1rem;
 }
 
-.header__title--pages {
-  font-size: clamp(6rem, 1rem + 6vw, 30rem);
-}
-
 .header__info {
   width: 100%;
   font-size: 1.8rem;
@@ -402,10 +398,11 @@ body {
           align-items: start;
   -webkit-transform: translateY(-120%);
           transform: translateY(-120%);
-  -webkit-transition: 400ms;
-  transition: 400ms;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
   visibility: hidden;
-  overflow-x: hidden;
   overflow-y: scroll;
   scrollbar-width: 6px;
   /* Firefox */
@@ -413,11 +410,11 @@ body {
 
 .ofertasPage::-webkit-scrollbar, .productosPage::-webkit-scrollbar {
   width: 6px;
+  /* Safari and Chrome */
 }
 
 .ofertasPage::-webkit-scrollbar-track, .productosPage::-webkit-scrollbar-track {
   background: transparent;
-  /* Safari and Chrome */
 }
 
 .ofertasPage__title, .productosPage__title {
@@ -443,6 +440,7 @@ body {
 
 .ofertasPage__title h2, .productosPage__title h2 {
   color: white;
+  font-size: clamp(4rem, 1rem + 4vw, 30rem);
 }
 
 .ofertasPage__title h3, .productosPage__title h3 {
@@ -451,7 +449,7 @@ body {
       align-self: center;
   padding: 0;
   color: var(--color-segundo);
-  font-size: clamp(8rem, 1rem + 10vw, 40rem);
+  font-size: clamp(6rem, 1rem + 6vw, 40rem);
 }
 
 .visible {
@@ -520,7 +518,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  z-index: 2;
   -webkit-transform: translateY(-120%);
           transform: translateY(-120%);
   -webkit-transition: -webkit-transform 400ms;
@@ -528,8 +525,7 @@ body {
   transition: transform 400ms;
   transition: transform 400ms, -webkit-transform 400ms;
   visibility: hidden;
-  /* lista de compras escondida, ademas de trasladada, para facilitar navegacion por teclado cuando la lista esta cerrada. se cambia a visible mediante js al abrirla*/
-  overflow-x: hidden;
+  /* lista de compras escondida, ademas de trasladada, (para facilitar navegacion por teclado cuando la lista esta cerrada). se cambia a visible mediante js al abrirla*/
   overflow-y: scroll;
   scrollbar-width: 6px;
   /* Firefox */
@@ -537,11 +533,11 @@ body {
 
 .carrito__lista::-webkit-scrollbar {
   width: 6px;
+  /* Safari and Chrome */
 }
 
 .carrito__lista::-webkit-scrollbar-track {
   background: transparent;
-  /* Safari and Chrome */
 }
 
 .carrito__lista__translated {
