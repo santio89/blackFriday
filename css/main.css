@@ -264,6 +264,7 @@ body {
   border-radius: .5rem;
   border: 2px solid white;
   background: var(--color-cuarto);
+  min-height: 20vh;
 }
 
 .productos {
@@ -380,7 +381,6 @@ body {
   left: 0;
   width: 100vw;
   height: calc(100vh - 48px);
-  height: calc(100vh - 48px);
   background: var(--color-primero);
   z-index: 1;
   display: -webkit-box;
@@ -422,7 +422,8 @@ body {
       -ms-flex: 1;
           flex: 1;
   border-bottom: 4px dashed var(--color-segundo);
-  padding-left: clamp(0.8rem, 2vw, 2rem);
+  margin-left: clamp(0.8rem, 2vw, 2rem);
+  margin-top: 2.6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
