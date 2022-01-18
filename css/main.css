@@ -511,7 +511,7 @@ body {
   background: var(--color-primero);
   border-radius: 1rem;
   font-size: 2rem;
-  padding: 1rem;
+  padding: clamp(.4rem, .4rem + 1vw, 1rem);
   -webkit-box-shadow: 0 0 0 4px var(--color-segundo), 0 0 0 8px white;
           box-shadow: 0 0 0 4px var(--color-segundo), 0 0 0 8px white;
   display: -webkit-box;
@@ -634,7 +634,9 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  font-size: clamp(.6em, .6em + 1vw, 1em);
+  font-size: clamp(.4em, .4em + 2vw, 1em);
+  gap: .2em;
+  border-bottom: 1px dashed var(--color-segundo);
 }
 
 .carrito__lista li span {
@@ -646,10 +648,6 @@ body {
 
 .carrito__lista li span:first-of-type {
   text-align: left;
-}
-
-.carrito__lista li span:first-of-type span {
-  color: var(--color-segundo);
 }
 
 .carrito__lista li span:nth-of-type(2) {
