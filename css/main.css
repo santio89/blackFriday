@@ -510,6 +510,7 @@ body {
   margin: auto;
   background: var(--color-primero);
   border-radius: 1rem;
+  font-size: 2rem;
   padding: 1rem;
   -webkit-box-shadow: 0 0 0 4px var(--color-segundo), 0 0 0 8px white;
           box-shadow: 0 0 0 4px var(--color-segundo), 0 0 0 8px white;
@@ -633,6 +634,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  font-size: clamp(.6em, .6em + 1vw, 1em) !important;
 }
 
 .carrito__lista li span {
