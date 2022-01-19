@@ -35,11 +35,10 @@ class ShoppingCart{
     }
 
     addItem(id){
-      
         this.shopList.push(id);
 
         for (const bebida of stock1.arrayBebidas){
-            let stock = document.getElementById(`${bebida.nombre}__stock`);
+            let stock = document.querySelectorAll(`.${bebida.nombre.replace(/\s/g,"")}__stock`);
             if (this.shopList[this.shopList.length-1] == bebida.id){
                 if(bebida.outOfStock()){
                     alert("Producto fuera de stock.");
@@ -47,7 +46,8 @@ class ShoppingCart{
                     break;
                 }
                 else{      
-                    stock.innerHTML = `stock: ${bebida.stock}`;    
+                    stock.forEach((element)=>{element.innerHTML = `stock: ${bebida.stock}`});
+                     
                     carrito__numero.innerHTML = shopCart1.shopList.length;
                     this.subTotalCalc();
                     carrito__total.innerHTML = `$${shopCart1.subTotal}`;
@@ -60,22 +60,21 @@ class ShoppingCart{
     }
 
     removeItem(id){
-   
         for (const items in this.shopList){
             if (this.shopList[items] == id){
     
                 for (const bebida of stock1.arrayBebidas){
-                    let stock = document.getElementById(`${bebida.nombre}__stock`);
+                    let stock = document.querySelectorAll(`.${bebida.nombre.replace(/\s/g,"")}__stock`);
                     if (this.shopList[items] == bebida.id){
                         bebida.stock++;
-                        stock.innerHTML = `stock: ${bebida.stock}`;                       
+                        stock.forEach((element)=>{element.innerHTML = `stock: ${bebida.stock}`});                  
                     }
-                }               
+                }  
+
                 this.shopList.splice(items, 1);  
                 carrito__numero.innerHTML = shopCart1.shopList.length;
                 this.subTotalCalc();
                 carrito__total.innerHTML = `$${shopCart1.subTotal}`;
-
                 localStorage.setItem("shopList", JSON.stringify(this.shopList));               
                 break;
             }

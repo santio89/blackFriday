@@ -4,7 +4,7 @@ const cerveza__brahma = new Bebida("cerveza".toUpperCase(), "Brahma".toUpperCase
 const cerveza__heineken = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 1000, 400, 3, 10);
 const vodka__smirnoff = new Bebida("vodka".toUpperCase(), "Smirnoff".toUpperCase(), 750, 1000, 4, 10);
 const whisky__vat = new Bebida("whisky".toUpperCase(), "Vat 69".toUpperCase(), 750, 1200, 5, 10);
-const ron__morgan = new Bebida("ron".toUpperCase(), "Morgan".toUpperCase(), 750, 1200, 6, 10);
+const ron__morgan = new Bebida("ron".toUpperCase(), "Captain Morgan".toUpperCase(), 750, 1200, 6, 10);
 const fernet__branca = new Bebida("fernet".toUpperCase(), "Branca".toUpperCase(), 750, 900, 7, 10);
 const tequila__sol = new Bebida("tequila".toUpperCase(), "Azteca".toUpperCase(), 750, 800, 8, 10);
 const shopCart1 = new ShoppingCart(new Date(), 001);
@@ -41,13 +41,13 @@ stock1.arrayBebidas.forEach(bebidas => {
     producto.classList.add("productos__producto");
     producto.innerHTML = `
     <p>${bebidas.tipo}</p>
-    <h1>${bebidas.marca}</h1>
+    <h2>${bebidas.marca}</h2>
     <p>${bebidas.contNeto}ml</p>
-    <p id="${bebidas.nombre}__stock">stock: ${bebidas.stock}</p>    
-    <h2>$${bebidas.precio}</h2>
+    <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">stock: ${bebidas.stock}</p>    
+    <h3>$${bebidas.precio}</h3>
     <div class="productos__producto__buttonContainer">
-    <button id="${bebidas.marca}__menos" onclick="shopCart1.removeItem(${bebidas.id})">-</button>
-    <button id="${bebidas.marca}__mas" onclick="shopCart1.addItem(${bebidas.id})">+</button>
+    <button class="${bebidas.marca}__menos" onclick="shopCart1.removeItem(${bebidas.id})">-</button>
+    <button class="${bebidas.marca}__mas" onclick="shopCart1.addItem(${bebidas.id})">+</button>
     </div>
     `;
      productosFeatured.appendChild(producto);
@@ -170,11 +170,11 @@ stock1.arrayBebidas.forEach(bebidas => {
     <p>${bebidas.tipo}</p>
     <h1>${bebidas.marca}</h1>
     <p>${bebidas.contNeto}ml</p>
-    <p id="${bebidas.nombre}__stock">stock: ${bebidas.stock}</p>    
+    <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">stock: ${bebidas.stock}</p>    
     <h2>$${bebidas.precio}</h2>
     <div class="productos__producto__buttonContainer">
-    <button id="${bebidas.marca}__menos" onclick="shopCart1.removeItem(${bebidas.id})">-</button>
-    <button id="${bebidas.marca}__mas" onclick="shopCart1.addItem(${bebidas.id})">+</button>
+    <button class="${bebidas.marca}__menos" onclick="shopCart1.removeItem(${bebidas.id})">-</button>
+    <button class="${bebidas.marca}__mas" onclick="shopCart1.addItem(${bebidas.id})">+</button>
     </div>
     `;
      productos.appendChild(producto);

@@ -233,19 +233,20 @@ body{
         display: flex;
         flex-flow: column;
         max-width: 240px;
+        aspect-ratio: 3/5;
 
-        h1{
-            margin: .8rem auto 0 auto;
+        h2{
+            margin: .2rem auto 0 auto;
             text-align: center;
             padding: .4rem;
-            line-height: .4;
+            line-height: .82;
             display: flex;
             justify-content: center;
             font-size: unquote("clamp(2rem, .8rem + 4vw, 3.8rem)");
             text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
         }
-        h2{
-            margin-top: 6.4rem;
+        h3{
+            margin-top: auto;
             text-align: center;
             font-size: unquote("clamp(1.8rem, .6rem + 4vw, 3.4rem)");
             text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
@@ -267,20 +268,20 @@ body{
             margin-left: auto;
             margin-right: .4rem;
             font-size: unquote("clamp(1.2rem, .8rem + 1.6vw, 3.2rem)");
-            line-height: 1.2;
+            line-height: 1;
         }
         p:nth-of-type(3){
             text-align: right;
             margin-left: auto;
             margin-right: .4rem;
             font-size: unquote("clamp(.88rem, .2rem + 1vw, 2rem)");
-            line-height: .4;
+            line-height: .6;
         }
         &__buttonContainer{           
             display: flex;
             flex-flow: row wrap;
             justify-content: space-evenly;
-            
+            margin-top: 0;
             button{
                 cursor: pointer;
                 line-height: .8;

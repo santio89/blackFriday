@@ -300,13 +300,14 @@ body {
       -ms-flex-flow: column;
           flex-flow: column;
   max-width: 240px;
+  aspect-ratio: 3/5;
 }
 
-.productos__producto h1 {
-  margin: .8rem auto 0 auto;
+.productos__producto h2 {
+  margin: .2rem auto 0 auto;
   text-align: center;
   padding: .4rem;
-  line-height: .4;
+  line-height: .82;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,8 +318,8 @@ body {
   text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
 }
 
-.productos__producto h2 {
-  margin-top: 6.4rem;
+.productos__producto h3 {
+  margin-top: auto;
   text-align: center;
   font-size: clamp(1.8rem, .6rem + 4vw, 3.4rem);
   text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
@@ -343,7 +344,7 @@ body {
   margin-left: auto;
   margin-right: .4rem;
   font-size: clamp(1.2rem, .8rem + 1.6vw, 3.2rem);
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .productos__producto p:nth-of-type(3) {
@@ -351,7 +352,7 @@ body {
   margin-left: auto;
   margin-right: .4rem;
   font-size: clamp(.88rem, .2rem + 1vw, 2rem);
-  line-height: .4;
+  line-height: .6;
 }
 
 .productos__producto__buttonContainer {
@@ -365,6 +366,7 @@ body {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  margin-top: 0;
 }
 
 .productos__producto__buttonContainer button {
