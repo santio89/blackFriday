@@ -2,11 +2,16 @@ class Stock{
     constructor (date, id){
         this.date = date;
         this.id = id;
-        this.arrayBebidas = [];
+        this.arrayBebidasFeatured = [];
+        this.arrayBebidasTotal = [];
     }
 
     addStockItem(item){
-        this.arrayBebidas.push(item);
+        this.arrayBebidasTotal.push(item);
+    }
+
+    addFeaturedItem(item){
+        this.arrayBebidasFeatured.push(item);
     }
 }
 

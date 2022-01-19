@@ -9,7 +9,7 @@ class ShoppingCart{
     subTotalCalc(){
         this.subTotal = 0;  
         for (const item of this.shopList){
-            for (const bebida of stock1.arrayBebidas){
+            for (const bebida of stock1.arrayBebidasTotal){
                 if (item == bebida.id){
                     this.subTotal += bebida.precio;
                     break;
@@ -18,26 +18,11 @@ class ShoppingCart{
         }
     }
 
-    showShopList(){
-        let shopListString = "";
-        let i = 1;
-
-        for (const items of this.shopList){
-            for (const bebidas of stock1.arrayBebidas){
-                if (items == bebidas.id){
-                    shopListString += i + "- " + bebidas.nombre + " $" + bebidas.precio + "\n";
-                    i++;
-                    break;
-                }
-            }
-        }
-        return shopListString;
-    }
 
     addItem(id){
         this.shopList.push(id);
 
-        for (const bebida of stock1.arrayBebidas){
+        for (const bebida of stock1.arrayBebidasTotal){
             let stock = document.querySelectorAll(`.${bebida.nombre.replace(/\s/g,"")}__stock`);
             if (this.shopList[this.shopList.length-1] == bebida.id){
                 if(bebida.outOfStock()){
@@ -63,7 +48,7 @@ class ShoppingCart{
         for (const items in this.shopList){
             if (this.shopList[items] == id){
     
-                for (const bebida of stock1.arrayBebidas){
+                for (const bebida of stock1.arrayBebidasTotal){
                     let stock = document.querySelectorAll(`.${bebida.nombre.replace(/\s/g,"")}__stock`);
                     if (this.shopList[items] == bebida.id){
                         bebida.stock++;
