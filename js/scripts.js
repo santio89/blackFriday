@@ -141,7 +141,6 @@ function toggleOfertas(){
     } else{
         document.documentElement.style.overflowY = "hidden";
     }
-
 }
 
 function toggleProductos(){
