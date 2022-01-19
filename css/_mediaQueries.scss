@@ -12,6 +12,12 @@
  }
 }
 
+@media (pointer: coarse){
+    .nav__ul{
+        margin-right: 0 !important;
+    }
+}
+
 @media (min-width: 629px){
     .nav{
         justify-content: center;
