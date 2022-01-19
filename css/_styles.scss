@@ -269,7 +269,7 @@ body{
             text-align: left;
             margin-right: auto;
             margin-left: .4rem;         
-            font-size: unquote("clamp(.6rem, .2rem + 1vw, 2rem)");           
+            font-size: unquote("clamp(.8rem, .2rem + 1vw, 2rem)");           
         }
         p:nth-of-type(2){
             text-align: right;
@@ -399,6 +399,8 @@ body{
     &__lista{
         position: fixed;
         inset: 10%;
+        top: calc(10% + 24px);
+        bottom: calc(10% - 24px);
         min-width: 250px;
         max-width: 1200px;
         margin: auto;

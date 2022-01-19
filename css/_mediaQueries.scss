@@ -1,9 +1,15 @@
-@media (max-width: 319px){
+@media (max-width: 340px){
     .nav__logo{
         font-size: .8em;
         top: .1rem;
         left: .1rem;
     }
+}
+
+@media (max-width: 310px){
+ .nav__ul{
+     font-size: 1.4rem;
+ }
 }
 
 @media (min-width: 629px){
@@ -20,6 +26,7 @@
         grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     }
 }
+
 @media (min-width: 880px){
     .nav{
         padding-left: 4rem;

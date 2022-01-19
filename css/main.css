@@ -344,7 +344,7 @@ body {
   text-align: left;
   margin-right: auto;
   margin-left: .4rem;
-  font-size: clamp(.6rem, .2rem + 1vw, 2rem);
+  font-size: clamp(.8rem, .2rem + 1vw, 2rem);
 }
 
 .productos__producto p:nth-of-type(2) {
@@ -507,6 +507,8 @@ body {
 .carrito__lista {
   position: fixed;
   inset: 10%;
+  top: calc(10% + 24px);
+  bottom: calc(10% - 24px);
   min-width: 250px;
   max-width: 1200px;
   margin: auto;
@@ -814,11 +816,17 @@ body {
 }
 
 /* fin scrollbar */
-@media (max-width: 319px) {
+@media (max-width: 340px) {
   .nav__logo {
     font-size: .8em;
     top: .1rem;
     left: .1rem;
+  }
+}
+
+@media (max-width: 310px) {
+  .nav__ul {
+    font-size: 1.4rem;
   }
 }
 
