@@ -1,6 +1,8 @@
 /* agregar bebidas al stock. esta operacion, idealmente, deberia ser realizada por un usuario administrador mediante input. por el momento, al no manejar usuarios ni tener una forma de guardar la info en una base de datos, inicializo el stock manualmente */
+
 const shopCart1 = new ShoppingCart(new Date(), 001);
 const stock1 = new Stock(new Date(), 001);
+
 const cerveza__quilmes = new Bebida("cerveza".toUpperCase(), "Quilmes".toUpperCase(), 1000, 300, 001, 10);
 const cerveza__brahma = new Bebida("cerveza".toUpperCase(), "Brahma".toUpperCase(), 1000, 200, 002, 10);
 const cerveza__heineken = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 1000, 400, 003, 10);
@@ -9,7 +11,6 @@ const whisky__vat = new Bebida("whisky".toUpperCase(), "Vat 69".toUpperCase(), 7
 const ron__morgan = new Bebida("ron".toUpperCase(), "Morgan".toUpperCase(), 750, 1200, 006, 10);
 const fernet__branca = new Bebida("fernet".toUpperCase(), "Branca".toUpperCase(), 750, 900, 007, 10);
 const tequila__sol = new Bebida("tequila".toUpperCase(), "Azteca".toUpperCase(), 750, 800, 108, 10);
-
 const vodka__skyy = new Bebida("tequila".toUpperCase(), "Skyy".toUpperCase(), 750, 1200, 109, 10);
 const vino__norton = new Bebida("vino".toUpperCase(), "Norton".toUpperCase(), 750, 500, 010, 10);
 const licor__jager = new Bebida("licor".toUpperCase(), "Jäger".toUpperCase(), 700, 400, 011, 10);
@@ -18,7 +19,6 @@ const vino__rutini = new Bebida("vino".toUpperCase(), "Rutini".toUpperCase(), 75
 const cerveza__corona = new Bebida("cerveza".toUpperCase(), "Corona".toUpperCase(), 710, 400, 014, 10);
 const whisky__chivas = new Bebida("tequila".toUpperCase(), "Chivas".toUpperCase(), 500, 3000, 015, 10);
 const gin__larios = new Bebida("gin".toUpperCase(), "Larios".toUpperCase(), 750, 2000, 016, 10);
-
 
 stock1.addStockItem(cerveza__quilmes);
 stock1.addStockItem(cerveza__brahma);
