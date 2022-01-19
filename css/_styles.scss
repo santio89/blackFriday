@@ -220,6 +220,12 @@ body{
     align-content: center;
     gap: unquote("clamp(.4rem, 2vw, 2rem)");
 
+    &--page{
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+    }
+
     &__producto{   
         border-radius: .5rem;
         border: 2px solid white;
@@ -295,35 +301,54 @@ body{
 
 .ofertasPage, .productosPage{
     position: fixed;
+    inset: 0;
     top: 48px;
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - 48px);
+    min-height: calc(100vh - 48px);
+    padding-left: clamp(.8rem, 2vw, 2rem);
+    padding-right: clamp(.8rem, 2vw, 2rem);
     background: var(--color-primero);
     z-index: 1;
-    display: flex;
-    flex-flow: row wrap;
+    /* display: flex;
+    flex-flow: column wrap;
     justify-content: start;
-    align-items: start;
+    align-items: start; */
     transform: translateY(-120%);
     transition: transform 400ms;
     visibility: hidden;
     overflow-x: hidden;
     overflow-y: scroll;
-    scrollbar-width: 6px;  /* Firefox */
+    scrollbar-width:0;  /* Firefox */
 
     &::-webkit-scrollbar { 
         width: 6px;  /* Safari and Chrome */
         &-track {
             background: transparent;
         }
+        &-thumb {
+            background: 
+            linear-gradient(-135deg, transparent 6px, var(--color-segundo-dark) 6px) top,
+            linear-gradient(-135deg, var(--color-segundo-dark) 50%,var(--color-tercero-dark) 50%) center, 
+            linear-gradient(45deg, transparent 6px,var(--color-tercero-dark) 6px) bottom;
+            background-size:100% 48%;
+            background-repeat:no-repeat;
+        
+            &:hover{
+                background: 
+                linear-gradient(-135deg, transparent 6px, var(--color-segundo) 6px) top,
+                linear-gradient(-135deg, var(--color-segundo) 50%,var(--color-tercero) 50%) center, 
+                linear-gradient(45deg, transparent 6px,var(--color-tercero) 6px) bottom;
+                background-size:100% 48%;
+                background-repeat:no-repeat;
+            }
+        }
     }
 
     &__title{
-        flex: 1;
+        width: 100%;
         border-bottom: 4px dashed var(--color-segundo);
         margin-left: clamp(.8rem, 2vw, 2rem);
         margin-top: 2.6rem;
+        margin-bottom: 1.2rem;
         display: flex;
         flex-flow: column wrap;
         justify-content: start;

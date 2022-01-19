@@ -35,7 +35,7 @@ if (localStorage.getItem("shopList")){
 
 
 /* agregar las cards de productos al html, según los productos que hayan en el inventario (uso forEach en vez de map, ya que no necesito retornar nada) */
-let productos = document.getElementById("productos");
+let productosFeatured = document.getElementById("productosFeatured");
 stock1.arrayBebidas.forEach(bebidas => {
     let producto = document.createElement("div");
     producto.classList.add("productos__producto");
@@ -50,9 +50,10 @@ stock1.arrayBebidas.forEach(bebidas => {
     <button id="${bebidas.marca}__mas" onclick="shopCart1.addItem(${bebidas.id})">+</button>
     </div>
     `;
-     productos.appendChild(producto);
+     productosFeatured.appendChild(producto);
 }); 
 
+/* carrito - icono */
 let carrito__numero = document.querySelector(".carrito__numero");
 carrito__numero.innerHTML = shopCart1.shopList.length;
 
@@ -127,6 +128,13 @@ function toggleOfertas(){
         productos.classList.toggle("carrito__lista__translated");
         setTimeout(()=>productos.classList.remove("visible"), 400);
     }
+
+    if(document.documentElement.style.overflowY == "hidden"){
+        document.documentElement.style.overflowY = "scroll";
+    } else{
+        document.documentElement.style.overflowY = "hidden";
+    }
+
 }
 
 function toggleProductos(){
@@ -145,9 +153,31 @@ function toggleProductos(){
         setTimeout(()=>ofertas.classList.remove("visible"), 400);
     }
 
+    if(document.documentElement.style.overflowY == "hidden"){
+        document.documentElement.style.overflowY = "scroll";
+    } else{
+        document.documentElement.style.overflowY = "hidden";
+    }
+
 }
 
 
-
+let productos = document.getElementById("productos");
+stock1.arrayBebidas.forEach(bebidas => {
+    let producto = document.createElement("div");
+    producto.classList.add("productos__producto");
+    producto.innerHTML = `
+    <p>${bebidas.tipo}</p>
+    <h1>${bebidas.marca}</h1>
+    <p>${bebidas.contNeto}ml</p>
+    <p id="${bebidas.nombre}__stock">stock: ${bebidas.stock}</p>    
+    <h2>$${bebidas.precio}</h2>
+    <div class="productos__producto__buttonContainer">
+    <button id="${bebidas.marca}__menos" onclick="shopCart1.removeItem(${bebidas.id})">-</button>
+    <button id="${bebidas.marca}__mas" onclick="shopCart1.addItem(${bebidas.id})">+</button>
+    </div>
+    `;
+     productos.appendChild(producto);
+}); 
 
 
