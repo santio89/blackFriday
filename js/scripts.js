@@ -136,15 +136,19 @@ function toggleOfertas(){
         setTimeout(()=>productos.classList.remove("visible"), 400);
     }
 
+    let nav__ul = document.querySelector(".nav__ul");
     if(document.documentElement.style.overflowY == "hidden"){
         let productosPage = document.querySelector(".productosPage");
         if (productosPage.classList.contains("visible")){
             document.documentElement.style.overflowY = "hidden";
+            nav__ul.style.marginRight = "8px";
         } else{
             document.documentElement.style.overflowY = "scroll";
+            nav__ul.style.marginRight = "0";
         }
     } else{
         document.documentElement.style.overflowY = "hidden";
+        nav__ul.style.marginRight = "8px";
     }
 }
 
@@ -172,15 +176,19 @@ function toggleProductos(){
         setTimeout(()=>ofertas.classList.remove("visible"), 400);
     }
 
+    let nav__ul = document.querySelector(".nav__ul");
     if(document.documentElement.style.overflowY == "hidden"){
         let ofertasPage = document.querySelector(".ofertasPage");
         if (ofertasPage.classList.contains("visible")){
             document.documentElement.style.overflowY = "hidden";
+            nav__ul.style.marginRight = "8px";
         } else{
             document.documentElement.style.overflowY = "scroll";
+            nav__ul.style.marginRight = "0";
         }
     } else{
         document.documentElement.style.overflowY = "hidden";
+        nav__ul.style.marginRight = "8px";
     }
 }
 

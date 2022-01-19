@@ -158,6 +158,8 @@ body{
                 background: none;
                 border: none;
                 outline: none;
+                padding-left: 1rem;
+                padding-right: 1rem;
                 
                 &:hover, &:focus{
                     color: var(--color-segundo);
@@ -192,6 +194,7 @@ body{
 
 .active{
     color: var(--color-segundo);
+    background: var(--color-primero);
 }
 
 .main{

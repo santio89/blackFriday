@@ -201,6 +201,8 @@ body {
   background: none;
   border: none;
   outline: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .nav__ul__li__a:hover, .nav__ul__li__a:focus {
@@ -239,6 +241,7 @@ body {
 
 .active {
   color: var(--color-segundo);
+  background: var(--color-primero);
 }
 
 .main {
