@@ -395,7 +395,7 @@ body {
   min-height: calc(100vh - 48px);
   padding-left: clamp(0.8rem, 2vw, 2rem);
   padding-right: clamp(0.8rem, 2vw, 2rem);
-  background: var(--color-primero);
+  background: linear-gradient(135deg, var(--color-segundo) 21%, var(--color-primero) 21%);
   z-index: 1;
   /* display: flex;
     flex-flow: column wrap;
@@ -422,7 +422,6 @@ body {
 .ofertasPage__title, .productosPage__title {
   width: 100%;
   border-bottom: 4px dashed var(--color-segundo);
-  margin-left: clamp(0.8rem, 2vw, 2rem);
   margin-top: 2.6rem;
   margin-bottom: 1.2rem;
   display: -webkit-box;
