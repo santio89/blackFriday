@@ -116,6 +116,13 @@ function checkout(){
 function toggleOfertas(){
     let ofertas = document.querySelector(".ofertasPage");
     ofertas.classList.toggle("carrito__lista__translated");
+    let nav__ofertas = document.querySelector("#nav__ofertas");
+    nav__ofertas.classList.toggle("active");
+
+    let nav__productos = document.querySelector("#nav__productos");
+    if (nav__productos.classList.contains("active")){
+        nav__productos.classList.toggle("active");
+    }
 
     if (ofertas.classList.contains("visible")){
         setTimeout(()=>ofertas.classList.remove("visible"), 400);
@@ -140,6 +147,14 @@ function toggleOfertas(){
 function toggleProductos(){
     let productos = document.querySelector(".productosPage");
     productos.classList.toggle("carrito__lista__translated");
+    
+    let nav__productos = document.querySelector("#nav__productos");
+    nav__productos.classList.toggle("active");
+
+    let nav__ofertas = document.querySelector("#nav__ofertas");
+    if (nav__ofertas.classList.contains("active")){
+        nav__ofertas.classList.toggle("active");
+    }
 
     if (productos.classList.contains("visible")){
         setTimeout(()=>productos.classList.remove("visible"), 400);

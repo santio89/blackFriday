@@ -237,6 +237,10 @@ body {
   color: darkgray;
 }
 
+.active {
+  color: var(--color-segundo);
+}
+
 .main {
   padding: clamp(0.8rem, 2vw, 2rem);
   width: 100%;
@@ -410,24 +414,8 @@ body {
 }
 
 .ofertasPage::-webkit-scrollbar, .productosPage::-webkit-scrollbar {
-  width: 6px;
+  display: none;
   /* Safari and Chrome */
-}
-
-.ofertasPage::-webkit-scrollbar-track, .productosPage::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.ofertasPage::-webkit-scrollbar-thumb, .productosPage::-webkit-scrollbar-thumb {
-  background: linear-gradient(-135deg, transparent 6px, var(--color-segundo-dark) 6px) top, linear-gradient(-135deg, var(--color-segundo-dark) 50%, var(--color-tercero-dark) 50%) center, linear-gradient(45deg, transparent 6px, var(--color-tercero-dark) 6px) bottom;
-  background-size: 100% 48%;
-  background-repeat: no-repeat;
-}
-
-.ofertasPage::-webkit-scrollbar-thumb:hover, .productosPage::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(-135deg, transparent 6px, var(--color-segundo) 6px) top, linear-gradient(-135deg, var(--color-segundo) 50%, var(--color-tercero) 50%) center, linear-gradient(45deg, transparent 6px, var(--color-tercero) 6px) bottom;
-  background-size: 100% 48%;
-  background-repeat: no-repeat;
 }
 
 .ofertasPage__title, .productosPage__title {

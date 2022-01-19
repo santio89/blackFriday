@@ -190,6 +190,10 @@ body{
     
 }
 
+.active{
+    color: var(--color-segundo);
+}
+
 .main{
     padding: clamp(.8rem, 2vw, 2rem);
     width: 100%;
@@ -320,28 +324,8 @@ body{
     overflow-y: scroll;
     scrollbar-width:0;  /* Firefox */
 
-    &::-webkit-scrollbar { 
-        width: 6px;  /* Safari and Chrome */
-        &-track {
-            background: transparent;
-        }
-        &-thumb {
-            background: 
-            linear-gradient(-135deg, transparent 6px, var(--color-segundo-dark) 6px) top,
-            linear-gradient(-135deg, var(--color-segundo-dark) 50%,var(--color-tercero-dark) 50%) center, 
-            linear-gradient(45deg, transparent 6px,var(--color-tercero-dark) 6px) bottom;
-            background-size:100% 48%;
-            background-repeat:no-repeat;
-        
-            &:hover{
-                background: 
-                linear-gradient(-135deg, transparent 6px, var(--color-segundo) 6px) top,
-                linear-gradient(-135deg, var(--color-segundo) 50%,var(--color-tercero) 50%) center, 
-                linear-gradient(45deg, transparent 6px,var(--color-tercero) 6px) bottom;
-                background-size:100% 48%;
-                background-repeat:no-repeat;
-            }
-        }
+    &::-webkit-scrollbar {   
+        display: none; /* Safari and Chrome */
     }
 
     &__title{
