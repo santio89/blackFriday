@@ -137,7 +137,12 @@ function toggleOfertas(){
     }
 
     if(document.documentElement.style.overflowY == "hidden"){
-        document.documentElement.style.overflowY = "scroll";
+        let productosPage = document.querySelector(".productosPage");
+        if (productosPage.classList.contains("visible")){
+            document.documentElement.style.overflowY = "hidden";
+        } else{
+            document.documentElement.style.overflowY = "scroll";
+        }
     } else{
         document.documentElement.style.overflowY = "hidden";
     }
@@ -168,7 +173,12 @@ function toggleProductos(){
     }
 
     if(document.documentElement.style.overflowY == "hidden"){
-        document.documentElement.style.overflowY = "scroll";
+        let ofertasPage = document.querySelector(".ofertasPage");
+        if (ofertasPage.classList.contains("visible")){
+            document.documentElement.style.overflowY = "hidden";
+        } else{
+            document.documentElement.style.overflowY = "scroll";
+        }
     } else{
         document.documentElement.style.overflowY = "hidden";
     }
