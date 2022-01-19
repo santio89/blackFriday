@@ -639,8 +639,8 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  font-size: clamp(.4em, .4em + 2vw, 1em);
-  gap: .2em;
+  font-size: clamp(.2em, .2em + 2.8vw, 1em);
+  gap: clamp(0, .05em + 1vw, .2em);
   border-bottom: 1px dashed var(--color-segundo);
 }
 
@@ -649,6 +649,7 @@ body {
       -ms-flex: 1;
           flex: 1;
   text-align: right;
+  min-width: 44px;
 }
 
 .carrito__lista li span:first-of-type {

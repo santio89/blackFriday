@@ -502,13 +502,14 @@ body{
             display: flex;
             justify-content: space-between;
             width: 100%;
-            font-size: unquote("clamp(.4em, .4em + 2vw, 1em)");
-            gap: .2em;
+            font-size: unquote("clamp(.2em, .2em + 2.8vw, 1em)");
+            gap: unquote("clamp(0, .05em + 1vw, .2em)");
             border-bottom: 1px dashed var(--color-segundo);
 
             span{
                 flex: 1;
                 text-align: right;
+                min-width: 44px;
                 
                 &:first-of-type{
                     text-align: left;
