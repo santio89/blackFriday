@@ -250,39 +250,34 @@ body{
             line-height: .82;
             display: flex;
             justify-content: center;
-            font-size: unquote("clamp(2rem, .8rem + 4vw, 3.8rem)");
+            font-size: unquote("clamp(2rem, .8rem + 2.6vw, 3.8rem)");
             text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
         }
         h3{
             margin-top: auto;
             text-align: center;
-            font-size: unquote("clamp(1.8rem, .6rem + 4vw, 3.4rem)");
+            font-size: unquote("clamp(1.8rem, .6rem + 2.6vw, 3.4rem)");
             text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
             line-height: .88;
-        }
-        p{
-            text-align: right;
-            font-size: unquote("clamp(1rem, .2rem + 1vw, 3rem)");
-            margin-right: .4rem;
         }
         p:nth-of-type(1){
             text-align: left;
             margin-right: auto;
             margin-left: .4rem;         
-            font-size: unquote("clamp(.8rem, .2rem + 1vw, 2rem)");           
+            font-size: unquote("clamp(1rem, .1rem + 1vw, 2rem)");         
         }
         p:nth-of-type(2){
             text-align: right;
             margin-left: auto;
             margin-right: .4rem;
-            font-size: unquote("clamp(1.2rem, .8rem + 1.6vw, 3.2rem)");
+            font-size: unquote("clamp(1.4rem, .8rem + 1.2vw, 2.8rem)");
             line-height: 1;
         }
         p:nth-of-type(3){
             text-align: right;
             margin-left: auto;
             margin-right: .4rem;
-            font-size: unquote("clamp(.88rem, .2rem + 1vw, 2rem)");
+            font-size: unquote("clamp(1rem, .1rem + 1vw, 2rem)");     
             line-height: .6;
         }
         &__buttonContainer{           
@@ -297,7 +292,7 @@ body{
                 background: none;
                 outline: none;
                 border: none;
-                font-size: unquote("clamp(1.8rem, 2rem + 4vw, 10rem)");
+                font-size: unquote("clamp(1.8rem, 3.8rem + 2.6vw,8rem)");
 
                 &:hover, &:focus{
                     color: white;

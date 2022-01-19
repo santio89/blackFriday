@@ -322,36 +322,30 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: clamp(2rem, .8rem + 4vw, 3.8rem);
+  font-size: clamp(2rem, .8rem + 2.6vw, 3.8rem);
   text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
 }
 
 .productos__producto h3 {
   margin-top: auto;
   text-align: center;
-  font-size: clamp(1.8rem, .6rem + 4vw, 3.4rem);
+  font-size: clamp(1.8rem, .6rem + 2.6vw, 3.4rem);
   text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
   line-height: .88;
-}
-
-.productos__producto p {
-  text-align: right;
-  font-size: clamp(1rem, .2rem + 1vw, 3rem);
-  margin-right: .4rem;
 }
 
 .productos__producto p:nth-of-type(1) {
   text-align: left;
   margin-right: auto;
   margin-left: .4rem;
-  font-size: clamp(.8rem, .2rem + 1vw, 2rem);
+  font-size: clamp(1rem, .1rem + 1vw, 2rem);
 }
 
 .productos__producto p:nth-of-type(2) {
   text-align: right;
   margin-left: auto;
   margin-right: .4rem;
-  font-size: clamp(1.2rem, .8rem + 1.6vw, 3.2rem);
+  font-size: clamp(1.4rem, .8rem + 1.2vw, 2.8rem);
   line-height: 1;
 }
 
@@ -359,7 +353,7 @@ body {
   text-align: right;
   margin-left: auto;
   margin-right: .4rem;
-  font-size: clamp(.88rem, .2rem + 1vw, 2rem);
+  font-size: clamp(1rem, .1rem + 1vw, 2rem);
   line-height: .6;
 }
 
@@ -384,7 +378,7 @@ body {
   background: none;
   outline: none;
   border: none;
-  font-size: clamp(1.8rem, 2rem + 4vw, 10rem);
+  font-size: clamp(1.8rem, 3.8rem + 2.6vw,8rem);
 }
 
 .productos__producto__buttonContainer button:hover, .productos__producto__buttonContainer button:focus {
