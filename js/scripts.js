@@ -8,12 +8,12 @@ const vodka__smirnoff = new Bebida("vodka".toUpperCase(), "Smirnoff".toUpperCase
 const whisky__vat = new Bebida("whisky".toUpperCase(), "Vat 69".toUpperCase(), 750, 1200, 005, 10);
 const ron__morgan = new Bebida("ron".toUpperCase(), "Morgan".toUpperCase(), 750, 1200, 006, 10);
 const fernet__branca = new Bebida("fernet".toUpperCase(), "Branca".toUpperCase(), 750, 900, 007, 10);
-const tequila__sol = new Bebida("tequila".toUpperCase(), "Sol Azteca".toUpperCase(), 750, 800, 108, 10);
+const tequila__sol = new Bebida("tequila".toUpperCase(), "Azteca".toUpperCase(), 750, 800, 108, 10);
 
 const vodka__skyy = new Bebida("tequila".toUpperCase(), "Skyy".toUpperCase(), 750, 1200, 109, 10);
-const vino__norton = new Bebida("vino".toUpperCase(), "Norton Malbec".toUpperCase(), 750, 500, 010, 10);
+const vino__norton = new Bebida("vino".toUpperCase(), "Norton".toUpperCase(), 750, 500, 010, 10);
 const licor__jager = new Bebida("licor".toUpperCase(), "Jäger".toUpperCase(), 700, 400, 011, 10);
-const espumante__chandon = new Bebida("espumante".toUpperCase(), "Luigi Bosca".toUpperCase(), 750, 1500, 012, 10);
+const espumante__chandon = new Bebida("espumante".toUpperCase(), "Chandon".toUpperCase(), 750, 1500, 012, 10);
 const vino__rutini = new Bebida("vino".toUpperCase(), "Rutini".toUpperCase(), 750, 2000, 013, 10);
 const cerveza__corona = new Bebida("cerveza".toUpperCase(), "Corona".toUpperCase(), 710, 400, 014, 10);
 const whisky__chivas = new Bebida("tequila".toUpperCase(), "Chivas".toUpperCase(), 500, 3000, 015, 10);
