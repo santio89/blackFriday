@@ -3,48 +3,48 @@
 const shopCart1 = new ShoppingCart(new Date(), 001);
 const stock1 = new Stock(new Date(), 001);
 
-const cerveza__quilmes = new Bebida("cerveza".toUpperCase(), "Quilmes".toUpperCase(), 1000, 300, 001, 10);
-const cerveza__brahma = new Bebida("cerveza".toUpperCase(), "Brahma".toUpperCase(), 1000, 200, 002, 10);
-const cerveza__heineken = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 1000, 400, 003, 10);
-const vodka__smirnoff = new Bebida("vodka".toUpperCase(), "Smirnoff".toUpperCase(), 750, 1000, 004, 10);
-const whisky__vat = new Bebida("whisky".toUpperCase(), "Vat 69".toUpperCase(), 750, 1200, 005, 10);
-const ron__morgan = new Bebida("ron".toUpperCase(), "Morgan".toUpperCase(), 750, 1200, 006, 10);
-const fernet__branca = new Bebida("fernet".toUpperCase(), "Branca".toUpperCase(), 750, 900, 007, 10);
-const tequila__sol = new Bebida("tequila".toUpperCase(), "Azteca".toUpperCase(), 750, 800, 108, 10);
-const vodka__skyy = new Bebida("tequila".toUpperCase(), "Skyy".toUpperCase(), 750, 1200, 109, 10);
-const vino__norton = new Bebida("vino".toUpperCase(), "Norton".toUpperCase(), 750, 500, 010, 10);
-const licor__jager = new Bebida("licor".toUpperCase(), "Jäger".toUpperCase(), 700, 400, 011, 10);
-const espumante__chandon = new Bebida("espumante".toUpperCase(), "Chandon".toUpperCase(), 750, 1500, 012, 10);
-const vino__rutini = new Bebida("vino".toUpperCase(), "Rutini".toUpperCase(), 750, 2000, 013, 10);
-const cerveza__corona = new Bebida("cerveza".toUpperCase(), "Corona".toUpperCase(), 710, 400, 014, 10);
-const whisky__chivas = new Bebida("tequila".toUpperCase(), "Chivas".toUpperCase(), 500, 3000, 015, 10);
-const gin__larios = new Bebida("gin".toUpperCase(), "Larios".toUpperCase(), 750, 2000, 016, 10);
+const cerveza__quilmes = new Bebida("cerveza".toUpperCase(), "Quilmes".toUpperCase(), 1000, 300, 01, 10);
+const cerveza__brahma = new Bebida("cerveza".toUpperCase(), "Brahma".toUpperCase(), 1000, 200, 02, 10);
+const cerveza__heineken = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 1000, 400, 03, 10);
+const vodka__smirnoff = new Bebida("vodka".toUpperCase(), "Smirnoff".toUpperCase(), 750, 1000, 04, 10);
+const whisky__vat = new Bebida("whisky".toUpperCase(), "Vat 69".toUpperCase(), 750, 1200, 05, 10);
+const ron__morgan = new Bebida("ron".toUpperCase(), "Morgan".toUpperCase(), 750, 1200, 06, 10);
+const fernet__branca = new Bebida("fernet".toUpperCase(), "Branca".toUpperCase(), 750, 900, 07, 10);
+const tequila__azteca = new Bebida("tequila".toUpperCase(), "Azteca".toUpperCase(), 750, 800, 08, 10);
+const vodka__skyy = new Bebida("tequila".toUpperCase(), "Skyy".toUpperCase(), 750, 1200, 09, 10);
+const vino__norton = new Bebida("vino".toUpperCase(), "Norton".toUpperCase(), 750, 500, 10, 10);
+const licor__jager = new Bebida("licor".toUpperCase(), "Jäger".toUpperCase(), 700, 400, 11, 10);
+const espumante__chandon = new Bebida("espumante".toUpperCase(), "Chandon".toUpperCase(), 750, 1500, 12, 10);
+const vino__rutini = new Bebida("vino".toUpperCase(), "Rutini".toUpperCase(), 750, 2000, 13, 10);
+const cerveza__corona = new Bebida("cerveza".toUpperCase(), "Corona".toUpperCase(), 710, 400, 14, 10);
+const whisky__chivas = new Bebida("tequila".toUpperCase(), "Chivas".toUpperCase(), 500, 3000, 15, 10);
+const gin__larios = new Bebida("gin".toUpperCase(), "Larios".toUpperCase(), 750, 2000, 16, 10);
 
 stock1.addStockItem(cerveza__quilmes);
-stock1.addStockItem(cerveza__brahma);
 stock1.addStockItem(cerveza__heineken);
-stock1.addStockItem(vodka__smirnoff);
-stock1.addStockItem(whisky__vat);
-stock1.addStockItem(ron__morgan);
-stock1.addStockItem(fernet__branca);
-stock1.addStockItem(tequila__sol);
-stock1.addStockItem(vodka__skyy);
-stock1.addStockItem(vino__norton);
-stock1.addStockItem(licor__jager);
-stock1.addStockItem(espumante__chandon);
-stock1.addStockItem(vino__rutini);
+stock1.addStockItem(cerveza__brahma);
 stock1.addStockItem(cerveza__corona);
+stock1.addStockItem(vino__norton);
+stock1.addStockItem(vino__rutini);
+stock1.addStockItem(espumante__chandon);
+stock1.addStockItem(fernet__branca);
+stock1.addStockItem(vodka__smirnoff);
+stock1.addStockItem(vodka__skyy);
+stock1.addStockItem(whisky__vat);
 stock1.addStockItem(whisky__chivas);
+stock1.addStockItem(licor__jager);
+stock1.addStockItem(ron__morgan);
+stock1.addStockItem(tequila__azteca);
 stock1.addStockItem(gin__larios);
 
 stock1.addFeaturedItem(cerveza__quilmes);
-stock1.addFeaturedItem(cerveza__brahma);
-stock1.addFeaturedItem(cerveza__heineken);
-stock1.addFeaturedItem(vodka__smirnoff);
-stock1.addFeaturedItem(whisky__vat);
-stock1.addFeaturedItem(ron__morgan);
 stock1.addFeaturedItem(fernet__branca);
-stock1.addFeaturedItem(tequila__sol);
+stock1.addFeaturedItem(licor__jager);
+stock1.addFeaturedItem(whisky__vat);
+stock1.addFeaturedItem(vino__norton);
+stock1.addFeaturedItem(cerveza__heineken);
+stock1.addFeaturedItem(ron__morgan);
+stock1.addFeaturedItem(vodka__smirnoff);
 
 
 /* cargar shopList, si existe, del storage */
@@ -102,7 +102,6 @@ function toggleLista(){
     } else{
         carrito__lista.classList.add("visible");
     }
-
     
     let carrito__lista__ul = document.querySelector(".carrito__lista__ul");
     carrito__lista__ul.innerHTML = "";
