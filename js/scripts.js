@@ -182,7 +182,6 @@ function toggleProductos(){
     } else{
         document.documentElement.style.overflowY = "hidden";
     }
-
 }
 
 
