@@ -178,21 +178,31 @@ function toggleProductos(){
         setTimeout(()=>ofertas.classList.remove("visible"), 400);
     }
 
-    /* "fix" para que los items del nav no se muevan al abrir esta seccion. (lo que ocurre es que cuando se abre la seccion, puse que el body no tenga overflow para que no aparezcan 2 barras de scroll en la pantalla. por tanto la barra de scrol del body desaparece, haciendo que los elementos de la pagina se reacomoden. "soluciono" esto aplicando un margen del width del scrollbar para compensar el espacio. */
+    /* en chrome, al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece). en otros browsers, debido a que no es sencillo como en chrome interactuar con la scrollbar, prefiero dejar el comportamiento por defecto */
 
-    let nav__ul = document.querySelector(".nav__ul");
-    if(document.documentElement.style.overflowY == "hidden"){
-        let ofertasPage = document.querySelector(".ofertasPage");
-        if (ofertasPage.classList.contains("visible")){
-            document.documentElement.style.overflowY = "hidden";
-            nav__ul.style.marginRight = "8px";
+    if (navigator.userAgent.indexOf("AppleWebKit") != -1){
+        let nav__ul = document.querySelector(".nav__ul");
+        let carrito = document.querySelector(".carrito");
+
+        if(document.documentElement.style.overflowY == "hidden"){
+            let ofertasPage = document.querySelector(".ofertasPage");
+            if (ofertasPage.classList.contains("visible")){
+                document.documentElement.style.overflowY = "hidden";
+                document.documentElement.style.marginRight = "8px";
+                nav__ul.style.marginRight = "8px";
+                carrito.style.right = "18px"
+            } else{
+                document.documentElement.style.overflowY = "scroll";
+                document.documentElement.style.marginRight = "0";
+                nav__ul.style.marginRight = "0";
+                carrito.style.right = "0"
+            }
         } else{
-            document.documentElement.style.overflowY = "scroll";
-            nav__ul.style.marginRight = "0";
+            document.documentElement.style.overflowY = "hidden";
+            document.documentElement.style.marginRight = "8px";
+            nav__ul.style.marginRight = "8px";
+            carrito.style.right = "18px"
         }
-    } else{
-        document.documentElement.style.overflowY = "hidden";
-        nav__ul.style.marginRight = "8px";
     }
 }
 
@@ -248,21 +258,30 @@ function toggleOfertas(){
     }
     
 
-    /* "fix" del nav y las sections */
+    /* chrome y secciones overflow */
+    if (navigator.userAgent.indexOf("AppleWebKit") != -1){
+        let nav__ul = document.querySelector(".nav__ul");
+        let carrito = document.querySelector(".carrito");
 
-    let nav__ul = document.querySelector(".nav__ul");
-    if(document.documentElement.style.overflowY == "hidden"){
-        let productosPage = document.querySelector(".productosPage");
-        if (productosPage.classList.contains("visible")){
-            document.documentElement.style.overflowY = "hidden";
-            nav__ul.style.marginRight = "8px";
+        if(document.documentElement.style.overflowY == "hidden"){
+            let productosPage = document.querySelector(".productosPage");
+            if (productosPage.classList.contains("visible")){
+                document.documentElement.style.overflowY = "hidden";
+                document.documentElement.style.marginRight = "8px";
+                nav__ul.style.marginRight = "8px";
+                carrito.style.right = "18px"
+            } else{
+                document.documentElement.style.overflowY = "scroll";
+                document.documentElement.style.marginRight = "0";
+                nav__ul.style.marginRight = "0";
+                carrito.style.right = "10px"
+            }
         } else{
-            document.documentElement.style.overflowY = "scroll";
-            nav__ul.style.marginRight = "0";
+            document.documentElement.style.overflowY = "hidden";
+            document.documentElement.style.marginRight = "8px";
+            nav__ul.style.marginRight = "8px";
+            carrito.style.right = "18px"
         }
-    } else{
-        document.documentElement.style.overflowY = "hidden";
-        nav__ul.style.marginRight = "8px";
     }
 }
 
