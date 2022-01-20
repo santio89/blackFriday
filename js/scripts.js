@@ -193,17 +193,12 @@ function toggleProductos(){
 
         if(document.documentElement.style.overflowY == "hidden"){
             let ofertasPage = document.querySelector(".ofertasPage");
-            if (ofertasPage.classList.contains("visible")){
-                document.documentElement.style.overflowY = "hidden";
-                document.documentElement.style.marginRight = `${scrollbar__width}px`;
-                nav__ul.style.marginRight = `${scrollbar__width}px`;
-                carrito.style.right = `${scrollbar__width + 10}px`;
-            } else{
+            if (!ofertasPage.classList.contains("visible")){
                 document.documentElement.style.overflowY = "scroll";
                 document.documentElement.style.marginRight = "0";
                 nav__ul.style.marginRight = "0";
                 carrito.style.right = "10px";
-            }
+            } 
         } else{
             document.documentElement.style.overflowY = "hidden";
             document.documentElement.style.marginRight = `${scrollbar__width}px`;
@@ -272,17 +267,12 @@ function toggleOfertas(){
 
         if(document.documentElement.style.overflowY == "hidden"){
             let productosPage = document.querySelector(".productosPage");
-            if (productosPage.classList.contains("visible")){
-                document.documentElement.style.overflowY = "hidden";
-                document.documentElement.style.marginRight = `${scrollbar__width}px`;
-                nav__ul.style.marginRight = `${scrollbar__width}px`;
-                carrito.style.right = `${scrollbar__width + 10}px`;
-            } else{
+            if (!productosPage.classList.contains("visible")){
                 document.documentElement.style.overflowY = "scroll";
                 document.documentElement.style.marginRight = "0";
                 nav__ul.style.marginRight = "0";
                 carrito.style.right = "10px";
-            }
+            } 
         } else{
             document.documentElement.style.overflowY = "hidden";
             document.documentElement.style.marginRight = `${scrollbar__width}px`;
