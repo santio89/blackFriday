@@ -149,7 +149,6 @@ body{
         flex-flow: row wrap;
         justify-content: center;
         align-items: stretch;
-        gap: unquote("clamp(.4rem, .4rem + .4vw, 1.4rem)");
         font-size: 2rem;
         
         &__li{
@@ -158,8 +157,8 @@ body{
                 background: none;
                 border: none;
                 outline: none;
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding-left: .8rem;
+                padding-right: .8rem;
                 
                 &:hover, &:focus{
                     color: var(--color-segundo);
@@ -170,10 +169,6 @@ body{
             &__whatsapp{
                 text-shadow: 1px 1px 0 var(--color-segundo), 2px 2px 0 var(--color-primero);
                 color: green;
-                
-                &:hover, &:focus{
-                    color: var(--color-segundo);
-                }
             }
         }
     }

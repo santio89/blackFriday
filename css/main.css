@@ -192,7 +192,6 @@ body {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  gap: clamp(.4rem, .4rem + .4vw, 1.4rem);
   font-size: 2rem;
 }
 
@@ -201,8 +200,8 @@ body {
   background: none;
   border: none;
   outline: none;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: .8rem;
+  padding-right: .8rem;
 }
 
 .nav__ul__li__a:hover, .nav__ul__li__a:focus {
@@ -212,10 +211,6 @@ body {
 .nav__ul__li__whatsapp {
   text-shadow: 1px 1px 0 var(--color-segundo), 2px 2px 0 var(--color-primero);
   color: green;
-}
-
-.nav__ul__li__whatsapp:hover, .nav__ul__li__whatsapp:focus {
-  color: var(--color-segundo);
 }
 
 .nav--footer {
@@ -812,7 +807,7 @@ body {
 }
 
 /* fin scrollbar */
-@media (max-width: 340px) {
+@media (max-width: 349px) {
   .nav__logo {
     font-size: .8em;
     top: .1rem;
@@ -820,7 +815,7 @@ body {
   }
 }
 
-@media (max-width: 310px) {
+@media (max-width: 319px) {
   .nav__ul {
     font-size: 1.4rem;
   }
@@ -838,8 +833,9 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .nav__ul {
-    gap: clamp(1rem, 1rem + 1vw, 2rem);
+  .nav__ul__li__a {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
