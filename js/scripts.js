@@ -195,7 +195,7 @@ function toggleProductos(){
                 document.documentElement.style.overflowY = "scroll";
                 document.documentElement.style.marginRight = "0";
                 nav__ul.style.marginRight = "0";
-                carrito.style.right = "0"
+                carrito.style.right = "10px"
             }
         } else{
             document.documentElement.style.overflowY = "hidden";
