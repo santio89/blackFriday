@@ -201,7 +201,7 @@ body{
     flex-flow: column wrap;
     justify-content: start;
     align-items: stretch;
-    gap: 2rem;
+    gap: 2.8rem;
     position: relative;
 }
 
@@ -227,6 +227,7 @@ body{
 
     &__wrapper{
         overflow-x: scroll;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
         background: transparent;
         padding-left: 1rem;
@@ -260,7 +261,33 @@ body{
             }
 
             p{
-                font-size: 1rem;
+                font-size: 1.12rem;
+            }
+
+            &__buttonContainer{
+                margin-left: 1rem;           
+                margin-right: auto;           
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-evenly;
+                gap: 1.2rem;
+                padding: .8rem;
+                padding-bottom: 0;
+    
+                button{
+                    cursor: pointer;
+                    line-height: .8;
+                    margin-bottom: 0;
+                    background: none;
+                    outline: none;
+                    border: none;
+                    font-size: 6rem;
+                    color: var(--color-tercero-dark);
+
+                    &:hover, &:focus{
+                        color: white;
+                    }
+                }
             }
             
         }

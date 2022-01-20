@@ -16,6 +16,15 @@ class ShoppingCart{
                 }
             }
         }
+
+        for (const item of this.shopList){
+            for (const combo of stock1.arrayCombosTotal){
+                if (item == combo.id){
+                    this.subTotal += combo.precioTotal;
+                    break;
+                }
+            }
+        }
     }
 
 
@@ -40,6 +49,27 @@ class ShoppingCart{
                     localStorage.setItem("shopList", JSON.stringify(this.shopList));
                     break;
                 }
+            }
+        }
+
+        for (const combo of stock1.arrayCombosTotal){
+            /* let stock = document.querySelectorAll(`.${bebida.nombre.replace(/\s/g,"")}__stock`); */
+            if (this.shopList[this.shopList.length-1] == combo.id){
+                /* if(bebida.outOfStock()){
+                    alert("Producto fuera de stock.");
+                    this.shopList.pop();
+                    break;
+                } */
+                
+                    /* stock.forEach((element)=>{element.innerHTML = `stock: ${bebida.stock}`}); */
+                     
+                    carrito__numero.innerHTML = shopCart1.shopList.length;
+                    this.subTotalCalc();
+                    carrito__total.innerHTML = `$${shopCart1.subTotal}`;
+                    
+                    localStorage.setItem("shopList", JSON.stringify(this.shopList));
+                    break;
+                
             }
         }
     }

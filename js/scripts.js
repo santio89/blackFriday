@@ -20,14 +20,14 @@ const cerveza__corona = new Bebida("cerveza".toUpperCase(), "Corona".toUpperCase
 const whisky__chivas = new Bebida("tequila".toUpperCase(), "Chivas".toUpperCase(), 500, 3000, 15, Infinity);
 const gin__larios = new Bebida("gin".toUpperCase(), "Larios".toUpperCase(), 750, 2000, 16, Infinity);
 
-const combo1 = new Combo([cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat], 20,Infinity);
-const combo2 = new Combo([cerveza__corona, cerveza__heineken, whisky__vat, vodka__skyy], 20,Infinity);
-const combo3 = new Combo([whisky__chivas, whisky__vat, vodka__skyy, vodka__smirnoff], 20,Infinity);
-const combo4 = new Combo([vino__rutini, vino__norton, vodka__smirnoff, cerveza__heineken], 20,Infinity);
-const combo5 = new Combo([cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat], 20,Infinity);
-const combo6 = new Combo([licor__jager, cerveza__heineken, ron__morgan, whisky__vat], 20,Infinity);
-const combo7 = new Combo([vino__norton, vino__rutini, espumante__chandon, vodka__smirnoff], 20,Infinity);
-const combo8 = new Combo([cerveza__quilmes, cerveza__quilmes, cerveza__heineken, cerveza__heineken], 20,Infinity);
+const combo1 = new Combo([cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat], 20, "1", 99);
+const combo2 = new Combo([cerveza__corona, cerveza__heineken, whisky__vat, vodka__skyy], 20, "2", 98);
+const combo3 = new Combo([whisky__chivas, whisky__vat, vodka__skyy, vodka__smirnoff], 20, "3", 97);
+const combo4 = new Combo([vino__rutini, vino__norton, vodka__smirnoff, cerveza__heineken], 20, "4", 96);
+const combo5 = new Combo([whisky__chivas, vino__rutini, licor__jager, espumante__chandon], 20, "5", 95);
+const combo6 = new Combo([licor__jager, cerveza__heineken, ron__morgan, whisky__vat], 20, "6", 94);
+const combo7 = new Combo([vino__norton, vino__rutini, espumante__chandon, vodka__smirnoff], 20, "7", 93);
+const combo8 = new Combo([cerveza__quilmes, cerveza__quilmes, cerveza__heineken, cerveza__heineken], 20, "8", 92);
 
 stock1.addStockItem(cerveza__quilmes);
 stock1.addStockItem(cerveza__heineken);
@@ -142,6 +142,19 @@ function toggleLista(){
                 <span>$${bebidas.precio}</span>
                 <span>(x${bebidas.inShopList()})</span>
                 <span>$${bebidas.precio * bebidas.inShopList()}</span>
+                `;
+                carrito__lista__ul.appendChild(carrito__newLi);
+            }
+        }
+        for (const combos of stock1.arrayCombosTotal){
+            if (items == combos.id){
+                let carrito__newLi = document.createElement("li");
+                carrito__newLi.innerHTML = `
+                <span>COMBO ${combos.nombre}</span>
+                <span>-</span>
+                <span>$${combos.precioTotal}</span>
+                <span>(x${combos.inShopList()})</span>
+                <span>$${combos.precioTotal * combos.inShopList()}</span>
                 `;
                 carrito__lista__ul.appendChild(carrito__newLi);
             }
@@ -317,11 +330,11 @@ cerrar__ofertas.onclick = toggleOfertas;
 /* ofertasFeatured */
 let ofertasFeatured = document.querySelector(".ofertasFeatured__wrapper");
 
-for (let i=0; i<stock1.arrayCombosFeatured.length;i++){
+for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
     let combo = stock1.arrayCombosFeatured[i];
+
     let wrapper__item = document.createElement("div");
     wrapper__item.classList.add("ofertasFeatured__wrapper__item");
-
 
     wrapper__item.innerHTML = `
     <h3><span>COMBO ${i+1} &#8674; </span>$${combo.precioTotal}</h3>`;
@@ -332,6 +345,13 @@ for (let i=0; i<stock1.arrayCombosFeatured.length;i++){
         <p>${combo__item.tipo} ${combo__item.marca} ${combo__item.contNeto}ml</p>
         `
     }
+
+    wrapper__item.innerHTML += `
+    <div class="ofertasFeatured__wrapper__item__buttonContainer">
+    <button class="${combo.nombre}__menos" onclick="shopCart1.removeItem(${combo.id})">-</button>
+    <button class="${combo.nombre}__mas" onclick="shopCart1.addItem(${combo.id})">+</button>
+    </div>
+    `
     
     ofertasFeatured.appendChild(wrapper__item);
 }
