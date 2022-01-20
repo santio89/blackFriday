@@ -332,7 +332,7 @@ for (i=0; i<stock1.arrayCombosFeatured.length;i++){
     combo.forEach(item=>combo__precio += item.precio);
 
     wrapper__item.innerHTML = `
-    <h3><span>COMBO ${i+1} &#8674;</span>${combo__precio}</h3>`;
+    <h3><span>COMBO ${i+1} &#8674; </span>$${combo__precio}</h3>`;
 
     for (j=0; j<combo.length;j++){
         let combo__item = combo[j];
