@@ -2,10 +2,10 @@ class Stock{
     constructor (date, id){
         this.date = date;
         this.id = id;
-        this.arrayBebidasFeatured = [];
         this.arrayBebidasTotal = [];
-        this.arrayCombosFeatured = [];
+        this.arrayBebidasFeatured = [];
         this.arrayCombosTotal = [];
+        this.arrayCombosFeatured = [];
     }
 
     addStockItem(item){
@@ -16,12 +16,12 @@ class Stock{
         this.arrayBebidasFeatured.push(item);
     }
 
-    addComboFeatured(combo){
-        this.arrayCombosFeatured.push(combo);
-    }
-
     addComboTotal(combo){
         this.arrayCombosTotal.push(combo);
+    }
+
+    addComboFeatured(combo){
+        this.arrayCombosFeatured.push(combo);
     }
 }
 

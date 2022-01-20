@@ -3,39 +3,31 @@
 const shopCart1 = new ShoppingCart(new Date(), 001);
 const stock1 = new Stock(new Date(), 001);
 
-const cerveza__quilmes = new Bebida("cerveza".toUpperCase(), "Quilmes".toUpperCase(), 1000, 300, 01, 10);
-const cerveza__brahma = new Bebida("cerveza".toUpperCase(), "Brahma".toUpperCase(), 1000, 200, 02, 10);
-const cerveza__heineken = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 1000, 400, 03, 10);
-const vodka__smirnoff = new Bebida("vodka".toUpperCase(), "Smirnoff".toUpperCase(), 750, 1000, 04, 10);
-const whisky__vat = new Bebida("whisky".toUpperCase(), "Vat 69".toUpperCase(), 750, 1200, 05, 10);
-const ron__morgan = new Bebida("ron".toUpperCase(), "Morgan".toUpperCase(), 750, 1200, 06, 10);
-const fernet__branca = new Bebida("fernet".toUpperCase(), "Branca".toUpperCase(), 750, 900, 07, 10);
-const tequila__azteca = new Bebida("tequila".toUpperCase(), "Azteca".toUpperCase(), 750, 800, 08, 10);
-const vodka__skyy = new Bebida("tequila".toUpperCase(), "Skyy".toUpperCase(), 750, 1200, 09, 10);
-const vino__norton = new Bebida("vino".toUpperCase(), "Norton".toUpperCase(), 750, 500, 10, 10);
-const licor__jager = new Bebida("licor".toUpperCase(), "Jäger".toUpperCase(), 700, 400, 11, 10);
-const espumante__chandon = new Bebida("espumante".toUpperCase(), "Chandon".toUpperCase(), 750, 1500, 12, 10);
-const vino__rutini = new Bebida("vino".toUpperCase(), "Rutini".toUpperCase(), 750, 2000, 13, 10);
-const cerveza__corona = new Bebida("cerveza".toUpperCase(), "Corona".toUpperCase(), 710, 400, 14, 10);
-const whisky__chivas = new Bebida("tequila".toUpperCase(), "Chivas".toUpperCase(), 500, 3000, 15, 10);
-const gin__larios = new Bebida("gin".toUpperCase(), "Larios".toUpperCase(), 750, 2000, 16, 10);
+const cerveza__quilmes = new Bebida("cerveza".toUpperCase(), "Quilmes".toUpperCase(), 1000, 300, 01, Infinity);
+const cerveza__brahma = new Bebida("cerveza".toUpperCase(), "Brahma".toUpperCase(), 1000, 200, 02, Infinity);
+const cerveza__heineken = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 1000, 400, 03, Infinity);
+const vodka__smirnoff = new Bebida("vodka".toUpperCase(), "Smirnoff".toUpperCase(), 750, 1000, 04, Infinity);
+const whisky__vat = new Bebida("whisky".toUpperCase(), "Vat 69".toUpperCase(), 750, 1200, 05, Infinity);
+const ron__morgan = new Bebida("ron".toUpperCase(), "Morgan".toUpperCase(), 750, 1200, 06, Infinity);
+const fernet__branca = new Bebida("fernet".toUpperCase(), "Branca".toUpperCase(), 750, 900, 07, Infinity);
+const tequila__azteca = new Bebida("tequila".toUpperCase(), "Azteca".toUpperCase(), 750, 800, 08, Infinity);
+const vodka__skyy = new Bebida("tequila".toUpperCase(), "Skyy".toUpperCase(), 750, 1200, 09, Infinity);
+const vino__norton = new Bebida("vino".toUpperCase(), "Norton".toUpperCase(), 750, 500, 10, Infinity);
+const licor__jager = new Bebida("licor".toUpperCase(), "Jäger".toUpperCase(), 700, 400, 11, Infinity);
+const espumante__chandon = new Bebida("espumante".toUpperCase(), "Chandon".toUpperCase(), 750, 1500, 12, Infinity);
+const vino__rutini = new Bebida("vino".toUpperCase(), "Rutini".toUpperCase(), 750, 2000, 13, Infinity);
+const cerveza__corona = new Bebida("cerveza".toUpperCase(), "Corona".toUpperCase(), 710, 400, 14, Infinity);
+const whisky__chivas = new Bebida("tequila".toUpperCase(), "Chivas".toUpperCase(), 500, 3000, 15, Infinity);
+const gin__larios = new Bebida("gin".toUpperCase(), "Larios".toUpperCase(), 750, 2000, 16, Infinity);
 
-const combo1 = []
-const combo2 = []
-const combo3 = []
-const combo4 = []
-const combo5 = []
-const combo6 = []
-const combo7 = []
-const combo8 = []
-combo1.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
-combo2.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
-combo3.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
-combo4.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
-combo5.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
-combo6.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
-combo7.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
-combo8.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
+const combo1 = new Combo([cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat], 20,Infinity);
+const combo2 = new Combo([cerveza__corona, cerveza__heineken, whisky__vat, vodka__skyy], 20,Infinity);
+const combo3 = new Combo([whisky__chivas, whisky__vat, vodka__skyy, vodka__smirnoff], 20,Infinity);
+const combo4 = new Combo([vino__rutini, vino__norton, vodka__smirnoff, cerveza__heineken], 20,Infinity);
+const combo5 = new Combo([cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat], 20,Infinity);
+const combo6 = new Combo([licor__jager, cerveza__heineken, ron__morgan, whisky__vat], 20,Infinity);
+const combo7 = new Combo([vino__norton, vino__rutini, espumante__chandon, vodka__smirnoff], 20,Infinity);
+const combo8 = new Combo([cerveza__quilmes, cerveza__quilmes, cerveza__heineken, cerveza__heineken], 20,Infinity);
 
 stock1.addStockItem(cerveza__quilmes);
 stock1.addStockItem(cerveza__heineken);
@@ -77,6 +69,7 @@ stock1.addComboFeatured(combo3);
 stock1.addComboFeatured(combo5);
 stock1.addComboFeatured(combo7);
 
+stock1.arrayCombosTotal.forEach(combo => combo.calcPrecioTotal());
 
 
 /* cargar shopList, si existe, del storage */
@@ -324,22 +317,20 @@ cerrar__ofertas.onclick = toggleOfertas;
 /* ofertasFeatured */
 let ofertasFeatured = document.querySelector(".ofertasFeatured__wrapper");
 
-for (i=0; i<stock1.arrayCombosFeatured.length;i++){
+for (let i=0; i<stock1.arrayCombosFeatured.length;i++){
     let combo = stock1.arrayCombosFeatured[i];
     let wrapper__item = document.createElement("div");
     wrapper__item.classList.add("ofertasFeatured__wrapper__item");
-    let combo__precio = 0;
-    combo.forEach(item=>combo__precio += item.precio);
+
 
     wrapper__item.innerHTML = `
-    <h3><span>COMBO ${i+1} &#8674; </span>$${combo__precio}</h3>`;
+    <h3><span>COMBO ${i+1} &#8674; </span>$${combo.precioTotal}</h3>`;
 
-    for (j=0; j<combo.length;j++){
-        let combo__item = combo[j];
+    for (let j=0; j<combo.productos.length;j++){
+        let combo__item = combo.productos[j];
         wrapper__item.innerHTML += `
-        <p>${combo__item.tipo} ${combo__item.contNeto}ml</p>
+        <p>${combo__item.tipo} ${combo__item.marca} ${combo__item.contNeto}ml</p>
         `
-        combo__precio+=combo__item.precio;
     }
     
     ofertasFeatured.appendChild(wrapper__item);

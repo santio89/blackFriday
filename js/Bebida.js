@@ -30,4 +30,20 @@ class Bebida{
     }
 }
 
+class Combo{
+    constructor(productos, descuento, stock){
+        this.productos = productos;
+        this.stock = stock;
+        this.precioTotal = 0;
+        this.descuento = descuento;
+    }
+
+    calcPrecioTotal(){
+        for (let i=0; i<this.productos.length;i++){
+            this.precioTotal += this.productos[i].precio;
+        }
+        this.precioTotal -= Math.round((this.descuento / 100) * this.precioTotal);
+    }
+}
+
 /* module.exports = Bebida; */
