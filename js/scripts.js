@@ -61,7 +61,7 @@ if (localStorage.getItem("shopList")){
 } 
 
 
-/* agregar las cards de productos al html, según los productos que hayan en el inventario (uso forEach en vez de map, ya que no necesito retornar nada) */
+/* agregar las cards de productos featured al html, según los productos que hayan en el inventario (uso forEach en vez de map, ya que no necesito retornar nada) */
 let productosFeatured = document.getElementById("productosFeatured");
 stock1.arrayBebidasFeatured.forEach(bebidas => {
     let producto = document.createElement("div");
@@ -87,10 +87,9 @@ carrito__numero.innerHTML = shopCart1.shopList.length;
 let carrito__total = document.querySelector(".carrito__total");
 carrito__total.innerHTML = `$${shopCart1.subTotal}`;
 
+
+
 /* carrito - lista de compras */
-let carrito = document.querySelector(".carrito");
-carrito.addEventListener("keydown", (e)=>{if(e.keyCode == 13){toggleLista()}});
-carrito.addEventListener("click", toggleLista);
 
 function toggleLista(){
     let carrito__lista = document.querySelector(".carrito__lista");
@@ -129,55 +128,32 @@ function toggleLista(){
     carrito__total.innerHTML = `$${shopCart1.subTotal}`
 }
 
+/* carrito evento - toggle list */
+let carrito = document.querySelector(".carrito");
+carrito.addEventListener("keydown", (e)=>{if(e.keyCode == 13){toggleLista()}});
+carrito.addEventListener("click", toggleLista);
+
+let carrito__cerrar = document.querySelector(".carrito__lista__cerrar");
+carrito__cerrar.onclick = toggleLista;
+
+/* carrito - vaciar */
 function vaciarCompra(){
     localStorage.removeItem("shopList");
     window.location.reload();
 }
 
+let carrito__vaciar = document.querySelector(".carrito__lista__vaciar");
+carrito__vaciar.onclick = vaciarCompra;
+
+/* carrito - checkout */
 function checkout(){
     alert(`***CHECKOUT***\nTOTAL: $${shopCart1.subTotal}\nDirección -> Medios de Pago -> Confirmar`);
 }
 
+let carrito__checkout = document.querySelector(".carrito__lista__checkout");
+carrito__checkout.onclick = checkout;
 
-function toggleOfertas(){
-    let ofertas = document.querySelector(".ofertasPage");
-    ofertas.classList.toggle("carrito__lista__translated");
-    let nav__ofertas = document.querySelector("#nav__ofertas");
-    nav__ofertas.classList.toggle("active");
-
-    let nav__productos = document.querySelector("#nav__productos");
-    if (nav__productos.classList.contains("active")){
-        nav__productos.classList.toggle("active");
-    }
-
-    if (ofertas.classList.contains("visible")){
-        setTimeout(()=>ofertas.classList.remove("visible"), 400);
-    } else{
-        ofertas.classList.add("visible");
-    }
-
-    let productos = document.querySelector(".productosPage");
-    if (productos.classList.contains("carrito__lista__translated")){
-        productos.classList.toggle("carrito__lista__translated");
-        setTimeout(()=>productos.classList.remove("visible"), 400);
-    }
-
-    let nav__ul = document.querySelector(".nav__ul");
-    if(document.documentElement.style.overflowY == "hidden"){
-        let productosPage = document.querySelector(".productosPage");
-        if (productosPage.classList.contains("visible")){
-            document.documentElement.style.overflowY = "hidden";
-            nav__ul.style.marginRight = "8px";
-        } else{
-            document.documentElement.style.overflowY = "scroll";
-            nav__ul.style.marginRight = "0";
-        }
-    } else{
-        document.documentElement.style.overflowY = "hidden";
-        nav__ul.style.marginRight = "8px";
-    }
-}
-
+/* sección productos */
 function toggleProductos(){
     let productos = document.querySelector(".productosPage");
     productos.classList.toggle("carrito__lista__translated");
@@ -218,7 +194,7 @@ function toggleProductos(){
     }
 }
 
-
+/* cards de la seccion productos */
 let productos = document.getElementById("productos");
 stock1.arrayBebidasTotal.forEach(bebidas => {
     let producto = document.createElement("div");
@@ -237,4 +213,58 @@ stock1.arrayBebidasTotal.forEach(bebidas => {
      productos.appendChild(producto);
 }); 
 
+/* event link productos */
+let link__productos = document.getElementById("nav__productos");
+link__productos.onclick = toggleProductos;
+
+let cerrar__productos = document.querySelector(".carrito__lista__cerrar--productos");
+cerrar__productos.onclick = toggleProductos;
+
+
+/* sección ofertas */
+function toggleOfertas(){
+    let ofertas = document.querySelector(".ofertasPage");
+    ofertas.classList.toggle("carrito__lista__translated");
+    let nav__ofertas = document.querySelector("#nav__ofertas");
+    nav__ofertas.classList.toggle("active");
+
+    let nav__productos = document.querySelector("#nav__productos");
+    if (nav__productos.classList.contains("active")){
+        nav__productos.classList.toggle("active");
+    }
+
+    if (ofertas.classList.contains("visible")){
+        setTimeout(()=>ofertas.classList.remove("visible"), 400);
+    } else{
+        ofertas.classList.add("visible");
+    }
+
+    let productos = document.querySelector(".productosPage");
+    if (productos.classList.contains("carrito__lista__translated")){
+        productos.classList.toggle("carrito__lista__translated");
+        setTimeout(()=>productos.classList.remove("visible"), 400);
+    }
+
+    let nav__ul = document.querySelector(".nav__ul");
+    if(document.documentElement.style.overflowY == "hidden"){
+        let productosPage = document.querySelector(".productosPage");
+        if (productosPage.classList.contains("visible")){
+            document.documentElement.style.overflowY = "hidden";
+            nav__ul.style.marginRight = "8px";
+        } else{
+            document.documentElement.style.overflowY = "scroll";
+            nav__ul.style.marginRight = "0";
+        }
+    } else{
+        document.documentElement.style.overflowY = "hidden";
+        nav__ul.style.marginRight = "8px";
+    }
+}
+
+/* event link ofertas */
+let link__ofertas = document.getElementById("nav__ofertas");
+link__ofertas.onclick = toggleOfertas;
+
+let cerrar__ofertas = document.querySelector(".carrito__lista__cerrar--ofertas");
+cerrar__ofertas.onclick = toggleOfertas;
 

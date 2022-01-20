@@ -22,8 +22,8 @@
     <nav class="nav">
         <a href="index.html" class="nav__logo">BF</a>
         <ul class="nav__ul">
-            <li class="nav__ul__li"><button class="nav__ul__li__a" onclick="toggleOfertas()" id="nav__ofertas">Ofertas</button></li>
-            <li class="nav__ul__li"><button class="nav__ul__li__a" onclick="toggleProductos()" id="nav__productos">Bebidas</button></li>
+            <li class="nav__ul__li"><button class="nav__ul__li__a" id="nav__ofertas">Ofertas</button></li>
+            <li class="nav__ul__li"><button class="nav__ul__li__a" id="nav__productos">Bebidas</button></li>
             <li class="nav__ul__li"><a href="https://wa.me/541199999999" target="_blank" rel="noopener" class="nav__ul__li__whatsapp"><i class="bi bi-whatsapp"></i></a></li>
         </ul>
     </nav>
@@ -33,7 +33,7 @@
     </header>
 
     <main class="main">
-        <div class="carrito" aria-label="Abrir lista" tabindex="0">
+        <div class="carrito" aria-label="Abrir lista de compras" tabindex="0">
             <i class="bi bi-cart carrito__icon"></i>
             <p class="carrito__numero"></p>
             <p class="carrito__total"></p>   
@@ -45,9 +45,9 @@
                
             </ul>
             <p class="carrito__lista__total"><span>TOTAL</span><span class="carrito__lista__total__number">$0</span></p>
-            <button class="carrito__lista__vaciar" onclick="vaciarCompra()">VACIAR COMPRA</button>
-            <button class="carrito__lista__checkout" onclick="checkout()">IR AL CHECKOUT</button>
-            <button aria-label="Cerrar lista" onclick="toggleLista()" class="carrito__lista__cerrar">X</button>
+            <button aria-label="Vaciar Compra" class="carrito__lista__vaciar">VACIAR COMPRA</button>
+            <button aria-label="Ir al checkout" class="carrito__lista__checkout">IR AL CHECKOUT</button>
+            <button aria-label="Cerrar lista" class="carrito__lista__cerrar">X</button>
         </div>
         
 
@@ -64,7 +64,7 @@
                 <h2 class="header__title">BLACK FRIDAY</h2>
                 <h3 class="header__title">OFERTAS</h3>
             </div>
-            <button aria-label="Cerrar Ofertas" class="carrito__lista__cerrar" onclick="toggleOfertas()">X</button>
+            <button aria-label="Cerrar Ofertas" class="carrito__lista__cerrar carrito__lista__cerrar--ofertas">X</button>
         </div>
         <div class="productosPage">
             <div class="productosPage__title">
@@ -72,7 +72,7 @@
                 <h3 class="header__title">BEBIDAS</h3>               
             </div>
             <div class="productos productos--page" id="productos"></div>
-            <button aria-label="Cerrar Productos" class="carrito__lista__cerrar" onclick="toggleProductos()">X</button>
+            <button aria-label="Cerrar Productos" class="carrito__lista__cerrar carrito__lista__cerrar--productos">X</button>
         </div>
     </main>
 
