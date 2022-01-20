@@ -329,8 +329,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  border-left: 2px dashed var(--color-segundo);
   padding-left: .8rem;
+  border-left: 2px dashed var(--color-segundo-dark);
 }
 
 .ofertasFeatured__wrapper__item h3 {

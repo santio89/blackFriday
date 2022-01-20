@@ -209,8 +209,7 @@ body{
     width: 100%;
     border-radius: .5rem;
     border: 2px solid white;
-    background: 
-        linear-gradient(-45deg, var(--color-primero) 38%, var(--color-segundo) 38%);
+    background: linear-gradient(-45deg, var(--color-primero) 38%, var(--color-segundo) 38%);
     background-size: 400%;
     background-position: 76.8% 0%;
     display: flex;
@@ -237,7 +236,7 @@ body{
         max-width: 300px;
         margin-left: auto;
         margin-right: auto;
-
+        
         &::-webkit-scrollbar{
             height: 6px;
         }
@@ -252,8 +251,8 @@ body{
             scroll-snap-align: start;
             display: flex;
             flex-flow: column nowrap;
-            border-left: 2px dashed var(--color-segundo);
             padding-left: .8rem;
+            border-left: 2px dashed var(--color-segundo-dark);
             
             h3{
                 font-size: 2rem;
