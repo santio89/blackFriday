@@ -153,7 +153,14 @@ function checkout(){
 let carrito__checkout = document.querySelector(".carrito__lista__checkout");
 carrito__checkout.onclick = checkout;
 
+
+
 /* sección productos */
+
+function getScrollbarWidth() {
+    return window.innerWidth - document.documentElement.clientWidth;
+}
+
 function toggleProductos(){
     let productos = document.querySelector(".productosPage");
     productos.classList.toggle("carrito__lista__translated");
@@ -178,32 +185,31 @@ function toggleProductos(){
         setTimeout(()=>ofertas.classList.remove("visible"), 400);
     }
 
-    /* en chrome, al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece). en otros browsers, debido a que no es sencillo como en chrome interactuar con la scrollbar, prefiero dejar el comportamiento por defecto */
-
-    if (navigator.userAgent.indexOf("AppleWebKit") != -1){
+    /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
+    
         let nav__ul = document.querySelector(".nav__ul");
         let carrito = document.querySelector(".carrito");
+        let scrollbar__width = getScrollbarWidth();
 
         if(document.documentElement.style.overflowY == "hidden"){
             let ofertasPage = document.querySelector(".ofertasPage");
             if (ofertasPage.classList.contains("visible")){
                 document.documentElement.style.overflowY = "hidden";
-                document.documentElement.style.marginRight = "8px";
-                nav__ul.style.marginRight = "8px";
-                carrito.style.right = "18px"
+                document.documentElement.style.marginRight = `${scrollbar__width}px`;
+                nav__ul.style.marginRight = `${scrollbar__width}px`;
+                carrito.style.right = `${scrollbar__width + 10}px`;
             } else{
                 document.documentElement.style.overflowY = "scroll";
                 document.documentElement.style.marginRight = "0";
                 nav__ul.style.marginRight = "0";
-                carrito.style.right = "10px"
+                carrito.style.right = "10px";
             }
         } else{
             document.documentElement.style.overflowY = "hidden";
-            document.documentElement.style.marginRight = "8px";
-            nav__ul.style.marginRight = "8px";
-            carrito.style.right = "18px"
+            document.documentElement.style.marginRight = `${scrollbar__width}px`;
+            nav__ul.style.marginRight = `${scrollbar__width}px`;
+            carrito.style.right = `${scrollbar__width + 10}px`;
         }
-    }
 }
 
 /* cards de la seccion productos */
@@ -258,31 +264,31 @@ function toggleOfertas(){
     }
     
 
-    /* chrome y secciones overflow */
-    if (navigator.userAgent.indexOf("AppleWebKit") != -1){
+    /* sections, overflow hidden y scrollbar */
+    
         let nav__ul = document.querySelector(".nav__ul");
         let carrito = document.querySelector(".carrito");
+        let scrollbar__width = getScrollbarWidth();
 
         if(document.documentElement.style.overflowY == "hidden"){
             let productosPage = document.querySelector(".productosPage");
             if (productosPage.classList.contains("visible")){
                 document.documentElement.style.overflowY = "hidden";
-                document.documentElement.style.marginRight = "8px";
-                nav__ul.style.marginRight = "8px";
-                carrito.style.right = "18px"
+                document.documentElement.style.marginRight = `${scrollbar__width}px`;
+                nav__ul.style.marginRight = `${scrollbar__width}px`;
+                carrito.style.right = `${scrollbar__width + 10}px`;
             } else{
                 document.documentElement.style.overflowY = "scroll";
                 document.documentElement.style.marginRight = "0";
                 nav__ul.style.marginRight = "0";
-                carrito.style.right = "10px"
+                carrito.style.right = "10px";
             }
         } else{
             document.documentElement.style.overflowY = "hidden";
-            document.documentElement.style.marginRight = "8px";
-            nav__ul.style.marginRight = "8px";
-            carrito.style.right = "18px"
+            document.documentElement.style.marginRight = `${scrollbar__width}px`;
+            nav__ul.style.marginRight = `${scrollbar__width}px`;
+            carrito.style.right = `${scrollbar__width + 10}px`;
         }
-    }
 }
 
 /* event link ofertas */
