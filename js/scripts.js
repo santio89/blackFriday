@@ -178,6 +178,8 @@ function toggleProductos(){
         setTimeout(()=>ofertas.classList.remove("visible"), 400);
     }
 
+    /* "fix" para que los items del nav no se muevan al abrir esta seccion. (lo que ocurre es que cuando se abre la seccion, puse que el body no tenga overflow para que no aparezcan 2 barras de scroll en la pantalla. por tanto la barra de scrol del body desaparece, haciendo que los elementos de la pagina se reacomoden. "soluciono" esto aplicando un margen del width del scrollbar para compensar el espacio. */
+
     let nav__ul = document.querySelector(".nav__ul");
     if(document.documentElement.style.overflowY == "hidden"){
         let ofertasPage = document.querySelector(".ofertasPage");
@@ -244,6 +246,9 @@ function toggleOfertas(){
         productos.classList.toggle("carrito__lista__translated");
         setTimeout(()=>productos.classList.remove("visible"), 400);
     }
+    
+
+    /* "fix" del nav y las sections */
 
     let nav__ul = document.querySelector(".nav__ul");
     if(document.documentElement.style.overflowY == "hidden"){
