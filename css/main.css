@@ -329,9 +329,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-}
-
-.ofertasFeatured__wrapper__item__title {
   border-left: 2px dashed var(--color-segundo);
   padding-left: .8rem;
 }

@@ -20,6 +20,23 @@ const cerveza__corona = new Bebida("cerveza".toUpperCase(), "Corona".toUpperCase
 const whisky__chivas = new Bebida("tequila".toUpperCase(), "Chivas".toUpperCase(), 500, 3000, 15, 10);
 const gin__larios = new Bebida("gin".toUpperCase(), "Larios".toUpperCase(), 750, 2000, 16, 10);
 
+const combo1 = []
+const combo2 = []
+const combo3 = []
+const combo4 = []
+const combo5 = []
+const combo6 = []
+const combo7 = []
+const combo8 = []
+combo1.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
+combo2.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
+combo3.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
+combo4.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
+combo5.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
+combo6.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
+combo7.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
+combo8.push(cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat);
+
 stock1.addStockItem(cerveza__quilmes);
 stock1.addStockItem(cerveza__heineken);
 stock1.addStockItem(cerveza__brahma);
@@ -45,6 +62,21 @@ stock1.addFeaturedItem(vino__norton);
 stock1.addFeaturedItem(cerveza__heineken);
 stock1.addFeaturedItem(ron__morgan);
 stock1.addFeaturedItem(vodka__smirnoff);
+
+stock1.addComboTotal(combo1);
+stock1.addComboTotal(combo2);
+stock1.addComboTotal(combo3);
+stock1.addComboTotal(combo4);
+stock1.addComboTotal(combo5);
+stock1.addComboTotal(combo6);
+stock1.addComboTotal(combo7);
+stock1.addComboTotal(combo8);
+
+stock1.addComboFeatured(combo1);
+stock1.addComboFeatured(combo3);
+stock1.addComboFeatured(combo5);
+stock1.addComboFeatured(combo7);
+
 
 
 /* cargar shopList, si existe, del storage */
@@ -288,3 +320,27 @@ link__ofertas.onclick = toggleOfertas;
 let cerrar__ofertas = document.querySelector(".carrito__lista__cerrar--ofertas");
 cerrar__ofertas.onclick = toggleOfertas;
 
+
+/* ofertasFeatured */
+let ofertasFeatured = document.querySelector(".ofertasFeatured__wrapper");
+
+for (i=0; i<stock1.arrayCombosFeatured.length;i++){
+    let combo = stock1.arrayCombosFeatured[i];
+    let wrapper__item = document.createElement("div");
+    wrapper__item.classList.add("ofertasFeatured__wrapper__item");
+    let combo__precio = 0;
+    combo.forEach(item=>combo__precio += item.precio);
+
+    wrapper__item.innerHTML = `
+    <h3><span>COMBO ${i+1} &#8674;</span>${combo__precio}</h3>`;
+
+    for (j=0; j<combo.length;j++){
+        let combo__item = combo[j];
+        wrapper__item.innerHTML += `
+        <p>${combo__item.tipo} ${combo__item.contNeto}ml</p>
+        `
+        combo__precio+=combo__item.precio;
+    }
+    
+    ofertasFeatured.appendChild(wrapper__item);
+}
