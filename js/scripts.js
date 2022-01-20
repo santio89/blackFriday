@@ -146,6 +146,7 @@ function toggleLista(){
                 carrito__lista__ul.appendChild(carrito__newLi);
             }
         }
+        
         for (const combos of stock1.arrayCombosTotal){
             if (items == combos.id){
                 let carrito__newLi = document.createElement("li");
