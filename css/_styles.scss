@@ -266,12 +266,13 @@ body{
         padding-right: 1rem;
         display: flex;
         flex-flow: row nowrap;
-        min-width: 320px;
-        max-width: 320px;
+        min-width: 300px;
+        max-width: 300px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 1rem;
         margin-bottom: 1rem;
+        gap: .2rem;
         
         &::-webkit-scrollbar{
             height: 16px;
@@ -283,8 +284,8 @@ body{
 
         &__item{
             width: fit-content;
-            min-width: 320px;
-            max-width: 320px;
+            min-width: 300px;
+            max-width: 300px;
             scroll-snap-align: start;
             display: flex;
             flex-flow: column nowrap;

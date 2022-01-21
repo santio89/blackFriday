@@ -344,12 +344,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  min-width: 320px;
-  max-width: 320px;
+  min-width: 300px;
+  max-width: 300px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  gap: .2rem;
 }
 
 .ofertasFeatured__wrapper::-webkit-scrollbar {
@@ -364,8 +365,8 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  min-width: 320px;
-  max-width: 320px;
+  min-width: 300px;
+  max-width: 300px;
   scroll-snap-align: start;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1023,7 +1024,7 @@ body {
   }
 }
 
-@media (min-width: 880px) {
+@media (min-width: 1024px) {
   .nav {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -1080,6 +1081,7 @@ body {
         -ms-flex-flow: column wrap;
             flex-flow: column wrap;
     gap: 4rem;
+    min-width: unset;
     max-width: unset;
     overflow-x: unset;
     overflow-y: unset;
@@ -1098,6 +1100,7 @@ body {
   }
   .ofertasFeatured__wrapper__item {
     min-width: unset;
+    max-width: unset;
   }
   .productos {
     -webkit-box-flex: 8;

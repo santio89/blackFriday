@@ -45,7 +45,7 @@
     }
 }
 
-@media (min-width: 880px){
+@media (min-width: 1024px){
     .nav{
         padding-left: 4rem;
         padding-right: 4rem;
@@ -86,6 +86,7 @@
         &__wrapper{
             flex-flow: column wrap;
             gap: 4rem;
+            min-width: unset;
             max-width: unset;
             overflow-x: unset;
             overflow-y: unset;
@@ -99,6 +100,7 @@
 
             &__item{
                 min-width: unset;
+                max-width: unset;
             }
         }
 
