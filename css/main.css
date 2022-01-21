@@ -320,7 +320,7 @@ body {
           flex-flow: row nowrap;
   max-width: 300px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 10%;
 }
 
 .ofertasFeatured__wrapper::-webkit-scrollbar {
@@ -1045,6 +1045,7 @@ body {
             align-items: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-right: auto;
   }
   .ofertasFeatured__wrapper__item {
     min-width: unset;
