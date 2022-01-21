@@ -65,9 +65,9 @@ stock1.addComboTotal(combo7);
 stock1.addComboTotal(combo8);
 
 stock1.addComboFeatured(combo1);
+stock1.addComboFeatured(combo2);
 stock1.addComboFeatured(combo3);
-stock1.addComboFeatured(combo5);
-stock1.addComboFeatured(combo7);
+stock1.addComboFeatured(combo4);
 
 stock1.arrayCombosTotal.forEach(combo => combo.calcPrecioTotal());
 
