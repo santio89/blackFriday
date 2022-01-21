@@ -347,7 +347,7 @@ body {
 }
 
 .ofertasFeatured__wrapper::-webkit-scrollbar {
-  height: 8px;
+  height: 16px;
 }
 
 .ofertasFeatured__wrapper::-webkit-scrollbar-track {
@@ -610,8 +610,8 @@ body {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border: 2px solid white;
   background: var(--color-cuarto);
   border-radius: .5rem;
@@ -629,9 +629,9 @@ body {
 }
 
 .carrito__icon {
-  font-size: 5rem;
+  font-size: 4.8rem;
   text-shadow: 2px 2px 0 var(--color-cuarto), 2.6px 2.6px 0 var(--color-segundo);
-  margin-top: .5rem;
+  margin-top: .44rem;
 }
 
 .carrito__numero {
@@ -645,7 +645,7 @@ body {
 
 .carrito__total {
   position: absolute;
-  top: -46%;
+  top: -50%;
   left: 0;
   text-shadow: 1px 1px 0 var(--color-primero), 1.6px 1.6px 0 var(--color-segundo);
 }
