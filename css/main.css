@@ -265,7 +265,7 @@ body {
   width: 100%;
   border-radius: .5rem;
   border: 2px solid white;
-  background: linear-gradient(-45deg, var(--color-primero) 38%, var(--color-segundo) 38%);
+  background: linear-gradient(-45deg, var(--color-primero) 38%, var(--color-segundo-dark) 38%);
   background-size: 400%;
   background-position: 76.8% 0%;
   display: -webkit-box;
@@ -286,8 +286,8 @@ body {
 
 .ofertasFeatured h2 {
   color: var(--color-primero);
-  text-shadow: 2px 2px 0 var(--color-segundo), 4px 4px 0 var(--color-primero);
-  font-size: 3.2rem;
+  text-shadow: 2px 2px 0 var(--color-segundo-dark), 4px 4px 0 var(--color-primero);
+  font-size: 3.8rem;
   letter-spacing: .2rem;
 }
 
@@ -331,7 +331,7 @@ body {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   padding-left: .8rem;
-  border-left: 2px dashed var(--color-segundo-dark);
+  border-left: 2px dashed var(--color-segundo);
 }
 
 .ofertasFeatured__wrapper__item h3 {
@@ -990,18 +990,20 @@ body {
     max-width: unset;
     gap: 4rem;
     overflow-x: unset;
+    overflow-y: unset;
     -ms-scroll-snap-type: unset;
         scroll-snap-type: unset;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
   .ofertasFeatured h2 {
-    color: var(--color-primero);
-    font-size: 4.8rem;
-    text-shadow: 2px 2px 0 var(--color-segundo), 4px 4px 0 var(--color-primero);
+    font-size: 5.8rem;
   }
   .productos {
     -webkit-box-flex: 8;

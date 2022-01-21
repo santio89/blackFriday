@@ -209,7 +209,7 @@ body{
     width: 100%;
     border-radius: .5rem;
     border: 2px solid white;
-    background: linear-gradient(-45deg, var(--color-primero) 38%, var(--color-segundo) 38%);
+    background: linear-gradient(-45deg, var(--color-primero) 38%, var(--color-segundo-dark) 38%);
     background-size: 400%;
     background-position: 76.8% 0%;
     display: flex;
@@ -220,8 +220,8 @@ body{
 
     h2{
         color: var(--color-primero);
-        text-shadow: 2px 2px 0 var(--color-segundo), 4px 4px 0 var(--color-primero);
-        font-size: 3.2rem;
+        text-shadow: 2px 2px 0 var(--color-segundo-dark), 4px 4px 0 var(--color-primero);
+        font-size: 3.8rem;
         letter-spacing: .2rem;
     }
 
@@ -253,7 +253,7 @@ body{
             display: flex;
             flex-flow: column nowrap;
             padding-left: .8rem;
-            border-left: 2px dashed var(--color-segundo-dark);
+            border-left: 2px dashed var(--color-segundo);
             
             h3{
                 font-size: 2rem;
