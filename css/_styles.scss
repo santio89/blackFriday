@@ -231,12 +231,26 @@ body{
     align-items: start;
     padding: 1rem;
 
-    h2{
-        color: var(--color-primero);
-        text-shadow: 2px 2px 0 var(--color-segundo-dark), 4px 4px 0 var(--color-primero);
-        font-size: 3.8rem;
-        letter-spacing: .2rem;
+    &__title{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: start;
+        align-items: start;
+
+        p{
+            text-align: left;
+        }
+
+        h2{
+            color: var(--color-primero);
+            text-shadow: 2px 2px 0 var(--color-segundo-dark), 4px 4px 0 var(--color-primero);
+            font-size: 3.8rem;
+            letter-spacing: .2rem;
+            line-height: 1.2;
+        }
     }
+
+    
 
     &__wrapper{
         overflow-x: scroll;
@@ -249,7 +263,9 @@ body{
         flex-flow: row nowrap;
         max-width: 300px;
         margin-left: auto;
-        margin-right:10%;
+        margin-right: 10%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
         
         &::-webkit-scrollbar{
             height: 8px;

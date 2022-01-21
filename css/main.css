@@ -296,11 +296,32 @@ body {
   padding: 1rem;
 }
 
-.ofertasFeatured h2 {
+.ofertasFeatured__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.ofertasFeatured__title p {
+  text-align: left;
+}
+
+.ofertasFeatured__title h2 {
   color: var(--color-primero);
   text-shadow: 2px 2px 0 var(--color-segundo-dark), 4px 4px 0 var(--color-primero);
   font-size: 3.8rem;
   letter-spacing: .2rem;
+  line-height: 1.2;
 }
 
 .ofertasFeatured__wrapper {
@@ -321,6 +342,8 @@ body {
   max-width: 300px;
   margin-left: auto;
   margin-right: 10%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .ofertasFeatured__wrapper::-webkit-scrollbar {
@@ -1025,6 +1048,22 @@ body {
     -webkit-box-flex: 3;
         -ms-flex: 3;
             flex: 3;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .ofertasFeatured__title {
+    width: 100%;
+  }
+  .ofertasFeatured__title h2 {
+    font-size: 5.8rem;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
   .ofertasFeatured__wrapper {
     -webkit-box-orient: vertical;
@@ -1043,15 +1082,13 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 0;
+    margin-right: 0;
   }
   .ofertasFeatured__wrapper__item {
     min-width: unset;
-  }
-  .ofertasFeatured h2 {
-    font-size: 5.8rem;
   }
   .productos {
     -webkit-box-flex: 8;
