@@ -26,7 +26,7 @@ const cerveza__grolsch__lata = new Bebida("cerveza".toUpperCase(), "Grolsch".toU
 const gaseosa__coca = new Bebida("gaseosa".toUpperCase(), "Coca Cola".toUpperCase(), 2250, 200, 20, Infinity);
 const agua__glaciar = new Bebida("agua".toUpperCase(), "Glaciar".toUpperCase(), 1500, 120, 21, Infinity);
 const jugo__cepita__naranja = new Bebida("jugo".toUpperCase(), "Cepita Naranja".toUpperCase(), 1000, 120, 22, Infinity);
-const jugo__cepita__manzana = new Bebida("gin".toUpperCase(), "Cepita Manzana".toUpperCase(), 1000, 120, 23, Infinity);
+const jugo__cepita__manzana = new Bebida("jugo".toUpperCase(), "Cepita Manzana".toUpperCase(), 1000, 120, 23, Infinity);
 
 const combo1 = new Combo([cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat], 20, "1", 99);
 const combo2 = new Combo([cerveza__corona, cerveza__heineken, whisky__vat, vodka__skyy], 20, "2", 98);
