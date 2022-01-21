@@ -113,6 +113,7 @@ body {
   margin-top: 48px;
   padding: clamp(0.8rem, 2vw, 2rem);
   padding-bottom: calc(clamp(.8rem, 2vw, 2rem) / 2);
+  padding-top: 2rem;
 }
 
 .header__title {
@@ -126,6 +127,11 @@ body {
   text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
   word-spacing: .8rem;
   letter-spacing: .1rem;
+}
+
+.header__title h1 {
+  margin-bottom: 2rem;
+  font-size: clamp(8rem, 1rem + 10vw, 40rem);
 }
 
 .header__info {
@@ -242,7 +248,7 @@ body {
 
 .featured {
   padding-left: clamp(0.8rem, 2vw, 2rem);
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 .main {
@@ -994,6 +1000,7 @@ body {
   .header {
     padding: 4rem;
     padding-bottom: 2rem;
+    padding-top: 2rem;
   }
   .featured {
     padding-left: 4rem;
