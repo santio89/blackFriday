@@ -112,6 +112,7 @@ body {
           align-items: center;
   margin-top: 48px;
   padding: clamp(0.8rem, 2vw, 2rem);
+  padding-bottom: calc(clamp(.8rem, 2vw, 2rem) / 2);
 }
 
 .header__title {
@@ -237,6 +238,11 @@ body {
 .active {
   color: var(--color-segundo);
   background: var(--color-primero);
+}
+
+.featured {
+  padding-left: clamp(0.8rem, 2vw, 2rem);
+  font-size: 2rem;
 }
 
 .main {
@@ -987,6 +993,11 @@ body {
   }
   .header {
     padding: 4rem;
+    padding-bottom: 2rem;
+  }
+  .featured {
+    padding-left: 4rem;
+    font-size: 3.2rem;
   }
   .main {
     -webkit-box-orient: horizontal;

@@ -90,6 +90,7 @@ body{
     align-items: center;
     margin-top: 48px;
     padding: clamp(.8rem, 2vw, 2rem);
+    padding-bottom: calc(clamp(.8rem, 2vw, 2rem) / 2);
 
     &__title{
         font-size: unquote("clamp(8rem, 1rem + 10vw, 40rem)");
@@ -190,6 +191,11 @@ body{
 .active{
     color: var(--color-segundo);
     background: var(--color-primero);
+}
+
+.featured{
+    padding-left: clamp(.8rem, 2vw, 2rem);
+    font-size: 2rem;
 }
 
 .main{
