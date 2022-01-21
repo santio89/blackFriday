@@ -19,6 +19,14 @@ const vino__rutini = new Bebida("vino".toUpperCase(), "Rutini".toUpperCase(), 75
 const cerveza__corona = new Bebida("cerveza".toUpperCase(), "Corona".toUpperCase(), 710, 400, 14, Infinity);
 const whisky__chivas = new Bebida("tequila".toUpperCase(), "Chivas".toUpperCase(), 500, 3000, 15, Infinity);
 const gin__larios = new Bebida("gin".toUpperCase(), "Larios".toUpperCase(), 750, 2000, 16, Infinity);
+const cerveza__patagonia__lata = new Bebida("cerveza".toUpperCase(), "Patagonia".toUpperCase(), 410, 180, 17, Infinity);
+const cerveza__quilmes__lata = new Bebida("cerveza".toUpperCase(), "Quilmes".toUpperCase(), 473, 120, 18, Infinity);
+const cerveza__heineken__lata = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 473, 200, 19, Infinity);
+const cerveza__grolsch__lata = new Bebida("cerveza".toUpperCase(), "Grolsch".toUpperCase(), 473, 220, 24, Infinity);
+const gaseosa__coca = new Bebida("gaseosa".toUpperCase(), "Coca Cola".toUpperCase(), 2250, 200, 20, Infinity);
+const agua__glaciar = new Bebida("agua".toUpperCase(), "Glaciar".toUpperCase(), 1500, 120, 21, Infinity);
+const jugo__cepita__naranja = new Bebida("jugo".toUpperCase(), "Cepita Naranja".toUpperCase(), 1000, 120, 22, Infinity);
+const jugo__cepita__manzana = new Bebida("gin".toUpperCase(), "Cepita Manzana".toUpperCase(), 1000, 120, 23, Infinity);
 
 const combo1 = new Combo([cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat], 20, "1", 99);
 const combo2 = new Combo([cerveza__corona, cerveza__heineken, whisky__vat, vodka__skyy], 20, "2", 98);
@@ -45,6 +53,14 @@ stock1.addStockItem(licor__jager);
 stock1.addStockItem(ron__morgan);
 stock1.addStockItem(tequila__azteca);
 stock1.addStockItem(gin__larios);
+stock1.addStockItem(cerveza__patagonia__lata);
+stock1.addStockItem(cerveza__quilmes__lata);
+stock1.addStockItem(cerveza__heineken__lata);
+stock1.addStockItem(cerveza__grolsch__lata);
+stock1.addStockItem(gaseosa__coca);
+stock1.addStockItem(agua__glaciar);
+stock1.addStockItem(jugo__cepita__naranja);
+stock1.addStockItem(jugo__cepita__manzana);
 
 stock1.addFeaturedItem(cerveza__quilmes);
 stock1.addFeaturedItem(fernet__branca);
@@ -54,6 +70,10 @@ stock1.addFeaturedItem(vino__norton);
 stock1.addFeaturedItem(cerveza__heineken);
 stock1.addFeaturedItem(ron__morgan);
 stock1.addFeaturedItem(vodka__smirnoff);
+stock1.addFeaturedItem(vino__rutini);
+stock1.addFeaturedItem(espumante__chandon);
+stock1.addFeaturedItem(cerveza__corona);
+stock1.addFeaturedItem(vodka__skyy);
 
 stock1.addComboTotal(combo1);
 stock1.addComboTotal(combo2);
