@@ -298,7 +298,7 @@ body{
                     color: var(--color-tercero-dark);
 
                     &:hover, &:focus{
-                        color: white;
+                        color: var(--color-segundo);
                     }
                 }
             }

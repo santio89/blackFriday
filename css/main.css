@@ -385,7 +385,7 @@ body {
 }
 
 .ofertasFeatured__wrapper__item__buttonContainer button:hover, .ofertasFeatured__wrapper__item__buttonContainer button:focus {
-  color: white;
+  color: var(--color-segundo);
 }
 
 .ofertas {
