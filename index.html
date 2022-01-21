@@ -20,15 +20,15 @@
 </head>
 <body id="body">
     <nav class="nav">
-        <a href="index.html" class="nav__logo">BF</a>
+        <a href="index.html" class="nav__logo" aria-label="Home">BF</a>
         <ul class="nav__ul">
-            <li class="nav__ul__li"><button class="nav__ul__li__a" id="nav__ofertas">Ofertas</button></li>
-            <li class="nav__ul__li"><button class="nav__ul__li__a" id="nav__productos">Bebidas</button></li>
+            <li class="nav__ul__li"><button class="nav__ul__li__a" id="nav__ofertas" aria-label="Combos">Combos</button></li>
+            <li class="nav__ul__li"><button class="nav__ul__li__a" id="nav__productos" aria-label="Bebidas">Bebidas</button></li>
             <li class="nav__ul__li"><a href="https://wa.me/541199999999" target="_blank" rel="noopener" class="nav__ul__li__a nav__ul__li__whatsapp"><i class="bi bi-whatsapp"></i></a></li>
         </ul>
     </nav>
     <header class="header">
-        <a href="index.html" class="header__title">Black Friday</a>
+        <a href="index.html" class="header__title" aria-label="Home">Black Friday</a>
         <p class="header__info">Delivery de bebidas 24hs, CABA </p>
     </header>
 
@@ -64,14 +64,15 @@
 
         <div class="ofertasPage">
             <div class="ofertasPage__title">
-                <h2 class="header__title">BLACK FRIDAY</h2>
-                <h3 class="header__title">OFERTAS</h3>
+                <h2 class="header__title" id="header__title__ofertas" aria-label="Home">BLACK FRIDAY</h2>
+                <h3 class="header__title">COMBOS</h3>
             </div>
+             <div class="productos productos--page" id="ofertas"></div>
             <button aria-label="Cerrar Ofertas" class="carrito__lista__cerrar carrito__lista__cerrar--ofertas">X</button>
         </div>
         <div class="productosPage">
             <div class="productosPage__title">
-                <h2 class="header__title">BLACK FRIDAY</h2>
+                <h2 class="header__title" id="header__title__productos" aria-label="Home">BLACK FRIDAY</h2>
                 <h3 class="header__title">BEBIDAS</h3>               
             </div>
             <div class="productos productos--page" id="productos"></div>
@@ -82,8 +83,8 @@
     <footer class="footer">
         <nav class="footer__nav">
             <ul class="footer__nav__ul">
-                <li class="footer__nav__ul__li"><a href="#" class="footer__nav__ul__li__a">Ofertas</a></li>
-                <li class="footer__nav__ul__li"><a href="#" class="footer__nav__ul__li__a">Productos</a></li>
+                <li class="footer__nav__ul__li"><button class="footer__nav__ul__li__a" id="footer__nav__ofertas" aria-label="Combos">Combos</button></li>
+                <li class="footer__nav__ul__li"><button class="footer__nav__ul__li__a" id="footer__nav__productos" aria-label="Bebidas">Bebidas</button></li>
                 <li class="footer__nav__ul__li"><a href="https://wa.me/541199999999" target="_blank" rel="noopener" class="footer__nav__ul__li__whatsapp"><i class="bi bi-whatsapp"></i></a></li>
             </ul>
         </nav>

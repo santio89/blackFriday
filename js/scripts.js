@@ -146,7 +146,7 @@ function toggleLista(){
                 carrito__lista__ul.appendChild(carrito__newLi);
             }
         }
-        
+
         for (const combos of stock1.arrayCombosTotal){
             if (items == combos.id){
                 let carrito__newLi = document.createElement("li");
@@ -269,11 +269,17 @@ stock1.arrayBebidasTotal.forEach(bebidas => {
 let link__productos = document.getElementById("nav__productos");
 link__productos.onclick = toggleProductos;
 
+let footer__link__productos = document.getElementById("footer__nav__productos");
+footer__link__productos.onclick = toggleProductos;
+
 let cerrar__productos = document.querySelector(".carrito__lista__cerrar--productos");
 cerrar__productos.onclick = toggleProductos;
 
+let cerrar__productos__title = document.querySelector("#header__title__productos");
+cerrar__productos__title.onclick = toggleProductos;
 
-/* sección ofertas */
+
+/* sección ofertas/combos */
 function toggleOfertas(){
     let ofertas = document.querySelector(".ofertasPage");
     ofertas.classList.toggle("carrito__lista__translated");
@@ -298,7 +304,7 @@ function toggleOfertas(){
     }
     
 
-    /* sections, overflow hidden y scrollbar */
+     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
     
         let nav__ul = document.querySelector(".nav__ul");
         let carrito = document.querySelector(".carrito");
@@ -320,12 +326,46 @@ function toggleOfertas(){
         }
 }
 
-/* event link ofertas */
+/* cards de la seccion ofertas/combos */
+let ofertas = document.getElementById("ofertas");
+stock1.arrayCombosTotal.forEach(combos => {
+    let combo = combos;
+
+    let wrapper__item = document.createElement("div");
+    wrapper__item.classList.add("ofertasFeatured__wrapper__item");
+
+    wrapper__item.innerHTML = `
+    <h3><span>COMBO ${combo.nombre} &#8674; </span>$${combo.precioTotal}</h3>`;
+
+    for (let j=0; j<combo.productos.length;j++){
+        let combo__item = combo.productos[j];
+        wrapper__item.innerHTML += `
+        <p>${combo__item.tipo} ${combo__item.marca} ${combo__item.contNeto}ml</p>
+        `
+    }
+
+    wrapper__item.innerHTML += `
+    <div class="ofertasFeatured__wrapper__item__buttonContainer">
+    <button class="${combo.nombre}__menos" onclick="shopCart1.removeItem(${combo.id})">-</button>
+    <button class="${combo.nombre}__mas" onclick="shopCart1.addItem(${combo.id})">+</button>
+    </div>
+    `
+    
+    ofertas.appendChild(wrapper__item);
+}); 
+
+/* event link ofertas/combos */
 let link__ofertas = document.getElementById("nav__ofertas");
 link__ofertas.onclick = toggleOfertas;
 
+let footer__link__ofertas = document.getElementById("footer__nav__ofertas");
+footer__link__ofertas.onclick = toggleOfertas;
+
 let cerrar__ofertas = document.querySelector(".carrito__lista__cerrar--ofertas");
 cerrar__ofertas.onclick = toggleOfertas;
+
+let cerrar__ofertas__title = document.querySelector("#header__title__ofertas");
+cerrar__ofertas__title.onclick = toggleOfertas;
 
 
 /* ofertasFeatured */
@@ -338,7 +378,7 @@ for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
     wrapper__item.classList.add("ofertasFeatured__wrapper__item");
 
     wrapper__item.innerHTML = `
-    <h3><span>COMBO ${i+1} &#8674; </span>$${combo.precioTotal}</h3>`;
+    <h3><span>COMBO ${combo.nombre} &#8674; </span>$${combo.precioTotal}</h3>`;
 
     for (let j=0; j<combo.productos.length;j++){
         let combo__item = combo.productos[j];

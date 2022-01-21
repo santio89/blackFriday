@@ -312,7 +312,7 @@ body {
 }
 
 .ofertasFeatured__wrapper::-webkit-scrollbar {
-  height: 6px;
+  height: 8px;
 }
 
 .ofertasFeatured__wrapper::-webkit-scrollbar-track {
@@ -537,6 +537,7 @@ body {
 .ofertasPage__title h2, .productosPage__title h2 {
   color: white;
   font-size: clamp(4rem, 1rem + 4vw, 30rem);
+  cursor: pointer;
 }
 
 .ofertasPage__title h3, .productosPage__title h3 {
@@ -819,6 +820,9 @@ body {
 
 .footer__nav__ul__li__a {
   color: var(--color-tercero);
+  background: none;
+  outline: none;
+  border: none;
 }
 
 .footer__nav__ul__li__a:hover, .footer__nav__ul__li__a:focus {

@@ -239,7 +239,7 @@ body{
         margin-right: auto;
         
         &::-webkit-scrollbar{
-            height: 6px;
+            height: 8px;
         }
        
         &::-webkit-scrollbar-track {
@@ -418,6 +418,7 @@ body{
         h2{
             color: white;
             font-size: unquote("clamp(4rem, 1rem + 4vw, 30rem)");
+            cursor: pointer;
         }
 
         h3{
@@ -642,7 +643,10 @@ body{
                 
                 &__a{
                     color: var(--color-tercero);
-    
+                    background: none;
+                    outline: none;
+                    border: none;
+
                     &:hover, &:focus{
                         color: var(--color-segundo);
                     }
