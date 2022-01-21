@@ -432,11 +432,6 @@ body{
     visibility: hidden;
     overflow-x: hidden;
     overflow-y: scroll;
-    scrollbar-width:0;  /* Firefox */
-
-    &::-webkit-scrollbar {   
-        display: none; /* Safari and Chrome */
-    }
 
     &__title{
         width: 100%;

@@ -541,13 +541,6 @@ body {
   visibility: hidden;
   overflow-x: hidden;
   overflow-y: scroll;
-  scrollbar-width: 0;
-  /* Firefox */
-}
-
-.ofertasPage::-webkit-scrollbar, .productosPage::-webkit-scrollbar {
-  display: none;
-  /* Safari and Chrome */
 }
 
 .ofertasPage__title, .productosPage__title {
@@ -967,6 +960,14 @@ body {
 @media (pointer: coarse) {
   .nav__ul {
     margin-right: 0 !important;
+  }
+  .ofertasPage, .productosPage {
+    scrollbar-width: 0;
+    /* Firefox */
+  }
+  .ofertasPage::-webkit-scrollbar, .productosPage::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
   }
 }
 

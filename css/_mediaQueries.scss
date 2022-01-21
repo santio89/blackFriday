@@ -16,6 +16,14 @@
     .nav__ul{
         margin-right: 0 !important;
     }
+
+    .ofertasPage, .productosPage{
+        scrollbar-width:0;  /* Firefox */
+
+        &::-webkit-scrollbar {   
+            display: none; /* Safari and Chrome */
+        }
+    }
 }
 
 @media (min-width: 629px){
