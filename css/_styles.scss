@@ -245,8 +245,8 @@ body{
         }
 
         h2{
-            color: var(--color-segundo);
-            text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
+            color: var(--color-tercero);
+            text-shadow: 2px 2px 0 var(--color-segundo), 4px 4px 0 var(--color-segundo);
             font-size: 4.8rem;
             letter-spacing: .2rem;
             line-height: 1.2;
@@ -254,8 +254,6 @@ body{
             text-align: center;
         }
     }
-
-    
 
     &__wrapper{
         overflow-x: scroll;
