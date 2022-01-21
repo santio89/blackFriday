@@ -76,6 +76,7 @@
 
         &__title{
             width: 100%;
+            margin-right: 0;
             
             h2{
                 font-size: calc(3.2rem + 3.2vw);
@@ -98,7 +99,7 @@
             margin-bottom: 2rem;
             margin-left: 0;
             margin-right: 0;
-
+            
             &__item{
                 min-width: unset;
                 max-width: unset;
