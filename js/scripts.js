@@ -171,7 +171,7 @@ function toggleLista(){
             if (items == combos.id){
                 let carrito__newLi = document.createElement("li");
                 carrito__newLi.innerHTML = `
-                <span>COMBO ${combos.nombre}</span>
+                <span>COMBO<br>${combos.nombre}</span>
                 <span>-</span>
                 <span>$${combos.precioTotal}</span>
                 <span>(x${combos.inShopList()})</span>
