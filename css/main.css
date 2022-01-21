@@ -1070,7 +1070,8 @@ body {
     width: 100%;
   }
   .ofertasFeatured__title h2 {
-    font-size: 5.8rem;
+    font-size: calc(3.2rem + 3.2vw);
+    font-size: clamp(4rem, 3rem + 3vw, 7.4rem);
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;

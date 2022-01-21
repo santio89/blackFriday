@@ -78,7 +78,8 @@
             width: 100%;
             
             h2{
-                font-size: 5.8rem;
+                font-size: calc(3.2rem + 3.2vw);
+                font-size: unquote("clamp(4rem, 3rem + 3vw, 7.4rem)");
                 align-self: center;
             }
         }
