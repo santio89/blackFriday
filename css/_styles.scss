@@ -296,7 +296,9 @@ body{
                 min-width: 300px;
                 max-width: 300px;
                 display: flex;
-                flex-flow: column nowrap;
+                flex-flow: column wrap;
+                justify-content: start;
+                align-items: start;
                 padding-left: .8rem;
                 border-left: 2px dashed var(--color-segundo);
                 
@@ -306,17 +308,19 @@ body{
                 }
     
                 p{
-                    font-size: 1.12rem;
+                    
+                    font-size: 1.2rem;
+                    text-align: center
                 }
     
                 &__buttonContainer{
                     display: flex;
                     flex-flow: row wrap;
-                    justify-content: start;
-                    gap: 1.2rem;
+                    justify-content: center;
+                    gap: 2rem;
                     padding: .8rem;
                     padding-bottom: 0;
-        
+
                     button{
                         cursor: pointer;
                         line-height: .8;
