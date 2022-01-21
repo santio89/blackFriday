@@ -36,6 +36,10 @@ const combo5 = new Combo([whisky__chivas, vino__rutini, licor__jager, espumante_
 const combo6 = new Combo([licor__jager, cerveza__heineken, ron__morgan, whisky__vat], 20, "6", 94);
 const combo7 = new Combo([vino__norton, vino__rutini, espumante__chandon, vodka__smirnoff], 20, "7", 93);
 const combo8 = new Combo([cerveza__quilmes, cerveza__quilmes, cerveza__heineken, cerveza__heineken], 20, "8", 92);
+const combo9 = new Combo([fernet__branca, gaseosa__coca, vodka__smirnoff, jugo__cepita__naranja], 20, "9", 91);
+const combo10 = new Combo([cerveza__heineken, cerveza__quilmes, ron__morgan, jugo__cepita__manzana], 20, "10", 90);
+const combo11 = new Combo([cerveza__quilmes, cerveza__brahma, cerveza__heineken, cerveza__corona], 20, "11", 89);
+const combo12 = new Combo([gaseosa__coca, jugo__cepita__naranja, jugo__cepita__manzana, agua__glaciar], 20, "12", 88);
 
 stock1.addStockItem(cerveza__quilmes);
 stock1.addStockItem(cerveza__heineken);
@@ -83,6 +87,10 @@ stock1.addComboTotal(combo5);
 stock1.addComboTotal(combo6);
 stock1.addComboTotal(combo7);
 stock1.addComboTotal(combo8);
+stock1.addComboTotal(combo9);
+stock1.addComboTotal(combo10);
+stock1.addComboTotal(combo11);
+stock1.addComboTotal(combo12);
 
 stock1.addComboFeatured(combo1);
 stock1.addComboFeatured(combo2);
