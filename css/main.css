@@ -348,8 +348,8 @@ body {
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   width: 100%;
-  min-width: clamp(220px, 220px + 42vw,700px);
-  max-width: clamp(220px, 220px + 42vw,700px);
+  min-width: clamp(220px, 60px + 60vw,800px);
+  max-width: clamp(220px, 60px + 60vw,800px);
   margin-left: auto;
   margin-right: auto;
   -ms-flex-item-align: center;
@@ -369,8 +369,8 @@ body {
 
 .ofertasFeatured__wrapper__item {
   scroll-snap-align: start;
-  min-width: clamp(220px, 220px + 42vw,700px);
-  max-width: clamp(220px, 220px + 42vw,700px);
+  min-width: clamp(220px, 60px + 60vw,800px);
+  max-width: clamp(220px, 10vw,10rem);
   margin-left: auto;
   margin-right: auto;
 }
@@ -1108,7 +1108,7 @@ body {
     margin-top: 2rem;
     margin-bottom: 2rem;
     margin-left: 0;
-    margin-right: 0;
+    margin-right: auto;
   }
   .ofertasFeatured__wrapper__item {
     min-width: unset;

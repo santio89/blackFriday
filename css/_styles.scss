@@ -266,8 +266,8 @@ body{
         display: flex;
         flex-flow: row nowrap;
         width: 100%;
-        min-width: unquote("clamp(220px, 220px + 42vw,700px)");
-        max-width: unquote("clamp(220px, 220px + 42vw,700px)");
+        min-width: unquote("clamp(220px, 60px + 60vw,800px)");
+        max-width: unquote("clamp(220px, 60px + 60vw,800px)");
         margin-left: auto;
         margin-right: auto;
         align-self: center;
@@ -285,8 +285,8 @@ body{
 
         &__item{
             scroll-snap-align: start;
-            min-width: unquote("clamp(220px, 220px + 42vw,700px)");
-            max-width: unquote("clamp(220px, 220px + 42vw,700px)");
+            min-width: unquote("clamp(220px, 60px + 60vw,800px)");
+            max-width: unquote("clamp(220px, 10vw,10rem)");
             margin-left: auto;
             margin-right: auto;
             
