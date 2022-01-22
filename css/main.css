@@ -1124,6 +1124,7 @@ body {
   .ofertasFeatured__wrapper__item {
     min-width: unset;
     max-width: unset;
+    background: none;
   }
   .productos {
     -webkit-box-flex: 8;
