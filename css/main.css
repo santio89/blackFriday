@@ -1126,6 +1126,14 @@ body {
     max-width: unset;
     background: none;
   }
+  .ofertasFeatured__wrapper__item h3 {
+    font-size: 2.22rem;
+    text-shadow: 2px 2px 0 var(--color-primero), 2.6px 2.6px 0 var(--color-segundo);
+  }
+  .ofertasFeatured__wrapper__item p {
+    font-size: 1.22rem;
+    text-align: center;
+  }
   .productos {
     -webkit-box-flex: 8;
         -ms-flex: 8;

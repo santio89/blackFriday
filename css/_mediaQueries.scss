@@ -119,6 +119,15 @@
                 min-width: unset;
                 max-width: unset;
                 background: none;
+                h3{
+                    font-size: 2.22rem;
+                    text-shadow: 2px 2px 0 var(--color-primero), 2.6px 2.6px 0 var(--color-segundo);
+                }
+    
+                p{
+                    font-size: 1.22rem;
+                    text-align: center
+                }
             }
         }
 
