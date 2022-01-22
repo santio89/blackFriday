@@ -362,28 +362,24 @@ stock1.arrayCombosTotal.forEach(combos => {
     let wrapper__item = document.createElement("div");
     wrapper__item.classList.add("ofertasFeatured__wrapper__item");
 
-    let wrapper__item__content = document.createElement("div");
-    wrapper__item__content.classList.add("ofertasFeatured__wrapper__item__content");
-
-    wrapper__item__content.innerHTML = `
+    wrapper__item.innerHTML = `
     <h3><span>COMBO ${combo.nombre} &#8674; </span>$${combo.precioTotal}</h3>`;
 
     for (let j=0; j<combo.productos.length;j++){
         let combo__item = combo.productos[j];
-        wrapper__item__content.innerHTML += `
+        wrapper__item.innerHTML += `
         <p>${combo__item.tipo} ${combo__item.marca} ${combo__item.contNeto}ml</p>
         `
     }
 
-    wrapper__item__content.innerHTML += `
-    <div class="ofertasFeatured__wrapper__item__content__buttonContainer">
+    wrapper__item.innerHTML += `
+    <div class="ofertasFeatured__wrapper__item__buttonContainer">
     <button class="${combo.nombre}__menos" onclick="shopCart1.removeItem(${combo.id})">-</button>
     <button class="${combo.nombre}__mas" onclick="shopCart1.addItem(${combo.id})">+</button>
     </div>
     `
   
     ofertas.appendChild(wrapper__item);
-    wrapper__item.appendChild(wrapper__item__content);
 }); 
 
 /* event link ofertas/combos */
@@ -408,9 +404,6 @@ for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
 
     let wrapper__item = document.createElement("div");
     wrapper__item.classList.add("ofertasFeatured__wrapper__item");
-
-/*     let wrapper__item__content = document.createElement("div");
-    wrapper__item__content.classList.add("ofertasFeatured__wrapper__item__content"); */
 
     wrapper__item.innerHTML = `
     <h3><span>COMBO ${combo.nombre} &#8674; </span>$${combo.precioTotal}</h3>`;
