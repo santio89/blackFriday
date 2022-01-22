@@ -226,7 +226,7 @@ body{
     background-size: 400%;
     background-position: 76.8% 0%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: start;
     align-items: start;
     padding: 1rem;
@@ -237,7 +237,6 @@ body{
         flex-flow: column wrap;
         justify-content: start;
         align-items: start;
-        margin-right: 1rem;
         
         p{
             text-align: left;
@@ -265,12 +264,12 @@ body{
         padding-right: 1rem;
         display: flex;
         flex-flow: row nowrap;
-        min-width: 320px;
-        max-width: 320px;
+        min-width: 100%;
+        max-width: 100%;
         margin-top: 1rem;
         margin-bottom: 1rem;
         margin-left: auto;
-        margin-right: 0;
+        margin-right: auto;
         
         &::-webkit-scrollbar{
             height: 16px;
@@ -282,18 +281,20 @@ body{
 
         &__item{
             scroll-snap-align: start;
-            min-width: 320px;
-            max-width: 320px;
+            min-width: calc(100% + 2rem);
+            min-width: calc(100% + 2rem);
             margin-left: auto;
             display: flex;
             flex-flow: column wrap;
             justify-content: start;
             align-items: start;
             padding-left: 1.2rem;
-            border-left: 2px dashed var(--color-segundo);
+            border-left: 4px dashed var(--color-segundo);
             margin-left: auto;
             margin-right: auto;
-            
+            background: rgba(255, 255, 255,.04);
+            border-radius: .1em;
+
             h3{
                 font-size: 2rem;
                 text-shadow: 2px 2px 0 var(--color-primero), 2.6px 2.6px 0 var(--color-segundo);
@@ -312,7 +313,9 @@ body{
                 gap: 2rem;
                 padding: .8rem;
                 padding-bottom: 0;
-
+                margin-left: auto;
+                margin-right: auto;
+                
                 button{
                     cursor: pointer;
                     line-height: .8;

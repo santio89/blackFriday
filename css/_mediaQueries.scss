@@ -26,18 +26,6 @@
     }
 }
 
-@media (min-width: 600px){
-    .ofertasFeatured{
-        &__wrapper{
-            min-width: 640px;
-            max-width: 640px;
-            &__item{
-                min-width: 320px;
-                max-width: 320px;
-            }
-        }
-    }
-}
 
 @media (min-width: 629px){
     .nav{
@@ -52,6 +40,20 @@
         }
     }   
 }
+
+@media (min-width: 710px){
+    .ofertasFeatured{
+        &__wrapper{
+            min-width: 640px;
+            max-width: 640px;
+            &__item{
+                min-width: 320px;
+                max-width: 320px;
+            }
+        }
+    }
+}
+
 @media (min-width: 780px){
     .productos{
         grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
