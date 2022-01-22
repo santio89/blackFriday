@@ -364,8 +364,8 @@ body {
 
 .ofertasFeatured__wrapper__item {
   scroll-snap-align: start;
-  min-width: calc(100% + 2rem);
-  min-width: calc(100% + 2rem);
+  min-width: calc(100% + 2.2rem);
+  min-width: calc(100% + 2.2rem);
   margin-left: auto;
   display: -webkit-box;
   display: -ms-flexbox;
