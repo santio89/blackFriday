@@ -265,15 +265,12 @@ body{
         padding-right: 1rem;
         display: flex;
         flex-flow: row nowrap;
-        width: 100%;
-        min-width: unquote("clamp(220px, 60px + 60vw,800px)");
-        max-width: unquote("clamp(220px, 60px + 60vw,800px)");
-        margin-left: auto;
-        margin-right: auto;
-        align-self: center;
+        min-width: 320px;
+        max-width: 320px;
         margin-top: 1rem;
         margin-bottom: 1rem;
-        gap: 2rem;
+        margin-left: auto;
+        margin-right: 0;
         
         &::-webkit-scrollbar{
             height: 16px;
@@ -285,58 +282,53 @@ body{
 
         &__item{
             scroll-snap-align: start;
-            min-width: unquote("clamp(220px, 60px + 60vw,800px)");
-            max-width: unquote("clamp(220px, 10vw,10rem)");
+            min-width: 320px;
+            max-width: 320px;
+            margin-left: auto;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: start;
+            align-items: start;
+            padding-left: 1.2rem;
+            border-left: 2px dashed var(--color-segundo);
             margin-left: auto;
             margin-right: auto;
             
-            &__content{
-                margin-left: auto;
-                margin-right: auto;
-                min-width: 300px;
-                max-width: 300px;
-                display: flex;
-                flex-flow: column wrap;
-                justify-content: start;
-                align-items: start;
-                padding-left: .8rem;
-                border-left: 2px dashed var(--color-segundo);
-                
-                h3{
-                    font-size: 2rem;
-                    text-shadow: 2px 2px 0 var(--color-primero), 2.6px 2.6px 0 var(--color-segundo);
-                }
-    
-                p{
-                    
-                    font-size: 1.2rem;
-                    text-align: center
-                }
-    
-                &__buttonContainer{
-                    display: flex;
-                    flex-flow: row wrap;
-                    justify-content: center;
-                    gap: 2rem;
-                    padding: .8rem;
-                    padding-bottom: 0;
+            h3{
+                font-size: 2rem;
+                text-shadow: 2px 2px 0 var(--color-primero), 2.6px 2.6px 0 var(--color-segundo);
+            }
 
-                    button{
-                        cursor: pointer;
-                        line-height: .8;
-                        margin-bottom: 0;
-                        background: none;
-                        outline: none;
-                        border: none;
-                        font-size: 6rem;
-                        color: var(--color-tercero-dark);
-    
-                        &:hover, &:focus{
-                            color: var(--color-segundo);
-                        }
+            p{
+                
+                font-size: 1.2rem;
+                text-align: center
+            }
+
+            &__buttonContainer{
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                gap: 2rem;
+                padding: .8rem;
+                padding-bottom: 0;
+
+                button{
+                    cursor: pointer;
+                    line-height: .8;
+                    margin-bottom: 0;
+                    background: none;
+                    outline: none;
+                    border: none;
+                    font-size: 6rem;
+                    color: var(--color-tercero-dark);
+
+                    &:hover, &:focus{
+                        color: var(--color-segundo);
                     }
                 }
             }
+            
            
             
         }
