@@ -202,8 +202,8 @@ body {
 .validation__denied {
   color: red;
   text-align: center;
-  -webkit-animation: denied 4s forwards;
-          animation: denied 4s forwards;
+  -webkit-animation: denied 4000ms forwards;
+          animation: denied 4000ms forwards;
 }
 
 @-webkit-keyframes denied {
