@@ -435,8 +435,17 @@ for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
 
 
 /* validation */
+if (localStorage.getItem("validation")){
+    if (localStorage.getItem("validation") == 1){
+        let validation = document.querySelector(".validation");
+        validation.classList.add("validation__translated");
+        validation.style.display = "none";
+        document.documentElement.style.overflowY = "scroll";
+    }
+}
 
 function validationYes(){
+    localStorage.setItem("validation", 1);
     let validation = document.querySelector(".validation");
 
     validation.classList.add("validation__translated");
@@ -449,10 +458,11 @@ function validationYes(){
     validation__header__info.style.marginLeft = `${scrollbar__width}px`;
     validation__age.style.marginLeft = `${scrollbar__width}px`;
     
-    setTimeout(()=>validation.classList.add("hidden"), 800);
+    setTimeout(()=>validation.style.display = "none", 800);
 }
 
 function validationNo(){
+    localStorage.setItem("validation", 0);
     let validation = document.querySelector(".validation");
     let denied = document.querySelector(".validation__denied");
 
