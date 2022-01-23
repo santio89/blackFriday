@@ -241,8 +241,9 @@ function toggleProductos(){
         nav__ofertas.classList.toggle("active");
     }
 
+    
     if (productos.classList.contains("visible")){
-        setTimeout(()=>productos.classList.remove("visible"), 400);
+        setTimeout(()=>productos.classList.remove("visible"), 200);
     } else{
         productos.classList.add("visible");
     }
@@ -250,7 +251,7 @@ function toggleProductos(){
     let ofertas = document.querySelector(".ofertasPage");
     if (ofertas.classList.contains("carrito__lista__translated")){
         ofertas.classList.toggle("carrito__lista__translated");
-        setTimeout(()=>ofertas.classList.remove("visible"), 400);
+        setTimeout(()=>ofertas.classList.remove("visible"), 200);
     }
 
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
@@ -324,7 +325,7 @@ function toggleOfertas(){
     }
 
     if (ofertas.classList.contains("visible")){
-        setTimeout(()=>ofertas.classList.remove("visible"), 400);
+        setTimeout(()=>ofertas.classList.remove("visible"), 200);
     } else{
         ofertas.classList.add("visible");
     }
@@ -332,7 +333,7 @@ function toggleOfertas(){
     let productos = document.querySelector(".productosPage");
     if (productos.classList.contains("carrito__lista__translated")){
         productos.classList.toggle("carrito__lista__translated");
-        setTimeout(()=>productos.classList.remove("visible"), 400);
+        setTimeout(()=>productos.classList.remove("visible"), 200);
     }
     
 
