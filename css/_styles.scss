@@ -155,7 +155,7 @@ body{
     &__denied{
         color: red;
         text-align: center;
-        animation: denied 4000ms forwards;
+        opacity: 0
     }
 }
 

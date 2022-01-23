@@ -465,17 +465,8 @@ function validationNo(){
     localStorage.setItem("validation", 0);
     let validation = document.querySelector(".validation");
     let denied = document.querySelector(".validation__denied");
-
-    if(!denied){
-        let denied = document.createElement("div");
-        denied.classList.add("validation__denied");
-        denied.textContent = "Debes ser mayor de edad para visitar el sitio."
-        validation.appendChild(denied);
-        
-    } else{
-        validation.appendChild(denied);
-        denied.textContent = "Debes ser mayor de edad para visitar el sitio."
-    }
+    denied.style.animation = "denied 4000ms";
+    validation.appendChild(denied);
 }
 
 let validation__yes = document.querySelector(".validation__age__yes");
