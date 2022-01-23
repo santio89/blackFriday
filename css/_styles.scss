@@ -21,7 +21,7 @@
 html{
     font-size: 100%;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
     --font-primera: 'Bebas Neue', 'sans-serif';
     scroll-behavior: smooth;
 }
@@ -79,6 +79,93 @@ body{
     justify-content: space-between;
     height: 100%;
     width: 100%;
+}
+
+.validation{
+    position: fixed;
+    inset: 0;
+    padding-left: clamp(.8rem, 2vw, 2rem);
+    padding-right: clamp(.8rem, 2vw, 2rem);
+    background: linear-gradient(135deg, var(--color-segundo) 21%, var(--color-primero) 21%);
+    z-index: 3;
+    overflow-x: hidden;
+    transition: transform 800ms;
+
+    &__translated{
+        transform: translateY(-120%);
+    }
+
+    &__title{
+        width: 100%;
+        border-bottom: 4px dashed var(--color-segundo);
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: start;
+        align-items: start;
+        
+        h2{
+            color: white;
+            font-size: unquote("clamp(4rem, 1rem + 4vw, 30rem)");
+            cursor: pointer;
+        }
+
+        h3{
+            align-self: center;
+            padding: 0;
+            color: var(--color-segundo);
+            font-size: unquote("clamp(6rem, 1rem + 6vw, 40rem)");
+        }
+    }
+
+    &__age{
+        margin-bottom: unquote("clamp(1.2rem, 1.2rem + 2vw, 8rem)");
+        margin-top: unquote("clamp(1.2rem, 1.2rem + 2vw, 8rem)");
+        font-size: unquote("clamp(4rem, 1rem + 4vw, 30rem)");
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1.2rem;
+
+        h3{
+            line-height: 1;
+        }
+
+        &__container{
+            display: flex;
+            flex-flow: row wrap;
+            gap: 3.8rem;
+            justify-content: center;
+            align-items: center;
+
+            button{
+                border: 4px dashed var(--color-segundo-dark);
+                outline: none;
+                background: transparent;
+                color: var(--color-tercero);
+                width: 4ch;
+                
+                &:hover, &:focus{
+                    color: var(--color-segundo-dark);
+                }
+            }
+        }
+    }
+
+    &__denied{
+        color: red;
+        text-align: center;
+        animation: denied 4s forwards;
+    }
+}
+
+@keyframes denied{
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+    }
 }
 
 .header{
@@ -490,7 +577,12 @@ body{
 }
 
 .visible{
-            visibility: visible !important;
+    visibility: visible !important;
+
+}
+
+.hidden{
+    visibility: hidden !important;
 }
 
 .carrito{
@@ -791,4 +883,7 @@ background: var(--color-primero);
     }
 }
   
+
+
 /* fin scrollbar */
+

@@ -424,3 +424,45 @@ for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
     
     ofertasFeatured.appendChild(wrapper__item);
 }
+
+
+
+
+/* validation */
+
+function validationYes(){
+    let validation = document.querySelector(".validation");
+
+    validation.classList.add("validation__translated");
+    document.documentElement.style.overflowY = "scroll";
+
+    /* al aparecer el scroll que estaba escondido, ajusto la posicion de los elementos de esta placa acordes al tamaño de la scrolbar para que no parezca que se mueven */
+    let validation__header__info = document.getElementById("validation__header__info");
+    let validation__age = document.querySelector(".validation__age");
+    let scrollbar__width = getScrollbarWidth();
+    validation__header__info.style.marginLeft = `${scrollbar__width}px`;
+    validation__age.style.marginLeft = `${scrollbar__width}px`;
+    
+    setTimeout(()=>validation.classList.add("hidden"), 800);
+}
+
+function validationNo(){
+    let validation = document.querySelector(".validation");
+    let denied = document.querySelector(".validation__denied");
+
+    if(!denied){
+        let denied = document.createElement("div");
+        denied.classList.add("validation__denied");
+        denied.textContent = "Debes ser mayor de edad para visitar el sitio."
+        validation.appendChild(denied);
+        
+    } else{
+        validation.appendChild(denied);
+        denied.textContent = "Debes ser mayor de edad para visitar el sitio."
+    }
+}
+
+let validation__yes = document.querySelector(".validation__age__yes");
+let validation__no = document.querySelector(".validation__age__no");
+validation__yes.addEventListener("click", validationYes);
+validation__no.addEventListener("click", validationNo);

@@ -24,6 +24,14 @@
             display: none; /* Safari and Chrome */
         }
     }
+
+    .validation{
+        scrollbar-width:0;  /* Firefox */
+
+        &::-webkit-scrollbar {   
+            display: none; /* Safari and Chrome */
+        }
+    }
 }
 
 
@@ -61,6 +69,10 @@
 }
 
 @media (min-width: 1024px){
+    .validation{
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
     .nav{
         padding-left: 4rem;
         padding-right: 4rem;
