@@ -713,7 +713,7 @@ body {
   transition: transform 400ms, -webkit-transform 400ms;
   visibility: hidden;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .ofertasPage__title, .productosPage__title {

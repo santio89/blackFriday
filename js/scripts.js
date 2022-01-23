@@ -231,6 +231,7 @@ function getScrollbarWidth() {
 function toggleProductos(){
     let productos = document.querySelector(".productosPage");
     productos.classList.toggle("carrito__lista__translated");
+    productos.style.overflowY = "scroll";
     
     let nav__productos = document.querySelector("#nav__productos");
     nav__productos.classList.toggle("active");
@@ -254,24 +255,25 @@ function toggleProductos(){
 
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
     
-        let nav__ul = document.querySelector(".nav__ul");
-        let carrito = document.querySelector(".carrito");
-        let scrollbar__width = getScrollbarWidth();
+    let nav__ul = document.querySelector(".nav__ul");
+    let carrito = document.querySelector(".carrito");
+    let scrollbar__width = getScrollbarWidth();
 
-        if(document.documentElement.style.overflowY == "hidden"){
-            let ofertasPage = document.querySelector(".ofertasPage");
-            if (!ofertasPage.classList.contains("visible")){
-                document.documentElement.style.overflowY = "scroll";
-                document.documentElement.style.marginRight = "0";
-                nav__ul.style.marginRight = "0";
-                carrito.style.right = "10px";
-            } 
-        } else{
-            document.documentElement.style.overflowY = "hidden";
-            document.documentElement.style.marginRight = `${scrollbar__width}px`;
-            nav__ul.style.marginRight = `${scrollbar__width}px`;
-            carrito.style.right = `${scrollbar__width + 10}px`;
-        }
+    if(document.documentElement.style.overflowY == "hidden"){
+        let ofertasPage = document.querySelector(".ofertasPage");
+        if (!ofertasPage.classList.contains("visible")){
+            document.documentElement.style.overflowY = "scroll";
+            productos.style.overflowY = "hidden";
+            document.documentElement.style.marginRight = "0";
+            nav__ul.style.marginRight = "0";
+            carrito.style.right = "10px";
+        } 
+    } else{
+        document.documentElement.style.overflowY = "hidden";
+        document.documentElement.style.marginRight = `${scrollbar__width}px`;
+        nav__ul.style.marginRight = `${scrollbar__width}px`;
+        carrito.style.right = `${scrollbar__width + 10}px`;
+    }
 }
 
 /* cards de la seccion productos */
@@ -311,6 +313,8 @@ cerrar__productos__title.onclick = toggleProductos;
 function toggleOfertas(){
     let ofertas = document.querySelector(".ofertasPage");
     ofertas.classList.toggle("carrito__lista__translated");
+    ofertas.style.overflowY = "scroll";
+    
     let nav__ofertas = document.querySelector("#nav__ofertas");
     nav__ofertas.classList.toggle("active");
 
@@ -342,6 +346,7 @@ function toggleOfertas(){
             let productosPage = document.querySelector(".productosPage");
             if (!productosPage.classList.contains("visible")){
                 document.documentElement.style.overflowY = "scroll";
+                ofertas.style.overflowY = "hidden";
                 document.documentElement.style.marginRight = "0";
                 nav__ul.style.marginRight = "0";
                 carrito.style.right = "10px";

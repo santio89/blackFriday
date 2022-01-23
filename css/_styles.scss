@@ -549,7 +549,7 @@ body{
     transition: transform 400ms;
     visibility: hidden;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
 
     &__title{
         width: 100%;
