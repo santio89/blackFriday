@@ -126,11 +126,17 @@ stock1.arrayBebidasFeatured.forEach(bebidas => {
     <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">stock: ${bebidas.stock}</p>    
     <h3>$${bebidas.precio}</h3>
     <div class="productos__producto__buttonContainer">
-    <button class="${bebidas.marca}__menos" onclick="shopCart1.removeItem(${bebidas.id})">-</button>
-    <button class="${bebidas.marca}__mas" onclick="shopCart1.addItem(${bebidas.id})">+</button>
+    <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsFeatured">-</button>
+    <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__productsFeatured">+</button>
     </div>
     `;
-     productosFeatured.appendChild(producto);
+    
+    productosFeatured.appendChild(producto);
+
+    let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__menos__productsFeatured`);
+    let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__mas__productsFeatured`);
+    bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
+    bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
 }); 
 
 /* carrito - icono */
@@ -289,11 +295,17 @@ stock1.arrayBebidasTotal.forEach(bebidas => {
     <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">stock: ${bebidas.stock}</p>    
     <h3>$${bebidas.precio}</h3>
     <div class="productos__producto__buttonContainer">
-    <button class="${bebidas.marca}__menos" onclick="shopCart1.removeItem(${bebidas.id})">-</button>
-    <button class="${bebidas.marca}__mas" onclick="shopCart1.addItem(${bebidas.id})">+</button>
+    <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal">-</button>
+    <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal">+</button>
     </div>
     `;
-     productos.appendChild(producto);
+
+    productos.appendChild(producto);
+
+    let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal`);
+    let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal`);
+    bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
+    bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
 }); 
 
 /* event link productos */
@@ -363,29 +375,34 @@ function toggleOfertas(){
 /* cards de la seccion ofertas/combos */
 let ofertas = document.getElementById("ofertas");
 stock1.arrayCombosTotal.forEach(combos => {
-    let combo = combos;
 
     let wrapper__item = document.createElement("div");
     wrapper__item.classList.add("ofertasFeatured__wrapper__item");
 
     wrapper__item.innerHTML = `
-    <h3><span>COMBO ${combo.nombre} &#8674; </span>$${combo.precioTotal}</h3>`;
+    <h3><span>COMBO ${combos.nombre} &#8674; </span>$${combos.precioTotal}</h3>`;
 
-    for (let j=0; j<combo.productos.length;j++){
-        let combo__item = combo.productos[j];
+    for (let j=0; j<combos.productos.length;j++){
+        let combos__item = combos.productos[j];
         wrapper__item.innerHTML += `
-        <p>${combo__item.tipo} ${combo__item.marca} ${combo__item.contNeto}ml</p>
+        <p>${combos__item.tipo} ${combos__item.marca} ${combos__item.contNeto}ml</p>
         `
     }
 
     wrapper__item.innerHTML += `
     <div class="ofertasFeatured__wrapper__item__buttonContainer">
-    <button class="${combo.nombre}__menos" onclick="shopCart1.removeItem(${combo.id})">-</button>
-    <button class="${combo.nombre}__mas" onclick="shopCart1.addItem(${combo.id})">+</button>
+    <button class="COMBO${combos.nombre.replace(/\s/g,"")}__menos__combosTotal">-</button>
+    <button class="COMBO${combos.nombre.replace(/\s/g,"")}__mas__combosTotal">+</button>
     </div>
     `
   
     ofertas.appendChild(wrapper__item);
+
+    let combo__menos = document.querySelector(`.COMBO${combos.nombre.replace(/\s/g,"")}__menos__combosTotal`);
+    let combo__mas = document.querySelector(`.COMBO${combos.nombre.replace(/\s/g,"")}__mas__combosTotal`);
+    combo__menos.addEventListener("click", ()=>{shopCart1.removeItem(combos.id)});
+    combo__mas.addEventListener("click", ()=>{shopCart1.addItem(combos.id)});
+
 }); 
 
 /* event link ofertas/combos */
@@ -423,12 +440,17 @@ for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
 
     wrapper__item.innerHTML += `
     <div class="ofertasFeatured__wrapper__item__buttonContainer">
-    <button class="${combo.nombre}__menos" onclick="shopCart1.removeItem(${combo.id})">-</button>
-    <button class="${combo.nombre}__mas" onclick="shopCart1.addItem(${combo.id})">+</button>
+    <button class="COMBO${combo.nombre.replace(/\s/g,"")}__menos__combosFeatured" onclick="shopCart1.removeItem(${combo.id})">-</button>
+    <button class="COMBO${combo.nombre.replace(/\s/g,"")}__mas__combosFeatured" onclick="shopCart1.addItem(${combo.id})">+</button>
     </div>
     `
     
     ofertasFeatured.appendChild(wrapper__item);
+
+    let combo__menos = document.querySelector(`.COMBO${combo.nombre.replace(/\s/g,"")}__menos__combosFeatured`);
+    let combo__mas = document.querySelector(`.COMBO${combo.nombre.replace(/\s/g,"")}__mas__combosFeatured`);
+    combo__menos.addEventListener("click", ()=>{shopCart1.removeItem(combo.id)});
+    combo__mas.addEventListener("click", ()=>{shopCart1.addItem(combo.id)});
 }
 
 
