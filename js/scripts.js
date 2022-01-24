@@ -220,7 +220,7 @@ carrito__vaciar.onclick = vaciarCompra;
 
 /* carrito - checkout */
 function checkout(){
-    alert(`***CHECKOUT***\nTOTAL: $${shopCart1.subTotal}\nDirección -> Medios de Pago -> Confirmar`);
+    alert(`***CHECKOUT***\nTOTAL: $${shopCart1.subTotal}\nConfirmación, envío y medios de pago`);
 }
 
 let carrito__checkout = document.querySelector(".carrito__lista__checkout");
