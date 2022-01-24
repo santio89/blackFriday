@@ -73,7 +73,7 @@ button{
 body{
     background: linear-gradient(45deg, var(--color-segundo) 38%, var(--color-primero) 38%);
     font-size: 2rem;
-    color: white;
+    color: var(--color-tercero);
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
@@ -107,7 +107,7 @@ body{
         align-items: start;
         
         h2{
-            color: white;
+            color: var(--color-tercero);
             font-size: unquote("clamp(4rem, 1rem + 4vw, 30rem)");
             cursor: pointer;
         }
@@ -186,7 +186,7 @@ body{
 
     &__title{
         font-size: unquote("clamp(8rem, 1rem + 10vw, 40rem)");
-        color: white;
+        color: var(--color-tercero);
         padding: 2rem;
         padding-left: clamp(.8rem, 2vw, 2rem);
         padding-right: clamp(.8rem, 2vw, 2rem);
@@ -214,7 +214,7 @@ body{
 
 .nav{
     width: 100%;
-    background: white;
+    background: var(--color-tercero);
     color: var(--color-primero);
     display: flex;
     flex-flow: row wrap;
@@ -311,7 +311,7 @@ body{
 .ofertasFeatured{
     width: 100%;
     border-radius: .5rem;
-    border: 2px solid white;
+    border: 2px solid var(--color-tercero);
     background: linear-gradient(-45deg, var(--color-primero) 38%, var(--color-segundo-dark) 38%);
     background-size: 400%;
     background-position: 76.8% 0%;
@@ -467,7 +467,7 @@ body{
 
     &__producto{   
         border-radius: .5rem;
-        border: 2px solid white;
+        border: 2px solid var(--color-tercero);
         background: var(--color-segundo);
         display: flex;
         flex-flow: column;
@@ -532,7 +532,7 @@ body{
                 font-size: unquote("clamp(1.8rem, 3.8rem + 2.6vw,8rem)");
 
                 &:hover, &:focus{
-                    color: white;
+                    color: var(--color-tercero);
                 }
             }
         }
@@ -566,7 +566,7 @@ body{
         align-items: start;
         
         h2{
-            color: white;
+            color: var(--color-tercero);
             font-size: unquote("clamp(4rem, 1rem + 4vw, 30rem)");
             cursor: pointer;
         }
@@ -591,7 +591,7 @@ body{
     right: 10px;
     width: 90px;
     height: 90px;
-    border: 2px solid white;
+    border: 2px solid var(--color-tercero);
     background: var(--color-cuarto);
     border-radius: .5rem;
     display: flex;
@@ -633,7 +633,7 @@ body{
         border-radius: 1rem;
         font-size: 2rem;
         padding: unquote("clamp(.4rem, .4rem + 1vw, 1rem)");
-        box-shadow: 0 0 0 4px var(--color-segundo), 0 0 0 8px white;
+        box-shadow: 0 0 0 4px var(--color-segundo), 0 0 0 8px var(--color-tercero);
         display: flex;
         flex-flow: column nowrap;
         z-index: 2;
@@ -680,13 +680,13 @@ body{
             font-weight: bold;
             background: none;
             border: none;
-            color: white;
+            color: var(--color-tercero);
             cursor: pointer;
             text-shadow: 2.2px 2.2px 0 var(--color-primero), 3px 3px 0 var(--color-segundo);
 
             &:hover, &:focus{
                 color: var(--color-segundo);
-                text-shadow: 2.2px 2.2px 0 var(--color-primero), 3px 3px 0 white;
+                text-shadow: 2.2px 2.2px 0 var(--color-primero), 3px 3px 0 var(--color-tercero);
             }
         }
         
@@ -705,16 +705,16 @@ body{
         &__checkout{
             font-size: 1.4em;
             font-weight: bold;
-            background: white;
+            background: var(--color-tercero);
             border: none;
             outline: none;
-            text-shadow: 2px 2px 0 white, 3px 3px 0 var(--color-primero);
+            text-shadow: 2px 2px 0 var(--color-tercero), 3px 3px 0 var(--color-primero);
             border-radius: .4rem;
             color: var(--color-primero);
             box-shadow: 2.8px 2.8px 0 0 var(--color-primero), 4.8px 4.8px 0 0 var(--color-segundo);
             
             &:hover, &:focus{ 
-                text-shadow: 2px 2px 0 white, 3px 3px 0 var(--color-segundo);
+                text-shadow: 2px 2px 0 var(--color-tercero), 3px 3px 0 var(--color-segundo);
                 transform: translate(2px, 2px);
             }
             
@@ -768,7 +768,7 @@ body{
 
 
 .footer{
-    border-top: 1px solid white;
+    border-top: 1px solid var(--color-tercero);
     margin-top: auto;
     padding: 1rem;
     padding-left: clamp(.8rem, 2vw, 2rem);
