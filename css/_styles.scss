@@ -292,11 +292,14 @@ body{
             border: none;
             padding-left: .8rem;
             padding-right: .8rem;
+            color: var(--color-primero);
+
+            &:hover{
+                color: var(--color-segundo);
+            }
         }     
+        
         &__dark{
-            display: none;
-        }
-        &__light{
             display: none;
         }
     } 

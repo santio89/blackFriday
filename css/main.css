@@ -382,13 +382,14 @@ body {
   border: none;
   padding-left: .8rem;
   padding-right: .8rem;
+  color: var(--color-primero);
+}
+
+.nav__toggleLightDark__light:hover, .nav__toggleLightDark__dark:hover {
+  color: var(--color-segundo);
 }
 
 .nav__toggleLightDark__dark {
-  display: none;
-}
-
-.nav__toggleLightDark__light {
   display: none;
 }
 
