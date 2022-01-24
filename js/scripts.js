@@ -485,7 +485,7 @@ function validationNo(){
     localStorage.setItem("validation", 0);
     let validation = document.querySelector(".validation");
     let denied = document.querySelector(".validation__denied");
-    denied.style.animation = "denied 4000ms";
+    denied.style.animation = "denied 6000ms";
     validation.appendChild(denied);
 }
 
