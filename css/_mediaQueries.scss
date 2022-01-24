@@ -1,16 +1,12 @@
 @media (max-width: 409px){
-    .nav__logo{
-        font-size: .8em;
-        top: .1rem;
-        left: .1rem;
-    }
+
 
     .nav__ul{
         font-size: 1.6rem;
     }
 }
 
-@media (max-width: 339px){
+@media (max-width: 349px){
     .nav__ul{
         font-size: 1.4rem;
 
@@ -23,6 +19,15 @@
     .nav__toggleLightDark__light, .nav__toggleLightDark__dark{
         padding-left: .4rem;
         padding-right: .4rem;
+    }
+
+}
+
+@media (max-width: 279px){
+    .nav__logo{
+        font-size: .8em;
+        top: .1rem;
+        left: .1rem;
     }
 }
 
