@@ -493,3 +493,8 @@ let validation__yes = document.querySelector(".validation__age__yes");
 let validation__no = document.querySelector(".validation__age__no");
 validation__yes.addEventListener("click", validationYes);
 validation__no.addEventListener("click", validationNo);
+
+
+/* toggle dark light mode */
+let lightMode = document.querySelector(".nav__toggleLightDark__light");
+let darkMode = document.querySelector(".nav__toggleLightDark__dark");

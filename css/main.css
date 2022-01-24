@@ -248,6 +248,7 @@ body {
   padding: clamp(0.8rem, 2vw, 2rem);
   padding-bottom: calc(clamp(.8rem, 2vw, 2rem) / 2);
   padding-top: 2rem;
+  position: relative;
 }
 
 .header__title {
@@ -373,6 +374,13 @@ body {
 
 .nav--footer a {
   color: darkgray;
+}
+
+.nav__toggleLightDark {
+  position: absolute;
+  top: 0;
+  right: clamp(0.8rem, 2vw, 2rem);
+  display: none;
 }
 
 .active {
@@ -1198,6 +1206,9 @@ body {
   }
   .nav__logo {
     left: 4rem;
+  }
+  .darkNightMode {
+    right: 4rem;
   }
   .header {
     padding: 4rem;

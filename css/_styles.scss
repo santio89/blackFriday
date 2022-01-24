@@ -184,7 +184,7 @@ body{
     padding: clamp(.8rem, 2vw, 2rem);
     padding-bottom: calc(clamp(.8rem, 2vw, 2rem) / 2);
     padding-top: 2rem;
-
+    position: relative;
 
     &__title{
         font-size: unquote("clamp(8rem, 1rem + 10vw, 40rem)");
@@ -284,8 +284,15 @@ body{
             color: darkgray;
         }
     }
-    
+    &__toggleLightDark{
+        position: absolute;
+        top: 0;
+        right: clamp(.8rem, 2vw, 2rem);
+        display: none;
+    } 
 }
+
+
 
 .active{
     color: var(--color-segundo);
