@@ -83,7 +83,10 @@ body{
 
 .validation{
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     padding-left: clamp(.8rem, 2vw, 2rem);
     padding-right: clamp(.8rem, 2vw, 2rem);
     background: linear-gradient(135deg, var(--color-segundo) 21%, var(--color-primero) 21%);
@@ -155,7 +158,8 @@ body{
     &__denied{
         color: red;
         text-align: center;
-        opacity: 0
+        opacity: 0;
+        margin-bottom: 1rem;
     }
 }
 

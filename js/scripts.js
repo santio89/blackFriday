@@ -435,14 +435,14 @@ for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
 
 
 /* validation */
-if (localStorage.getItem("validation")){
+/* if (localStorage.getItem("validation")){
     if (localStorage.getItem("validation") == 1){
         let validation = document.querySelector(".validation");
         validation.classList.add("validation__translated");
         validation.style.display = "none";
         document.documentElement.style.overflowY = "scroll";
     }
-}
+} */
 
 function validationYes(){
     localStorage.setItem("validation", 1);
