@@ -1,16 +1,31 @@
-@media (max-width: 349px){
+@media (max-width: 409px){
     .nav__logo{
         font-size: .8em;
         top: .1rem;
         left: .1rem;
     }
+
+    .nav__ul{
+        font-size: 1.6rem;
+    }
 }
 
-@media (max-width: 319px){
- .nav__ul{
-     font-size: 1.4rem;
- }
+@media (max-width: 339px){
+    .nav__ul{
+        font-size: 1.4rem;
+
+        &__li__a{
+            padding-left: .4rem;
+            padding-right: .4rem;
+        }
+    }
+
+    .nav__toggleLightDark__light, .nav__toggleLightDark__dark{
+        padding-left: .4rem;
+        padding-right: .4rem;
+    }
 }
+
 
 @media (pointer: coarse){
     .nav__ul{
