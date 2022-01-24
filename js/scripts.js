@@ -432,8 +432,6 @@ for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
 }
 
 
-
-
 /* validation */
 if (localStorage.getItem("validation")){
     if (localStorage.getItem("validation") == 1){
