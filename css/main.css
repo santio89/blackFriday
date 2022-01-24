@@ -16,6 +16,8 @@
   --color-cuarto: rgb(31, 0, 37);
   --color-primero-rgb: 0, 0, 0;
   --color-segundo-rgb: 253, 46, 121;
+  --color-tercero-rgb: 255, 255, 255;
+  --color-primero-dark: rgb(30, 30, 30);
   --color-segundo-dark: rgb(194, 33, 92);
   --color-tercero-dark: rgb(220, 220, 220);
 }
