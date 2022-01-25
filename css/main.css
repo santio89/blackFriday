@@ -10,8 +10,8 @@
 }
 
 :root {
-  --color-background-primero: rgb(18, 18, 18);
-  --color-background-segundo: rgb(220, 220, 220);
+  --color-background-primero: rgb(20, 20, 20);
+  --color-background-segundo: rgb(230, 230, 230);
   --color-primero: rgb(0, 0, 0);
   --color-segundo: rgb(253, 46, 121);
   --color-tercero: rgb(255, 255, 255);
@@ -19,9 +19,9 @@
   --color-primero-rgb: 0, 0, 0;
   --color-segundo-rgb: 253, 46, 121;
   --color-tercero-rgb: 255, 255, 255;
-  --color-primero-dark: rgb(18, 18, 18);
+  --color-primero-dark: rgb(20, 20, 20);
   --color-segundo-dark: rgb(194, 33, 92);
-  --color-tercero-dark: rgb(220, 220, 220);
+  --color-tercero-dark: rgb(230, 230, 230);
   --font-primera: 'Bebas Neue', 'sans-serif';
 }
 
@@ -372,10 +372,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background: transparent;
-}
-
-.nav--footer a {
-  color: darkgray;
 }
 
 .nav__toggleLightDark__light, .nav__toggleLightDark__dark {
@@ -1097,8 +1093,8 @@ body {
 }
 
 .footer__blackFriday__hr {
-  background: -webkit-gradient(linear, right top, left top, from(var(--color-primero)), to(var(--color-segundo-dark)));
-  background: linear-gradient(270deg, var(--color-primero), var(--color-segundo-dark));
+  background: -webkit-gradient(linear, right top, left top, from(var(--color-background-primero)), to(var(--color-segundo-dark)));
+  background: linear-gradient(270deg, var(--color-background-primero), var(--color-segundo-dark));
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;

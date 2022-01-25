@@ -8,8 +8,8 @@
 }
 
 :root{
-    --color-background-primero: rgb(18, 18, 18);
-    --color-background-segundo: rgb(220, 220, 220);
+    --color-background-primero: rgb(20, 20, 20);
+    --color-background-segundo: rgb(230, 230, 230);
     --color-primero: rgb(0, 0, 0);
     --color-segundo: rgb(253, 46, 121);
     --color-tercero: rgb(255, 255, 255);
@@ -17,9 +17,9 @@
     --color-primero-rgb: 0, 0, 0;
     --color-segundo-rgb: 253, 46, 121;
     --color-tercero-rgb: 255, 255, 255;
-    --color-primero-dark: rgb(18, 18, 18);
+    --color-primero-dark: rgb(20, 20, 20);
     --color-segundo-dark: rgb(194, 33, 92);
-    --color-tercero-dark: rgb(220, 220, 220);
+    --color-tercero-dark: rgb(230, 230, 230);
     --font-primera: 'Bebas Neue', 'sans-serif';
 }
 
@@ -281,10 +281,6 @@ body{
         justify-content: start;
         align-items: center;
         background: transparent;
-
-        a{
-            color: darkgray;
-        }
     }
 
     &__toggleLightDark{
@@ -851,7 +847,7 @@ body{
         gap: 1rem;
 
         &__hr{
-            background: linear-gradient(270deg, var(--color-primero) , var(--color-segundo-dark));
+            background: linear-gradient(270deg, var(--color-background-primero) , var(--color-segundo-dark));
             flex:1;
             height: 2px;
             border-radius: calc(1vw + 1vh);            
