@@ -630,8 +630,8 @@ body {
 
 .productos__producto {
   border-radius: .5rem;
-  border: 2px solid var(--color-tercero);
   background: var(--color-segundo);
+  background: linear-gradient(45deg, var(--color-segundo) 52%, var(--color-background-primero) 52%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -641,6 +641,7 @@ body {
           flex-flow: column;
   max-width: 240px;
   aspect-ratio: 3/5;
+  outline: 2px dashed var(--color-segundo-dark);
 }
 
 .productos__producto h2 {
