@@ -527,10 +527,16 @@ lightMode.addEventListener("click", ()=>{
     let tempPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-primero");
     let tempTercero = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero");
     let tempPrimeroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-dark");
+    let tempTerceroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-dark");
+    let tempPrimeroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-rgb");
+    let tempTerceroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-rgb");
     
     document.documentElement.style.setProperty("--color-primero", tempTercero);
     document.documentElement.style.setProperty("--color-tercero", tempPrimero);
+    document.documentElement.style.setProperty("--color-primero-dark", tempTerceroDark);
     document.documentElement.style.setProperty("--color-tercero-dark", tempPrimeroDark);
+    document.documentElement.style.setProperty("--color-primero-rgb", tempTerceroRgb);
+    document.documentElement.style.setProperty("--color-tercero-rgb", tempPrimeroRgb);
 
     lightMode.style.display = "none";
     darkMode.style.display = "inline-block";
@@ -541,10 +547,16 @@ darkMode.addEventListener("click", ()=>{
     let tempPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-primero");
     let tempTercero = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero");
     let tempPrimeroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-dark");
-
+    let tempTerceroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-dark");
+    let tempPrimeroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-rgb");
+    let tempTerceroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-rgb");
+    
     document.documentElement.style.setProperty("--color-primero", tempTercero);
     document.documentElement.style.setProperty("--color-tercero", tempPrimero);
+    document.documentElement.style.setProperty("--color-primero-dark", tempTerceroDark);
     document.documentElement.style.setProperty("--color-tercero-dark", tempPrimeroDark);
+    document.documentElement.style.setProperty("--color-primero-rgb", tempTerceroRgb);
+    document.documentElement.style.setProperty("--color-tercero-rgb", tempPrimeroRgb);
 
     darkMode.style.display = "none";
     lightMode.style.display = "inline-block";
