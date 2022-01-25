@@ -500,7 +500,7 @@ let lightMode = document.querySelector(".nav__toggleLightDark__light");
 let darkMode = document.querySelector(".nav__toggleLightDark__dark");
 
 let colorMode = localStorage.getItem("colorMode");
-/* if (colorMode){
+if (colorMode){
     switch (colorMode) {
         case "light":
             document.documentElement.style.setProperty("--color-primero", "rgb(255, 255, 255)");
@@ -521,7 +521,7 @@ let colorMode = localStorage.getItem("colorMode");
             localStorage.setItem("colorMode", "dark");
             break;
     }
-} */
+}
 
 lightMode.addEventListener("click", ()=>{
     let tempPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-primero");
