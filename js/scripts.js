@@ -500,7 +500,7 @@ let lightMode = document.querySelector(".nav__toggleLightDark__light");
 let darkMode = document.querySelector(".nav__toggleLightDark__dark");
 
 let colorMode = localStorage.getItem("colorMode");
-if (colorMode){
+/* if (colorMode){
     switch (colorMode) {
         case "light":
             let tempPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-primero");
@@ -509,6 +509,9 @@ if (colorMode){
             let tempTerceroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-dark");
             let tempPrimeroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-rgb");
             let tempTerceroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-rgb");
+            let tempBackgroundPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-background-primero");
+            let tempBackgroundSegundo = getComputedStyle(document.documentElement).getPropertyValue("--color-background-segundo");
+           
             
             document.documentElement.style.setProperty("--color-primero", tempTercero);
             document.documentElement.style.setProperty("--color-tercero", tempPrimero);
@@ -516,6 +519,8 @@ if (colorMode){
             document.documentElement.style.setProperty("--color-tercero-dark", tempPrimeroDark);
             document.documentElement.style.setProperty("--color-primero-rgb", tempTerceroRgb);
             document.documentElement.style.setProperty("--color-tercero-rgb", tempPrimeroRgb);
+            document.documentElement.style.setProperty("--color-background-primero", tempBackgroundSegundo);
+            document.documentElement.style.setProperty("--color-background-segundo", tempBackgroundPrimero);
 
             lightMode.style.display = "none";
             darkMode.style.display = "inline-block";
@@ -524,7 +529,7 @@ if (colorMode){
         default:
             break;
     }
-}
+} */
 
 lightMode.addEventListener("click", ()=>{
     let tempPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-primero");
@@ -533,6 +538,9 @@ lightMode.addEventListener("click", ()=>{
     let tempTerceroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-dark");
     let tempPrimeroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-rgb");
     let tempTerceroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-rgb");
+    let tempBackgroundPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-background-primero");
+    let tempBackgroundSegundo = getComputedStyle(document.documentElement).getPropertyValue("--color-background-segundo");
+   
     
     document.documentElement.style.setProperty("--color-primero", tempTercero);
     document.documentElement.style.setProperty("--color-tercero", tempPrimero);
@@ -540,6 +548,8 @@ lightMode.addEventListener("click", ()=>{
     document.documentElement.style.setProperty("--color-tercero-dark", tempPrimeroDark);
     document.documentElement.style.setProperty("--color-primero-rgb", tempTerceroRgb);
     document.documentElement.style.setProperty("--color-tercero-rgb", tempPrimeroRgb);
+    document.documentElement.style.setProperty("--color-background-primero", tempBackgroundSegundo);
+    document.documentElement.style.setProperty("--color-background-segundo", tempBackgroundPrimero);
 
     lightMode.style.display = "none";
     darkMode.style.display = "inline-block";
@@ -553,6 +563,9 @@ darkMode.addEventListener("click", ()=>{
     let tempTerceroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-dark");
     let tempPrimeroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-rgb");
     let tempTerceroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-rgb");
+    let tempBackgroundPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-background-primero");
+    let tempBackgroundSegundo = getComputedStyle(document.documentElement).getPropertyValue("--color-background-segundo");
+   
     
     document.documentElement.style.setProperty("--color-primero", tempTercero);
     document.documentElement.style.setProperty("--color-tercero", tempPrimero);
@@ -560,6 +573,8 @@ darkMode.addEventListener("click", ()=>{
     document.documentElement.style.setProperty("--color-tercero-dark", tempPrimeroDark);
     document.documentElement.style.setProperty("--color-primero-rgb", tempTerceroRgb);
     document.documentElement.style.setProperty("--color-tercero-rgb", tempPrimeroRgb);
+    document.documentElement.style.setProperty("--color-background-primero", tempBackgroundSegundo);
+    document.documentElement.style.setProperty("--color-background-segundo", tempBackgroundPrimero);
 
     darkMode.style.display = "none";
     lightMode.style.display = "inline-block";

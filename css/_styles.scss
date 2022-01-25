@@ -8,14 +8,16 @@
 }
 
 :root{
-    --color-primero: rgb(18, 18, 18);
+    --color-background-primero: rgb(18, 18, 18);
+    --color-background-segundo: rgb(220, 220, 220);
+    --color-primero: rgb(0, 0, 0);
     --color-segundo: rgb(253, 46, 121);
     --color-tercero: rgb(255, 255, 255);
     --color-cuarto: rgb(70, 0, 55);
     --color-primero-rgb: 0, 0, 0;
     --color-segundo-rgb: 253, 46, 121;
     --color-tercero-rgb: 255, 255, 255;
-    --color-primero-dark: rgb(0, 0, 0);
+    --color-primero-dark: rgb(30, 30, 30);
     --color-segundo-dark: rgb(194, 33, 92);
     --color-tercero-dark: rgb(220, 220, 220);
     --font-primera: 'Bebas Neue', 'sans-serif';
@@ -73,7 +75,7 @@ button{
 /* fin css reset */
 
 body{
-    background: linear-gradient(45deg, var(--color-segundo) 38%, var(--color-primero) 38%);
+    background: linear-gradient(45deg, var(--color-segundo) 38%, var(--color-background-primero) 38%);
     font-size: 2rem;
     color: var(--color-tercero);
     display: flex;
@@ -333,7 +335,7 @@ body{
     width: 100%;
     border-radius: .5rem;
     border: 2px solid var(--color-tercero);
-    background: linear-gradient(-45deg, var(--color-primero) 38%, var(--color-segundo-dark) 38%);
+    background: linear-gradient(-45deg, var(--color-background-primero) 38%, var(--color-segundo-dark) 38%);
     background-size: 400%;
     background-position: 76.8% 0%;
     display: flex;
@@ -568,7 +570,7 @@ body{
     min-height: calc(100vh - 48px);
     padding-left: clamp(.8rem, 2vw, 2rem);
     padding-right: clamp(.8rem, 2vw, 2rem);
-    background: linear-gradient(135deg, var(--color-segundo) 21%, var(--color-primero) 21%);
+    background: linear-gradient(135deg, var(--color-segundo) 21%, var(--color-background-primero) 21%);
     z-index: 1;
     transform: translateY(-120%);
     transition: transform 200ms;
@@ -662,7 +664,7 @@ body{
         min-width: 250px;
         max-width: 1200px;
         margin: auto;
-        background: var(--color-primero);
+        background: var(--color-background-primero);
         border-radius: 1rem;
         font-size: 2rem;
         padding: unquote("clamp(.4rem, .4rem + 1vw, 1rem)");
@@ -798,7 +800,7 @@ body{
     padding: 1rem;
     padding-left: clamp(.8rem, 2vw, 2rem);
     padding-right: clamp(.8rem, 2vw, 2rem);
-    background: var(--color-primero);
+    background: var(--color-background-primero);
 
     &__nav{
         width: 100%;
@@ -886,7 +888,7 @@ body{
   
 /* track */
 ::-webkit-scrollbar-track {
-background: var(--color-primero);
+background: var(--color-background-primero);
 }
 
 /* handle */
