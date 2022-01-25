@@ -787,7 +787,7 @@ body {
   width: 90px;
   height: 90px;
   border: 2px solid var(--color-tercero);
-  background: var(--color-cuarto);
+  background: var(--color-segundo-dark);
   border-radius: .5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -804,7 +804,7 @@ body {
 
 .carrito:hover, .carrito:focus {
   outline: 2px solid var(--color-segundo);
-  background: var(--color-cuarto-light);
+  background: var(--color-segundo);
 }
 
 .carrito__container {
@@ -833,7 +833,7 @@ body {
   position: absolute;
   top: 49%;
   left: 52%;
-  color: var(--color-segundo);
+  color: var(--color-primero);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
