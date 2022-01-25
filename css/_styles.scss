@@ -486,7 +486,6 @@ body{
 
     &__producto{   
         border-radius: .5rem;
-        background: var(--color-segundo);
         background: linear-gradient(45deg, var(--color-segundo) 52%, var(--color-background-primero) 52%);
         display: flex;
         flex-flow: column;
