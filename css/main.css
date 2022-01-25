@@ -10,14 +10,14 @@
 }
 
 :root {
-  --color-primero: rgb(0, 0, 0);
+  --color-primero: rgb(20, 20,20);
   --color-segundo: rgb(253, 46, 121);
   --color-tercero: rgb(255, 255, 255);
   --color-cuarto: rgb(31, 0, 37);
   --color-primero-rgb: 0, 0, 0;
   --color-segundo-rgb: 253, 46, 121;
   --color-tercero-rgb: 255, 255, 255;
-  --color-primero-dark: rgb(30, 30, 30);
+  --color-primero-dark: rgb(10, 10, 10);
   --color-segundo-dark: rgb(194, 33, 92);
   --color-tercero-dark: rgb(220, 220, 220);
 }
@@ -713,6 +713,7 @@ body {
   outline: none;
   border: none;
   font-size: clamp(1.8rem, 3.8rem + 2.6vw,8rem);
+  color: var(--color-primero);
 }
 
 .productos__producto__buttonContainer button:hover, .productos__producto__buttonContainer button:focus {
