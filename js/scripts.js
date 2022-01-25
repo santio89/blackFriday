@@ -503,22 +503,25 @@ let colorMode = localStorage.getItem("colorMode");
 if (colorMode){
     switch (colorMode) {
         case "light":
-            document.documentElement.style.setProperty("--color-primero", "rgb(255, 255, 255)");
-            document.documentElement.style.setProperty("--color-tercero", "rgb(0, 0, 0)");
-            document.documentElement.style.setProperty("--color-tercero-dark", "rgb(30, 30, 30)");
+            let tempPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-primero");
+            let tempTercero = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero");
+            let tempPrimeroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-dark");
+            let tempTerceroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-dark");
+            let tempPrimeroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-rgb");
+            let tempTerceroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-rgb");
+            
+            document.documentElement.style.setProperty("--color-primero", tempTercero);
+            document.documentElement.style.setProperty("--color-tercero", tempPrimero);
+            document.documentElement.style.setProperty("--color-primero-dark", tempTerceroDark);
+            document.documentElement.style.setProperty("--color-tercero-dark", tempPrimeroDark);
+            document.documentElement.style.setProperty("--color-primero-rgb", tempTerceroRgb);
+            document.documentElement.style.setProperty("--color-tercero-rgb", tempPrimeroRgb);
+
             lightMode.style.display = "none";
             darkMode.style.display = "inline-block";
-            localStorage.setItem("colorMode", "light");
             break;
     
         default:
-            document.documentElement.style.setProperty("--color-primero", "rgb(0, 0, 0)");
-            document.documentElement.style.setProperty("--color-tercero", "rgb(255, 255, 255)");
-            document.documentElement.style.setProperty("--color-tercero-dark", "rgb(220, 220, 220)");
-            darkMode.style.display = "none";
-            lightMode.style.display = "inline-block";
-            console.log("test")
-            localStorage.setItem("colorMode", "dark");
             break;
     }
 }
