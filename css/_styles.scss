@@ -9,7 +9,7 @@
 
 :root{
     --color-background-primero: rgb(20, 20, 20);
-    --color-background-segundo: rgb(230, 230, 230);
+    --color-background-segundo: rgb(220, 220, 220);
     --color-primero: rgb(0, 0, 0);
     --color-segundo: rgb(253, 46, 121);
     --color-tercero: rgb(255, 255, 255);
@@ -19,7 +19,7 @@
     --color-tercero-rgb: 255, 255, 255;
     --color-primero-dark: rgb(20, 20, 20);
     --color-segundo-dark: rgb(194, 33, 92);
-    --color-tercero-dark: rgb(230, 230, 230);
+    --color-tercero-dark: rgb(220, 220, 220);
     --font-primera: 'Bebas Neue', 'sans-serif';
 }
 
@@ -424,7 +424,7 @@ body{
                 padding-bottom: 0;
                 margin-left: auto;
                 margin-right: auto;
-                
+            
                 button{
                     cursor: pointer;
                     line-height: .8;
@@ -434,7 +434,8 @@ body{
                     border: none;
                     font-size: 6rem;
                     color: var(--color-tercero-dark);
-
+                    text-shadow: 1px 1px 0 var(--color-segundo);
+                    
                     &:hover, &:focus{
                         color: var(--color-segundo);
                     }
@@ -486,12 +487,23 @@ body{
 
     &__producto{   
         border-radius: .5rem;
-        background: linear-gradient(45deg, var(--color-segundo) 52%, var(--color-background-primero) 52%);
+       /*  background: linear-gradient(45deg, var(--color-segundo), var(--color-segundo-dark)), url("/img/stockPhotos/quilmes473.jpg"); */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-blend-mode: lighten;
         display: flex;
         flex-flow: column;
         max-width: 240px;
         aspect-ratio: 3/5;
         outline: 2px dashed var(--color-segundo-dark);
+        
+       /*  &:hover{
+            background: url("/img/stockPhotos/quilmes473.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        } */
 
         h2{
             margin: .2rem auto 0 auto;
@@ -550,6 +562,8 @@ body{
                 border: none;
                 font-size: unquote("clamp(1.8rem, 3.8rem + 2.6vw,8rem)");
                 color: var(--color-primero);
+                text-shadow: 1px 1px 0 var(--color-segundo);
+
                 &:hover, &:focus{
                     color: var(--color-tercero);
                 }
