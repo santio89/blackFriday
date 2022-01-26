@@ -154,6 +154,9 @@
                 min-width: unset;
                 max-width: unset;
                 background: none;
+                border-bottom: 4px dashed var(--color-segundo);
+                border-right: none;
+
                 h3{
                     font-size: 2.3rem;
                     text-shadow: 2px 2px 0 var(--color-primero), 2.6px 2.6px 0 var(--color-segundo);

@@ -21,6 +21,7 @@
     --color-segundo-dark: rgb(194, 33, 92);
     --color-tercero-dark: rgb(220, 220, 220);
     --font-primera: 'Bebas Neue', 'sans-serif';
+    --stock-image: "none";
 }
 
 html{
@@ -370,7 +371,6 @@ body{
         scroll-snap-type: x mandatory;
         background: transparent;
         padding-left: 1rem;
-        padding-right: 1rem;
         display: flex;
         flex-flow: row nowrap;
         min-width: 100%;
@@ -399,10 +399,11 @@ body{
             align-items: start;
             padding-left: 1.2rem;
             border-left: 4px dashed var(--color-segundo);
+            border-right: 4px dashed var(--color-segundo);
             margin-left: auto;
             margin-right: auto;
             background: rgba(255, 255, 255,.04);
-            border-radius: .1em;
+            width: 100%;
 
             h3{
                 font-size: 2rem;
@@ -487,7 +488,7 @@ body{
 
     &__producto{   
         border-radius: .5rem;
-       /*  background: linear-gradient(45deg, var(--color-segundo), var(--color-segundo-dark)), url("/img/stockPhotos/quilmes473.jpg"); */
+        background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), .7), rgba(var(--color-segundo-rgb), .7)), var(--stock-image);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -496,14 +497,14 @@ body{
         flex-flow: column;
         max-width: 240px;
         aspect-ratio: 3/5;
-        outline: 2px dashed var(--color-segundo-dark);
+        outline: 3px dashed var(--color-segundo-dark);
         
-       /*  &:hover{
-            background: url("/img/stockPhotos/quilmes473.jpg");
+        &:hover{
+            background: var(--stock-image);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-        } */
+        }
 
         h2{
             margin: .2rem auto 0 auto;

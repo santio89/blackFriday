@@ -1,40 +1,40 @@
 /* agregar bebidas al stock. esta operacion, idealmente, deberia ser realizada por un usuario administrador mediante input. por el momento, al no manejar usuarios ni tener una forma de guardar la info en una base de datos, inicializo el stock manualmente */
-
+/* paso un stock de Infinity para cada bebida (las bebidas tienen la funcionalidad de pasar un stock y al agregar o quitar al carrito los suma o resta del stock. pero esta funcionalidad tiene mas sentido de ser implementa en un backend en realidad, asi que deje el stock como infinito directamente en vez de eliminarlo) */
 const shopCart1 = new ShoppingCart(new Date(), 001);
 const stock1 = new Stock(new Date(), 001);
 
-const cerveza__quilmes = new Bebida("cerveza".toUpperCase(), "Quilmes".toUpperCase(), 1000, 300, 01, Infinity);
-const cerveza__brahma = new Bebida("cerveza".toUpperCase(), "Brahma".toUpperCase(), 1000, 200, 02, Infinity);
-const cerveza__heineken = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 1000, 400, 03, Infinity);
-const vodka__smirnoff = new Bebida("vodka".toUpperCase(), "Smirnoff".toUpperCase(), 750, 1000, 04, Infinity);
-const whisky__vat = new Bebida("whisky".toUpperCase(), "Vat 69".toUpperCase(), 750, 1200, 05, Infinity);
-const ron__morgan = new Bebida("ron".toUpperCase(), "Morgan".toUpperCase(), 750, 1200, 06, Infinity);
-const fernet__branca = new Bebida("fernet".toUpperCase(), "Branca".toUpperCase(), 750, 900, 07, Infinity);
-const tequila__azteca = new Bebida("tequila".toUpperCase(), "Azteca".toUpperCase(), 750, 800, 08, Infinity);
-const vodka__skyy = new Bebida("vodka".toUpperCase(), "Skyy".toUpperCase(), 750, 1200, 09, Infinity);
-const vino__norton = new Bebida("vino".toUpperCase(), "Norton".toUpperCase(), 750, 500, 10, Infinity);
-const licor__jager = new Bebida("licor".toUpperCase(), "Jäger".toUpperCase(), 700, 400, 11, Infinity);
-const espumante__chandon = new Bebida("espumante".toUpperCase(), "Chandon".toUpperCase(), 750, 1500, 12, Infinity);
-const vino__rutini = new Bebida("vino".toUpperCase(), "Rutini".toUpperCase(), 750, 2000, 13, Infinity);
-const cerveza__corona = new Bebida("cerveza".toUpperCase(), "Corona".toUpperCase(), 710, 400, 14, Infinity);
-const whisky__chivas = new Bebida("tequila".toUpperCase(), "Chivas".toUpperCase(), 750, 3000, 15, Infinity);
-const gin__larios = new Bebida("gin".toUpperCase(), "Larios".toUpperCase(), 750, 2000, 16, Infinity);
-const cerveza__patagonia__lata = new Bebida("cerveza".toUpperCase(), "Patagonia".toUpperCase(), 410, 180, 17, Infinity);
-const cerveza__quilmes__lata = new Bebida("cerveza".toUpperCase(), "Quilmes".toUpperCase(), 473, 120, 18, Infinity);
-const cerveza__heineken__lata = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 473, 200, 19, Infinity);
-const cerveza__grolsch__lata = new Bebida("cerveza".toUpperCase(), "Grolsch".toUpperCase(), 473, 220, 24, Infinity);
-const gaseosa__coca = new Bebida("gaseosa".toUpperCase(), "Coca Cola".toUpperCase(), 2250, 200, 20, Infinity);
-const agua__glaciar = new Bebida("agua".toUpperCase(), "Glaciar".toUpperCase(), 1500, 120, 21, Infinity);
-const jugo__cepita__naranja = new Bebida("jugo".toUpperCase(), "Cepita Naranja".toUpperCase(), 1000, 120, 22, Infinity);
-const jugo__cepita__manzana = new Bebida("jugo".toUpperCase(), "Cepita Manzana".toUpperCase(), 1000, 120, 23, Infinity);
+const cerveza__quilmes = new Bebida("cerveza".toUpperCase(), "Quilmes".toUpperCase(), 1000, 300, 01, Infinity, `url("/img/stockPhotos/cervezaQuilmes1000.jpg")`);
+const cerveza__brahma = new Bebida("cerveza".toUpperCase(), "Brahma".toUpperCase(), 1000, 200, 02, Infinity, `url("/img/stockPhotos/cervezaBrahma1000.jpg")`);
+const cerveza__heineken = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 1000, 300, 03, Infinity, `url("/img/stockPhotos/cervezaHeineken1000.jpg")`);
+const vodka__smirnoff = new Bebida("vodka".toUpperCase(), "Smirnoff".toUpperCase(), 750, 1000, 04, Infinity, `url("/img/stockPhotos/vodkaSmirnoff750.jpg")`);
+const whisky__vat = new Bebida("whisky".toUpperCase(), "Vat 69".toUpperCase(), 750, 1200, 05, Infinity, `url("/img/stockPhotos/whiskyVat750.jpg")`);
+const ron__morgan = new Bebida("ron".toUpperCase(), "Morgan".toUpperCase(), 750, 1200, 06, Infinity, `url("/img/stockPhotos/ronMorgan750.jpg")`);
+const fernet__branca = new Bebida("fernet".toUpperCase(), "Branca".toUpperCase(), 1000, 900, 07, Infinity, `url("/img/stockPhotos/fernetBranca1000.jpg")`);
+const tequila__azteca = new Bebida("tequila".toUpperCase(), "Azteca".toUpperCase(), 1000, 800, 08, Infinity, `url("/img/stockPhotos/tequilaAzteca1000.jpg")`);
+const vodka__skyy = new Bebida("vodka".toUpperCase(), "Skyy".toUpperCase(), 980, 1200, 09, Infinity, `url("/img/stockPhotos/vodkaSkyy750.jpg")`);
+const vino__norton = new Bebida("vino malbec".toUpperCase(), "Norton".toUpperCase(), 750, 500, 10, Infinity, `url("/img/stockPhotos/vinoMalbecNorton750.jpg")`);
+const licor__jager = new Bebida("licor".toUpperCase(), "Jäger".toUpperCase(), 700, 2900, 11, Infinity, `url("/img/stockPhotos/licorJager750.jpg")`);
+const licor__campari = new Bebida("licor".toUpperCase(), "Campari".toUpperCase(), 750, 900, 12, Infinity, `url("/img/stockPhotos/licorCampari750.jpg")`);
+const vino__rutini = new Bebida("vino malbec".toUpperCase(), "Rutini".toUpperCase(), 750, 2000, 13, Infinity, `url("/img/stockPhotos/vinoMalbecRutini750.jpg")`);
+const cerveza__corona = new Bebida("cerveza".toUpperCase(), "Corona".toUpperCase(), 710, 400, 14, Infinity, `url("/img/stockPhotos/cervezaCorona710.jpg")`);
+const whisky__chivas = new Bebida("tequila".toUpperCase(), "Chivas".toUpperCase(), 750, 3000, 15, Infinity, `url("/img/stockPhotos/whiskyChivas750.jpg")`);
+const gin__larios = new Bebida("gin".toUpperCase(), "Larios".toUpperCase(), 1000, 2200, 16, Infinity, `url("/img/stockPhotos/ginLarios1000.jpg")`);
+const vermouth__cinzano = new Bebida("vermouth".toUpperCase(), "Cinzano".toUpperCase(), 950, 1000, 17, Infinity, `url("/img/stockPhotos/vermouthCinzano950.jpg")`);
+const cerveza__quilmes__lata = new Bebida("cerveza".toUpperCase(), "Quilmes".toUpperCase(), 473, 120, 18, Infinity, `url("/img/stockPhotos/cervezaQuilmes473.jpg")`);
+const cerveza__heineken__lata = new Bebida("cerveza".toUpperCase(), "Heineken".toUpperCase(), 473, 200, 19, Infinity, `url("/img/stockPhotos/cervezaHeineken473.jpg")`);
+const cerveza__brahma__lata = new Bebida("cerveza".toUpperCase(), "Brahma".toUpperCase(), 473, 220, 24, Infinity, `url("/img/stockPhotos/cervezaBrahma473.jpg")`);
+const gaseosa__coca = new Bebida("gaseosa".toUpperCase(), "Coca Cola".toUpperCase(), 1500, 150, 20, Infinity, `url("/img/stockPhotos/gaseosaCoca1500.jpg")`);
+const agua__glaciar = new Bebida("agua".toUpperCase(), "Glaciar".toUpperCase(), 1500, 120, 21, Infinity, `url("/img/stockPhotos/aguaGlaciar1000.jpg")`);
+const jugo__cepita__naranja = new Bebida("jugo".toUpperCase(), "Cepita Naranja".toUpperCase(), 1000, 120, 22, Infinity, `url("/img/stockPhotos/jugoCepitaNaranja1000.jpg")`);
+const jugo__cepita__manzana = new Bebida("jugo".toUpperCase(), "Cepita Manzana".toUpperCase(), 1000, 120, 23, Infinity, `url("/img/stockPhotos/jugoCepitaManzana1000.jpg")`);
 
 const combo1 = new Combo([cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat], 20, "1", 99);
 const combo2 = new Combo([cerveza__corona, cerveza__heineken, whisky__vat, vodka__skyy], 20, "2", 98);
 const combo3 = new Combo([whisky__chivas, whisky__vat, vodka__skyy, vodka__smirnoff], 20, "3", 97);
 const combo4 = new Combo([vino__rutini, vino__norton, vodka__smirnoff, cerveza__heineken], 20, "4", 96);
-const combo5 = new Combo([whisky__chivas, vino__rutini, licor__jager, espumante__chandon], 20, "5", 95);
+const combo5 = new Combo([whisky__chivas, vino__rutini, licor__jager, licor__campari], 20, "5", 95);
 const combo6 = new Combo([licor__jager, cerveza__heineken, ron__morgan, whisky__vat], 20, "6", 94);
-const combo7 = new Combo([vino__norton, vino__rutini, espumante__chandon, vodka__smirnoff], 20, "7", 93);
+const combo7 = new Combo([vino__norton, vino__rutini, licor__campari, vodka__smirnoff], 20, "7", 93);
 const combo8 = new Combo([cerveza__quilmes, cerveza__quilmes, cerveza__heineken, cerveza__heineken], 20, "8", 92);
 const combo9 = new Combo([fernet__branca, gaseosa__coca, vodka__smirnoff, jugo__cepita__naranja], 20, "9", 91);
 const combo10 = new Combo([cerveza__heineken, cerveza__quilmes, ron__morgan, jugo__cepita__manzana], 20, "10", 90);
@@ -47,7 +47,7 @@ stock1.addStockItem(cerveza__brahma);
 stock1.addStockItem(cerveza__corona);
 stock1.addStockItem(vino__norton);
 stock1.addStockItem(vino__rutini);
-stock1.addStockItem(espumante__chandon);
+stock1.addStockItem(licor__campari);
 stock1.addStockItem(fernet__branca);
 stock1.addStockItem(vodka__smirnoff);
 stock1.addStockItem(vodka__skyy);
@@ -57,27 +57,27 @@ stock1.addStockItem(licor__jager);
 stock1.addStockItem(ron__morgan);
 stock1.addStockItem(tequila__azteca);
 stock1.addStockItem(gin__larios);
-stock1.addStockItem(cerveza__patagonia__lata);
+stock1.addStockItem(vermouth__cinzano);
 stock1.addStockItem(cerveza__quilmes__lata);
 stock1.addStockItem(cerveza__heineken__lata);
-stock1.addStockItem(cerveza__grolsch__lata);
+stock1.addStockItem(cerveza__brahma__lata);
 stock1.addStockItem(gaseosa__coca);
 stock1.addStockItem(agua__glaciar);
 stock1.addStockItem(jugo__cepita__naranja);
 stock1.addStockItem(jugo__cepita__manzana);
 
-stock1.addFeaturedItem(cerveza__quilmes);
+stock1.addFeaturedItem(cerveza__heineken);
 stock1.addFeaturedItem(fernet__branca);
 stock1.addFeaturedItem(licor__jager);
+stock1.addFeaturedItem(ron__morgan);
 stock1.addFeaturedItem(whisky__vat);
 stock1.addFeaturedItem(vino__norton);
-stock1.addFeaturedItem(cerveza__heineken);
-stock1.addFeaturedItem(ron__morgan);
-stock1.addFeaturedItem(vodka__smirnoff);
-stock1.addFeaturedItem(vino__rutini);
-stock1.addFeaturedItem(espumante__chandon);
-stock1.addFeaturedItem(cerveza__corona);
+stock1.addFeaturedItem(cerveza__quilmes);
 stock1.addFeaturedItem(vodka__skyy);
+stock1.addFeaturedItem(vino__rutini);
+stock1.addFeaturedItem(vodka__smirnoff);
+stock1.addFeaturedItem(cerveza__corona);
+stock1.addFeaturedItem(licor__campari);
 
 stock1.addComboTotal(combo1);
 stock1.addComboTotal(combo2);
@@ -123,7 +123,7 @@ stock1.arrayBebidasFeatured.forEach(bebidas => {
     <p>${bebidas.tipo}</p>
     <h2>${bebidas.marca}</h2>
     <p>${bebidas.contNeto}ml</p>
-    <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">stock: ${bebidas.stock}</p>    
+    <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">En stock</p>    
     <h3>$${bebidas.precio}</h3>
     <div class="productos__producto__buttonContainer">
     <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsFeatured">-</button>
@@ -131,8 +131,9 @@ stock1.arrayBebidasFeatured.forEach(bebidas => {
     </div>
     `;
     
+    producto.style.setProperty("--stock-image", bebidas.img);
     productosFeatured.appendChild(producto);
-
+    
     let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__menos__productsFeatured`);
     let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__mas__productsFeatured`);
     bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
@@ -292,7 +293,7 @@ stock1.arrayBebidasTotal.forEach(bebidas => {
     <p>${bebidas.tipo}</p>
     <h2>${bebidas.marca}</h2>
     <p>${bebidas.contNeto}ml</p>
-    <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">stock: ${bebidas.stock}</p>    
+    <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">En stock</p>    
     <h3>$${bebidas.precio}</h3>
     <div class="productos__producto__buttonContainer">
     <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal">-</button>
@@ -300,6 +301,7 @@ stock1.arrayBebidasTotal.forEach(bebidas => {
     </div>
     `;
 
+    producto.style.setProperty("--stock-image", bebidas.img);
     productos.appendChild(producto);
 
     let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal`);
