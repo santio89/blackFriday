@@ -240,7 +240,6 @@ function toggleProductos(){
     let productos = document.querySelector(".productosPage");
     productos.classList.toggle("carrito__lista__translated");
     productos.style.overflowY = "scroll";
-    productos.scrollTo(0,0);
     
     let nav__productos = document.querySelector("#nav__productos");
     nav__productos.classList.toggle("active");
@@ -251,7 +250,7 @@ function toggleProductos(){
     }
 
     if (productos.classList.contains("visible")){
-        setTimeout(()=>productos.classList.remove("visible"), 200);
+        setTimeout(()=>{productos.classList.remove("visible"); productos.scrollTo(0,0);}, 200);
     } else{
         productos.classList.add("visible");
     }
@@ -259,8 +258,7 @@ function toggleProductos(){
     let ofertas = document.querySelector(".ofertasPage");
     if (ofertas.classList.contains("carrito__lista__translated")){
         ofertas.classList.toggle("carrito__lista__translated");
-        ofertas.scrollTo(0,0);
-        setTimeout(()=>ofertas.classList.remove("visible"), 200);
+        setTimeout(()=>{ofertas.classList.remove("visible"); ofertas.scrollTo(0,0);}, 200);
     }
 
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
@@ -331,7 +329,10 @@ function toggleOfertas(){
     let ofertas = document.querySelector(".ofertasPage");
     ofertas.classList.toggle("carrito__lista__translated");
     ofertas.style.overflowY = "scroll";
-    ofertas.scrollTo(0,0);
+    
+    if (ofertas.classList.contains("carrito__lista__translated")){
+        ofertas.scrollTo(0,0);
+    }
     
     let nav__ofertas = document.querySelector("#nav__ofertas");
     nav__ofertas.classList.toggle("active");
@@ -342,16 +343,15 @@ function toggleOfertas(){
     }
 
     if (ofertas.classList.contains("visible")){
-        setTimeout(()=>ofertas.classList.remove("visible"), 200);
+        setTimeout(()=>{ofertas.classList.remove("visible"); ofertas.scrollTo(0,0)}, 200);
     } else{
         ofertas.classList.add("visible");
     }
 
     let productos = document.querySelector(".productosPage");
     if (productos.classList.contains("carrito__lista__translated")){
-        productos.scrollTo(0,0);
         productos.classList.toggle("carrito__lista__translated");
-        setTimeout(()=>productos.classList.remove("visible"), 200);
+        setTimeout(()=>{productos.classList.remove("visible"); productos.scrollTo(0,0)}, 200);
     }
     
 
