@@ -8,16 +8,17 @@
 }
 
 :root{
-    --color-background-primero: rgb(20, 20, 20);
-    --color-background-segundo: rgb(220, 220, 220);
-    --color-primero: rgb(0, 0, 0);
+    /* background-primero/background-segundo coinciden con color-primero/color-segundo (los colores background son solo para el background del main, y el resto para lo demás). de esta forma puedo cambiar el color del background si quisiera sin afectar los demás colores */
+    --color-background-primero: rgb(20, 20, 20); 
+    --color-background-segundo: rgb(255, 255, 255);
+    --color-primero: rgb(20, 20, 20);
     --color-segundo: rgb(253, 46, 121);
     --color-tercero: rgb(255, 255, 255);
     --color-cuarto: rgb(70, 0, 55);
     --color-primero-rgb: 0, 0, 0;
     --color-segundo-rgb: 253, 46, 121;
     --color-tercero-rgb: 255, 255, 255;
-    --color-primero-dark: rgb(20, 20, 20);
+    --color-primero-dark: rgb(0, 0, 0);
     --color-segundo-dark: rgb(194, 33, 92);
     --color-tercero-dark: rgb(220, 220, 220);
     --font-primera: 'Bebas Neue', 'sans-serif';
@@ -165,15 +166,6 @@ body{
         text-align: center;
         opacity: 0;
         margin-bottom: 1rem;
-    }
-}
-
-@keyframes denied{
-    0%{
-        opacity: 100%;
-    }
-    100%{
-        opacity: 0%;
     }
 }
 
@@ -812,7 +804,10 @@ body{
     padding: 1rem;
     padding-left: clamp(.8rem, 2vw, 2rem);
     padding-right: clamp(.8rem, 2vw, 2rem);
-    background: var(--color-background-primero);
+    background: linear-gradient(45deg, var(--color-background-primero), var(--color-segundo-dark));
+    background-size: 1000%;
+    background-position: center;
+    animation: backgroundFooter 10000ms linear infinite alternate;
 
     &__nav{
         width: 100%;
