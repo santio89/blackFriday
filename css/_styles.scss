@@ -585,7 +585,7 @@ body{
     visibility: hidden;
     overflow-x: hidden;
     overflow-y: hidden;
-
+    
     &__title{
         width: 100%;
         border-bottom: 4px dashed var(--color-segundo);
@@ -819,7 +819,6 @@ body{
     background: linear-gradient(45deg, var(--color-background-primero), var(--color-segundo-dark));
     background-size: 1000%;
     background-position: center;
-    animation: backgroundFooter 10000ms linear infinite alternate;
 
     &__nav{
         width: 100%;
@@ -928,8 +927,5 @@ background: var(--color-background-primero);
         background-repeat:no-repeat;
     }
 }
-  
-
 
 /* fin scrollbar */
-
