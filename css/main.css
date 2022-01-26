@@ -650,10 +650,11 @@ body {
 }
 
 .productos__producto:hover {
-  background: var(--stock-image);
+  background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), 0), rgba(var(--color-segundo-rgb), 0)), var(--stock-image);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-blend-mode: lighten;
 }
 
 .productos__producto h2 {
