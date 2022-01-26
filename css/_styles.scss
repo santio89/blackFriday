@@ -494,7 +494,8 @@ body{
         flex-flow: column;
         max-width: 240px;
         aspect-ratio: 3/5;
-        outline: 4px dashed var(--color-segundo-dark);
+        border: 4px dashed var(--color-segundo-dark);
+        transition: border-width 100ms, color 100ms;
         
         &:hover{
          /* background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), 0), rgba(var(--color-segundo-rgb), 0)), var(--stock-image); 
@@ -502,7 +503,7 @@ body{
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;*/
-        outline: 4px dashed var(--color-segundo);
+        border: 8px dashed var(--color-segundo);
         }
 
         h2{

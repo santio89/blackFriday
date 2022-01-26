@@ -635,7 +635,9 @@ body {
           flex-flow: column;
   max-width: 240px;
   aspect-ratio: 3/5;
-  outline: 4px dashed var(--color-segundo-dark);
+  border: 4px dashed var(--color-segundo-dark);
+  -webkit-transition: border-width 100ms, color 100ms;
+  transition: border-width 100ms, color 100ms;
 }
 
 .productos__producto:hover {
@@ -644,7 +646,7 @@ body {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;*/
-  outline: 4px dashed var(--color-segundo);
+  border: 8px dashed var(--color-segundo);
 }
 
 .productos__producto h2 {
