@@ -926,7 +926,7 @@ body {
   right: 0;
   left: 100%;
   bottom: 100%;
-  font-size: clamp(2rem, 2rem + 2vw,3.6rem);
+  font-size: clamp(2rem, 2rem + 2vw, 3rem);
   font-weight: bold;
   color: var(--color-segundo-dark);
   cursor: pointer;
@@ -942,6 +942,7 @@ body {
 
 .carrito__lista__cerrar--ofertas, .carrito__lista__cerrar--productos {
   top: 1.4rem;
+  font-size: clamp(2.2rem, 2.2rem + 2vw, 3.6rem);
 }
 
 .carrito__lista__vaciar {
