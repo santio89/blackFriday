@@ -619,12 +619,13 @@ body {
 }
 
 .productos__producto {
-  border-radius: .5rem;
-  background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), 0.7), rgba(var(--color-segundo-rgb), 0.7)), var(--stock-image);
+  /* background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), .7), rgba(var(--color-segundo-rgb), .7)), var(--stock-image); 
+        background-blend-mode: lighten;*/
+  background: var(--stock-image);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-blend-mode: lighten;
+  border-radius: .5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -634,15 +635,16 @@ body {
           flex-flow: column;
   max-width: 240px;
   aspect-ratio: 3/5;
-  outline: 3px dashed var(--color-segundo-dark);
+  outline: 4px dashed var(--color-segundo-dark);
 }
 
 .productos__producto:hover {
-  background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), 0), rgba(var(--color-segundo-rgb), 0)), var(--stock-image);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-blend-mode: lighten;
+  /* background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), 0), rgba(var(--color-segundo-rgb), 0)), var(--stock-image); 
+        background-blend-mode: lighten;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;*/
+  outline: 4px dashed var(--color-segundo);
 }
 
 .productos__producto h2 {
