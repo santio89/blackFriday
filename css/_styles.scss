@@ -193,6 +193,10 @@ body{
         word-spacing: .8rem;
         letter-spacing: .1rem;
 
+        &--ofertas, &--productos{
+            margin-top: -3.6rem;
+        }
+
         h1{
             margin-bottom: 2rem;
             font-size: unquote("clamp(8rem, 1rem + 10vw, 40rem)");
@@ -691,7 +695,7 @@ body{
         }
 
         &__translated{
-            transform: translateY(0%);
+            transform: translateY(0%) !important;
         }
 
         &__title{
@@ -712,20 +716,27 @@ body{
         }
 
         &__cerrar{
-            position: absolute;
-            top: .2%;
-            right: 2.2%;
-            font-size: 2em;
+            position: sticky;
+            width: fit-content;
+            top: 0;
+            right: 0;
+            left: 100%;
+            bottom: 100%;
+            font-size: unquote("clamp(2rem, 2rem + 2vw,3.6rem)");
             font-weight: bold;
-            background: none;
-            border: none;
-            color: var(--color-tercero);
-            cursor: pointer;
-            text-shadow: 2.2px 2.2px 0 var(--color-primero), 3px 3px 0 var(--color-segundo);
+            color: var(--color-segundo-dark);
+            cursor: pointer;    
+            line-height: .8;
+            border-radius: 50%;
+            background: var(--color-tercero);
+            border: 2px solid var(--color-tercero);
 
             &:hover, &:focus{
                 color: var(--color-segundo);
-                text-shadow: 2.2px 2.2px 0 var(--color-primero), 3px 3px 0 var(--color-tercero);
+            }
+
+            &--ofertas, &--productos{
+                top: 1.4rem;
             }
         }
         

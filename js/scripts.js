@@ -162,6 +162,7 @@ function toggleLista(){
         carrito__lista.classList.add("visible");
     }
     
+    
     let carrito__lista__ul = document.querySelector(".carrito__lista__ul");
     carrito__lista__ul.innerHTML = "";
     let shopListWithoutDuplicates = new Set (shopCart1.shopList);
