@@ -607,7 +607,7 @@ body {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  gap: clamp(.4rem, .1rem + 2vw, 2rem);
+  gap: clamp(.6rem, .1rem + 2vw, 2rem);
 }
 
 .productos--page {
@@ -620,11 +620,11 @@ body {
 
 .productos__producto {
   /* background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), .7), rgba(var(--color-segundo-rgb), .7)), var(--stock-image); 
-        background-blend-mode: lighten;*/
+        background-blend-mode: lighten; una version con overlay que use, con 2 backgrounds mezclados */
   background: var(--stock-image);
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   border-radius: .5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -635,9 +635,9 @@ body {
           flex-flow: column;
   max-width: 240px;
   aspect-ratio: 3/5;
-  border: 4px dashed var(--color-segundo-dark);
-  -webkit-transition: border-width 100ms;
-  transition: border-width 100ms;
+  outline: 4px dashed var(--color-segundo-dark);
+  -webkit-transition: outline 100ms;
+  transition: outline 100ms;
 }
 
 .productos__producto:hover {
@@ -646,7 +646,8 @@ body {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;*/
-  border: 8px dashed var(--color-segundo-dark);
+  outline: 8px dashed var(--color-tercero);
+  z-index: 1;
 }
 
 .productos__producto h2 {

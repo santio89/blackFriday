@@ -472,7 +472,7 @@ body{
     grid-auto-rows: 1fr;
     justify-content: center;
     align-content: center;
-    gap: unquote("clamp(.4rem, .1rem + 2vw, 2rem)");
+    gap: unquote("clamp(.6rem, .1rem + 2vw, 2rem)");
 
     &--page{
         width: 90%;
@@ -484,18 +484,18 @@ body{
 
     &__producto{   
         /* background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), .7), rgba(var(--color-segundo-rgb), .7)), var(--stock-image); 
-        background-blend-mode: lighten;*/
+        background-blend-mode: lighten; una version con overlay que use, con 2 backgrounds mezclados */
         background: var(--stock-image);
-        background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
         border-radius: .5rem;
         display: flex;
         flex-flow: column;
         max-width: 240px;
         aspect-ratio: 3/5;
-        border: 4px dashed var(--color-segundo-dark);
-        transition: border-width 100ms;
+        outline: 4px dashed var(--color-segundo-dark);
+        transition: outline 100ms;
         
         &:hover{
          /* background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), 0), rgba(var(--color-segundo-rgb), 0)), var(--stock-image); 
@@ -503,7 +503,8 @@ body{
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;*/
-        border: 8px dashed var(--color-segundo-dark);
+        outline: 8px dashed var(--color-tercero);   
+        z-index: 1;     
         }
 
         h2{
