@@ -43,13 +43,13 @@ const combo10 = new Combo([cerveza__heineken, cerveza__quilmes, ron__morgan, jug
 const combo11 = new Combo([cerveza__quilmes, cerveza__brahma, cerveza__heineken, cerveza__corona], 20, "11", 89);
 const combo12 = new Combo([gaseosa__coca, jugo__cepita__naranja, jugo__cepita__manzana, agua__glaciar], 20, "12", 88);
 
-stock1.addStockItem(cerveza__quilmes);
+
 stock1.addStockItem(cerveza__heineken);
-stock1.addStockItem(cerveza__brahma);
-stock1.addStockItem(cerveza__corona);
+stock1.addStockItem(vodka__smirnoff);
 stock1.addStockItem(licor__campari);
 stock1.addStockItem(fernet__branca);
-stock1.addStockItem(vodka__smirnoff);
+stock1.addStockItem(cerveza__corona);
+stock1.addStockItem(ron__morgan);
 stock1.addStockItem(vodka__skyy);
 stock1.addStockItem(vino__norton__malbec);
 stock1.addStockItem(vino__rutini__malbec);
@@ -58,7 +58,8 @@ stock1.addStockItem(espumante__mumm__extra);
 stock1.addStockItem(whisky__vat);
 stock1.addStockItem(whisky__chivas);
 stock1.addStockItem(licor__jager);
-stock1.addStockItem(ron__morgan);
+stock1.addStockItem(cerveza__quilmes);
+stock1.addStockItem(cerveza__brahma);
 stock1.addStockItem(tequila__azteca);
 stock1.addStockItem(gin__larios);
 stock1.addStockItem(vermouth__cinzano);
