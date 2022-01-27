@@ -679,12 +679,13 @@ body {
   text-align: left;
   margin-right: auto;
   margin-left: .4rem;
-  font-size: clamp(1rem, .1rem + 1vw, 2rem);
+  font-size: clamp(1.2rem, .2rem + 1vw, 2.2rem);
   background: var(--color-segundo-dark);
   padding: .2em;
   padding-bottom: 0;
   line-height: 1;
-  border-radius: 0 0 .1em .1em;
+  border-radius: .2em 0 .1em 0;
+  margin-left: 0;
 }
 
 .productos__producto p:nth-of-type(2) {
