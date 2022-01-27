@@ -271,7 +271,7 @@ body {
       -ms-grid-row-align: end;
       align-self: end;
   text-align: right;
-  border-bottom: 2px solid var(--color-segundo);
+  border-bottom: 8px dashed var(--color-segundo);
   line-height: 1.2;
 }
 
@@ -419,7 +419,7 @@ body {
 .ofertasFeatured {
   width: 100%;
   border-radius: .5rem;
-  border: 2px solid var(--color-tercero);
+  border: 2px dashed var(--color-tercero);
   background: linear-gradient(-45deg, var(--color-background-primero) 38%, var(--color-segundo-dark) 38%);
   background-size: 400%;
   background-position: 76.8% 0%;
@@ -1040,7 +1040,7 @@ body {
 }
 
 .footer {
-  border-top: 1px solid var(--color-tercero);
+  border-top: 8px dashed var(--color-tercero);
   margin-top: auto;
   padding: 1rem;
   padding-left: clamp(0.8rem, 2vw, 2rem);
