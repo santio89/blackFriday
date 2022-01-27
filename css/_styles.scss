@@ -497,7 +497,7 @@ body{
         outline: 4px dashed var(--color-segundo-dark);
         transition: outline 100ms;
         
-        &:hover{
+        &:hover, &:focus, &:focus-within{
          /* background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), 0), rgba(var(--color-segundo-rgb), 0)), var(--stock-image); 
         background-blend-mode: lighten;
         background-size: cover;
@@ -922,7 +922,7 @@ background: var(--color-background-primero);
     background-size:100% 48%;
     background-repeat:no-repeat;
 
-    &:hover{
+    &:hover, &:focus{
         background: 
         linear-gradient(-135deg, transparent 6px, var(--color-segundo) 6px) top,
         linear-gradient(-135deg, var(--color-segundo) 50%,var(--color-tercero) 50%) center, 
