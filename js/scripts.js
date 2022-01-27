@@ -119,11 +119,19 @@ let productosFeatured = document.getElementById("productosFeatured");
 stock1.arrayBebidasFeatured.forEach(bebidas => {
     let producto = document.createElement("div");
     producto.classList.add("productos__producto");
+
+    let stockText;
+    if (bebidas.outOfStock()){
+        stockText = "Fuera de stock";
+    } else{
+        stockText = "En stock";
+    }
+
     producto.innerHTML = `
     <p>${bebidas.tipo}</p>
     <h2>${bebidas.marca}</h2>
     <p>${bebidas.contNeto}ml</p>
-    <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">En stock</p>    
+    <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">${stockText}</p>    
     <h3>$${bebidas.precio}</h3>
     <div class="productos__producto__buttonContainer">
     <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsFeatured">-</button>
@@ -289,11 +297,19 @@ let productos = document.getElementById("productos");
 stock1.arrayBebidasTotal.forEach(bebidas => {
     let producto = document.createElement("div");
     producto.classList.add("productos__producto");
+
+    let stockText;
+    if (bebidas.outOfStock()){
+        stockText = "Fuera de stock";
+    } else{
+        stockText = "En stock";
+    }
+
     producto.innerHTML = `
     <p>${bebidas.tipo}</p>
     <h2>${bebidas.marca}</h2>
     <p>${bebidas.contNeto}ml</p>
-    <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">En stock</p>    
+    <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">${stockText}</p>    
     <h3>$${bebidas.precio}</h3>
     <div class="productos__producto__buttonContainer">
     <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal">-</button>

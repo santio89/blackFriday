@@ -14,7 +14,6 @@ class Bebida{
         if (this.stock < 1){
             return true;
         } else{
-            this.stock--;
             return false;
         }
     }
