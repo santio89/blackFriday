@@ -21,6 +21,9 @@
     --color-primero-dark: rgb(0, 0, 0);
     --color-segundo-dark: rgb(194, 33, 92);
     --color-tercero-dark: rgb(220, 220, 220);
+    --color-primero-dark-rgb: 0, 0, 0;
+    --color-segundo-dark-rgb: 194, 33, 92;
+    --color-tercero-dark-rgb: 220, 220, 220;
     --font-primera: 'Bebas Neue', 'sans-serif';
     --stock-image: "none";
 }
@@ -484,8 +487,6 @@ body{
     }
 
     &__producto{   
-        /* background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), .7), rgba(var(--color-segundo-rgb), .7)), var(--stock-image); 
-        background-blend-mode: lighten; una version con overlay que use, con 2 backgrounds mezclados */
         background: var(--stock-image);
         background-repeat: no-repeat;
         background-position: center;
@@ -496,16 +497,16 @@ body{
         max-width: 240px;
         aspect-ratio: 3/5;
         outline: 4px dashed var(--color-segundo-dark);
-        transition: outline 100ms;
+        transition: outline-width 100ms;
         
         &:hover, &:focus, &:focus-within{
-         /* background: linear-gradient(45deg, rgba(var(--color-segundo-rgb), 0), rgba(var(--color-segundo-rgb), 0)), var(--stock-image); 
-        background-blend-mode: lighten;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;*/
         outline: 8px dashed var(--color-tercero);   
         z-index: 1;     
+        }
+
+        &:hover p:nth-of-type(1), &:focus p:nth-of-type(1), &:focus-within p:nth-of-type(1){
+        background: var(--color-tercero);
+        color: var(--color-primero);
         }
 
         h2{
@@ -531,7 +532,12 @@ body{
             text-align: left;
             margin-right: auto;
             margin-left: .4rem;         
-            font-size: unquote("clamp(1rem, .1rem + 1vw, 2rem)");         
+            font-size: unquote("clamp(1rem, .1rem + 1vw, 2rem)");
+            background: var(--color-segundo-dark);
+            padding: .2em;         
+            padding-bottom: 0;
+            line-height: 1;
+            border-radius: 0 0 .1em .1em;
         }
 
         p:nth-of-type(2){
@@ -540,6 +546,7 @@ body{
             margin-right: .4rem;
             font-size: unquote("clamp(1.4rem, .8rem + 1.2vw, 2.8rem)");
             line-height: 1;
+            text-shadow: 1px 1px 1px var(--color-primero);
         }
 
         p:nth-of-type(3){
@@ -548,6 +555,7 @@ body{
             margin-right: .4rem;
             font-size: unquote("clamp(1rem, .1rem + 1vw, 2rem)");     
             line-height: .6;
+            text-shadow: 1px 1px 1px var(--color-primero);
         }
         
         &__buttonContainer{           
