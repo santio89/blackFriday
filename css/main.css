@@ -1041,7 +1041,7 @@ body {
 
 .footer {
   border-top: 8px dashed var(--color-tercero);
-  margin-top: auto;
+  margin-top: 2rem;
   padding: 1rem;
   padding-left: clamp(0.8rem, 2vw, 2rem);
   padding-right: clamp(0.8rem, 2vw, 2rem);
