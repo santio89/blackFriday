@@ -6,6 +6,11 @@
     .nav__ul{
         font-size: 1.6rem;
     }
+    .ofertasPage, .productosPage{
+        &__title{
+            margin-top: 4rem;
+        }
+    }
 }
 
 @media (max-width: 349px){
