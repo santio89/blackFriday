@@ -1128,7 +1128,7 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  height: 2px;
+  height: 4px;
   border-radius: calc(1vw + 1vh);
   opacity: .8;
 }

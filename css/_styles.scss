@@ -884,7 +884,7 @@ body{
         &__hr{
             background: linear-gradient(270deg, var(--color-background-primero) , var(--color-segundo-dark));
             flex:1;
-            height: 2px;
+            height: 4px;
             border-radius: calc(1vw + 1vh);            
             opacity: .8;
         }
