@@ -264,7 +264,7 @@ function toggleProductos(){
     }
 
     if (productos.classList.contains("visible")){
-        setTimeout(()=>{productos.classList.remove("visible"); productos.scrollTo(0,0); filter.value = 'todos'; productFilter()}, 200);
+        setTimeout(()=>{productos.classList.remove("visible"); productos.scrollTo(0,0); filter.value = 'todas'; productFilter()}, 200);
     } else{
         productos.classList.add("visible");
     }
@@ -272,7 +272,7 @@ function toggleProductos(){
     let ofertas = document.querySelector(".ofertasPage");
     if (ofertas.classList.contains("carrito__lista__translated")){
         ofertas.classList.toggle("carrito__lista__translated");
-        setTimeout(()=>{ofertas.classList.remove("visible"); ofertas.scrollTo(0,0);filter.value = 'todos'; productFilter()}, 200);
+        setTimeout(()=>{ofertas.classList.remove("visible"); ofertas.scrollTo(0,0);filter.value = 'todas'; productFilter()}, 200);
     }
 
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
@@ -620,7 +620,7 @@ filter.addEventListener("change", productFilter);
 function productFilter(){
     let arrayBebidasFilter = stock1.arrayBebidasTotal.filter(bebida=> bebida.categoria.toLowerCase() == filter.value);
 
-    if (filter.value == "todos"){
+    if (filter.value == "todas"){
         arrayBebidasFilter = stock1.arrayBebidasTotal;
     }
 

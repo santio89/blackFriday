@@ -637,14 +637,18 @@ body{
     }
 }
 
-.productsPage__filter__select{
-    color: var(--color-primero);
-    border: none;
-    outline: none;
-    background: var(--color-segundo-dark);
-    padding: .2rem;
-    text-align: left;
-    vertical-align: middle;
+.productosPage__filter{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    
+    &__select{
+        color: var(--color-primero);
+        border: none;
+        outline: none;
+        background: var(--color-segundo-dark);
+        padding: .2rem;
+    }
 }
 
 .visible{
