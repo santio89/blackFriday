@@ -906,7 +906,7 @@ body {
   font-size: 1.8em;
   text-shadow: 2.2px 2.2px 0 var(--color-primero), 3px 3px 0 var(--color-segundo);
   margin-bottom: 2rem;
-  margin-top: 1rem;
+  margin-top: -1.2rem;
   margin-right: 2rem;
 }
 
