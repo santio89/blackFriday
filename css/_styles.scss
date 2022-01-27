@@ -923,7 +923,7 @@ background: var(--color-background-primero);
     background-size:100% 48%;
     background-repeat:no-repeat;
 
-    &:hover, &:focus{
+    &:hover{
         background: 
         linear-gradient(-135deg, transparent 6px, var(--color-segundo) 6px) top,
         linear-gradient(-135deg, var(--color-segundo) 50%,var(--color-tercero) 50%) center, 

@@ -1165,7 +1165,7 @@ body {
   background-repeat: no-repeat;
 }
 
-::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:focus {
+::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(-135deg, transparent 6px, var(--color-segundo) 6px) top, linear-gradient(-135deg, var(--color-segundo) 50%, var(--color-tercero) 50%) center, linear-gradient(45deg, transparent 6px, var(--color-tercero) 6px) bottom;
   background-size: 100% 48%;
   background-repeat: no-repeat;
