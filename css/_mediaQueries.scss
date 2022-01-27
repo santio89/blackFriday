@@ -61,8 +61,7 @@
     }
 }
 
-
-@media (min-width: 621px){
+@media (min-width: 618px){
     .nav{
         justify-content: center;
         
@@ -74,16 +73,15 @@
             
         }
     }   
-}
-
-@media (min-width: 710px){
+    
     .ofertasFeatured{
         &__wrapper{
-            min-width: 640px;
-            max-width: 640px;
+            min-width: 100%;
+            max-width: 100%;
+            
             &__item{
-                min-width: 320px;
-                max-width: 320px;
+                min-width: 50%;
+                max-width: 50%;
             }
         }
     }
@@ -163,7 +161,9 @@
                 background: none;
                 border-bottom: 4px dashed var(--color-segundo);
                 border-right: none;
-
+                padding: 0;
+                padding-left: 1.2rem;
+                
                 h3{
                     font-size: 2.3rem;
                     text-shadow: 2px 2px 0 var(--color-primero), 2.6px 2.6px 0 var(--color-segundo);

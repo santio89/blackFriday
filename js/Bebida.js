@@ -1,5 +1,6 @@
 class Bebida{
-    constructor(tipo, marca, contNeto, precio, id, stock, img){
+    constructor(categoria, tipo, marca, contNeto, precio, id, stock, img){
+        this.categoria = categoria;
         this.tipo = tipo;
         this.marca = marca;
         this.contNeto = contNeto;

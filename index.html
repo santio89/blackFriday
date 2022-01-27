@@ -101,7 +101,20 @@
                 <h3 class="header__title">BEBIDAS</h3>               
             </div>
 
-            <div class="productos productos--page" id="productos"></div>
+            <div class="productosPage__filter">
+                <select name="filter" id="productosPage__filter" class="productsPage__filter__select">
+                    <option value="todos" selected="selected">Todos</option>
+                    <option value="cervezas">Cervezas</option>
+                    <option value="vinos">Vinos</option>
+                    <option value="aguardientes">Aguardientes</option>
+                    <option value="licores">Licores</option>
+                    <option value="sinalcohol">Sin alcohol</option>
+                </select>
+            </div>
+
+            <div class="productos productos--page" id="productos">
+
+            </div>
         </div>
     </main>
 
