@@ -272,7 +272,7 @@ function toggleProductos(){
     let ofertas = document.querySelector(".ofertasPage");
     if (ofertas.classList.contains("carrito__lista__translated")){
         ofertas.classList.toggle("carrito__lista__translated");
-        setTimeout(()=>{ofertas.classList.remove("visible"); ofertas.scrollTo(0,0);filter.value = "todas"; productFilter()}, 200);
+        setTimeout(()=>{ofertas.classList.remove("visible"); ofertas.scrollTo(0,0); filter.value = "todas"; productFilter()}, 200);
     }
 
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
