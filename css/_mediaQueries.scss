@@ -1,4 +1,8 @@
 @media (max-width: 409px){
+    .header__title{
+        padding-top: .4rem;
+        padding-bottom: .4rem;
+    }
     .nav__ul{
         font-size: 1.6rem;
     }
@@ -53,7 +57,7 @@
 }
 
 
-@media (min-width: 629px){
+@media (min-width: 621px){
     .nav{
         justify-content: center;
         

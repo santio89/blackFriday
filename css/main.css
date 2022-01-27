@@ -231,7 +231,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 48px;
+  margin-top: 64px;
   padding: clamp(0.8rem, 2vw, 2rem);
   padding-bottom: calc(clamp(.8rem, 2vw, 2rem) / 2);
   padding-top: 2rem;
@@ -252,12 +252,13 @@ body {
 }
 
 .header__title--ofertas, .header__title--productos {
-  margin-top: -3.6rem;
+  margin-top: -3.4rem;
 }
 
 .header__title h1 {
   margin-bottom: 2rem;
   font-size: clamp(8rem, 1rem + 10vw, 40rem);
+  text-align: center;
 }
 
 .header__info {
@@ -1189,6 +1190,10 @@ body {
 }
 
 @media (max-width: 409px) {
+  .header__title {
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+  }
   .nav__ul {
     font-size: 1.6rem;
   }
@@ -1238,7 +1243,7 @@ body {
   }
 }
 
-@media (min-width: 629px) {
+@media (min-width: 621px) {
   .nav {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
