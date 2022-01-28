@@ -666,7 +666,7 @@ function productFilter(){
 
 
 
-/* filter productos con jquery */
+/* filter productos con jquery*/
 
 let filter = $("#productosPage__filter");
 filter.on("change", productFilter);
@@ -692,7 +692,7 @@ function productFilter(){
             stockText = "En stock";
         }
 
-        $(`.producto--${bebidas.id}`).html(`
+        producto.innerHTML = `
         <p>${bebidas.tipo}</p>
         <h2>${bebidas.marca}</h2>
         <p>${bebidas.contNeto}ml</p>
@@ -702,7 +702,7 @@ function productFilter(){
         <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal">-</button>
         <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal">+</button>
         </div>
-        `);
+        `;
 
         $("#productos").append(producto);
         $(`.producto--${bebidas.id}`).css(`--stock-image`, `${bebidas.img}`);
