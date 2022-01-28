@@ -804,6 +804,7 @@ body{
             border-radius: .4rem;
             color: var(--color-primero);
             box-shadow: 2.8px 2.8px 0 0 var(--color-primero), 4.8px 4.8px 0 0 var(--color-segundo);
+            margin-bottom: 1.8rem;
             
             &:hover, &:focus{ 
                 text-shadow: 2px 2px 0 var(--color-tercero), 3px 3px 0 var(--color-segundo);

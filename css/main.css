@@ -1011,6 +1011,7 @@ body {
   color: var(--color-primero);
   -webkit-box-shadow: 2.8px 2.8px 0 0 var(--color-primero), 4.8px 4.8px 0 0 var(--color-segundo);
           box-shadow: 2.8px 2.8px 0 0 var(--color-primero), 4.8px 4.8px 0 0 var(--color-segundo);
+  margin-bottom: 1.8rem;
 }
 
 .carrito__lista__checkout:hover, .carrito__lista__checkout:focus {
