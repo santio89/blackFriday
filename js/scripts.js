@@ -666,7 +666,7 @@ function productFilter(){
 
 
 
-/* filter productos con jquery*/
+/* filter productos con jquery */
 
 let filter = $("#productosPage__filter");
 filter.on("change", productFilter);
