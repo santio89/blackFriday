@@ -615,7 +615,8 @@ darkMode.addEventListener("click", ()=>{
 
 
 
-/* filter productos */
+/* filter productos con js -> lo hice también, mas abajo, usando jquery
+
 let filter = document.querySelector("#productosPage__filter");
 
 filter.addEventListener("change", productFilter);
@@ -660,5 +661,56 @@ function productFilter(){
         let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal`);
         bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
         bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
+    });
+} */
+
+
+
+/* filter productos con jquery*/
+
+let filter = $("#productosPage__filter");
+filter.on("change", productFilter);
+
+function productFilter(){
+    let arrayBebidasFilter = stock1.arrayBebidasTotal.filter(bebida=> bebida.categoria.toLowerCase() == filter.val());
+
+    if (filter.val() == "todas"){
+        arrayBebidasFilter = stock1.arrayBebidasTotal;
+    }
+
+    $("#productos").html("");
+
+    arrayBebidasFilter.forEach(bebidas => {
+        let producto = document.createElement("div");
+        producto.classList.add("productos__producto");
+        producto.classList.add(`producto--${bebidas.id}`);
+
+        let stockText;
+        if (bebidas.outOfStock()){
+            stockText = "Fuera de stock";
+        } else{
+            stockText = "En stock";
+        }
+
+        $(`.producto--${bebidas.id}`).html(`
+        <p>${bebidas.tipo}</p>
+        <h2>${bebidas.marca}</h2>
+        <p>${bebidas.contNeto}ml</p>
+        <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">${stockText}</p>    
+        <h3>$${bebidas.precio}</h3>
+        <div class="productos__producto__buttonContainer">
+        <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal">-</button>
+        <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal">+</button>
+        </div>
+        `);
+
+        $("#productos").append(producto);
+        $(`.producto--${bebidas.id}`).css(`--stock-image`, `${bebidas.img}`);
+       
+
+        let bebida__menos = $(`.${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal`);
+        let bebida__mas = $(`.${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal`);
+        bebida__menos.on("click", ()=>{shopCart1.removeItem(bebidas.id)});
+        bebida__mas.on("click", ()=>{shopCart1.addItem(bebidas.id)});
     });
 }
