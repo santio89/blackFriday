@@ -1292,8 +1292,8 @@ body {
     max-width: 100%;
   }
   .ofertasFeatured__wrapper__item {
-    min-width: 50%;
-    max-width: 50%;
+    min-width: calc(50% + .5rem);
+    max-width: calc(50% + .5rem);
   }
 }
 
