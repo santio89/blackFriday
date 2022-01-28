@@ -244,7 +244,8 @@ body {
 .header__title {
   font-size: clamp(8rem, 1rem + 10vw, 40rem);
   color: var(--color-tercero);
-  padding: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
   padding-left: clamp(0.8rem, 2vw, 2rem);
   padding-right: clamp(0.8rem, 2vw, 2rem);
   font-weight: bold;
@@ -259,9 +260,10 @@ body {
 }
 
 .header__title h1 {
+  text-align: center;
+  margin: auto;
   margin-bottom: 2rem;
   font-size: clamp(8rem, 1rem + 10vw, 40rem);
-  text-align: center;
 }
 
 .header__info {
@@ -1223,10 +1225,6 @@ body {
 }
 
 @media (max-width: 409px) {
-  .header__title {
-    padding-top: .4rem;
-    padding-bottom: .4rem;
-  }
   .nav__ul {
     font-size: 1.6rem;
   }
@@ -1279,7 +1277,7 @@ body {
   }
 }
 
-@media (min-width: 618px) {
+@media (min-width: 621px) {
   .nav {
     -webkit-box-pack: center;
         -ms-flex-pack: center;

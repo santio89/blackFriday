@@ -187,7 +187,8 @@ body{
     &__title{
         font-size: unquote("clamp(8rem, 1rem + 10vw, 40rem)");
         color: var(--color-tercero);
-        padding: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
         padding-left: clamp(.8rem, 2vw, 2rem);
         padding-right: clamp(.8rem, 2vw, 2rem);
         font-weight: bold;
@@ -201,9 +202,10 @@ body{
         }
 
         h1{
+            text-align: center;
+            margin: auto;
             margin-bottom: 2rem;
             font-size: unquote("clamp(8rem, 1rem + 10vw, 40rem)");
-            text-align: center;
         }
     }
 
