@@ -472,8 +472,8 @@ for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
 
     wrapper__item.innerHTML += `
     <div class="ofertasFeatured__wrapper__item__buttonContainer">
-    <button class="COMBO${combo.nombre.replace(/\s/g,"")}__menos__combosFeatured" onclick="shopCart1.removeItem(${combo.id})">-</button>
-    <button class="COMBO${combo.nombre.replace(/\s/g,"")}__mas__combosFeatured" onclick="shopCart1.addItem(${combo.id})">+</button>
+    <button class="COMBO${combo.nombre.replace(/\s/g,"")}__menos__combosFeatured">-</button>
+    <button class="COMBO${combo.nombre.replace(/\s/g,"")}__mas__combosFeatured">+</button>
     </div>
     `
     
