@@ -331,6 +331,7 @@ body {
       -ms-flex-align: stretch;
           align-items: stretch;
   font-size: 2rem;
+  padding-left: 40px;
 }
 
 .nav__ul__li__a {
@@ -1232,7 +1233,7 @@ body {
   }
 }
 
-@media (max-width: 349px) {
+@media (max-width: 359px) {
   .nav__ul {
     font-size: 1.4rem;
   }
@@ -1276,11 +1277,14 @@ body {
   }
 }
 
-@media (min-width: 621px) {
+@media (min-width: 594px) {
   .nav {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .nav__ul {
+    padding-left: 0;
   }
   .nav__ul__li__a {
     padding-left: 2rem;

@@ -254,7 +254,8 @@ body{
         justify-content: center;
         align-items: stretch;
         font-size: 2rem;
-        
+        padding-left: 40px;
+
         &__li{
             &__a{
                 color: var(--color-primero);
