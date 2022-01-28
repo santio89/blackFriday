@@ -255,7 +255,7 @@ function toggleProductos(){
     productos.classList.toggle("carrito__lista__translated");
     productos.style.overflowY = "scroll";
     
-    filter.value = "todas"; 
+    document.getElementById("productosPage__filter").value = "todas"; 
     productFilter();
 
     let nav__productos = document.querySelector("#nav__productos");
@@ -692,7 +692,9 @@ function productFilter(){
             stockText = "En stock";
         }
 
-        producto.innerHTML = `
+        $("#productos").append(producto);
+
+        $(`.producto--${bebidas.id}`).html(`
         <p>${bebidas.tipo}</p>
         <h2>${bebidas.marca}</h2>
         <p>${bebidas.contNeto}ml</p>
@@ -702,11 +704,10 @@ function productFilter(){
         <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal">-</button>
         <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal">+</button>
         </div>
-        `;
+        `);
 
-        $("#productos").append(producto);
         $(`.producto--${bebidas.id}`).css(`--stock-image`, `${bebidas.img}`);
-       
+        
 
         let bebida__menos = $(`.${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal`);
         let bebida__mas = $(`.${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal`);
