@@ -890,7 +890,7 @@ body {
   inset: 10%;
   top: calc(10% + 24px);
   bottom: calc(10% - 24px);
-  min-width: 250px;
+  min-width: 240px;
   max-width: 1200px;
   margin: auto;
   background: var(--color-background-primero);
@@ -940,8 +940,8 @@ body {
   font-size: 1.8em;
   text-shadow: 2.2px 2.2px 0 var(--color-primero), 3px 3px 0 var(--color-segundo);
   margin-bottom: 2rem;
-  margin-top: -1.2rem;
-  margin-right: 2rem;
+  margin-top: -1rem;
+  margin-right: 3.8rem;
 }
 
 .carrito__lista__total {
