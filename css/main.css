@@ -113,7 +113,7 @@ body {
   padding-left: clamp(0.8rem, 2vw, 2rem);
   padding-right: clamp(0.8rem, 2vw, 2rem);
   background: linear-gradient(135deg, var(--color-segundo) 21%, var(--color-primero) 21%);
-  z-index: 3;
+  z-index: 4;
   overflow-x: hidden;
   -webkit-transition: -webkit-transform 800ms;
   transition: -webkit-transform 800ms;
@@ -295,7 +295,7 @@ body {
           align-items: end;
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   min-height: 48px;
   padding-left: clamp(0.8rem, 2vw, 2rem);
   padding-right: clamp(0.8rem, 2vw, 2rem);
@@ -746,7 +746,7 @@ body {
   padding-left: clamp(0.8rem, 2vw, 2rem);
   padding-right: clamp(0.8rem, 2vw, 2rem);
   background: linear-gradient(135deg, var(--color-segundo) 21%, var(--color-background-primero) 21%);
-  z-index: 1;
+  z-index: 2;
   -webkit-transform: translateY(-120%);
           transform: translateY(-120%);
   -webkit-transition: -webkit-transform 400ms;
@@ -801,6 +801,10 @@ body {
 .ofertasPage .ofertasFeatured__wrapper__item, .productosPage .ofertasFeatured__wrapper__item {
   min-width: unset;
   max-width: unset;
+}
+
+.toggleZ {
+  z-index: 1;
 }
 
 .productosPage__filter {

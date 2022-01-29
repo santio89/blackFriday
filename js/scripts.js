@@ -263,7 +263,8 @@ function toggleProductos(){
     let productos = document.querySelector(".productosPage");
     productos.classList.toggle("carrito__lista__translated");
     productos.style.overflowY = "scroll";
-    
+    productos.classList.toggle("toggleZ");
+
     if (productos.classList.contains("carrito__lista__translated")){
         productos.scrollTo(0,0);
     }
@@ -378,7 +379,8 @@ function toggleOfertas(){
     let ofertas = document.querySelector(".ofertasPage");
     ofertas.classList.toggle("carrito__lista__translated");
     ofertas.style.overflowY = "scroll";
-    
+    ofertas.classList.toggle("toggleZ");
+
     if (ofertas.classList.contains("carrito__lista__translated")){
         ofertas.scrollTo(0,0);
     }

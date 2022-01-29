@@ -99,7 +99,7 @@ body{
     padding-left: clamp(.8rem, 2vw, 2rem);
     padding-right: clamp(.8rem, 2vw, 2rem);
     background: linear-gradient(135deg, var(--color-segundo) 21%, var(--color-primero) 21%);
-    z-index: 3;
+    z-index: 4;
     overflow-x: hidden;
     transition: transform 800ms;
 
@@ -228,7 +228,7 @@ body{
     align-items: end;
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 3;
     min-height: 48px;
     padding-left: clamp(.8rem, 2vw, 2rem);
     padding-right: clamp(.8rem, 2vw, 2rem);
@@ -595,7 +595,7 @@ body{
     padding-left: clamp(.8rem, 2vw, 2rem);
     padding-right: clamp(.8rem, 2vw, 2rem);
     background: linear-gradient(135deg, var(--color-segundo) 21%, var(--color-background-primero) 21%);
-    z-index: 1;
+    z-index: 2;
     transform: translateY(-120%);
     transition: transform 400ms;
     visibility: hidden;
@@ -637,6 +637,10 @@ body{
             }
         }
     }
+}
+
+.toggleZ{
+    z-index: 1;
 }
 
 .productosPage__filter{
