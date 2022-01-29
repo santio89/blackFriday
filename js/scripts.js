@@ -27,8 +27,8 @@ const agua__glaciar = new Bebida("sinalcohol", "agua".toUpperCase(), "Glaciar".t
 const jugo__cepita__naranja = new Bebida("sinalcohol", "jugo".toUpperCase(), "Cepita Naranja".toUpperCase(), 1000, 120, 22, Infinity, `url("../img/stockPhotos/jugoCepitaNaranja1000.jpg")`);
 const jugo__cepita__manzana = new Bebida("sinalcohol", "jugo".toUpperCase(), "Cepita Manzana".toUpperCase(), 1000, 120, 23, Infinity, `url("../img/stockPhotos/jugoCepitaManzana1000.jpg")`);
 const cerveza__brahma__lata = new Bebida("cervezas", "cerveza".toUpperCase(), "Brahma".toUpperCase(), 473, 220, 24, Infinity, `url("../img/stockPhotos/cervezaBrahma473.jpg")`);
-const espumante__chandon__extra = new Bebida("vinos", "espumante extra brut".toUpperCase(), "Chandon".toUpperCase(), 750, 1200, 25, Infinity, `url("../img/stockPhotos/espumanteChandonExtraBrut750.jpg")`);
-const espumante__mumm__extra = new Bebida("vinos", "espumante extra brut".toUpperCase(), "Mumm".toUpperCase(), 750, 900, 26, Infinity, `url("../img/stockPhotos/espumanteMummExtraBrut750.jpg")`);
+const espumante__extrabrut__chandon = new Bebida("vinos", "extra brut".toUpperCase(), "Chandon".toUpperCase(), 750, 1200, 25, Infinity, `url("../img/stockPhotos/espumanteExtraBrutChandon750.jpg")`);
+const espumante__extrabrut__mumm = new Bebida("vinos", "extra brut".toUpperCase(), "Mumm".toUpperCase(), 750, 900, 26, Infinity, `url("../img/stockPhotos/espumanteExtraBrutMumm750.jpg")`);
 const whisky__jack = new Bebida("aguardientes", "whisky".toUpperCase(), "Jack Daniels".toUpperCase(), 750, 4000, 27, Infinity, `url("../img/stockPhotos/whiskyJack750.jpg")`);
 const cerveza__guinness = new Bebida("cervezas", "cerveza".toUpperCase(), "Guinness".toUpperCase(), 473, 250, 28, Infinity, `url("../img/stockPhotos/guinness473.jpg")`);
 
@@ -55,8 +55,8 @@ stock1.addStockItem(ron__morgan);
 stock1.addStockItem(vodka__skyy);
 stock1.addStockItem(vino__norton__malbec);
 stock1.addStockItem(vino__rutini__malbec);
-stock1.addStockItem(espumante__chandon__extra);
-stock1.addStockItem(espumante__mumm__extra);
+stock1.addStockItem(espumante__extrabrut__chandon);
+stock1.addStockItem(espumante__extrabrut__mumm);
 stock1.addStockItem(whisky__vat);
 stock1.addStockItem(whisky__chivas);
 stock1.addStockItem(whisky__jack);
