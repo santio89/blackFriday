@@ -174,8 +174,13 @@ function toggleLista(){
     carrito__lista.classList.toggle("carrito__lista__translated");
 
     /* cambio la visibilidad al togglear la lista para facilitar navegacion por teclado cuando la lista esta cerrada */
+    /* este timeout se repite tambien para las secciones de ofertas/combos y productos. sirve para esconder la visibilidad del container luego del translate. hay una doble verificacion if (una inicial y otra luego del timeout) para que no se buggee al spammear el boton */
     if (carrito__lista.classList.contains("visible")){
-        setTimeout(()=>carrito__lista.classList.remove("visible"), 400);
+        setTimeout(()=>{
+            if (!carrito__lista.classList.contains("carrito__lista__translated")){
+                carrito__lista.classList.remove("visible");
+            }
+        }, 400);
     } else{
         carrito__lista.classList.add("visible");
     }
@@ -259,6 +264,10 @@ function toggleProductos(){
     productos.classList.toggle("carrito__lista__translated");
     productos.style.overflowY = "scroll";
     
+/*     if (productos.classList.contains("carrito__lista__translated")){
+        productos.scrollTo(0,0);
+    } */
+
     document.getElementById("productosPage__filter").value = "todas"; 
     productFilter();
 
@@ -271,7 +280,12 @@ function toggleProductos(){
     }
 
     if (productos.classList.contains("visible")){
-        setTimeout(()=>{productos.classList.remove("visible"); productos.scrollTo(0,0)}, 200);
+        setTimeout(()=>{
+            if (!productos.classList.contains("carrito__lista__translated")){
+                productos.classList.remove("visible"); 
+                productos.scrollTo(0,0);
+            }           
+        }, 400);
     } else{
         productos.classList.add("visible");
     }
@@ -279,7 +293,12 @@ function toggleProductos(){
     let ofertas = document.querySelector(".ofertasPage");
     if (ofertas.classList.contains("carrito__lista__translated")){
         ofertas.classList.toggle("carrito__lista__translated");
-        setTimeout(()=>{ofertas.classList.remove("visible"); ofertas.scrollTo(0,0)}, 200);
+        setTimeout(()=>{
+            if (!ofertas.classList.contains("carrito__lista__translated")){
+                ofertas.classList.remove("visible"); 
+                ofertas.scrollTo(0,0);
+            }
+        }, 400);
     }
 
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
@@ -360,9 +379,9 @@ function toggleOfertas(){
     ofertas.classList.toggle("carrito__lista__translated");
     ofertas.style.overflowY = "scroll";
     
-    if (ofertas.classList.contains("carrito__lista__translated")){
+/*     if (ofertas.classList.contains("carrito__lista__translated")){
         ofertas.scrollTo(0,0);
-    }
+    } */
     
     let nav__ofertas = document.querySelector("#nav__ofertas");
     nav__ofertas.classList.toggle("active");
@@ -373,7 +392,12 @@ function toggleOfertas(){
     }
 
     if (ofertas.classList.contains("visible")){
-        setTimeout(()=>{ofertas.classList.remove("visible"); ofertas.scrollTo(0,0)}, 200);
+        setTimeout(()=>{
+            if (!ofertas.classList.contains("carrito__lista__translated")){
+                ofertas.classList.remove("visible"); 
+                ofertas.scrollTo(0,0);
+            }           
+        }, 400);
     } else{
         ofertas.classList.add("visible");
     }
@@ -381,7 +405,12 @@ function toggleOfertas(){
     let productos = document.querySelector(".productosPage");
     if (productos.classList.contains("carrito__lista__translated")){
         productos.classList.toggle("carrito__lista__translated");
-        setTimeout(()=>{productos.classList.remove("visible"); productos.scrollTo(0,0)}, 200);
+        setTimeout(()=>{
+            if (!productos.classList.contains("carrito__lista__translated")){
+                productos.classList.remove("visible"); 
+                productos.scrollTo(0,0);
+            }
+        }, 400);
     }
     
 
