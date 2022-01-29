@@ -650,6 +650,11 @@ body{
         outline: none;
         background: var(--color-segundo-dark);
         padding: .2rem;
+        cursor: pointer;
+        
+        &:hover{
+            background: var(--color-segundo);
+        }
     }
 }
 

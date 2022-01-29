@@ -815,6 +815,11 @@ body {
   outline: none;
   background: var(--color-segundo-dark);
   padding: .2rem;
+  cursor: pointer;
+}
+
+.productosPage__filter__select:hover {
+  background: var(--color-segundo);
 }
 
 .visible {
