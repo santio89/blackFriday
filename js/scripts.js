@@ -264,9 +264,9 @@ function toggleProductos(){
     productos.classList.toggle("carrito__lista__translated");
     productos.style.overflowY = "scroll";
     
-/*     if (productos.classList.contains("carrito__lista__translated")){
+    if (productos.classList.contains("carrito__lista__translated")){
         productos.scrollTo(0,0);
-    } */
+    }
 
     document.getElementById("productosPage__filter").value = "todas"; 
     productFilter();
@@ -379,9 +379,9 @@ function toggleOfertas(){
     ofertas.classList.toggle("carrito__lista__translated");
     ofertas.style.overflowY = "scroll";
     
-/*     if (ofertas.classList.contains("carrito__lista__translated")){
+    if (ofertas.classList.contains("carrito__lista__translated")){
         ofertas.scrollTo(0,0);
-    } */
+    }
     
     let nav__ofertas = document.querySelector("#nav__ofertas");
     nav__ofertas.classList.toggle("active");
