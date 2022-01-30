@@ -830,6 +830,10 @@ body {
   visibility: visible !important;
 }
 
+.noPointer {
+  pointer-events: none;
+}
+
 .carrito {
   position: fixed;
   bottom: 10px;

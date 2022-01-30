@@ -171,7 +171,19 @@ carrito__total.innerHTML = `$${shopCart1.subTotal}`;
 
 function toggleLista(){
     let carrito__lista = document.querySelector(".carrito__lista");
+    let ofertasMain = document.querySelector(".ofertasFeatured");
+    let productosMain = document.querySelector(".productos");
+    let ofertasPage = document.querySelector(".ofertas--page");
+    let productosPage = document.querySelector(".productos--page");
+    let cerrar = document.querySelectorAll(".carrito__lista__cerrar");
+    let productosPage__filter = document.querySelector(".productosPage__filter");
     carrito__lista.classList.toggle("carrito__lista__translated");
+    ofertasMain.classList.toggle("noPointer");
+    productosMain.classList.toggle("noPointer");
+    ofertasPage.classList.toggle("noPointer");
+    productosPage.classList.toggle("noPointer");
+    productosPage__filter.classList.toggle("noPointer");
+    cerrar.forEach(cerrarButton =>{cerrarButton.style.pointerEvents = "auto";});
 
     /* cambio la visibilidad al togglear la lista para facilitar navegacion por teclado cuando la lista esta cerrada */
     /* este timeout se repite tambien para las secciones de ofertas/combos y productos. sirve para esconder la visibilidad del container luego del translate. hay una doble verificacion if (una inicial y otra luego del timeout) para que no se buggee al spammear el boton */

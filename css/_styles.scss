@@ -470,7 +470,6 @@ body{
     }
 }
 
-
 .productos{
     width: 100%;
     display: grid;
@@ -664,6 +663,10 @@ body{
 
 .visible{
     visibility: visible !important;
+}
+
+.noPointer{
+    pointer-events: none;
 }
 
 .carrito{
