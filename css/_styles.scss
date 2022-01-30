@@ -595,7 +595,7 @@ body{
     padding-left: clamp(.8rem, 2vw, 2rem);
     padding-right: clamp(.8rem, 2vw, 2rem);
     background: linear-gradient(135deg, var(--color-segundo) 21%, var(--color-background-primero) 21%);
-    z-index: 2;
+    z-index: 1;
     transform: translateY(-120%);
     transition: transform 400ms;
     visibility: hidden;
@@ -640,7 +640,7 @@ body{
 }
 
 .toggleZ{
-    z-index: 1;
+    z-index: 2;
 }
 
 .productosPage__filter{

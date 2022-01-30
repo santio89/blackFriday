@@ -294,6 +294,7 @@ function toggleProductos(){
     let ofertas = document.querySelector(".ofertasPage");
     if (ofertas.classList.contains("carrito__lista__translated")){
         ofertas.classList.toggle("carrito__lista__translated");
+        ofertas.classList.toggle("toggleZ");
         setTimeout(()=>{
             if (!ofertas.classList.contains("carrito__lista__translated")){
                 ofertas.classList.remove("visible"); 
@@ -407,6 +408,7 @@ function toggleOfertas(){
     let productos = document.querySelector(".productosPage");
     if (productos.classList.contains("carrito__lista__translated")){
         productos.classList.toggle("carrito__lista__translated");
+        productos.classList.toggle("toggleZ");
         setTimeout(()=>{
             if (!productos.classList.contains("carrito__lista__translated")){
                 productos.classList.remove("visible"); 
