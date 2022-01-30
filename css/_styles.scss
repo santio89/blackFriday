@@ -783,6 +783,7 @@ body{
             border-radius: 50%;
             background: var(--color-tercero);
             border: 2px solid var(--color-tercero);
+            outline: none   ;
 
             &:hover, &:focus{
                 color: var(--color-segundo);

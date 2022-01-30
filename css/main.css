@@ -988,6 +988,7 @@ body {
   border-radius: 50%;
   background: var(--color-tercero);
   border: 2px solid var(--color-tercero);
+  outline: none;
 }
 
 .carrito__lista__cerrar:hover, .carrito__lista__cerrar:focus {
