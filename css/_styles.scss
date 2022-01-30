@@ -787,6 +787,11 @@ body{
 
             &:hover, &:focus{
                 color: var(--color-segundo);
+                transform: translate(2px, 2px);
+            }
+
+            &:active{
+                transform: translate(4px, 4px);
             }
 
             &--ofertas, &--productos{

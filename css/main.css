@@ -993,6 +993,13 @@ body {
 
 .carrito__lista__cerrar:hover, .carrito__lista__cerrar:focus {
   color: var(--color-segundo);
+  -webkit-transform: translate(2px, 2px);
+          transform: translate(2px, 2px);
+}
+
+.carrito__lista__cerrar:active {
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
 }
 
 .carrito__lista__cerrar--ofertas, .carrito__lista__cerrar--productos {
