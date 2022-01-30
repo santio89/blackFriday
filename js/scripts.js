@@ -166,7 +166,6 @@ let carrito__total = document.querySelector(".carrito__total");
 carrito__total.innerHTML = `$${shopCart1.subTotal}`;
 
 
-
 /* carrito - lista de compras */
 
 function toggleLista(){
