@@ -218,10 +218,16 @@ function toggleLista(){
                 <span>${bebidas.tipo}<br>${bebidas.marca}</span>
                 <span>${bebidas.contNeto}ml</span>
                 <span>$${bebidas.precio}</span>
-                <span>(x${bebidas.inShopList()})</span>
+                <span>(x${bebidas.inShopList()})<div class="buttonContainer__shopList"><button class="${bebidas.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
+                <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__shopList">+</button></div></span>
                 <span>$${bebidas.precio * bebidas.inShopList()}</span>
                 `;
                 carrito__lista__ul.appendChild(carrito__newLi);
+
+                let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__menos__shopList`);
+                let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__mas__shopList`);
+                bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
+                bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
             }
         }
 
@@ -232,7 +238,8 @@ function toggleLista(){
                 <span>COMBO<br>${combos.nombre}</span>
                 <span>-</span>
                 <span>$${combos.precioTotal}</span>
-                <span>(x${combos.inShopList()})</span>
+                <span>(x${combos.inShopList()})<div class="buttonContainer__shopList"><button class="${combos.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
+                <button class="${combos.nombre.replace(/\s/g,"")}__mas__shopList">+</button></div></span>
                 <span>$${combos.precioTotal * combos.inShopList()}</span>
                 `;
                 carrito__lista__ul.appendChild(carrito__newLi);
