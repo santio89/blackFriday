@@ -901,12 +901,12 @@ body {
 
 .carrito__lista {
   position: fixed;
-  inset: 10%;
-  top: calc(10% + 24px);
-  bottom: calc(10% - 24px);
+  inset: 9%;
+  top: calc(9% + 24px);
+  bottom: calc(9% - 24px);
   min-width: 240px;
   max-width: 1200px;
-  max-height: 900px;
+  max-height: 800px;
   margin: auto;
   background: var(--color-background-primero);
   border-radius: 1rem;
@@ -983,9 +983,9 @@ body {
   line-height: 1;
   font-size: 1.8em;
   text-shadow: 2.2px 2.2px 0 var(--color-primero), 3px 3px 0 var(--color-segundo);
-  padding-bottom: 1rem;
-  margin-top: 1rem;
   margin-right: 3.8rem;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
   padding-left: clamp(.4rem, .4rem + 1vw, 1.2rem);
   padding-right: clamp(.4rem, .4rem + 1vw, 1.2rem);
 }
@@ -1000,6 +1000,23 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-size: clamp(.4em, .4em + 2.8vw, 1.4em);
+  line-height: 1.2;
+}
+
+.carrito__lista__vaciar {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  background: none;
+  color: darkred;
+  border: none;
+  outline: none;
+  font-size: clamp(.32em, .32em + 2.8vw, .92em);
+}
+
+.carrito__lista__vaciar:hover, .carrito__lista__vaciar:focus {
+  color: red;
 }
 
 .carrito__lista__cerrar {
@@ -1008,7 +1025,7 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   top: -3%;
-  right: -2%;
+  right: -1.5%;
   font-size: clamp(2.2rem, 2.2rem + 2vw, 3.6rem);
   font-weight: bolder;
   color: var(--color-segundo-dark);
@@ -1045,20 +1062,6 @@ body {
           transform: translate(4px, 4px);
 }
 
-.carrito__lista__vaciar {
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
-  background: none;
-  color: darkred;
-  border: none;
-  outline: none;
-}
-
-.carrito__lista__vaciar:hover, .carrito__lista__vaciar:focus {
-  color: red;
-}
-
 .carrito__lista__checkout {
   font-size: 1.4em;
   font-weight: bold;
@@ -1070,7 +1073,7 @@ body {
   color: var(--color-primero);
   -webkit-box-shadow: 2.8px 2.8px 0 0 var(--color-primero), 4.8px 4.8px 0 0 var(--color-segundo);
           box-shadow: 2.8px 2.8px 0 0 var(--color-primero), 4.8px 4.8px 0 0 var(--color-segundo);
-  margin-bottom: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .carrito__lista__checkout:hover, .carrito__lista__checkout:focus {

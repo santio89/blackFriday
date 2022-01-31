@@ -719,12 +719,12 @@ body{
 
     &__lista{
         position: fixed;
-        inset: 10%;
-        top: calc(10% + 24px);
-        bottom: calc(10% - 24px);
+        inset: 9%;
+        top: calc(9% + 24px);
+        bottom: calc(9% - 24px);
         min-width: 240px;
         max-width: 1200px;
-        max-height: 900px;
+        max-height: 800px;
         margin: auto;
         background: var(--color-background-primero);
         border-radius: 1rem;
@@ -774,10 +774,10 @@ body{
         &__title{
             line-height: 1;
             font-size: 1.8em;
-            text-shadow: 2.2px 2.2px 0 var(--color-primero), 3px 3px 0 var(--color-segundo);
-            padding-bottom: 1rem;
-            margin-top: 1rem;
+            text-shadow: 2.2px 2.2px 0 var(--color-primero), 3px 3px 0 var(--color-segundo);        
             margin-right: 3.8rem;
+            padding-top: .4rem;
+            padding-bottom: .4rem;
             padding-left: unquote("clamp(.4rem, .4rem + 1vw, 1.2rem)");
             padding-right: unquote("clamp(.4rem, .4rem + 1vw, 1.2rem)");;
         }
@@ -788,13 +788,28 @@ body{
             margin-top: .2rem;
             display: flex;
             justify-content: space-between;
+            font-size: unquote("clamp(.4em, .4em + 2.8vw, 1.4em)");
+            line-height: 1.2;
+        }
+
+        &__vaciar{
+            align-self: end;
+            background: none;
+            color: darkred;
+            border: none;
+            outline: none;
+            font-size: unquote("clamp(.32em, .32em + 2.8vw, .92em)");
+
+            &:hover, &:focus {
+                color: red;
+            }
         }
 
         &__cerrar{
             position: absolute;
             width: fit-content;
             top: -3%;
-            right: -2%;       
+            right: -1.5%;       
             font-size: unquote("clamp(2.2rem, 2.2rem + 2vw, 3.6rem)");
             font-weight: bolder;
             color: var(--color-segundo-dark);
@@ -826,18 +841,6 @@ body{
                 }
             }
         }
-        
-        &__vaciar{
-            align-self: end;
-            background: none;
-            color: darkred;
-            border: none;
-            outline: none;
-
-            &:hover, &:focus {
-                color: red;
-            }
-        }
 
         &__checkout{
             font-size: 1.4em;
@@ -849,7 +852,7 @@ body{
             border-radius: .4rem;
             color: var(--color-primero);
             box-shadow: 2.8px 2.8px 0 0 var(--color-primero), 4.8px 4.8px 0 0 var(--color-segundo);
-            margin-bottom: 1.8rem;
+            margin-bottom: 1rem;
             
             &:hover, &:focus{ 
                 text-shadow: 2px 2px 0 var(--color-tercero), 3px 3px 0 var(--color-segundo);
