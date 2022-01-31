@@ -773,7 +773,7 @@ body{
 
         &__title{
             line-height: 1;
-            font-size: 1.8em;
+            font-size: 1.6em;
             text-shadow: 2.2px 2.2px 0 var(--color-primero), 3px 3px 0 var(--color-segundo);        
             margin-right: 3.8rem;
             padding-top: .4rem;
@@ -843,7 +843,7 @@ body{
         }
 
         &__checkout{
-            font-size: 1.4em;
+            font-size: unquote("clamp(.4em, .4em + 2.8vw, 1.4em)");
             font-weight: bold;
             background: var(--color-tercero);
             border: none;
