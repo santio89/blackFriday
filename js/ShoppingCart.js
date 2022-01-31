@@ -31,6 +31,10 @@ class ShoppingCart{
     addItem(id){
         this.shopList.push(id);
 
+        let shopList__cantidad = document.querySelector(".carrito__lista li span:nth-of-type(4)");
+        let shopList__precio = document.querySelector(".carrito__lista li span:last-of-type");
+        let shopList__total = document.querySelector(".carrito__lista__total__number");
+
         for (const bebida of stock1.arrayBebidasTotal){
             if (this.shopList[this.shopList.length-1] == bebida.id){
                 if(bebida.outOfStock()){
@@ -40,9 +44,12 @@ class ShoppingCart{
                 }
                 
                 else{                        
-                    carrito__numero.innerHTML = shopCart1.shopList.length;
+                    carrito__numero.innerHTML = this.shopList.length;
                     this.subTotalCalc();
-                    carrito__total.innerHTML = `$${shopCart1.subTotal}`;
+                    carrito__total.innerHTML = `$${this.subTotal}`;
+             /*        shopList__cantidad.textContent = ``;
+                    shopList__precio = ``;
+                    shopList__total = ``; */
                     bebida.stock--;
 
                     localStorage.setItem("shopList", JSON.stringify(this.shopList));
@@ -53,9 +60,9 @@ class ShoppingCart{
 
         for (const combo of stock1.arrayCombosTotal){
             if (this.shopList[this.shopList.length-1] == combo.id){
-                    carrito__numero.innerHTML = shopCart1.shopList.length;
+                    carrito__numero.innerHTML = this.shopList.length;
                     this.subTotalCalc();
-                    carrito__total.innerHTML = `$${shopCart1.subTotal}`;
+                    carrito__total.innerHTML = `$${this.subTotal}`;
                     
                     localStorage.setItem("shopList", JSON.stringify(this.shopList));
                     break;
@@ -74,9 +81,9 @@ class ShoppingCart{
                 }  
 
                 this.shopList.splice(items, 1);  
-                carrito__numero.innerHTML = shopCart1.shopList.length;
+                carrito__numero.innerHTML = this.shopList.length;
                 this.subTotalCalc();
-                carrito__total.innerHTML = `$${shopCart1.subTotal}`;
+                carrito__total.innerHTML = `$${this.subTotal}`;
 
                 localStorage.setItem("shopList", JSON.stringify(this.shopList));               
                 break;

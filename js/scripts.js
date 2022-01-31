@@ -67,9 +67,9 @@ stock1.addStockItem(cerveza__brahma);
 stock1.addStockItem(tequila__azteca);
 stock1.addStockItem(gin__larios);
 stock1.addStockItem(vermouth__cinzano);
-stock1.addStockItem(cerveza__quilmes__lata);
-stock1.addStockItem(cerveza__heineken__lata);
-stock1.addStockItem(cerveza__brahma__lata);
+/* stock1.addStockItem(cerveza__quilmes__lata); */
+/* stock1.addStockItem(cerveza__heineken__lata);
+stock1.addStockItem(cerveza__brahma__lata); revisar por que se agregan doble, posiblemente el nombre*/
 stock1.addStockItem(gaseosa__coca);
 stock1.addStockItem(agua__glaciar);
 stock1.addStockItem(jugo__cepita__naranja);
@@ -218,9 +218,9 @@ function toggleLista(){
                 <span>${bebidas.tipo}<br>${bebidas.marca}</span>
                 <span>${bebidas.contNeto}ml</span>
                 <span>$${bebidas.precio}</span>
-                <span>(x${bebidas.inShopList()})<div class="buttonContainer__shopList"><button class="${bebidas.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
+                <span><div class="shopList__cantidad__${bebidas.id}">(x${bebidas.inShopList()})</div><div class="buttonContainer__shopList"><button class="${bebidas.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
                 <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__shopList">+</button></div></span>
-                <span>$${bebidas.precio * bebidas.inShopList()}</span>
+                <span class="shopList__precio__${bebidas.id}>$${bebidas.precio * bebidas.inShopList()}</span>
                 `;
                 
                 carrito__lista__ul.appendChild(carrito__newLi);
@@ -239,9 +239,9 @@ function toggleLista(){
                 <span>COMBO<br>${combos.nombre}</span>
                 <span>-</span>
                 <span>$${combos.precioTotal}</span>
-                <span>(x${combos.inShopList()})<div class="buttonContainer__shopList"><button class="combo${combos.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
+                <span><div class="shopList__cantidad__${bebidas.id}">(x${combos.inShopList()})</div><div class="buttonContainer__shopList"><button class="combo${combos.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
                 <button class="combo${combos.nombre.replace(/\s/g,"")}__mas__shopList">+</button></div></span>
-                <span>$${combos.precioTotal * combos.inShopList()}</span>
+                <span class="shopList__precio__${bebidas.id}>$${combos.precioTotal * combos.inShopList()}</span>
                 `;
 
                 carrito__lista__ul.appendChild(carrito__newLi);
