@@ -1009,7 +1009,6 @@ body {
   width: fit-content;
   top: -3%;
   right: -2%;
-  font-size: clamp(2rem, 2rem + 2.6vw, 4rem);
   font-size: clamp(2.2rem, 2.2rem + 2vw, 3.6rem);
   font-weight: bolder;
   color: var(--color-segundo-dark);
