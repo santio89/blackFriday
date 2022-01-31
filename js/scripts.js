@@ -222,6 +222,7 @@ function toggleLista(){
                 <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__shopList">+</button></div></span>
                 <span>$${bebidas.precio * bebidas.inShopList()}</span>
                 `;
+                
                 carrito__lista__ul.appendChild(carrito__newLi);
 
                 let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__menos__shopList`);
@@ -238,11 +239,17 @@ function toggleLista(){
                 <span>COMBO<br>${combos.nombre}</span>
                 <span>-</span>
                 <span>$${combos.precioTotal}</span>
-                <span>(x${combos.inShopList()})<div class="buttonContainer__shopList"><button class="${combos.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
-                <button class="${combos.nombre.replace(/\s/g,"")}__mas__shopList">+</button></div></span>
+                <span>(x${combos.inShopList()})<div class="buttonContainer__shopList"><button class="combo${combos.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
+                <button class="combo${combos.nombre.replace(/\s/g,"")}__mas__shopList">+</button></div></span>
                 <span>$${combos.precioTotal * combos.inShopList()}</span>
                 `;
+
                 carrito__lista__ul.appendChild(carrito__newLi);
+
+                let combo__menos = document.querySelector(`.combo${combos.nombre.replace(/\s/g,"")}__menos__shopList`);
+                let combo__mas = document.querySelector(`.combo${combos.nombre.replace(/\s/g,"")}__mas__shopList`);
+                combo__menos.addEventListener("click", ()=>{shopCart1.removeItem(combos.id)});
+                combo__mas.addEventListener("click", ()=>{shopCart1.addItem(combos.id)});
             }
         }
     }
