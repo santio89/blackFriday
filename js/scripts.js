@@ -184,9 +184,18 @@ function toggleLista(){
     productosPage__filter.classList.toggle("noPointer");
     cerrar.forEach(cerrarButton =>{cerrarButton.style.pointerEvents = "auto";});
 
+    function toggleLista__escEvent(e){
+        if (e.key == "Escape" && carrito__lista.classList.contains("carrito__lista__translated")){
+            toggleLista();
+        }
+    }
+
+    document.addEventListener("keydown", toggleLista__escEvent);
+
     /* cambio la visibilidad al togglear la lista para facilitar navegacion por teclado cuando la lista esta cerrada */
     /* este timeout se repite tambien para las secciones de ofertas/combos y productos. sirve para esconder la visibilidad del container luego del translate. hay una doble verificacion if (una inicial y otra luego del timeout) para que no se buggee al spammear el boton */
     if (carrito__lista.classList.contains("visible")){
+        document.removeEventListener("keydown", toggleLista__escEvent);
         setTimeout(()=>{
             if (!carrito__lista.classList.contains("carrito__lista__translated")){
                 carrito__lista.classList.remove("visible");
@@ -195,7 +204,6 @@ function toggleLista(){
     } else{
         carrito__lista.classList.add("visible");
     }
-    
     
     let carrito__lista__ul = document.querySelector(".carrito__lista__ul");
     carrito__lista__ul.innerHTML = "";
