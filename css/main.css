@@ -962,7 +962,6 @@ body {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   border-top: 4px dashed var(--color-segundo-dark);
-  border-bottom: 4px dashed var(--color-segundo-dark);
 }
 
 .carrito__lista__content::-webkit-scrollbar {
