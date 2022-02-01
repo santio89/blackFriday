@@ -925,8 +925,8 @@ body {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   z-index: 3;
-  -webkit-transform: translateY(-120%);
-          transform: translateY(-120%);
+  -webkit-transform: translateY(-800px);
+          transform: translateY(-800px);
   -webkit-transition: -webkit-transform 400ms;
   transition: -webkit-transform 400ms;
   transition: transform 400ms;
