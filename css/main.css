@@ -1117,7 +1117,6 @@ body {
           flex: 1;
   text-align: right;
   min-width: 44px;
-  margin-top: auto;
 }
 
 .carrito__lista li span:first-of-type {
