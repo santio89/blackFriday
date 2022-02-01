@@ -93,8 +93,8 @@ class ShoppingCart{
                         bebida.stock++;    
                         this.shopList.splice(items, 1);  
 
-                        carrito__numero.innerHTML = this.shopList.length;
                         this.subTotalCalc();
+                        carrito__numero.innerHTML = this.shopList.length;
                         carrito__total.innerHTML = `$${this.subTotal}`;
                         
                         if (shopList__cantidad){
@@ -102,7 +102,7 @@ class ShoppingCart{
                             shopList__precio.textContent = `$${bebida.precio * bebida.inShopList()}`;
                             shopList__total.textContent = `$${this.subTotal}`;
 
-                            if (bebida.inShopList() == 0){
+                            if (!bebida.inShopList()){
                                 shopList__precio.textContent = `$0`;
                                 shopList__cantidad.textContent = `(x0)`;
                             }
@@ -114,8 +114,8 @@ class ShoppingCart{
                     if (this.shopList[this.shopList.length-1] == combo.id){   
                         this.shopList.splice(items, 1);  
 
-                        carrito__numero.innerHTML = this.shopList.length;
                         this.subTotalCalc();
+                        carrito__numero.innerHTML = this.shopList.length;
                         carrito__total.innerHTML = `$${this.subTotal}`;
 
                         if (shopList__cantidad){
@@ -123,7 +123,7 @@ class ShoppingCart{
                             shopList__precio.textContent = `$${combo.precioTotal * combo.inShopList()}`;
                             shopList__total.textContent = `$${this.subTotal}`;
 
-                            if (combo.inShopList() == 0){
+                            if (!combo.inShopList()){
                                 shopList__precio.textContent = `$0`;
                                 shopList__cantidad.textContent = `(x0)`;
                             }
