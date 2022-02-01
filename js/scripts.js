@@ -220,7 +220,7 @@ function toggleLista(){
                 <span>$${bebidas.precio}</span>
                 <span><div class="shopList__cantidad__${bebidas.id}">(x${bebidas.inShopList()})</div><div class="buttonContainer__shopList"><button class="${bebidas.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
                 <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__shopList">+</button></div></span>
-                <span class="shopList__precio__${bebidas.id}>$${bebidas.precio * bebidas.inShopList()}</span>
+                <span class="shopList__precio__${bebidas.id}">$${bebidas.precio * bebidas.inShopList()}</span>
                 `;
                 
                 carrito__lista__ul.appendChild(carrito__newLi);
@@ -239,9 +239,9 @@ function toggleLista(){
                 <span>COMBO<br>${combos.nombre}</span>
                 <span>-</span>
                 <span>$${combos.precioTotal}</span>
-                <span><div class="shopList__cantidad__${bebidas.id}">(x${combos.inShopList()})</div><div class="buttonContainer__shopList"><button class="combo${combos.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
+                <span><div class="shopList__cantidad__${combos.id}">(x${combos.inShopList()})</div><div class="buttonContainer__shopList"><button class="combo${combos.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
                 <button class="combo${combos.nombre.replace(/\s/g,"")}__mas__shopList">+</button></div></span>
-                <span class="shopList__precio__${bebidas.id}>$${combos.precioTotal * combos.inShopList()}</span>
+                <span class="shopList__precio__${combos.id}">$${combos.precioTotal * combos.inShopList()}</span>
                 `;
 
                 carrito__lista__ul.appendChild(carrito__newLi);

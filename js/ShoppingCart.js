@@ -31,9 +31,9 @@ class ShoppingCart{
     addItem(id){
         this.shopList.push(id);
 
-        let shopList__cantidad = document.querySelector(".carrito__lista li span:nth-of-type(4)");
+      /*   let shopList__cantidad = document.querySelector(".carrito__lista li span:nth-of-type(4)");
         let shopList__precio = document.querySelector(".carrito__lista li span:last-of-type");
-        let shopList__total = document.querySelector(".carrito__lista__total__number");
+        let shopList__total = document.querySelector(".carrito__lista__total__number"); */
 
         for (const bebida of stock1.arrayBebidasTotal){
             if (this.shopList[this.shopList.length-1] == bebida.id){
