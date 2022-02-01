@@ -901,9 +901,10 @@ body {
 
 .carrito__lista {
   position: fixed;
-  inset: 9%;
-  top: calc(9% + 24px);
-  bottom: calc(9% - 24px);
+  top: calc(9vh + 24px);
+  bottom: calc(9vh - 24px);
+  left: 9vw;
+  right: 9vw;
   min-width: 240px;
   max-width: 1200px;
   height: -webkit-fit-content;
@@ -927,8 +928,10 @@ body {
   z-index: 3;
   -webkit-transform: translateY(calc(-100vh + 9vh + 24px));
           transform: translateY(calc(-100vh + 9vh + 24px));
-  -webkit-transition: 400ms;
-  transition: 400ms;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
   visibility: hidden;
   /* lista de compras escondida, ademas de trasladada, (para facilitar navegacion por teclado cuando la lista esta cerrada). se cambia a visible mediante js al abrirla*/
 }

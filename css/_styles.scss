@@ -716,12 +716,13 @@ body{
         left: 0;
         text-shadow: 1px 1px 0 var(--color-primero), 1.6px 1.6px 0 var(--color-segundo);
     }
-
+    
     &__lista{
         position: fixed;
-        inset: 9%;
-        top: calc(9% + 24px);
-        bottom: calc(9% - 24px);
+        top: calc(9vh + 24px);
+        bottom: calc(9vh - 24px);
+        left: 9vw;
+        right: 9vw;
         min-width: 240px;
         max-width: 1200px;
         height: fit-content;
@@ -736,7 +737,7 @@ body{
         flex-flow: column nowrap;
         z-index: 3;
         transform: translateY(calc(-100vh + 9vh + 24px));
-        transition: 400ms;
+        transition: transform 400ms;
         visibility: hidden; /* lista de compras escondida, ademas de trasladada, (para facilitar navegacion por teclado cuando la lista esta cerrada). se cambia a visible mediante js al abrirla*/
         
         &__translated{

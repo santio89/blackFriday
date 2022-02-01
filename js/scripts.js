@@ -351,14 +351,14 @@ function toggleProductos(){
             document.documentElement.style.marginRight = "0";
             nav__ul.style.marginRight = "0";
             carrito.style.right = "10px";
-            carrito__lista.style.right = "9%";
+            carrito__lista.style.right = "9vw";
         } 
     } else{
         document.documentElement.style.overflowY = "hidden";
         document.documentElement.style.marginRight = `${scrollbar__width}px`;
         nav__ul.style.marginRight = `${scrollbar__width}px`;
         carrito.style.right = `${scrollbar__width + 10}px`;
-        carrito__lista.style.right = `calc(${scrollbar__width}px + 9%)`;
+        carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
     }
 }
 
@@ -460,7 +460,7 @@ function toggleOfertas(){
         let carrito = document.querySelector(".carrito");
         let carrito__lista = document.querySelector(".carrito__lista");
         let scrollbar__width = getScrollbarWidth();
-
+        
         if(document.documentElement.style.overflowY == "hidden"){
             let productosPage = document.querySelector(".productosPage");
             if (!productosPage.classList.contains("visible")){
@@ -469,14 +469,14 @@ function toggleOfertas(){
                 document.documentElement.style.marginRight = "0";
                 nav__ul.style.marginRight = "0";
                 carrito.style.right = "10px";
-                carrito__lista.style.right = "9%";
+                carrito__lista.style.right = "9vw";
             } 
         } else{
             document.documentElement.style.overflowY = "hidden";
             document.documentElement.style.marginRight = `${scrollbar__width}px`;
             nav__ul.style.marginRight = `${scrollbar__width}px`;
             carrito.style.right = `${scrollbar__width + 10}px`;
-            carrito__lista.style.right = `calc(${scrollbar__width}px + 9%)`;
+            carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
         }
 }
 
