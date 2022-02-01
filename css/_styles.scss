@@ -735,12 +735,12 @@ body{
         display: flex;
         flex-flow: column nowrap;
         z-index: 3;
-        transform: translateY(-800px);
-        transition: transform 400ms;
+        transform: translateY(calc(-100vh + 9vh + 24px));
+        transition: 400ms;
         visibility: hidden; /* lista de compras escondida, ademas de trasladada, (para facilitar navegacion por teclado cuando la lista esta cerrada). se cambia a visible mediante js al abrirla*/
-
+        
         &__translated{
-            transform: translateY(0%) !important;
+            transform: translateY(0%);
         }
         
         &__content{

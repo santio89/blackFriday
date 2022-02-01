@@ -925,19 +925,17 @@ body {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   z-index: 3;
-  -webkit-transform: translateY(-800px);
-          transform: translateY(-800px);
-  -webkit-transition: -webkit-transform 400ms;
-  transition: -webkit-transform 400ms;
-  transition: transform 400ms;
-  transition: transform 400ms, -webkit-transform 400ms;
+  -webkit-transform: translateY(calc(-100vh + 9vh + 24px));
+          transform: translateY(calc(-100vh + 9vh + 24px));
+  -webkit-transition: 400ms;
+  transition: 400ms;
   visibility: hidden;
   /* lista de compras escondida, ademas de trasladada, (para facilitar navegacion por teclado cuando la lista esta cerrada). se cambia a visible mediante js al abrirla*/
 }
 
 .carrito__lista__translated {
-  -webkit-transform: translateY(0%) !important;
-          transform: translateY(0%) !important;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
 
 .carrito__lista__content {
