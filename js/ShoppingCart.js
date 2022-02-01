@@ -111,7 +111,7 @@ class ShoppingCart{
                 }  
                 
                 for (const combo of stock1.arrayCombosTotal){
-                    if (this.shopList[this.shopList.length-1] == combo.id){   
+                    if (this.shopList[items] == combo.id){   
                         this.shopList.splice(items, 1);  
 
                         this.subTotalCalc();
