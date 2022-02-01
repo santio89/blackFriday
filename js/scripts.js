@@ -67,9 +67,9 @@ stock1.addStockItem(cerveza__brahma);
 stock1.addStockItem(tequila__azteca);
 stock1.addStockItem(gin__larios);
 stock1.addStockItem(vermouth__cinzano);
-/* stock1.addStockItem(cerveza__quilmes__lata); */
-/* stock1.addStockItem(cerveza__heineken__lata);
-stock1.addStockItem(cerveza__brahma__lata); revisar por que se agregan doble, posiblemente el nombre*/
+stock1.addStockItem(cerveza__quilmes__lata);
+stock1.addStockItem(cerveza__heineken__lata);
+stock1.addStockItem(cerveza__brahma__lata); 
 stock1.addStockItem(gaseosa__coca);
 stock1.addStockItem(agua__glaciar);
 stock1.addStockItem(jugo__cepita__naranja);
@@ -128,7 +128,7 @@ let productosFeatured = document.getElementById("productosFeatured");
 stock1.arrayBebidasFeatured.forEach(bebidas => {
     let producto = document.createElement("div");
     producto.classList.add("productos__producto");
-    producto.classList.add(`producto--${bebidas.id}`);
+    producto.classList.add(`productoFeat--${bebidas.id}`);
 
     let stockText;
     if (bebidas.outOfStock()){
@@ -141,19 +141,19 @@ stock1.arrayBebidasFeatured.forEach(bebidas => {
     <p>${bebidas.tipo}</p>
     <h2>${bebidas.marca}</h2>
     <p>${bebidas.contNeto}ml</p>
-    <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">${stockText}</p>    
+    <p class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__stock">${stockText}</p>    
     <h3>$${bebidas.precio}</h3>
     <div class="productos__producto__buttonContainer">
-    <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsFeatured">-</button>
-    <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__productsFeatured">+</button>
+    <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsFeatured">-</button>
+    <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsFeatured">+</button>
     </div>
     `;
     
     producto.style.setProperty("--stock-image", bebidas.img);
     productosFeatured.appendChild(producto);
     
-    let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__menos__productsFeatured`);
-    let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__mas__productsFeatured`);
+    let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsFeatured`);
+    let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsFeatured`);
     bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
     bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
 }); 
@@ -218,15 +218,15 @@ function toggleLista(){
                 <span>${bebidas.tipo}<br>${bebidas.marca}</span>
                 <span>${bebidas.contNeto}ml</span>
                 <span>$${bebidas.precio}</span>
-                <span><div class="shopList__cantidad__${bebidas.id}">(x${bebidas.inShopList()})</div><div class="buttonContainer__shopList"><button class="${bebidas.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
-                <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__shopList">+</button></div></span>
+                <span><div class="shopList__cantidad__${bebidas.id}">(x${bebidas.inShopList()})</div><div class="buttonContainer__shopList"><button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__shopList">-</button>
+                <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__shopList">+</button></div></span>
                 <span class="shopList__precio__${bebidas.id}">$${bebidas.precio * bebidas.inShopList()}</span>
                 `;
                 
                 carrito__lista__ul.appendChild(carrito__newLi);
 
-                let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__menos__shopList`);
-                let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__mas__shopList`);
+                let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__shopList`);
+                let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__shopList`);
                 bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
                 bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
             }
@@ -363,11 +363,11 @@ function toggleProductos(){
 }
 
 /* cards de la seccion productos */
-    let productos = document.getElementById("productos");
-    stock1.arrayBebidasTotal.forEach(bebidas => {
+let productos = document.getElementById("productosTotal");
+stock1.arrayBebidasTotal.forEach(bebidas => {
     let producto = document.createElement("div");
     producto.classList.add("productos__producto");
-    producto.classList.add(`producto--${bebidas.id}`);
+    producto.classList.add(`productoTotal--${bebidas.id}`);
 
     let stockText;
     if (bebidas.outOfStock()){
@@ -380,19 +380,19 @@ function toggleProductos(){
     <p>${bebidas.tipo}</p>
     <h2>${bebidas.marca}</h2>
     <p>${bebidas.contNeto}ml</p>
-    <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">${stockText}</p>    
+    <p class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__stock">${stockText}</p>    
     <h3>$${bebidas.precio}</h3>
     <div class="productos__producto__buttonContainer">
-    <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal">-</button>
-    <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal">+</button>
+    <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsTotal">-</button>
+    <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsTotal">+</button>
     </div>
     `;
 
     producto.style.setProperty("--stock-image", bebidas.img);
     productos.appendChild(producto);
 
-    let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal`);
-    let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal`);
+    let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsTotal`);
+    let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsTotal`);
     bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
     bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
 }); 
@@ -691,58 +691,7 @@ darkMode.addEventListener("click", ()=>{
 
 
 
-/* filter productos con js -> lo hice también, mas abajo, usando jquery
-
-let filter = document.querySelector("#productosPage__filter");
-
-filter.addEventListener("change", productFilter);
-
-function productFilter(){
-    let arrayBebidasFilter = stock1.arrayBebidasTotal.filter(bebida=> bebida.categoria.toLowerCase() == filter.value);
-
-    if (filter.value == "todas"){
-        arrayBebidasFilter = stock1.arrayBebidasTotal;
-    }
-
-    productos.innerHTML = "";
-
-    arrayBebidasFilter.forEach(bebidas => {
-        let producto = document.createElement("div");
-        producto.classList.add("productos__producto");
-        producto.classList.add(`producto--${bebidas.id}`);
-
-        let stockText;
-        if (bebidas.outOfStock()){
-            stockText = "Fuera de stock";
-        } else{
-            stockText = "En stock";
-        }
-
-        producto.innerHTML = `
-        <p>${bebidas.tipo}</p>
-        <h2>${bebidas.marca}</h2>
-        <p>${bebidas.contNeto}ml</p>
-        <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">${stockText}</p>    
-        <h3>$${bebidas.precio}</h3>
-        <div class="productos__producto__buttonContainer">
-        <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal">-</button>
-        <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal">+</button>
-        </div>
-        `;
-
-        producto.style.setProperty("--stock-image", bebidas.img);
-        productos.appendChild(producto);
-
-        let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal`);
-        let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal`);
-        bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
-        bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
-    });
-} */
-
-
-
-/* filter productos con jquery*/
+/* filter productos usando jquery*/
 
 let filter = $("#productosPage__filter");
 filter.on("change", productFilter);
@@ -754,12 +703,12 @@ function productFilter(){
         arrayBebidasFilter = stock1.arrayBebidasTotal;
     }
 
-    $("#productos").html("");
+    $("#productosTotal").html("");
 
     arrayBebidasFilter.forEach(bebidas => {
         let producto = document.createElement("div");
         producto.classList.add("productos__producto");
-        producto.classList.add(`producto--${bebidas.id}`);
+        producto.classList.add(`productoTotal--${bebidas.id}`);
 
         let stockText;
         if (bebidas.outOfStock()){
@@ -768,26 +717,27 @@ function productFilter(){
             stockText = "En stock";
         }
 
-        $("#productos").append(producto);
+        $("#productosTotal").append(producto);
 
-        $(`.producto--${bebidas.id}`).html(`
+        $(`.productoTotal--${bebidas.id}`).html(`
         <p>${bebidas.tipo}</p>
         <h2>${bebidas.marca}</h2>
         <p>${bebidas.contNeto}ml</p>
         <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">${stockText}</p>    
         <h3>$${bebidas.precio}</h3>
         <div class="productos__producto__buttonContainer">
-        <button class="${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal">-</button>
-        <button class="${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal">+</button>
+        <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsTotal">-</button>
+        <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsTotal">+</button>
         </div>
         `);
 
-        $(`.producto--${bebidas.id}`).css(`--stock-image`, `${bebidas.img}`);
+        $(`.productoTotal--${bebidas.id}`).css(`--stock-image`, `${bebidas.img}`);
         
 
-        let bebida__menos = $(`.${bebidas.nombre.replace(/\s/g,"")}__menos__productsTotal`);
-        let bebida__mas = $(`.${bebidas.nombre.replace(/\s/g,"")}__mas__productsTotal`);
+        let bebida__menos = $(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsTotal`);
+        let bebida__mas = $(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsTotal`);
         bebida__menos.on("click", ()=>{shopCart1.removeItem(bebidas.id)});
         bebida__mas.on("click", ()=>{shopCart1.addItem(bebidas.id)});
     });
 }
+ 

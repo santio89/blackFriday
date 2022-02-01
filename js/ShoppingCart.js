@@ -8,6 +8,7 @@ class ShoppingCart{
 
     subTotalCalc(){
         this.subTotal = 0;  
+
         for (const item of this.shopList){
             for (const bebida of stock1.arrayBebidasTotal){
                 if (item == bebida.id){
@@ -36,23 +37,22 @@ class ShoppingCart{
         let shopList__total = document.querySelector(".carrito__lista__total__number");
 
         for (const bebida of stock1.arrayBebidasTotal){
-            if (this.shopList[this.shopList.length-1] == bebida.id){
+            if (id == bebida.id){
                 if(bebida.outOfStock()){
                     alert("Producto fuera de stock.");
                     this.shopList.pop();
                     break;
                 }
                 
-                else{                        
+                else{   
+                    this.subTotalCalc();                     
                     carrito__numero.innerHTML = this.shopList.length;
-                    this.subTotalCalc();
                     carrito__total.innerHTML = `$${this.subTotal}`;
 
                     if (shopList__cantidad){
                         shopList__cantidad.textContent = `(x${bebida.inShopList()})`;
                         shopList__precio.textContent = `$${bebida.precio * bebida.inShopList()}`;
                         shopList__total.textContent = `$${this.subTotal}`;
-
                     }
                     
                     bebida.stock--;
@@ -64,9 +64,9 @@ class ShoppingCart{
         }
 
         for (const combo of stock1.arrayCombosTotal){
-            if (this.shopList[this.shopList.length-1] == combo.id){
-                    carrito__numero.innerHTML = this.shopList.length;
+            if (id == combo.id){
                     this.subTotalCalc();
+                    carrito__numero.innerHTML = this.shopList.length; 
                     carrito__total.innerHTML = `$${this.subTotal}`;
 
                     if (shopList__cantidad){
@@ -88,45 +88,33 @@ class ShoppingCart{
 
         for (const items in this.shopList){
             if (this.shopList[items] == id){
-                for (const bebida of stock1.arrayBebidasTotal){
-                    if (this.shopList[items] == bebida.id){
-                        bebida.stock++;    
-                        this.shopList.splice(items, 1);  
+                this.shopList.splice(items, 1);  
+                this.subTotalCalc();
 
-                        this.subTotalCalc();
+                for (const bebida of stock1.arrayBebidasTotal){
+                    if (id == bebida.id){
+                        bebida.stock++;    
                         carrito__numero.innerHTML = this.shopList.length;
                         carrito__total.innerHTML = `$${this.subTotal}`;
                         
                         if (shopList__cantidad){
                             shopList__cantidad.textContent = `(x${bebida.inShopList()})`;
                             shopList__precio.textContent = `$${bebida.precio * bebida.inShopList()}`;
-                            shopList__total.textContent = `$${this.subTotal}`;
-
-                            if (!bebida.inShopList()){
-                                shopList__precio.textContent = `$0`;
-                                shopList__cantidad.textContent = `(x0)`;
-                            }
+                            shopList__total.textContent = `$${this.subTotal}`;  
                         } 
                     }
                 }  
                 
                 for (const combo of stock1.arrayCombosTotal){
-                    if (this.shopList[items] == combo.id){   
-                        this.shopList.splice(items, 1);  
-
-                        this.subTotalCalc();
+                    if (id == combo.id){   
+                        
                         carrito__numero.innerHTML = this.shopList.length;
                         carrito__total.innerHTML = `$${this.subTotal}`;
 
                         if (shopList__cantidad){
                             shopList__cantidad.textContent = `(x${combo.inShopList()})`;
                             shopList__precio.textContent = `$${combo.precioTotal * combo.inShopList()}`;
-                            shopList__total.textContent = `$${this.subTotal}`;
-
-                            if (!combo.inShopList()){
-                                shopList__precio.textContent = `$0`;
-                                shopList__cantidad.textContent = `(x0)`;
-                            }
+                            shopList__total.textContent = `$${this.subTotal}`;     
                         }
                     }
                 }  
