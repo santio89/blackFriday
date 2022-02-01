@@ -31,9 +31,9 @@ class ShoppingCart{
     addItem(id){
         this.shopList.push(id);
 
-      /*   let shopList__cantidad = document.querySelector(".carrito__lista li span:nth-of-type(4)");
-        let shopList__precio = document.querySelector(".carrito__lista li span:last-of-type");
-        let shopList__total = document.querySelector(".carrito__lista__total__number"); */
+        let shopList__cantidad = document.querySelector(`.shopList__cantidad__${id}`);
+        let shopList__precio = document.querySelector(`.shopList__precio__${id}`);
+        let shopList__total = document.querySelector(".carrito__lista__total__number");
 
         for (const bebida of stock1.arrayBebidasTotal){
             if (this.shopList[this.shopList.length-1] == bebida.id){
@@ -47,9 +47,14 @@ class ShoppingCart{
                     carrito__numero.innerHTML = this.shopList.length;
                     this.subTotalCalc();
                     carrito__total.innerHTML = `$${this.subTotal}`;
-             /*        shopList__cantidad.textContent = ``;
-                    shopList__precio = ``;
-                    shopList__total = ``; */
+
+                    if (shopList__cantidad){
+                        shopList__cantidad.textContent = `(x${bebida.inShopList()})`;
+                        shopList__precio.textContent = `$${bebida.precio * bebida.inShopList()}`;
+                        shopList__total.textContent = `$${this.subTotal}`;
+
+                    }
+                    
                     bebida.stock--;
 
                     localStorage.setItem("shopList", JSON.stringify(this.shopList));
@@ -63,6 +68,12 @@ class ShoppingCart{
                     carrito__numero.innerHTML = this.shopList.length;
                     this.subTotalCalc();
                     carrito__total.innerHTML = `$${this.subTotal}`;
+
+                    if (shopList__cantidad){
+                    shopList__cantidad.textContent = `(x${combo.inShopList()})`;
+                    shopList__precio.textContent = `$${combo.precioTotal * combo.inShopList()}`;
+                    shopList__total.textContent = `$${this.subTotal}`;
+                    }
                     
                     localStorage.setItem("shopList", JSON.stringify(this.shopList));
                     break;
@@ -70,20 +81,57 @@ class ShoppingCart{
         }
     }
 
-    removeItem(id){
+    removeItem(id){   
+        let shopList__cantidad = document.querySelector(`.shopList__cantidad__${id}`);
+        let shopList__precio = document.querySelector(`.shopList__precio__${id}`);
+        let shopList__total = document.querySelector(".carrito__lista__total__number");
+
         for (const items in this.shopList){
             if (this.shopList[items] == id){
-    
                 for (const bebida of stock1.arrayBebidasTotal){
                     if (this.shopList[items] == bebida.id){
-                        bebida.stock++;           
+                        bebida.stock++;    
+                        this.shopList.splice(items, 1);  
+
+                        carrito__numero.innerHTML = this.shopList.length;
+                        this.subTotalCalc();
+                        carrito__total.innerHTML = `$${this.subTotal}`;
+                        
+                        if (shopList__cantidad){
+                            shopList__cantidad.textContent = `(x${bebida.inShopList()})`;
+                            shopList__precio.textContent = `$${bebida.precio * bebida.inShopList()}`;
+                            shopList__total.textContent = `$${this.subTotal}`;
+
+                            if (bebida.inShopList() == 0){
+                                shopList__precio.textContent = `$0`;
+                                shopList__cantidad.textContent = `(x0)`;
+                            }
+                        } 
+                    }
+                }  
+                
+                for (const combo of stock1.arrayCombosTotal){
+                    if (this.shopList[this.shopList.length-1] == combo.id){   
+                        this.shopList.splice(items, 1);  
+
+                        carrito__numero.innerHTML = this.shopList.length;
+                        this.subTotalCalc();
+                        carrito__total.innerHTML = `$${this.subTotal}`;
+
+                        if (shopList__cantidad){
+                            shopList__cantidad.textContent = `(x${combo.inShopList()})`;
+                            shopList__precio.textContent = `$${combo.precioTotal * combo.inShopList()}`;
+                            shopList__total.textContent = `$${this.subTotal}`;
+
+                            if (combo.inShopList() == 0){
+                                shopList__precio.textContent = `$0`;
+                                shopList__cantidad.textContent = `(x0)`;
+                            }
+                        }
                     }
                 }  
 
-                this.shopList.splice(items, 1);  
-                carrito__numero.innerHTML = this.shopList.length;
-                this.subTotalCalc();
-                carrito__total.innerHTML = `$${this.subTotal}`;
+               
 
                 localStorage.setItem("shopList", JSON.stringify(this.shopList));               
                 break;
