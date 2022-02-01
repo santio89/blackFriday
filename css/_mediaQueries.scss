@@ -64,7 +64,14 @@
     }
 }
 
-@media (min-width: 594px){
+@media (min-width: 602px){
+    .header{
+        &__title{
+            h1{
+                max-width: none;
+            }
+        }
+    }
     .nav{
         justify-content: center;
         
