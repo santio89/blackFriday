@@ -29,7 +29,7 @@ const jugo__cepita__manzana = new Bebida("sinalcohol", "jugo".toUpperCase(), "Ce
 const cerveza__brahma__lata = new Bebida("cervezas", "cerveza".toUpperCase(), "Brahma".toUpperCase(), 473, 220, 24, Infinity, `url("../img/stockPhotos/cervezaBrahma473.jpg")`);
 const espumante__extrabrut__chandon = new Bebida("vinos", "extra brut".toUpperCase(), "Chandon".toUpperCase(), 750, 1200, 25, Infinity, `url("../img/stockPhotos/espumanteExtraBrutChandon750.jpg")`);
 const espumante__extrabrut__mumm = new Bebida("vinos", "extra brut".toUpperCase(), "Mumm".toUpperCase(), 750, 900, 26, Infinity, `url("../img/stockPhotos/espumanteExtraBrutMumm750.jpg")`);
-const whisky__jack = new Bebida("aguardientes", "whisky".toUpperCase(), "Jack Daniels".toUpperCase(), 750, 4000, 27, Infinity, `url("../img/stockPhotos/whiskyJack750.jpg")`);
+const whisky__jack = new Bebida("aguardientes", "whisky".toUpperCase(), "Jack".toUpperCase(), 750, 4000, 27, Infinity, `url("../img/stockPhotos/whiskyJack750.jpg")`);
 const cerveza__guinness = new Bebida("cervezas", "cerveza".toUpperCase(), "Guinness".toUpperCase(), 473, 250, 28, Infinity, `url("../img/stockPhotos/guinness473.jpg")`);
 
 const combo1 = new Combo([cerveza__quilmes, cerveza__heineken, fernet__branca, whisky__vat], 20, "1", 99);
