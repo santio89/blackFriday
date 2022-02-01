@@ -131,8 +131,6 @@ class ShoppingCart{
                     }
                 }  
 
-               
-
                 localStorage.setItem("shopList", JSON.stringify(this.shopList));               
                 break;
             }
