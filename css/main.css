@@ -215,7 +215,7 @@ body {
 .validation__denied {
   color: red;
   text-align: center;
-  opacity: 0;
+  display: none;
   margin-bottom: 1rem;
 }
 
@@ -258,20 +258,22 @@ body {
   word-spacing: .8rem;
   letter-spacing: .1rem;
   text-rendering: optimizeLegibility;
+  white-space: nowrap;
 }
 
 .header__title--ofertas, .header__title--productos {
   margin-top: -3.4rem;
 }
 
+.header__title__word {
+  display: block;
+}
+
 .header__title h1 {
   text-align: left;
   margin: auto;
   margin-bottom: 2rem;
-  font-size: clamp(7.6rem, 1rem + 10vw, 28rem);
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
+  font-size: clamp(6.8rem, 1rem + 10vw, 18rem);
 }
 
 .header__title h1 span {
@@ -1332,23 +1334,6 @@ body {
 }
 
 /* fin scrollbar */
-@-webkit-keyframes denied {
-  0% {
-    opacity: 100%;
-  }
-  100% {
-    opacity: 0%;
-  }
-}
-@keyframes denied {
-  0% {
-    opacity: 100%;
-  }
-  100% {
-    opacity: 0%;
-  }
-}
-
 @-webkit-keyframes rubberBand {
   from {
     -webkit-transform: scale3d(1, 1, 1);
@@ -1379,7 +1364,6 @@ body {
             transform: scale3d(1, 1, 1);
   }
 }
-
 @keyframes rubberBand {
   from {
     -webkit-transform: scale3d(1, 1, 1);
@@ -1471,9 +1455,9 @@ body {
   }
 }
 
-@media (min-width: 602px) {
-  .header__title h1 {
-    max-width: none;
+@media (min-width: 607px) {
+  .header__title__word {
+    display: inline-block;
   }
   .nav {
     -webkit-box-pack: center;

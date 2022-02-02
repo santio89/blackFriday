@@ -594,10 +594,7 @@ function validationYes(){
 
 function validationNo(){
     localStorage.setItem("validation", 0);
-    let validation = document.querySelector(".validation");
-    let denied = document.querySelector(".validation__denied");
-    denied.style.animation = "denied 6000ms";
-    validation.appendChild(denied);
+    $(".validation__denied").finish().fadeIn(0).delay(2400).fadeOut("slow");
 }
 
 let validation__yes = document.querySelector(".validation__age__yes");

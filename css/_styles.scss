@@ -167,7 +167,7 @@ body{
     &__denied{
         color: red;
         text-align: center;
-        opacity: 0;
+        display: none;
         margin-bottom: 1rem;
     }
 }
@@ -200,17 +200,21 @@ body{
         word-spacing: .8rem;
         letter-spacing: .1rem;
         text-rendering: optimizeLegibility; 
+        white-space: nowrap;
 
         &--ofertas, &--productos{
             margin-top: -3.4rem;
+        }
+
+        &__word{
+            display: block;
         }
 
         h1{
             text-align: left;
             margin: auto;
             margin-bottom: 2rem;
-            font-size: unquote("clamp(7.6rem, 1rem + 10vw, 28rem)");
-            max-width: fit-content;
+            font-size: unquote("clamp(6.8rem, 1rem + 10vw, 18rem)");
 
             span{
                 display: inline-block;
