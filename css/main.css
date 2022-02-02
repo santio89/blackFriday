@@ -257,6 +257,7 @@ body {
   text-shadow: 2px 2px 0 var(--color-primero), 4px 4px 0 var(--color-segundo);
   word-spacing: .8rem;
   letter-spacing: .1rem;
+  text-rendering: optimizeLegibility;
 }
 
 .header__title--ofertas, .header__title--productos {
