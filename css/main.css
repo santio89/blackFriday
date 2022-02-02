@@ -838,10 +838,6 @@ body {
   background: var(--color-segundo);
 }
 
-.visible {
-  visibility: visible !important;
-}
-
 .noPointer {
   pointer-events: none;
 }
@@ -868,7 +864,7 @@ body {
   cursor: pointer;
 }
 
-.carrito:hover, .carrito:focus {
+.carrito:hover, .carrito:focus-visible {
   outline: 2px solid var(--color-segundo);
   background: var(--color-segundo);
 }
@@ -1182,6 +1178,15 @@ body {
 
 .carrito__lista li span:last-of-type {
   text-align: right;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.carritoActive {
+  background: var(--color-segundo);
+  outline: 2px solid var(--color-segundo);
 }
 
 .footer {

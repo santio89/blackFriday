@@ -169,6 +169,7 @@ carrito__total.innerHTML = `$${shopCart1.subTotal}`;
 /* carrito - lista de compras */
 
 function toggleLista(){
+    let carrito = document.querySelector(".carrito");
     let carrito__lista = document.querySelector(".carrito__lista");
     let ofertasMain = document.querySelector(".ofertasFeatured");
     let productosMain = document.querySelector(".productos");
@@ -177,6 +178,7 @@ function toggleLista(){
     let cerrar = document.querySelectorAll(".carrito__lista__cerrar");
     let productosPage__filter = document.querySelector(".productosPage__filter");
     let header__title = document.querySelectorAll(".header__title");
+    carrito.classList.toggle("carritoActive");
     carrito__lista.classList.toggle("carrito__lista__translated");
     ofertasMain.classList.toggle("noPointer");
     productosMain.classList.toggle("noPointer");

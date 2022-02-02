@@ -671,10 +671,6 @@ body{
     }
 }
 
-.visible{
-    visibility: visible !important;
-}
-
 .noPointer{
     pointer-events: none;
 }
@@ -694,7 +690,7 @@ body{
     z-index: 3;
     cursor: pointer;
 
-    &:hover, &:focus{
+    &:hover, &:focus-visible{
         outline: 2px solid var(--color-segundo);
         background: var(--color-segundo);
     }
@@ -936,7 +932,14 @@ body{
     }
 }
 
+.visible{
+    visibility: visible;
+}
 
+.carritoActive{
+    background: var(--color-segundo);
+    outline: 2px solid var(--color-segundo);
+}
 
 .footer{
     border-top: 8px dashed var(--color-tercero);
