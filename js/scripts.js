@@ -747,8 +747,8 @@ function productFilter(){
 
 /* header title animation - usando jquery y css*/
 
-let z = $(".header__title h1 span");
-z.mouseenter((e)=>e.target.classList.add("rubberBand"));
-z.on("animationend webkitAnimationEnd oAnimationEnd", (e)=>e.target.classList.remove("rubberBand"));
+let header__logo = $(".header__title h1 span");
+header__logo.mouseenter((e)=>e.target.classList.add("rubberBand"));
+header__logo.on("animationend webkitAnimationEnd oAnimationEnd", (e)=>e.target.classList.remove("rubberBand"));
 
 
