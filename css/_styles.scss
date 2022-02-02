@@ -721,6 +721,7 @@ body{
         top:-50%;
         left: 0;
         text-shadow: 1px 1px 0 var(--color-primero), 1.6px 1.6px 0 var(--color-segundo);
+        display: none;
     }
     
     &__lista{
