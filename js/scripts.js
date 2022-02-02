@@ -280,12 +280,11 @@ carrito__vaciar.onclick = vaciarCompra;
 
 /* carrito - checkout */
 function checkout(){
-    alert(`***CHECKOUT***\nTOTAL: $${shopCart1.subTotal}\nEnvío -> Medios de pago -> Confirmación`);
+    alert(`***CHECKOUT***\nTOTAL: $${shopCart1.subTotal}\nEnvío -> Medios de pago -> Confirmación`);  
 }
 
 let carrito__checkout = document.querySelector(".carrito__lista__checkout");
 carrito__checkout.onclick = checkout;
-
 
 
 /* sección productos */
@@ -743,3 +742,11 @@ function productFilter(){
     });
 }
  
+
+/* header title animation - usando jquery y css*/
+
+let z = $(".header__title h1 span");
+z.mouseenter((e)=>e.target.classList.add("rubberBand"));
+z.on("animationend webkitAnimationEnd oAnimationEnd", (e)=>e.target.classList.remove("rubberBand"));
+
+

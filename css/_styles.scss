@@ -172,6 +172,10 @@ body{
     }
 }
 
+.rubberBand{
+    animation: rubberBand 800ms;
+}
+
 .header{
     width: 100%;
     display: flex;
@@ -206,6 +210,11 @@ body{
             margin-bottom: 2rem;
             font-size: unquote("clamp(7.6rem, 1rem + 10vw, 28rem)");
             max-width: fit-content;
+
+            span{
+                display: inline-block;
+            }
+          
         }
     }
 
