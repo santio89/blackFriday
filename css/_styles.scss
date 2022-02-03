@@ -167,8 +167,9 @@ body{
     &__denied{
         color: red;
         text-align: center;
-        display: none;
+        visibility: hidden;
         margin-bottom: 1rem;
+        min-height: 96px;
     }
 }
 

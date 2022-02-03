@@ -575,7 +575,7 @@ for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
 
 
 /* validation */
-if (localStorage.getItem("validation")){
+/* if (localStorage.getItem("validation")){
     if (localStorage.getItem("validation") == 1){
         let validation = document.querySelector(".validation");
         validation.classList.add("validation__translated");
@@ -584,7 +584,7 @@ if (localStorage.getItem("validation")){
 
         setTimeout(rubberBandOnce, 100);
     }
-}
+} */
 
 function validationYes(){
     localStorage.setItem("validation", 1);
@@ -606,7 +606,9 @@ function validationYes(){
 
 function validationNo(){
     localStorage.setItem("validation", 0);
-    $(".validation__denied").finish().show().delay(2400).fadeOut("slow");
+    $(".validation__denied").finish().css("visibility", "visible").delay(2400).fadeOut("slow", function(){
+        $(this).css({"display": "block", "visibility": "hidden"});
+    });
 }
 
 let validation__yes = document.querySelector(".validation__age__yes");
