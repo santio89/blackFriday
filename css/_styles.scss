@@ -831,8 +831,8 @@ body{
         &__cerrar{
             position: absolute;
             width: fit-content;
-            top: -3.8%;
-            right: -1.8%;       
+            top: -3.6%;
+            right: MIN(-12px, -1.6%);
             font-size: unquote("clamp(2rem, 2rem + 2vw, 3.6rem)");
             font-weight: bolder;
             color: var(--color-segundo-dark);
@@ -853,7 +853,6 @@ body{
                 top: 1rem;
                 font-size: unquote("clamp(2.2rem, 2.2rem + 2.2vw, 3.6rem)");
                 left: 98%;
-                transform: none;
                 transition: transform 200ms;
                 outline: none;
 

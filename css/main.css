@@ -1051,8 +1051,8 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  top: -3.8%;
-  right: -1.8%;
+  top: -3.6%;
+  right: MIN(-12px, -1.6%);
   font-size: clamp(2rem, 2rem + 2vw, 3.6rem);
   font-weight: bolder;
   color: var(--color-segundo-dark);
@@ -1075,8 +1075,6 @@ body {
   top: 1rem;
   font-size: clamp(2.2rem, 2.2rem + 2.2vw, 3.6rem);
   left: 98%;
-  -webkit-transform: none;
-          transform: none;
   -webkit-transition: -webkit-transform 200ms;
   transition: -webkit-transform 200ms;
   transition: transform 200ms;
