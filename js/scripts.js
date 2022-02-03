@@ -575,7 +575,7 @@ for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
 
 
 /* validation */
-/* if (localStorage.getItem("validation")){
+if (localStorage.getItem("validation")){
     if (localStorage.getItem("validation") == 1){
         let validation = document.querySelector(".validation");
         validation.classList.add("validation__translated");
@@ -584,7 +584,7 @@ for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
 
         setTimeout(rubberBandOnce, 100);
     }
-} */
+}
 
 function validationYes(){
     localStorage.setItem("validation", 1);
