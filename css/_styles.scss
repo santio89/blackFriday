@@ -219,7 +219,7 @@ body{
 
             span{
                 display: inline-block;
-                 /* antialiasing (para evitar que se vea blurreado el contorno del texto al realizar la animacion con transform (keyframes rubberBand) */
+                /* antialiasing (para evitar que se vea blurreado el contorno del texto al realizar la animacion con transform (keyframes rubberBand)) */
                 outline: 1px solid transparent;  
                 transform: translateZ(0);
                 will-change: transform;
@@ -227,6 +227,7 @@ body{
                 -webkit-backface-visibility: hidden;
                 perspective: 1000;
                 -webkit-perspective: 1000;
+                text-rendering: optimizeLegibility; 
                 /* fin antialiasing */
             }
           
