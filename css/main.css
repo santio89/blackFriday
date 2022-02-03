@@ -807,7 +807,7 @@ body {
 
 .ofertasPage__title h2, .productosPage__title h2 {
   color: var(--color-tercero);
-  font-size: clamp(4rem, 1rem + 4vw, 30rem);
+  font-size: clamp(2rem, 2rem + 6vw, 6rem);
   cursor: pointer;
 }
 
@@ -817,7 +817,7 @@ body {
       align-self: center;
   padding: 0;
   color: var(--color-segundo);
-  font-size: clamp(6rem, 1rem + 6vw, 40rem);
+  font-size: clamp(4rem, 4rem + 8vw, 10rem);
 }
 
 .ofertasPage .ofertasFeatured__wrapper, .productosPage .ofertasFeatured__wrapper {
