@@ -786,7 +786,7 @@ body {
 .ofertasPage__title, .productosPage__title {
   width: 100%;
   border-bottom: 4px dashed var(--color-segundo);
-  margin-top: 2.6rem;
+  margin-top: 2.4rem;
   margin-bottom: 1.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1007,10 +1007,10 @@ body {
 .carrito__lista__title {
   line-height: 1;
   font-size: 1.6em;
-  font-size: clamp(.6em, .6em + 2.8vw, 1.6em);
+  font-size: clamp(1em, 1em + 2.8vw, 2em);
   text-shadow: 2.2px 2.2px 0 var(--color-primero), 3px 3px 0 var(--color-segundo);
-  margin-right: 3.8rem;
-  padding-top: 1rem;
+  margin-right: clamp(.8em, .8em + 2.8vw, 3.8em);
+  padding-top: .8rem;
   padding-bottom: .4rem;
   padding-left: clamp(.4rem, .4rem + 1vw, 1.2rem);
   padding-right: clamp(.4rem, .4rem + 1vw, 1.2rem);
@@ -1052,7 +1052,7 @@ body {
   width: fit-content;
   top: -3.8%;
   right: -1.8%;
-  font-size: clamp(2.2rem, 2.2rem + 2vw, 3.6rem);
+  font-size: clamp(2rem, 2rem + 2vw, 3.6rem);
   font-weight: bolder;
   color: var(--color-segundo-dark);
   cursor: pointer;
@@ -1071,8 +1071,8 @@ body {
 .carrito__lista__cerrar--ofertas, .carrito__lista__cerrar--productos {
   position: -webkit-sticky;
   position: sticky;
-  top: 1.4rem;
-  font-size: clamp(2.2rem, 2.2rem + 2vw, 3.6rem);
+  top: 1rem;
+  font-size: clamp(2.2rem, 2.2rem + 2.2vw, 3.6rem);
   left: 98%;
   -webkit-transform: none;
           transform: none;
