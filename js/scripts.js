@@ -692,9 +692,10 @@ darkMode.addEventListener("click", ()=>{
 
 
 /* filter productos usando jquery*/
-
 let filter = $("#productosPage__filter");
-filter.on("change", productFilter);
+$(document).ready(function () {
+    filter.on("change", productFilter); 
+});
 
 function productFilter(){
     let arrayBebidasFilter = stock1.arrayBebidasTotal.filter(bebida=> bebida.categoria.toLowerCase() == filter.val());
@@ -743,9 +744,11 @@ function productFilter(){
  
 
 /* header title animation - usando jquery y css*/
+$(document).ready(function () {
+    let header__logo = $(".header__title h1 span");
+    header__logo.mouseenter((e)=>e.target.classList.add("rubberBand"));
+    header__logo.on("animationend webkitAnimationEnd oAnimationEnd", (e)=>e.target.classList.remove("rubberBand"));
+});
 
-let header__logo = $(".header__title h1 span");
-header__logo.mouseenter((e)=>e.target.classList.add("rubberBand"));
-header__logo.on("animationend webkitAnimationEnd oAnimationEnd", (e)=>e.target.classList.remove("rubberBand"));
 
 
