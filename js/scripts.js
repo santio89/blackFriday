@@ -572,6 +572,8 @@ if (localStorage.getItem("validation")){
         validation.classList.add("validation__translated");
         validation.style.display = "none";
         document.documentElement.style.overflowY = "scroll";
+
+        setTimeout(rubberBandOnce, 100);
     }
 }
 
@@ -590,6 +592,7 @@ function validationYes(){
     validation__age.style.marginLeft = `${scrollbar__width}px`;
     
     setTimeout(()=>validation.style.display = "none", 800);
+    setTimeout(rubberBandOnce, 900);
 }
 
 function validationNo(){
@@ -750,5 +753,9 @@ $(document).ready(function () {
     header__logo.on("animationend webkitAnimationEnd oAnimationEnd", (e)=>e.target.classList.remove("rubberBand"));
 });
 
-
+function rubberBandOnce(){
+    let header__title = $(".header__title h1 span");
+    header__title.addClass("rubberBand");
+    header__title.on("animationend webkitAnimationEnd oAnimationEnd", (e)=>e.target.classList.remove("rubberBand"));
+}
 

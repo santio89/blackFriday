@@ -278,6 +278,16 @@ body {
 
 .header__title h1 span {
   display: inline-block;
+  /* antialiasing (para evitar que se vea blurreado el contorno del texto al realizar la animacion con transform (keyframes rubberBand) */
+  outline: 1px solid transparent;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000;
+  -webkit-perspective: 1000;
+  /* fin antialiasing */
 }
 
 .header__info {
