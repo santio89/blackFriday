@@ -749,7 +749,7 @@ function productFilter(){
 /* header title animation - usando jquery y css*/
 $(document).ready(function () {
     let header__logo = $(".header__title h1 span");
-    header__logo.mouseenter((e)=>e.target.classList.add("rubberBand"));
+    header__logo.on("mouseenter", (e)=>e.target.classList.add("rubberBand"));
     header__logo.on("animationend webkitAnimationEnd oAnimationEnd", (e)=>e.target.classList.remove("rubberBand"));
 });
 
