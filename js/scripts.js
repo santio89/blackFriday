@@ -271,6 +271,7 @@ carrito.addEventListener("click", toggleLista);
 let carrito__cerrar = document.querySelector(".carrito__lista__cerrar");
 carrito__cerrar.onclick = toggleLista;
 
+
 /* carrito - vaciar */
 function vaciarCompra(){
     localStorage.removeItem("shopList");
@@ -280,9 +281,16 @@ function vaciarCompra(){
 let carrito__vaciar = document.querySelector(".carrito__lista__vaciar");
 carrito__vaciar.onclick = vaciarCompra;
 
+
 /* carrito - checkout */
 function checkout(){
-    alert(`***CHECKOUT***\nTOTAL: $${shopCart1.subTotal}\nEnvío -> Medios de pago -> Confirmación`);  
+    $(".checkoutConfirmation").html(`
+        <h3>TOTAL: $${shopCart1.subTotal}</h3>
+        <p><span>➞ </span>Envío</p>
+        <p><span>➞ </span>Medios de pago</p>
+        <p><span>➞ </span>Confirmación</p>
+    `);
+    $(".checkoutConfirmation").finish().slideDown().delay(2800).slideUp();
 }
 
 let carrito__checkout = document.querySelector(".carrito__lista__checkout");
@@ -339,6 +347,7 @@ function toggleProductos(){
         }, 400);
     }
 
+    
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
     
     let nav__ul = document.querySelector(".nav__ul");

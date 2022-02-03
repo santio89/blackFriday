@@ -1194,6 +1194,36 @@ body {
   text-align: right;
 }
 
+.checkoutConfirmation {
+  position: fixed;
+  top: 48%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  min-width: 180px;
+  padding: .4em;
+  background: var(--color-tercero);
+  color: var(--color-primero);
+  font-size: clamp(1rem, 1rem + 1vw, 2rem);
+  outline: 4px dashed var(--color-segundo);
+  border-radius: .2em;
+  z-index: 3;
+  display: none;
+}
+
+.checkoutConfirmation h3 {
+  font-size: 1.12em;
+  color: var(--color-segundo);
+}
+
+.checkoutConfirmation p {
+  font-size: 1em;
+}
+
+.checkoutConfirmation p span {
+  color: var(--color-segundo-dark);
+}
+
 .visible {
   visibility: visible;
 }
