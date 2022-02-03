@@ -347,7 +347,7 @@ function toggleProductos(){
         }, 400);
     }
 
-    
+
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
     
     let nav__ul = document.querySelector(".nav__ul");
@@ -606,7 +606,7 @@ function validationYes(){
 
 function validationNo(){
     localStorage.setItem("validation", 0);
-    $(".validation__denied").finish().fadeIn(0).delay(2400).fadeOut("slow");
+    $(".validation__denied").finish().show().delay(2400).fadeOut("slow");
 }
 
 let validation__yes = document.querySelector(".validation__age__yes");
