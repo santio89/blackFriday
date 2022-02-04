@@ -20,7 +20,7 @@ class Stock{
         this.arrayCombosTotal.push(combo);
     }
 
-    addComboFeatured(combo){
+    addFeaturedCombo(combo){
         this.arrayCombosFeatured.push(combo);
     }
 }

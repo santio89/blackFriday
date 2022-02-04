@@ -8,7 +8,7 @@ class Bebida{
         this.nombre = tipo + " " + marca;
         this.id = id;
         this.stock = stock;
-        this.img = img;
+        this.img = `url("${img}")`;
     }
     
     outOfStock(){

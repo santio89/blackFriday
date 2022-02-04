@@ -1,9 +1,9 @@
 class Combo{
-    constructor(productos, descuento, nombre, id){
+    constructor(nombre, productos, descuento, id){
+        this.nombre = nombre;
         this.productos = productos;
         this.precioTotal = 0;
         this.descuento = descuento;
-        this.nombre = nombre;
         this.id = id; 
     }
 
