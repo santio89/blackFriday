@@ -33,7 +33,6 @@ $.ajax({
 
 
 productsObject.forEach(producto=>{
-
     if (producto.stock == "isInfinity"){
         window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, Infinity, producto.imgUrl);
     } else{
