@@ -97,13 +97,13 @@
     }
 }
 
-@media (min-width: 780px){
+@media (min-width: 680px){
     .productos{
-        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(194px, 1fr));
     }
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1111px){
     .validation{
         padding-left: 4rem;
         padding-right: 4rem;

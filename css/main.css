@@ -632,8 +632,8 @@ body {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(140px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-auto-rows: 1fr;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -1546,14 +1546,14 @@ body {
   }
 }
 
-@media (min-width: 780px) {
+@media (min-width: 680px) {
   .productos {
-    -ms-grid-columns: (minmax(170px, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    -ms-grid-columns: (minmax(194px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(194px, 1fr));
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1111px) {
   .validation {
     padding-left: 4rem;
     padding-right: 4rem;
