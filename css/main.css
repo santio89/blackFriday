@@ -834,10 +834,34 @@ body {
   z-index: 2;
 }
 
+.productosPage__filterText {
+  margin: auto;
+  width: 90%;
+  max-width: 1000px;
+  font-size: .8em;
+}
+
 .productosPage__filter {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   width: 90%;
   max-width: 1000px;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  z-index: 3;
 }
 
 .productosPage__filter__select {
@@ -845,7 +869,8 @@ body {
   border: none;
   outline: none;
   background: var(--color-segundo-dark);
-  padding: .2rem;
+  padding: .18rem;
+  height: 48px;
   cursor: pointer;
 }
 

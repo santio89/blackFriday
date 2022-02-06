@@ -668,19 +668,34 @@ body{
     z-index: 2;
 }
 
+.productosPage__filterText{
+    margin: auto;
+    width: 90%;
+    max-width: 1000px;
+    font-size: .8em;
+}
+
 .productosPage__filter{
+    position:sticky;
+    top: 0;
     width: 90%;
     max-width: 1000px;
     margin: auto;
-    
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    align-items: stretch;
+    z-index: 3;
+
     &__select{
         color: var(--color-primero);
         border: none;
         outline: none;
         background: var(--color-segundo-dark);
-        padding: .2rem;
+        padding: .18rem;
+        height: 48px;
         cursor: pointer;
-        
+
         &:hover{
             background: var(--color-segundo);
         }
