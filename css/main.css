@@ -950,8 +950,8 @@ body {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   z-index: 3;
-  -webkit-transform: translateY(calc(-100vh + 9vh + 24px));
-          transform: translateY(calc(-100vh + 9vh + 24px));
+  -webkit-transform: translateY(-100vh);
+          transform: translateY(-100vh);
   -webkit-transition: -webkit-transform 400ms;
   transition: -webkit-transform 400ms;
   transition: transform 400ms;
