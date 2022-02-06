@@ -1,77 +1,76 @@
 /* agregar bebidas al stock. saco los datos desde productos.json (que simularia la respuesta de una base de datos de los productos que hay en stock) */
 const shopCart1 = new ShoppingCart(new Date(), 001);
 const stock1 = new Stock(new Date(), 001);
-var productsObject;
+let productsObject;
+let combosObject;
 
 $.ajax({
-    async: false,
     type: "GET",
     url: "js/productos.json",
     success: function (response) {
         productsObject = response;
+
+        productsObject.forEach(producto=>{
+            if (producto.stock == "isInfinity"){
+                window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, Infinity, producto.imgUrl);
+            } else{
+                window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, producto.stock, producto.imgUrl);
+            }
+            stock1.addStockItem(window[producto.variable]);
+        })
+
+        stock1.addFeaturedItem(cerveza__heineken);
+        stock1.addFeaturedItem(fernet__branca);
+        stock1.addFeaturedItem(licor__jager);
+        stock1.addFeaturedItem(ron__morgan);
+        stock1.addFeaturedItem(whisky__vat);
+        stock1.addFeaturedItem(vodka__skyy);
+        stock1.addFeaturedItem(vino__rutini__malbec);
+        stock1.addFeaturedItem(cerveza__quilmes);
+        stock1.addFeaturedItem(cerveza__guinness);
+        stock1.addFeaturedItem(vodka__smirnoff);
+        stock1.addFeaturedItem(cerveza__corona);
+        stock1.addFeaturedItem(licor__campari);
+
+        cards__productosFeatured();
+        cards__productos();
         
     },
     error: function () {
-        alert("Error retrieving products");
+        console.log("Error retrieving products");
     }
 });
 
-var combosObject;
 $.ajax({
-    async: false,
     type: "GET",
     url: "js/combos.json",
     success: function (response) {
         combosObject = response;
+
+        combosObject.forEach(combo=>{
+            for(i=0; i<combo.items.length;i++){
+                let comboItem = combo.items[i];
+                combo.items[i] = window[comboItem]
+            }
+                
+            window[combo.variable] = new Combo(combo.nombre, combo.items, combo.descuento, combo.id);
+            
+            stock1.addComboTotal(window[combo.variable]);
+        })
         
+        stock1.arrayCombosTotal.forEach(combo => combo.calcPrecioTotal());
+        stock1.addFeaturedCombo(combo__1);
+        stock1.addFeaturedCombo(combo__2);
+        stock1.addFeaturedCombo(combo__3);
+        stock1.addFeaturedCombo(combo__4);
+
+        cards__ofertasFeatured();
+        cards__ofertas();
     },
     error: function () {
-        alert("Error retrieving products");
+        console.log("Error retrieving products");
     }
 });
-
-
-
-productsObject.forEach(producto=>{
-    if (producto.stock == "isInfinity"){
-        window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, Infinity, producto.imgUrl);
-    } else{
-        window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, producto.stock, producto.imgUrl);
-    }
-    stock1.addStockItem(window[producto.variable]);
-})
-
-
-combosObject.forEach(combo=>{
-    for(i=0; i<combo.items.length;i++){
-        let comboItem = combo.items[i];
-        combo.items[i] = window[comboItem]
-    }
-        
-    window[combo.variable] = new Combo(combo.nombre, combo.items, combo.descuento, combo.id);
-    
-    stock1.addComboTotal(window[combo.variable]);
-})
-
-stock1.arrayCombosTotal.forEach(combo => combo.calcPrecioTotal());
-
-stock1.addFeaturedItem(cerveza__heineken);
-stock1.addFeaturedItem(fernet__branca);
-stock1.addFeaturedItem(licor__jager);
-stock1.addFeaturedItem(ron__morgan);
-stock1.addFeaturedItem(whisky__vat);
-stock1.addFeaturedItem(vodka__skyy);
-stock1.addFeaturedItem(vino__rutini__malbec);
-stock1.addFeaturedItem(cerveza__quilmes);
-stock1.addFeaturedItem(cerveza__guinness);
-stock1.addFeaturedItem(vodka__smirnoff);
-stock1.addFeaturedItem(cerveza__corona);
-stock1.addFeaturedItem(licor__campari);
-
-stock1.addFeaturedCombo(combo__1);
-stock1.addFeaturedCombo(combo__2);
-stock1.addFeaturedCombo(combo__3);
-stock1.addFeaturedCombo(combo__4);
 
 
 /* cargar shopList, si existe, del storage */
@@ -89,44 +88,46 @@ if (localStorage.getItem("shopList")){
 
 
 /* agregar las cards de productos featured al html, según los productos que hayan en el inventario (uso forEach en vez de map, ya que no necesito retornar nada) */
-let productosFeatured = document.getElementById("productosFeatured");
-stock1.arrayBebidasFeatured.forEach(bebidas => {
-    let producto = document.createElement("div");
-    producto.classList.add("productos__producto");
-    producto.classList.add(`productoFeat--${bebidas.id}`);
-
-    let stockText;
-    if (bebidas.outOfStock()){
-        stockText = "Fuera de stock";
-    } else{
-        stockText = "En stock";
-    }
-
-    producto.innerHTML = `
-    <p>${bebidas.tipo}</p>
-    <h2>${bebidas.marca}</h2>
-    <p>${bebidas.contNeto}ml</p>
-    <p class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__stock">${stockText}</p>    
-    <h3>$${bebidas.precio}</h3>
-    <div class="productos__producto__buttonContainer">
-    <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsFeatured">-</button>
-    <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsFeatured">+</button>
-    </div>
-    `;
+function cards__productosFeatured (){
+    let productosFeatured = document.getElementById("productosFeatured");
+    stock1.arrayBebidasFeatured.forEach(bebidas => {
+        let producto = document.createElement("div");
+        producto.classList.add("productos__producto");
+        producto.classList.add(`productoFeat--${bebidas.id}`);
     
-    producto.style.setProperty("--stock-image", bebidas.img);
-    productosFeatured.appendChild(producto);
+        let stockText;
+        if (bebidas.outOfStock()){
+            stockText = "Fuera de stock";
+        } else{
+            stockText = "En stock";
+        }
     
-    let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsFeatured`);
-    let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsFeatured`);
-    bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
-    bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
-}); 
+        producto.innerHTML = `
+        <p>${bebidas.tipo}</p>
+        <h2>${bebidas.marca}</h2>
+        <p>${bebidas.contNeto}ml</p>
+        <p class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__stock">${stockText}</p>    
+        <h3>$${bebidas.precio}</h3>
+        <div class="productos__producto__buttonContainer">
+        <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsFeatured">-</button>
+        <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsFeatured">+</button>
+        </div>
+        `;
+        
+        producto.style.setProperty("--stock-image", bebidas.img);
+        productosFeatured.appendChild(producto);
+        
+        let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsFeatured`);
+        let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsFeatured`);
+        bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
+        bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
+    }); 
+}
+
 
 /* carrito - icono */
 let carrito__numero = document.querySelector(".carrito__numero");
 carrito__numero.innerHTML = shopCart1.shopList.length;
-
 let carrito__total = document.querySelector(".carrito__total");
 carrito__total.innerHTML = `$${shopCart1.subTotal}`;
 
@@ -232,7 +233,6 @@ function toggleLista(){
 let carrito = document.querySelector(".carrito");
 carrito.addEventListener("keydown", (e)=>{if(e.keyCode == 13){toggleLista()}});
 carrito.addEventListener("click", toggleLista);
-
 let carrito__cerrar = document.querySelector(".carrito__lista__cerrar");
 carrito__cerrar.onclick = toggleLista;
 
@@ -340,7 +340,8 @@ function toggleProductos(){
 }
 
 /* cards de la seccion productos */
-let productos = document.getElementById("productosTotal");
+function cards__productos(){
+    let productos = document.getElementById("productosTotal");
 stock1.arrayBebidasTotal.forEach(bebidas => {
     let producto = document.createElement("div");
     producto.classList.add("productos__producto");
@@ -373,6 +374,8 @@ stock1.arrayBebidasTotal.forEach(bebidas => {
     bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
     bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
 }); 
+}
+
 
 /* event link productos */
 let link__productos = document.getElementById("nav__productos");
@@ -458,8 +461,9 @@ function toggleOfertas(){
 }
 
 /* cards de la seccion ofertas/combos */
-let ofertas = document.getElementById("ofertas");
-stock1.arrayCombosTotal.forEach(combos => {
+function cards__ofertas(){
+    let ofertas = document.getElementById("ofertas");
+    stock1.arrayCombosTotal.forEach(combos => {
 
     let wrapper__item = document.createElement("div");
     wrapper__item.classList.add("ofertasFeatured__wrapper__item");
@@ -489,6 +493,8 @@ stock1.arrayCombosTotal.forEach(combos => {
     combo__mas.addEventListener("click", ()=>{shopCart1.addItem(combos.id)});
 
 }); 
+}
+
 
 /* event link ofertas/combos */
 let link__ofertas = document.getElementById("nav__ofertas");
@@ -504,8 +510,9 @@ let cerrar__ofertas__title = document.querySelector("#header__title__ofertas");
 cerrar__ofertas__title.onclick = toggleOfertas;
 
 
-/* ofertasFeatured */
-let ofertasFeatured = document.querySelector(".ofertasFeatured__wrapper");
+/* cards de la seccion ofertasFeatured */
+function cards__ofertasFeatured(){
+    let ofertasFeatured = document.querySelector(".ofertasFeatured__wrapper");
 
 for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
     let combo = stock1.arrayCombosFeatured[i];
@@ -537,6 +544,8 @@ for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
     combo__menos.addEventListener("click", ()=>{shopCart1.removeItem(combo.id)});
     combo__mas.addEventListener("click", ()=>{shopCart1.addItem(combo.id)});
 }
+}
+
 
 
 /* validation */
