@@ -556,7 +556,6 @@ body {
   border-right: 4px dashed var(--color-segundo);
   margin-left: auto;
   margin-right: auto;
-  background: rgba(255, 255, 255, 0.04);
   width: 100%;
 }
 
@@ -1634,7 +1633,6 @@ body {
   .ofertasFeatured__wrapper__item {
     min-width: unset;
     max-width: unset;
-    background: none;
     border-bottom: 4px dashed var(--color-segundo);
     border-right: none;
     padding: 0;
