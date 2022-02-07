@@ -62,13 +62,15 @@ $.ajax({
                 cards__ofertasFeatured();
                 cards__ofertas();
             },
+            
             error: function () {
-                console.log("Error retrieving products");
+                console.log("Error retrieving productos (combos)");
             }
         });
     },
+
     error: function () {
-        console.log("Error retrieving products");
+        console.log("Error retrieving products (products)");
     }
 });
 
