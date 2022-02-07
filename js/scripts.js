@@ -34,43 +34,45 @@ $.ajax({
 
         cards__productosFeatured();
         cards__productos();
+
+        /* pongo la llamada ajax a combos dentro de la llamada ajax a productos, ya que los combos dependen del stock de productos. */
+        $.ajax({
+            type: "GET",
+            url: "js/combos.json",
+            success: function (response) {
+                combosObject = response;
         
-    },
-    error: function () {
-        console.log("Error retrieving products");
-    }
-});
-
-$.ajax({
-    type: "GET",
-    url: "js/combos.json",
-    success: function (response) {
-        combosObject = response;
-
-        combosObject.forEach(combo=>{
-            for(i=0; i<combo.items.length;i++){
-                let comboItem = combo.items[i];
-                combo.items[i] = window[comboItem]
-            }
+                combosObject.forEach(combo=>{
+                    for(i=0; i<combo.items.length;i++){
+                        let comboItem = combo.items[i];
+                        combo.items[i] = window[comboItem]
+                    }
+                        
+                    window[combo.variable] = new Combo(combo.nombre, combo.items, combo.descuento, combo.id);
+                    
+                    stock1.addComboTotal(window[combo.variable]);
+                })
                 
-            window[combo.variable] = new Combo(combo.nombre, combo.items, combo.descuento, combo.id);
-            
-            stock1.addComboTotal(window[combo.variable]);
-        })
+                stock1.arrayCombosTotal.forEach(combo => combo.calcPrecioTotal());
+                stock1.addFeaturedCombo(combo__1);
+                stock1.addFeaturedCombo(combo__2);
+                stock1.addFeaturedCombo(combo__3);
+                stock1.addFeaturedCombo(combo__4);
         
-        stock1.arrayCombosTotal.forEach(combo => combo.calcPrecioTotal());
-        stock1.addFeaturedCombo(combo__1);
-        stock1.addFeaturedCombo(combo__2);
-        stock1.addFeaturedCombo(combo__3);
-        stock1.addFeaturedCombo(combo__4);
-
-        cards__ofertasFeatured();
-        cards__ofertas();
+                cards__ofertasFeatured();
+                cards__ofertas();
+            },
+            error: function () {
+                console.log("Error retrieving products");
+            }
+        });
     },
     error: function () {
         console.log("Error retrieving products");
     }
 });
+
+
 
 
 /* cargar shopList, si existe, del storage */
