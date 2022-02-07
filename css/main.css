@@ -1552,6 +1552,10 @@ body {
   .ofertasFeatured__wrapper__item > * {
     margin: 0;
   }
+  .ofertasFeatured__wrapper__item__buttonContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (min-width: 680px) {
