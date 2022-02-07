@@ -557,6 +557,11 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  background: rgba(var(--color-tercero-rgb), 0.04);
+}
+
+.ofertasFeatured__wrapper__item > * {
+  margin: auto;
 }
 
 .ofertasFeatured__wrapper__item h3 {
@@ -1543,6 +1548,9 @@ body {
     min-width: calc(50% + .5rem);
     max-width: calc(50% + .5rem);
   }
+  .ofertasFeatured__wrapper__item > * {
+    margin: 0;
+  }
 }
 
 @media (min-width: 680px) {
@@ -1637,6 +1645,7 @@ body {
     border-right: none;
     padding: 0;
     padding-left: 1.2rem;
+    background: none;
   }
   .ofertasFeatured__wrapper__item h3 {
     font-size: 2.3rem;
