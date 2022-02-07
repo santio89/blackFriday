@@ -853,7 +853,7 @@ body{
             width: fit-content;
             top: -3.6%;
             right: MIN(-12px, -1.6%);
-            font-size: unquote("clamp(2rem, 2rem + 2vw, 3.6rem)");
+            font-size: unquote("clamp(2rem, 2rem + 2vw, 3.4rem)");
             font-weight: bolder;
             color: var(--color-segundo-dark);
             cursor: pointer;    
@@ -870,8 +870,9 @@ body{
 
             &--ofertas, &--productos{
                 position: sticky;
-                top: 1rem;
-                font-size: unquote("clamp(2.2rem, 2.2rem + 2.2vw, 3.6rem)");
+                top: 0;
+                margin-top: 1.2rem;
+                font-size: unquote("clamp(2.4rem, 2rem + 2.2vw, 3.8rem)");
                 left: 98%;
                 transition: transform 200ms;
                 outline: none;
