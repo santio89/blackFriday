@@ -33,7 +33,46 @@ html{
     overflow-x: hidden;
     overflow-y: hidden;
     scroll-behavior: smooth;
+
+    /* scrollbar standard (mas abajo scrollbar para webkit) */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-segundo) var(--color-background-primero);
 }
+
+
+/* scrollbar webkit */
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+/* track */
+::-webkit-scrollbar-track {
+background: var(--color-background-primero);
+}
+
+/* handle */
+::-webkit-scrollbar-thumb {
+    background: 
+        linear-gradient(-135deg, transparent 6px, var(--color-segundo-dark) 6px) top,
+        linear-gradient(-135deg, var(--color-segundo-dark) 50%,var(--color-tercero-dark) 50%) center, 
+        linear-gradient(45deg, transparent 6px,var(--color-tercero-dark) 6px) bottom;
+    background-size:100% 48%;
+    background-repeat:no-repeat;
+
+    &:hover{
+        background: 
+        linear-gradient(-135deg, transparent 6px, var(--color-segundo) 6px) top,
+        linear-gradient(-135deg, var(--color-segundo) 50%,var(--color-tercero) 50%) center, 
+        linear-gradient(45deg, transparent 6px,var(--color-tercero) 6px) bottom;
+        background-size:100% 48%;
+        background-repeat:no-repeat;
+    }
+}
+
+/* fin scrollbar */
+
 
 ul, ol, li, a, h1, h2, h3, p, body, header, section, footer, .container, .container-fluid, .row, .col{
     margin: 0;
@@ -1092,35 +1131,3 @@ body{
 }
 
 
-/* scrollbar chrome */
-
-/* width */
-::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-/* track */
-::-webkit-scrollbar-track {
-background: var(--color-background-primero);
-}
-
-/* handle */
-::-webkit-scrollbar-thumb {
-    background: 
-        linear-gradient(-135deg, transparent 6px, var(--color-segundo-dark) 6px) top,
-        linear-gradient(-135deg, var(--color-segundo-dark) 50%,var(--color-tercero-dark) 50%) center, 
-        linear-gradient(45deg, transparent 6px,var(--color-tercero-dark) 6px) bottom;
-    background-size:100% 48%;
-    background-repeat:no-repeat;
-
-    &:hover{
-        background: 
-        linear-gradient(-135deg, transparent 6px, var(--color-segundo) 6px) top,
-        linear-gradient(-135deg, var(--color-segundo) 50%,var(--color-tercero) 50%) center, 
-        linear-gradient(45deg, transparent 6px,var(--color-tercero) 6px) bottom;
-        background-size:100% 48%;
-        background-repeat:no-repeat;
-    }
-}
-
-/* fin scrollbar */
