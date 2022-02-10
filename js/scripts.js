@@ -787,5 +787,5 @@ function rubberBandOnce(){
 }
 
 function errorComponent(){
-    alert("not found 404")
+    console.log("error 404: not found");
 }
