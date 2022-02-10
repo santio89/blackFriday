@@ -125,9 +125,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   height: 100%;
   width: 100%;
 }
@@ -294,6 +291,11 @@ body {
   margin-top: -3.4rem;
 }
 
+.header__title--error {
+  white-space: normal;
+  font-size: clamp(6.8rem, 1rem + 10vw, 18rem);
+}
+
 .header__title__word {
   display: block;
 }
@@ -455,7 +457,8 @@ body {
   padding: clamp(0.8rem, 2vw, 2rem);
   width: 100%;
   max-width: 1600px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -860,6 +863,23 @@ body {
 .ofertasPage .ofertasFeatured__wrapper__item, .productosPage .ofertasFeatured__wrapper__item {
   min-width: unset;
   max-width: unset;
+}
+
+.errorPage {
+  font-size: clamp(4rem, 3.78rem + 6vw, 9.8rem);
+  text-shadow: 2px 2px 0 var(--color-tercero);
+  max-width: 800px;
+  margin: auto;
+  line-height: 1;
+  text-align: center;
+}
+
+.errorPage a {
+  color: var(--color-segundo-dark);
+}
+
+.errorPage a:hover {
+  text-shadow: 2px 2px 0 var(--color-tercero), 2px 2px 8px var(--color-segundo-dark);
 }
 
 .toggleZ {

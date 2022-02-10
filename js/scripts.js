@@ -787,5 +787,5 @@ function rubberBandOnce(){
 }
 
 function errorComponent(){
-    console.log("error 404: not found");
+    window.location.href = "404.html";
 }
