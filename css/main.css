@@ -1562,7 +1562,7 @@ body {
   }
 }
 
-@media (min-width: 680px) {
+@media (min-width: 672px) {
   .productos {
     -ms-grid-columns: (minmax(194px, 1fr))[auto-fit];
         grid-template-columns: repeat(auto-fit, minmax(194px, 1fr));
