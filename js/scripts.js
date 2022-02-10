@@ -1,3 +1,37 @@
+const router = () => {
+    const path = location.hash.slice(1).toLocaleLowerCase();
+    
+    switch (path) {
+        case '':
+            break;
+        case '/':
+            break;
+        case 'combos':
+            if($('.ofertasPage').hasClass("visible")){
+                break;
+            }
+            toggleOfertas();
+            break;
+        case 'bebidas':
+            if($('.productosPage').hasClass("visible")){
+                break;
+            }
+            toggleProductos();
+            break;
+        default:
+            errorComponent();
+            break;
+    }
+}
+
+$(window).on('load', function () {
+    router()
+})
+
+$(window).on('hashchange', function () {
+    router()
+})
+
 /* agregar bebidas al stock. saco los datos desde productos.json/combos.json (que simularia la respuesta de una base de datos de los productos y ofertas que hay en stock) */
 const shopCart1 = new ShoppingCart(new Date(), 001);
 const stock1 = new Stock(new Date(), 001);
@@ -294,6 +328,7 @@ function toggleProductos(){
     }
 
     if (productos.classList.contains("visible")){
+        location.hash = "/";
         setTimeout(()=>{
             if (!productos.classList.contains("carrito__lista__translated")){
                 productos.classList.remove("visible"); 
@@ -302,6 +337,7 @@ function toggleProductos(){
         }, 400);
     } else{
         productos.classList.add("visible");
+        location.hash = "bebidas";
     }
 
     let ofertas = document.querySelector(".ofertasPage");
@@ -415,6 +451,7 @@ function toggleOfertas(){
     }
 
     if (ofertas.classList.contains("visible")){
+        location.hash = "/";
         setTimeout(()=>{
             if (!ofertas.classList.contains("carrito__lista__translated")){
                 ofertas.classList.remove("visible"); 
@@ -423,6 +460,7 @@ function toggleOfertas(){
         }, 400);
     } else{
         ofertas.classList.add("visible");
+        location.hash = "combos";
     }
 
     let productos = document.querySelector(".productosPage");
@@ -748,3 +786,6 @@ function rubberBandOnce(){
     header__title.on("animationend webkitAnimationEnd oAnimationEnd", (e)=>e.target.classList.remove("rubberBand"));
 }
 
+function errorComponent(){
+    alert("not found 404")
+}
