@@ -787,5 +787,6 @@ function rubberBandOnce(){
 }
 
 function errorComponent(){
-    window.location.href = "404.html";
+    /* si se ingresa un hash incorrecto, se redirige al home. en cambio, si se ingresa una pagina incorrecta, se mostraria la clasica pagina 404 */
+    window.location.href = "https://santio89.github.io/blackFriday/";
 }
