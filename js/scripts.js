@@ -40,7 +40,7 @@ let combosObject;
 
 $.ajax({
     type: "GET",
-    url: "js/productos.json",
+    url: "./js/productos.json",
     success: function (response) {
         productsObject = response;
 
@@ -72,7 +72,7 @@ $.ajax({
         /* pongo la llamada ajax a combos dentro de la llamada ajax a productos, ya que los combos dependen del stock de productos. */
         $.ajax({
             type: "GET",
-            url: "js/combos.json",
+            url: "./js/combos.json",
             success: function (response) {
                 combosObject = response;
         
