@@ -132,14 +132,14 @@ function cards__productosFeatured (){
         let producto = document.createElement("div");
         producto.classList.add("productos__producto");
         producto.classList.add(`productoFeat--${bebidas.id}`);
-    
+
         let stockText;
         if (bebidas.outOfStock()){
             stockText = "Fuera de stock";
         } else{
             stockText = "En stock";
         }
-    
+
         producto.innerHTML = `
         <p>${bebidas.tipo}</p>
         <h2>${bebidas.marca}</h2>
@@ -536,7 +536,6 @@ function toggleOfertas(){
 function cards__ofertas(){
     let ofertas = document.getElementById("ofertas");
     stock1.arrayCombosTotal.forEach(combos => {
-
         let wrapper__item = document.createElement("div");
         wrapper__item.classList.add("ofertasFeatured__wrapper__item");
 
