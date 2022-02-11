@@ -6,6 +6,9 @@ const router = () => {
             break;
         case '/':
             break;
+        case 'body':
+            location.hash = "/";
+            break;
         case 'combos':
             if($('.ofertasPage').hasClass("visible")){
                 break;
@@ -565,6 +568,16 @@ function cards__ofertas(){
     }); 
 }
 
+let productosScrollUp = document.querySelector(".productosPage__scrollUp");
+let ofertasScrollUp = document.querySelector(".ofertasPage__scrollUp");
+productosScrollUp.addEventListener("click", ()=>{
+    let productosPage = document.querySelector(".productosPage");
+    productosPage.scrollTop = 0;
+});
+ofertasScrollUp.addEventListener("click", ()=>{
+    let ofertasPage = document.querySelector(".ofertasPage");
+    ofertasPage.scrollTop = 0;
+})
 
 /* event link ofertas/combos */
 let link__ofertas = document.getElementById("nav__ofertas");
@@ -866,5 +879,6 @@ function rubberBandOnce(){
 
 function errorComponent(){
     /* si se ingresa un hash incorrecto, se redirige al home. en cambio, si se ingresa una pagina incorrecta, se mostraria la pagina 404 */
-    window.location.href = "https://santio89.github.io/blackFriday/";
+    /* window.location.href = "https://santio89.github.io/blackFriday/"; */
+    console.log("error");
 }

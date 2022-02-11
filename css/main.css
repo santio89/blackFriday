@@ -820,6 +820,7 @@ body {
   visibility: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
+  scroll-behavior: smooth;
 }
 
 .ofertasPage__title, .productosPage__title {
@@ -865,6 +866,18 @@ body {
 .ofertasPage .ofertasFeatured__wrapper__item, .productosPage .ofertasFeatured__wrapper__item {
   min-width: unset;
   max-width: unset;
+}
+
+.ofertasPage__scrollUp, .productosPage__scrollUp {
+  font-size: 1.4em;
+  color: var(--color-tercero);
+  font-weight: bold;
+  text-shadow: 2px 2px 0 var(--color-primero), 3px 3px 0 var(--color-segundo);
+  letter-spacing: .2rem;
+}
+
+.ofertasPage__scrollUp:hover, .ofertasPage__scrollUp:focus, .productosPage__scrollUp:hover, .productosPage__scrollUp:focus {
+  color: var(--color-segundo);
 }
 
 .errorPage {

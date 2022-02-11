@@ -672,6 +672,7 @@ body{
     visibility: hidden;
     overflow-x: hidden;
     overflow-y: hidden;
+    scroll-behavior: smooth;
     
     &__title{
         width: 100%;
@@ -706,6 +707,18 @@ body{
                 min-width: unset;
                 max-width: unset;
             }
+        }
+    }
+
+    &__scrollUp{
+        font-size: 1.4em;
+        color: var(--color-tercero);
+        font-weight: bold;       
+        text-shadow: 2px 2px 0 var(--color-primero), 3px 3px 0 var(--color-segundo);
+        letter-spacing: .2rem;
+
+        &:hover, &:focus{
+            color: var(--color-segundo);
         }
     }
 }
