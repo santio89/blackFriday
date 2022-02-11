@@ -659,7 +659,7 @@ body {
   max-width: 1000px;
   margin: auto;
   margin-top: 4rem;
-  margin-bottom: 9.8rem;
+  margin-bottom: 5.2rem;
   gap: 2rem;
 }
 
@@ -682,7 +682,7 @@ body {
   width: 100%;
   max-width: 1000px;
   margin: auto;
-  margin-bottom: 9.8rem;
+  margin-bottom: 5.2rem;
   margin-top: 4rem;
   -ms-grid-columns: (minmax(150px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

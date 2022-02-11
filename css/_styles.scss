@@ -536,7 +536,7 @@ body{
         max-width: 1000px;
         margin: auto;
         margin-top: 4rem;
-        margin-bottom: 9.8rem;
+        margin-bottom: 5.2rem;
         gap: 2rem;
     }
 }
@@ -554,7 +554,7 @@ body{
         width: 100%;
         max-width: 1000px;
         margin: auto;
-        margin-bottom: 9.8rem;
+        margin-bottom: 5.2rem;
         margin-top: 4rem;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
@@ -673,7 +673,7 @@ body{
     overflow-x: hidden;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    
+
     &__title{
         width: 100%;
         border-bottom: 4px dashed var(--color-segundo);
