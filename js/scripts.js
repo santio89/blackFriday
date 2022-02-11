@@ -382,38 +382,38 @@ function toggleProductos(){
 /* cards de la seccion productos */
 function cards__productos(){
     let productos = document.getElementById("productosTotal");
-stock1.arrayBebidasTotal.forEach(bebidas => {
-    let producto = document.createElement("div");
-    producto.classList.add("productos__producto");
-    producto.classList.add(`productoTotal--${bebidas.id}`);
+    stock1.arrayBebidasTotal.forEach(bebidas => {
+        let producto = document.createElement("div");
+        producto.classList.add("productos__producto");
+        producto.classList.add(`productoTotal--${bebidas.id}`);
 
-    let stockText;
-    if (bebidas.outOfStock()){
-        stockText = "Fuera de stock";
-    } else{
-        stockText = "En stock";
-    }
+        let stockText;
+        if (bebidas.outOfStock()){
+            stockText = "Fuera de stock";
+        } else{
+            stockText = "En stock";
+        }
 
-    producto.innerHTML = `
-    <p>${bebidas.tipo}</p>
-    <h2>${bebidas.marca}</h2>
-    <p>${bebidas.contNeto}ml</p>
-    <p class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__stock">${stockText}</p>    
-    <h3>$${bebidas.precio}</h3>
-    <div class="productos__producto__buttonContainer">
-    <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsTotal">-</button>
-    <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsTotal">+</button>
-    </div>
-    `;
+        producto.innerHTML = `
+        <p>${bebidas.tipo}</p>
+        <h2>${bebidas.marca}</h2>
+        <p>${bebidas.contNeto}ml</p>
+        <p class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__stock">${stockText}</p>    
+        <h3>$${bebidas.precio}</h3>
+        <div class="productos__producto__buttonContainer">
+        <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsTotal">-</button>
+        <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsTotal">+</button>
+        </div>
+        `;
 
-    producto.style.setProperty("--stock-image", bebidas.img);
-    productos.appendChild(producto);
+        producto.style.setProperty("--stock-image", bebidas.img);
+        productos.appendChild(producto);
 
-    let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsTotal`);
-    let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsTotal`);
-    bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
-    bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
-}); 
+        let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsTotal`);
+        let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsTotal`);
+        bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
+        bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
+    }); 
 }
 
 
@@ -507,34 +507,33 @@ function cards__ofertas(){
     let ofertas = document.getElementById("ofertas");
     stock1.arrayCombosTotal.forEach(combos => {
 
-    let wrapper__item = document.createElement("div");
-    wrapper__item.classList.add("ofertasFeatured__wrapper__item");
+        let wrapper__item = document.createElement("div");
+        wrapper__item.classList.add("ofertasFeatured__wrapper__item");
 
-    wrapper__item.innerHTML = `
-    <h3><span>COMBO ${combos.nombre} &#8674; </span>$${combos.precioTotal}</h3>`;
+        wrapper__item.innerHTML = `
+        <h3><span>COMBO ${combos.nombre} &#8674; </span>$${combos.precioTotal}</h3>`;
 
-    for (let j=0; j<combos.productos.length;j++){
-        let combos__item = combos.productos[j];
+        for (let j=0; j<combos.productos.length;j++){
+            let combos__item = combos.productos[j];
+            wrapper__item.innerHTML += `
+            <p>${combos__item.tipo} ${combos__item.marca} ${combos__item.contNeto}ml</p>
+            `
+        }
+
         wrapper__item.innerHTML += `
-        <p>${combos__item.tipo} ${combos__item.marca} ${combos__item.contNeto}ml</p>
+        <div class="ofertasFeatured__wrapper__item__buttonContainer">
+        <button class="COMBO${combos.nombre.replace(/\s/g,"")}__menos__combosTotal">-</button>
+        <button class="COMBO${combos.nombre.replace(/\s/g,"")}__mas__combosTotal">+</button>
+        </div>
         `
-    }
+    
+        ofertas.appendChild(wrapper__item);
 
-    wrapper__item.innerHTML += `
-    <div class="ofertasFeatured__wrapper__item__buttonContainer">
-    <button class="COMBO${combos.nombre.replace(/\s/g,"")}__menos__combosTotal">-</button>
-    <button class="COMBO${combos.nombre.replace(/\s/g,"")}__mas__combosTotal">+</button>
-    </div>
-    `
-  
-    ofertas.appendChild(wrapper__item);
-
-    let combo__menos = document.querySelector(`.COMBO${combos.nombre.replace(/\s/g,"")}__menos__combosTotal`);
-    let combo__mas = document.querySelector(`.COMBO${combos.nombre.replace(/\s/g,"")}__mas__combosTotal`);
-    combo__menos.addEventListener("click", ()=>{shopCart1.removeItem(combos.id)});
-    combo__mas.addEventListener("click", ()=>{shopCart1.addItem(combos.id)});
-
-}); 
+        let combo__menos = document.querySelector(`.COMBO${combos.nombre.replace(/\s/g,"")}__menos__combosTotal`);
+        let combo__mas = document.querySelector(`.COMBO${combos.nombre.replace(/\s/g,"")}__mas__combosTotal`);
+        combo__menos.addEventListener("click", ()=>{shopCart1.removeItem(combos.id)});
+        combo__mas.addEventListener("click", ()=>{shopCart1.addItem(combos.id)});
+    }); 
 }
 
 
