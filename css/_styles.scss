@@ -556,6 +556,7 @@ body{
         margin: auto;
         margin-bottom: 9.8rem;
         margin-top: 4rem;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 
     &__producto{   
@@ -730,12 +731,33 @@ body{
     z-index: 2;
 }
 
-.productosPage__filterText{
-    margin: auto;
-    width: 90%;
+.productosPage__filterWrapper{
+    width: fit-content;
+    width: 84%;
     max-width: 1000px;
     font-size: .8em;
+    display: flex;
+    margin: auto;
+    align-self: start;
+    line-height: 1;
+
+    &__filter, &__search{
+        background: var(--color-segundo-dark);
+        padding-left: .4rem;
+        padding-right: .4rem;
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        outline: none;
+
+        &:hover{
+            background: var(--color-segundo);
+        }
+    }
 }
+
 
 .productosPage__filter{
     position:sticky;
@@ -748,20 +770,76 @@ body{
     justify-content: start;
     align-items: stretch;
     z-index: 3;
-
+    
     &__select{
         color: var(--color-primero);
         border: none;
         outline: none;
-        background: var(--color-segundo-dark);
+        background: var(--color-segundo);
         padding: .18rem;
         height: 48px;
+        padding-left: 2.8rem;
+        padding-right: 1.8rem;
         cursor: pointer;
-
-        &:hover{
-            background: var(--color-segundo);
-        }
     }
+
+    &__icon{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: .4rem;
+        margin: auto;
+        max-height: 32px;
+        opacity: .24;
+        line-height: 1;
+    }
+}
+
+.productosPage__search{
+    position:sticky;
+    top: 0;
+    width: 84%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    align-items: stretch;
+    z-index: 3;
+    display: none;
+
+    &__input{
+        color: var(--color-primero);
+        border: none;
+        outline: none;
+        background: var(--color-segundo);
+        padding: .18rem;
+        height: 48px;
+        cursor: text;
+        position:relative;
+        max-width: 100%;
+        padding-left: 2.8rem;
+        padding-right: 1.8rem;
+    }
+
+    &__icon{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: .4rem;
+        margin: auto;
+        max-height: 32px;
+        opacity: .24;
+        line-height: 1;
+    }
+}
+
+.filterActive{
+    background: var(--color-segundo);
+}
+
+.hideDisplay{
+    display: none;
 }
 
 .noPointer{

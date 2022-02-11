@@ -105,9 +105,13 @@
                 <h3 class="header__title">BEBIDAS</h3>               
             </div>
 
-            <p class="productosPage__filterText">Filtrar por: </p>
+            <div class="productosPage__filterWrapper">
+                <button class="productosPage__filterWrapper__filter filterActive">Filtrar: </button>
+                <button class="productosPage__filterWrapper__search">Buscar: </button>
+            </div>
+            
             <div class="productosPage__filter">
-                <select name="filter" id="productosPage__filter" class="productosPage__filter__select">
+                <select name="filter" id="productosPage__filter" class="productosPage__filter__select" aria-label="Filter Products">
                     <option value="todas" selected="selected">Todas</option>
                     <option value="cervezas">Cervezas</option>
                     <option value="vinos">Vinos</option>
@@ -115,6 +119,12 @@
                     <option value="licores">Licores</option>
                     <option value="sinalcohol">Sin alcohol</option>
                 </select>
+                <i class="bi bi-filter productosPage__filter__icon"></i>
+            </div>
+
+            <div class="productosPage__search">
+                <input autocomplete="off" type="search" name="productosSearch" id="productosPage__search" aria-label="Search Products" class="productosPage__search__input">
+                <i class="bi bi-search productosPage__search__icon"></i>
             </div>
 
             <div class="productos productos--page" id="productosTotal">

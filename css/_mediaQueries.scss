@@ -109,6 +109,10 @@
 @media (min-width: 672px){
     .productos{
         grid-template-columns: repeat(auto-fit, minmax(194px, 1fr));
+
+        &--page{
+            grid-template-columns: repeat(auto-fill, minmax(194px, 1fr));
+        }
     }
 }
 
@@ -195,6 +199,10 @@
     .productos{
         flex: 8;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+        &--page{
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
     }
     .footer{
         padding-left: 4rem;
