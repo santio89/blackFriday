@@ -377,6 +377,21 @@ function toggleProductos(){
         carrito.style.right = `${scrollbar__width + 10}px`;
         carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
     }
+
+    /* reset filter button */
+    let filterButton = document.querySelector(".productosPage__filterWrapper__filter ");
+    let searchButton = document.querySelector(".productosPage__filterWrapper__search");
+    let filterBar = document.querySelector(".productosPage__filter");
+    let searchBar = document.querySelector(".productosPage__search");
+    let searchInput = document.querySelector("#productosPage__search");
+    let filterInput = document.querySelector("#productosPage__filter");
+    filterButton.classList.add("filterActive");
+    searchButton.classList.remove("filterActive");
+    filterBar.style.display = "flex";
+    searchBar.style.display = "none";
+    filterInput.value = "todas"; 
+    productFilter();
+    searchInput.value = "";
 }
 
 /* cards de la seccion productos */
@@ -478,28 +493,43 @@ function toggleOfertas(){
 
      /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
     
-        let nav__ul = document.querySelector(".nav__ul");
-        let carrito = document.querySelector(".carrito");
-        let carrito__lista = document.querySelector(".carrito__lista");
-        let scrollbar__width = getScrollbarWidth();
-        
-        if(document.documentElement.style.overflowY == "hidden"){
-            let productosPage = document.querySelector(".productosPage");
-            if (!productosPage.classList.contains("visible")){
-                document.documentElement.style.overflowY = "scroll";
-                ofertas.style.overflowY = "hidden";
-                document.documentElement.style.marginRight = "0";
-                nav__ul.style.marginRight = "0";
-                carrito.style.right = "10px";
-                carrito__lista.style.right = "9vw";
-            } 
-        } else{
-            document.documentElement.style.overflowY = "hidden";
-            document.documentElement.style.marginRight = `${scrollbar__width}px`;
-            nav__ul.style.marginRight = `${scrollbar__width}px`;
-            carrito.style.right = `${scrollbar__width + 10}px`;
-            carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
-        }
+    let nav__ul = document.querySelector(".nav__ul");
+    let carrito = document.querySelector(".carrito");
+    let carrito__lista = document.querySelector(".carrito__lista");
+    let scrollbar__width = getScrollbarWidth();
+    
+    if(document.documentElement.style.overflowY == "hidden"){
+        let productosPage = document.querySelector(".productosPage");
+        if (!productosPage.classList.contains("visible")){
+            document.documentElement.style.overflowY = "scroll";
+            ofertas.style.overflowY = "hidden";
+            document.documentElement.style.marginRight = "0";
+            nav__ul.style.marginRight = "0";
+            carrito.style.right = "10px";
+            carrito__lista.style.right = "9vw";
+        } 
+    } else{
+        document.documentElement.style.overflowY = "hidden";
+        document.documentElement.style.marginRight = `${scrollbar__width}px`;
+        nav__ul.style.marginRight = `${scrollbar__width}px`;
+        carrito.style.right = `${scrollbar__width + 10}px`;
+        carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
+    }
+
+    /* reset filter button */
+    let filterButton = document.querySelector(".productosPage__filterWrapper__filter ");
+    let searchButton = document.querySelector(".productosPage__filterWrapper__search");
+    let filterBar = document.querySelector(".productosPage__filter");
+    let searchBar = document.querySelector(".productosPage__search");
+    let searchInput = document.querySelector("#productosPage__search");
+    let filterInput = document.querySelector("#productosPage__filter");
+    filterButton.classList.add("filterActive");
+    searchButton.classList.remove("filterActive");
+    filterBar.style.display = "flex";
+    searchBar.style.display = "none";
+    filterInput.value = "todas"; 
+    productFilter();
+    searchInput.value = "";
 }
 
 /* cards de la seccion ofertas/combos */
@@ -770,6 +800,56 @@ function productFilter(){
         bebida__mas.on("click", ()=>{shopCart1.addItem(bebidas.id)});
     });
 }
+
+/* search productos */
+let filterButton = document.querySelector(".productosPage__filterWrapper__filter ");
+let searchButton = document.querySelector(".productosPage__filterWrapper__search");
+let filterBar = document.querySelector(".productosPage__filter");
+let searchBar = document.querySelector(".productosPage__search");
+let searchInput = document.querySelector("#productosPage__search");
+let filterInput = document.querySelector("#productosPage__filter");
+let productosTotal = document.querySelector("#productosTotal");
+let productosSearch = productosTotal.childNodes;
+
+filterButton.addEventListener("click", ()=>{
+    filterButton.classList.add("filterActive");
+    searchButton.classList.remove("filterActive");
+    filterBar.style.display = "flex";
+    searchBar.style.display = "none";
+    filterInput.value = "todas"; 
+    productFilter();
+    searchInput.value = "";
+})
+
+searchButton.addEventListener("click", ()=>{
+    searchButton.classList.add("filterActive");
+    filterButton.classList.remove("filterActive");
+    searchBar.style.display = "flex";
+    filterBar.style.display = "none";
+    filterInput.value = "todas"; 
+    productFilter();
+    searchInput.value = "";
+})
+
+searchInput.addEventListener("input", (e)=>{
+    let value = e.target.value;
+
+    productsObject.forEach((bebida)=>{
+        let isVisible = bebida.tipo.toUpperCase().includes(value.toUpperCase()) || bebida.categoria.toUpperCase().includes(value.toUpperCase()) || bebida.marca.toUpperCase().includes(value.toUpperCase());
+
+        productosSearch.forEach((bebidaSearch)=>{
+            if (isVisible){
+                if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
+                    bebidaSearch.classList.toggle("hideDisplay", false);
+                }
+            } else{
+                if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
+                    bebidaSearch.classList.toggle("hideDisplay", true);
+                }
+            }
+        })
+    })
+})
  
 
 /* header title animation - usando jquery y css*/
