@@ -897,7 +897,7 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  width: 90%;
+  width: 84%;
   max-width: 1000px;
   margin: auto;
   display: -webkit-box;
@@ -1152,7 +1152,7 @@ body {
   position: sticky;
   top: 0;
   margin-top: 1.2rem;
-  font-size: clamp(2.4rem, 2rem + 2.2vw, 3.8rem);
+  font-size: clamp(2.5rem, 2rem + 2.2vw, 4rem);
   left: 98%;
   -webkit-transition: -webkit-transform 200ms;
   transition: -webkit-transform 200ms;
