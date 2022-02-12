@@ -118,6 +118,12 @@ button{
 
 /* fin css reset */
 
+/* selection */
+::selection{
+    color: rgba(var(--color-primero-rgb), .8);
+    background: rgba(var(--color-segundo-rgb), .8);
+}
+
 body{
     background: linear-gradient(45deg, var(--color-segundo) 38%, var(--color-background-primero) 38%);
     font-size: 2rem;
@@ -771,6 +777,12 @@ body{
     }
 }
 
+.productosPage__filter, .productosPage__search{
+    ::selection{
+        color: rgba(var(--color-segundo-rgb), .8);
+        background: rgba(var(--color-primero-rgb), .8);
+    }
+}
 
 .productosPage__filter{
     position:sticky;
@@ -1233,11 +1245,5 @@ body{
     }
 }
 
-
-/* selection */
-::selection{
-    color: rgba(var(--color-primero-rgb), .8);
-    background: rgba(var(--color-segundo-rgb), .8);
-}
 
 

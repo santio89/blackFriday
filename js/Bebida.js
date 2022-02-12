@@ -1,5 +1,5 @@
 class Bebida{
-    constructor(categoria, tipo, marca, contNeto, precio, id, stock, img){
+    constructor(categoria, tipo, marca, contNeto, precio, id, stock, img, keywords){
         this.categoria = categoria;
         this.tipo = tipo;
         this.marca = marca;
@@ -9,6 +9,7 @@ class Bebida{
         this.id = id;
         this.stock = stock;
         this.img = `url("${img}")`;
+        this.keywords = keywords;
     }
     
     outOfStock(){

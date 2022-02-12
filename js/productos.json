@@ -8,7 +8,8 @@
         "precio": 300,
         "id": 1,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/cervezaQuilmes1000.jpg"
+        "imgUrl": "../img/stockPhotos/cervezaQuilmes1000.jpg",
+        "keywords": "cervezas rubias quilmes 1000"
     },
     {
         "variable": "cerveza__brahma",
@@ -19,7 +20,8 @@
         "precio": 200,
         "id": 2,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/cervezaBrahma1000.jpg"
+        "imgUrl": "../img/stockPhotos/cervezaBrahma1000.jpg",
+        "keywords": "cervezas rubias brahma 1000"
     },
     {
         "variable": "cerveza__heineken",
@@ -30,7 +32,8 @@
         "precio": 300,
         "id": 3,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/cervezaHeineken1000.jpg"
+        "imgUrl": "../img/stockPhotos/cervezaHeineken1000.jpg",
+        "keywords": "cervezas rubias heineken 1000"
     },
     {
         "variable": "vodka__smirnoff",
@@ -41,7 +44,8 @@
         "precio": 1000,
         "id": 4,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/vodkaSmirnoff750.jpg"
+        "imgUrl": "../img/stockPhotos/vodkaSmirnoff750.jpg",
+        "keywords": "aguardientes vodkas smirnoff 750"
     },
     {
         "variable": "whisky__vat",
@@ -52,7 +56,8 @@
         "precio": 1200,
         "id": 5,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/whiskyVat750.jpg"
+        "imgUrl": "../img/stockPhotos/whiskyVat750.jpg",
+        "keywords": "aguardientes whiskys whiskeys smirnoff 750"
     },
     {
         "variable": "ron__morgan",
@@ -63,7 +68,8 @@
         "precio": 1200,
         "id": 6,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/ronMorgan750.jpg"
+        "imgUrl": "../img/stockPhotos/ronMorgan750.jpg",
+        "keywords": "aguardientes rones captain morgan 750"
     },
     {
         "variable": "fernet__branca",
@@ -74,7 +80,8 @@
         "precio": 900,
         "id": 7,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/fernetBranca1000.jpg"
+        "imgUrl": "../img/stockPhotos/fernetBranca1000.jpg",
+        "keywords": "licores fernets branca 1000"
     },
     {
         "variable": "tequila__azteca",
@@ -85,7 +92,8 @@
         "precio": 800,
         "id": 8,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/tequilaAzteca1000.jpg"
+        "imgUrl": "../img/stockPhotos/tequilaAzteca1000.jpg",
+        "keywords": "aguardientes tequilas sol azteca 1000"
     },
     {
         "variable": "vodka__skyy",
@@ -96,7 +104,8 @@
         "precio": 1200,
         "id": 9,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/vodkaSkyy750.jpg"
+        "imgUrl": "../img/stockPhotos/vodkaSkyy750.jpg",
+        "keywords": "aguardientes vodkas skyy 980"
     },
     {
         "variable": "vino__norton__malbec",
@@ -107,7 +116,8 @@
         "precio": 500,
         "id": 10,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/vinoMalbecNorton750.jpg"
+        "imgUrl": "../img/stockPhotos/vinoMalbecNorton750.jpg",
+        "keywords": "vinos malbecs norton 750"
     },
     {
         "variable": "licor__jager",
@@ -118,7 +128,8 @@
         "precio": 2900,
         "id": 11,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/licorJager750.jpg"
+        "imgUrl": "../img/stockPhotos/licorJager750.jpg",
+        "keywords": "licores jägermeister jagermeister 700"
     },
     {
         "variable": "licor__campari",
@@ -129,7 +140,8 @@
         "precio": 900,
         "id": 12,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/licorCampari750.jpg"
+        "imgUrl": "../img/stockPhotos/licorCampari750.jpg",
+        "keywords": "licores campari 750"
     },
     {
         "variable": "vino__rutini__malbec",
@@ -140,7 +152,8 @@
         "precio": 2000,
         "id": 13,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/vinoMalbecRutini750.jpg"
+        "imgUrl": "../img/stockPhotos/vinoMalbecRutini750.jpg",
+        "keywords": "vinos malbecs rutini 750"
     },
     {
         "variable": "cerveza__corona",
@@ -151,7 +164,8 @@
         "precio": 400,
         "id": 14,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/cervezaCorona710.jpg"
+        "imgUrl": "../img/stockPhotos/cervezaCorona710.jpg",
+        "keywords": "cervezas rubias corona 710"
     },
     {
         "variable": "whisky__chivas",
@@ -162,7 +176,8 @@
         "precio": 3000,
         "id": 15,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/whiskyChivas750.jpg"
+        "imgUrl": "../img/stockPhotos/whiskyChivas750.jpg",
+        "keywords": "aguardientes whiskys whiskeys chivas 750"
     },
     {
         "variable": "gin__larios",
@@ -173,7 +188,8 @@
         "precio": 2200,
         "id": 16,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/ginLarios1000.jpg"
+        "imgUrl": "../img/stockPhotos/ginLarios1000.jpg",
+        "keywords": "aguardientes gins larios 1000"
     },
     {
         "variable": "vermouth__cinzano",
@@ -184,7 +200,8 @@
         "precio": 1000,
         "id": 17,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/vermouthCinzano950.jpg"
+        "imgUrl": "../img/stockPhotos/vermouthCinzano950.jpg",
+        "keywords": "licores vermouths cinzano 950"
     },
     {
         "variable": "cerveza__quilmes__lata",
@@ -195,7 +212,8 @@
         "precio": 120,
         "id": 18,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/cervezaQuilmes473.jpg"
+        "imgUrl": "../img/stockPhotos/cervezaQuilmes473.jpg",
+        "keywords": "cervezas rubias quilmes latas 473"
     },
     {
         "variable": "cerveza__heineken__lata",
@@ -206,7 +224,8 @@
         "precio": 200,
         "id": 19,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/cervezaHeineken473.jpg"
+        "imgUrl": "../img/stockPhotos/cervezaHeineken473.jpg",
+        "keywords": "cervezas rubias heineken latas 473"
     },
     {
         "variable": "gaseosa__coca",
@@ -217,7 +236,8 @@
         "precio": 150,
         "id": 20,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/gaseosaCoca1500.jpg"
+        "imgUrl": "../img/stockPhotos/gaseosaCoca1500.jpg",
+        "keywords": "sinalcohol gaseosas coca cola coca-cola 1500"
     },
     {
         "variable": "agua__glaciar",
@@ -228,7 +248,8 @@
         "precio": 120,
         "id": 21,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/aguaGlaciar1000.jpg"
+        "imgUrl": "../img/stockPhotos/aguaGlaciar1000.jpg",
+        "keywords": "sinalcohol aguas glaciar 1500"
     },
     {
         "variable": "jugo__cepita__naranja",
@@ -239,7 +260,8 @@
         "precio": 120,
         "id": 22,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/jugoCepitaNaranja1000.jpg"
+        "imgUrl": "../img/stockPhotos/jugoCepitaNaranja1000.jpg",
+        "keywords": "sinalcohol jugos cepita naranjas 1000"
     },
     {
         "variable": "jugo__cepita__manzana",
@@ -250,18 +272,20 @@
         "precio": 120,
         "id": 23,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/jugoCepitaManzana1000.jpg"
+        "imgUrl": "../img/stockPhotos/jugoCepitaManzana1000.jpg",
+        "keywords": "sinalcohol jugos cepita manzanas 1000"
     },
     {
         "variable": "cerveza__brahma__lata",
         "categoria": "cervezas",
-        "tipo": "CERVEZA",
+        "tipo": "CERVEZA RUBIA",
         "marca": "BRAHMA",
         "contNeto": 473,
         "precio": 220,
         "id": 24,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/cervezaBrahma473.jpg"
+        "imgUrl": "../img/stockPhotos/cervezaBrahma473.jpg",
+        "keywords": "cervezas rubias brahma latas 473"
     },
     {
         "variable": "espumante__extrabrut__chandon",
@@ -272,7 +296,8 @@
         "precio": 1200,
         "id": 25,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/espumanteExtraBrutChandon750.jpg"
+        "imgUrl": "../img/stockPhotos/espumanteExtraBrutChandon750.jpg",
+        "keywords": "vinos espumantes extrabruts chandon 750"
     },
     {
         "variable": "espumante__extrabrut__mumm",
@@ -283,7 +308,8 @@
         "precio": 900,
         "id": 26,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/espumanteExtraBrutMumm750.jpg"
+        "imgUrl": "../img/stockPhotos/espumanteExtraBrutMumm750.jpg",
+        "keywords": "vinos espumantes extrabruts mumm 750"
     },
     {
         "variable": "whisky__jack",
@@ -294,7 +320,8 @@
         "precio": 4000,
         "id": 27,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/whiskyJack750.jpg"
+        "imgUrl": "../img/stockPhotos/whiskyJack750.jpg",
+        "keywords": "aguardientes whiskys whiskeys jack daniel's daniels 750"
     },
     {
         "variable": "cerveza__guinness",
@@ -305,6 +332,7 @@
         "precio": 250,
         "id": 28,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/guinness473.jpg"
+        "imgUrl": "../img/stockPhotos/guinness473.jpg",
+        "keywords": "cervezas negras guinness latas 473"
     }
 ]

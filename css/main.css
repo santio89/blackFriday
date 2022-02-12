@@ -114,6 +114,16 @@ button {
 }
 
 /* fin css reset */
+/* selection */
+::-moz-selection {
+  color: rgba(var(--color-primero-rgb), 0.8);
+  background: rgba(var(--color-segundo-rgb), 0.8);
+}
+::selection {
+  color: rgba(var(--color-primero-rgb), 0.8);
+  background: rgba(var(--color-segundo-rgb), 0.8);
+}
+
 body {
   background: linear-gradient(45deg, var(--color-segundo) 38%, var(--color-background-primero) 38%);
   font-size: 2rem;
@@ -939,6 +949,16 @@ body {
   background: var(--color-segundo);
 }
 
+.productosPage__filter ::-moz-selection, .productosPage__search ::-moz-selection {
+  color: rgba(var(--color-segundo-rgb), 0.8);
+  background: rgba(var(--color-primero-rgb), 0.8);
+}
+
+.productosPage__filter ::selection, .productosPage__search ::selection {
+  color: rgba(var(--color-segundo-rgb), 0.8);
+  background: rgba(var(--color-primero-rgb), 0.8);
+}
+
 .productosPage__filter {
   position: -webkit-sticky;
   position: sticky;
@@ -1527,16 +1547,6 @@ body {
 
 .footer__blackFriday__logo:hover, .footer__blackFriday__logo:focus {
   color: var(--color-segundo);
-}
-
-/* selection */
-::-moz-selection {
-  color: rgba(var(--color-primero-rgb), 0.8);
-  background: rgba(var(--color-segundo-rgb), 0.8);
-}
-::selection {
-  color: rgba(var(--color-primero-rgb), 0.8);
-  background: rgba(var(--color-segundo-rgb), 0.8);
 }
 
 @-webkit-keyframes rubberBand {

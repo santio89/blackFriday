@@ -49,9 +49,9 @@ $.ajax({
 
         productsObject.forEach(producto=>{
             if (producto.stock == "isInfinity"){
-                window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, Infinity, producto.imgUrl);
+                window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, Infinity, producto.imgUrl, producto.keywords);
             } else{
-                window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, producto.stock, producto.imgUrl);
+                window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, producto.stock, producto.imgUrl, producto.keywords);
             }
             stock1.addStockItem(window[producto.variable]);
         })
@@ -845,9 +845,10 @@ searchButton.addEventListener("click", ()=>{
 
 searchInput.addEventListener("input", (e)=>{
     let value = e.target.value;
+    value = value.trim();
 
     productsObject.forEach((bebida)=>{
-        let isVisible = bebida.tipo.toUpperCase().includes(value.toUpperCase()) || bebida.categoria.toUpperCase().includes(value.toUpperCase()) || bebida.marca.toUpperCase().includes(value.toUpperCase());
+        let isVisible = bebida.tipo.toUpperCase().includes(value.toUpperCase()) || bebida.categoria.toUpperCase().includes(value.toUpperCase()) || bebida.marca.toUpperCase().includes(value.toUpperCase()) || bebida.keywords.toUpperCase().includes(value.toUpperCase());
 
         productosSearch.forEach((bebidaSearch)=>{
             if (isVisible){
