@@ -117,7 +117,7 @@
         "id": 10,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/vinoMalbecNorton750.jpg",
-        "keywords": "vinos malbecs nortons 750"
+        "keywords": "vinos tintos malbecs nortons 750"
     },
     {
         "variable": "licor__jager__700",
@@ -153,7 +153,7 @@
         "id": 13,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/vinoMalbecRutini750.jpg",
-        "keywords": "vinos malbecs rutinis 750"
+        "keywords": "vinos tintos malbecs rutinis 750"
     },
     {
         "variable": "cerveza__rubia__corona__710",
@@ -297,7 +297,7 @@
         "id": 25,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteExtraBrutChandon750.jpg",
-        "keywords": "vinos espumantes extrabruts extra brut extras bruts chandons 750"
+        "keywords": "vinos espumantes champagnes extrabruts extra brut extras bruts chandons 750"
     },
     {
         "variable": "espumante__extrabrut__mumm__750",
@@ -309,7 +309,7 @@
         "id": 26,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteExtraBrutMumm750.jpg",
-        "keywords": "vinos espumantes extrabruts extra brut extras bruts mumms 750"
+        "keywords": "vinos espumantes champagnes extrabruts extra brut extras bruts mumms 750"
     },
     {
         "variable": "whisky__jack__750",
@@ -561,7 +561,7 @@
         "id": 47,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/vinoSauvignonLatitud750.jpg",
-        "keywords": "vinos sauvignons latituds 33° 750"
+        "keywords": "vinos blancos sauvignons latituds 33° 750"
     },
     {
         "variable": "vino__malbec__latitud__750",
@@ -573,6 +573,6 @@
         "id": 48,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/vinoMalbecLatitud750.jpg",
-        "keywords": "vinos malbecs latituds 33° 750"
+        "keywords": "vinos tintos malbecs latituds 33° 750"
     }
 ]
