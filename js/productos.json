@@ -416,7 +416,7 @@
         "precio": 300,
         "id": 35,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/espumanteBluefrizze1000.jpg",
+        "imgUrl": "../img/stockPhotos/espumanteBlueFrizze1000.jpg",
         "keywords": "vinos espumantes frizzes blues 1000"
     },
     {
@@ -428,7 +428,7 @@
         "precio": 300,
         "id": 36,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/espumanteLimonatafrizze1000.jpg",
+        "imgUrl": "../img/stockPhotos/espumanteLimonataFrizze1000.jpg",
         "keywords": "vinos espumantes frizzes limonatas 1000"
     },
     {
