@@ -228,16 +228,16 @@
         "keywords": "cervezas rubias heinekens latas 473"
     },
     {
-        "variable": "gaseosa__coca__1500",
-        "categoria": "sinalcohol",
-        "tipo": "GASEOSA",
-        "marca": "COCA COLA",
-        "contNeto": 1500,
-        "precio": 150,
+        "variable": "cerveza__ipa__patagonia__473",
+        "categoria": "cervezas",
+        "tipo": "CERVEZA IPA",
+        "marca": "PATAGONIA",
+        "contNeto": 473,
+        "precio": 120,
         "id": 20,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/gaseosaCoca1500.jpg",
-        "keywords": "sinalcohol gaseosas cocas colas coca-cola 1500"
+        "imgUrl": "../img/stockPhotos/cervezaIpaPatagonia473.jpg",
+        "keywords": "cervezas rubias patagonias latas 473"
     },
     {
         "variable": "agua__glaciar__1500",
@@ -336,16 +336,16 @@
         "keywords": "cervezas negras guinness latas 473"
     },
     {
-        "variable": "cerveza__ipa__patagonia__473",
-        "categoria": "cervezas",
-        "tipo": "CERVEZA IPA",
-        "marca": "PATAGONIA",
-        "contNeto": 473,
-        "precio": 120,
+        "variable": "licor__curasao__700",
+        "categoria": "licores",
+        "tipo": "BLUE CURAÇAO",
+        "marca": "CUSENIER",
+        "contNeto": 700,
+        "precio": 520,
         "id": 29,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/cervezaIpaPatagonia473.jpg",
-        "keywords": "cervezas rubias patagonias latas 473"
+        "imgUrl": "../img/stockPhotos/licorCurasaoCusenier700.jpg",
+        "keywords": "licores blues curasaos curaçaos curazaos 700"
     },
     {
         "variable": "cerveza__negra__andes__473",
@@ -456,13 +456,37 @@
         "keywords": "licores aperitivos martinis 1000"
     },
     {
+        "variable": "gaseosa__sprite__1500",
+        "categoria": "sinalcohol",
+        "tipo": "GASEOSA",
+        "marca": "SPRITE",
+        "contNeto": 1500,
+        "precio": 150,
+        "id": 39,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/gaseosaSprite1500.jpg",
+        "keywords": "sinalcohol gaseosas sprites 1500"
+    },
+    {
+        "variable": "gaseosa__coca__1500",
+        "categoria": "sinalcohol",
+        "tipo": "GASEOSA",
+        "marca": "COCA COLA",
+        "contNeto": 1500,
+        "precio": 150,
+        "id": 40,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/gaseosaCoca1500.jpg",
+        "keywords": "sinalcohol gaseosas cocas colas coca-cola 1500"
+    },
+    {
         "variable": "vodka__absolut__750",
         "categoria": "aguardientes",
         "tipo": "VODKA",
         "marca": "absolut",
         "contNeto": 750,
         "precio": 3400,
-        "id": 39,
+        "id": 41,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/vodkaAbsolut750.jpg",
         "keywords": "aguardientes vodkas absoluts 750"
@@ -474,9 +498,33 @@
         "marca": "JOHNNIE BLACK",
         "contNeto": 750,
         "precio": 3800,
-        "id": 40,
+        "id": 42,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/whiskyJohnnieBlack750.jpg",
         "keywords": "aguardientes whiskys whiskeys johnnies walkers 750"
+    },
+    {
+        "variable": "granadina__cusenier__1000",
+        "categoria": "sinalcohol",
+        "tipo": "GRANADINA",
+        "marca": "CUSENIER",
+        "contNeto": 1000,
+        "precio": 500,
+        "id": 43,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/granadinaCusenier1000.jpg",
+        "keywords": "sinalcohol granadinas cuseniers 1000"
+    },
+    {
+        "variable": "licor__gancia__950",
+        "categoria": "licores",
+        "tipo": "APERITIVO",
+        "marca": "GANCIA",
+        "contNeto": 950,
+        "precio": 800,
+        "id": 44,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/aperitivoGancia950.jpg",
+        "keywords": "licores aperitivos gancias 950"
     }
 ]
