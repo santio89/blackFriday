@@ -1,6 +1,6 @@
 [
     {
-        "variable": "cerveza__quilmes",
+        "variable": "cerveza__rubia__quilmes__1000",
         "categoria": "cervezas",
         "tipo": "CERVEZA RUBIA",
         "marca": "QUILMES",
@@ -12,7 +12,7 @@
         "keywords": "cervezas rubias quilmes 1000"
     },
     {
-        "variable": "cerveza__brahma",
+        "variable": "cerveza__rubia__brahma__1000",
         "categoria": "cervezas",
         "tipo": "CERVEZA RUBIA",
         "marca": "BRAHMA",
@@ -24,7 +24,7 @@
         "keywords": "cervezas rubias brahmas 1000"
     },
     {
-        "variable": "cerveza__heineken",
+        "variable": "cerveza__rubia__heineken__1000",
         "categoria": "cervezas",
         "tipo": "CERVEZA RUBIA",
         "marca": "heineken",
@@ -36,7 +36,7 @@
         "keywords": "cervezas rubias heinekens 1000"
     },
     {
-        "variable": "vodka__smirnoff",
+        "variable": "vodka__smirnoff__750",
         "categoria": "aguardientes",
         "tipo": "VODKA",
         "marca": "smirnoff",
@@ -48,7 +48,7 @@
         "keywords": "aguardientes vodkas smirnoffs 750"
     },
     {
-        "variable": "whisky__vat",
+        "variable": "whisky__vat__750",
         "categoria": "aguardientes",
         "tipo": "WHISKY",
         "marca": "VAT 69",
@@ -60,7 +60,7 @@
         "keywords": "aguardientes whiskys whiskeys smirnoffs 750"
     },
     {
-        "variable": "ron__morgan",
+        "variable": "ron__morgan__750",
         "categoria": "aguardientes",
         "tipo": "RON",
         "marca": "MORGAN",
@@ -72,7 +72,7 @@
         "keywords": "aguardientes rones captains morgans 750"
     },
     {
-        "variable": "fernet__branca",
+        "variable": "fernet__branca__1000",
         "categoria": "licores",
         "tipo": "FERNET",
         "marca": "BRANCA",
@@ -84,7 +84,7 @@
         "keywords": "licores fernets brancas 1000"
     },
     {
-        "variable": "tequila__azteca",
+        "variable": "tequila__azteca__1000",
         "categoria": "aguardientes",
         "tipo": "TEQUILA",
         "marca": "AZTECA",
@@ -96,7 +96,7 @@
         "keywords": "aguardientes tequilas soles aztecas 1000"
     },
     {
-        "variable": "vodka__skyy",
+        "variable": "vodka__skyy__980",
         "categoria": "aguardientes",
         "tipo": "VODKA",
         "marca": "SKYY",
@@ -108,7 +108,7 @@
         "keywords": "aguardientes vodkas skyys 980"
     },
     {
-        "variable": "vino__norton__malbec",
+        "variable": "vino__malbec__norton__750",
         "categoria": "vinos",
         "tipo": "VINO MALBEC",
         "marca": "NORTON",
@@ -120,7 +120,7 @@
         "keywords": "vinos malbecs nortons 750"
     },
     {
-        "variable": "licor__jager",
+        "variable": "licor__jager__700",
         "categoria": "licores",
         "tipo": "LICOR",
         "marca": "JÄGER",
@@ -132,7 +132,7 @@
         "keywords": "licores jägermeisters jagermeisters 700"
     },
     {
-        "variable": "licor__campari",
+        "variable": "licor__campari__750",
         "categoria": "licores",
         "tipo": "LICOR",
         "marca": "CAMPARI",
@@ -144,7 +144,7 @@
         "keywords": "licores camparis 750"
     },
     {
-        "variable": "vino__rutini__malbec",
+        "variable": "vino__malbec__rutini__750",
         "categoria": "vinos",
         "tipo": "VINO MALBEC",
         "marca": "RUTINI",
@@ -156,7 +156,7 @@
         "keywords": "vinos malbecs rutinis 750"
     },
     {
-        "variable": "cerveza__corona",
+        "variable": "cerveza__rubia__corona__710",
         "categoria": "cervezas",
         "tipo": "CERVEZA RUBIA",
         "marca": "CORONA",
@@ -168,19 +168,19 @@
         "keywords": "cervezas rubias coronas 710"
     },
     {
-        "variable": "whisky__chivas",
+        "variable": "whisky__chivas__750",
         "categoria": "aguardientes",
         "tipo": "WHISKY",
-        "marca": "CHIVAS",
+        "marca": "CHIVAS 12",
         "contNeto": 750,
         "precio": 3000,
         "id": 15,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/whiskyChivas750.jpg",
+        "imgUrl": "../img/stockPhotos/whiskyChivas12750.jpg",
         "keywords": "aguardientes whiskys whiskeys chivas 750"
     },
     {
-        "variable": "gin__larios",
+        "variable": "gin__larios__1000",
         "categoria": "aguardientes",
         "tipo": "GIN",
         "marca": "LARIOS",
@@ -192,7 +192,7 @@
         "keywords": "aguardientes gins larios 1000"
     },
     {
-        "variable": "vermouth__cinzano",
+        "variable": "vermouth__cinzano__1000",
         "categoria": "licores",
         "tipo": "VERMOUTH",
         "marca": "CINZANO",
@@ -204,7 +204,7 @@
         "keywords": "licores vermouths cinzanos 950"
     },
     {
-        "variable": "cerveza__quilmes__lata",
+        "variable": "cerveza__rubia__quilmes__473",
         "categoria": "cervezas",
         "tipo": "CERVEZA RUBIA",
         "marca": "QUILMES",
@@ -216,7 +216,7 @@
         "keywords": "cervezas rubias quilmes latas 473"
     },
     {
-        "variable": "cerveza__heineken__lata",
+        "variable": "cerveza__rubia__heineken__473",
         "categoria": "cervezas",
         "tipo": "CERVEZA RUBIA",
         "marca": "HEINEKEN",
@@ -228,7 +228,7 @@
         "keywords": "cervezas rubias heinekens latas 473"
     },
     {
-        "variable": "gaseosa__coca",
+        "variable": "gaseosa__coca__1500",
         "categoria": "sinalcohol",
         "tipo": "GASEOSA",
         "marca": "COCA COLA",
@@ -240,7 +240,7 @@
         "keywords": "sinalcohol gaseosas cocas colas coca-cola 1500"
     },
     {
-        "variable": "agua__glaciar",
+        "variable": "agua__glaciar__1500",
         "categoria": "sinalcohol",
         "tipo": "AGUA",
         "marca": "GLACIAR",
@@ -252,7 +252,7 @@
         "keywords": "sinalcohol aguas glaciares 1500"
     },
     {
-        "variable": "jugo__cepita__naranja",
+        "variable": "jugo__cepita__naranja__1000",
         "categoria": "sinalcohol",
         "tipo": "JUGO",
         "marca": "CEPITA NARANJA",
@@ -264,7 +264,7 @@
         "keywords": "sinalcohol jugos cepitas naranjas 1000"
     },
     {
-        "variable": "jugo__cepita__manzana",
+        "variable": "jugo__cepita__manzana__1000",
         "categoria": "sinalcohol",
         "tipo": "JUGO",
         "marca": "CEPITA MANZANA",
@@ -276,7 +276,7 @@
         "keywords": "sinalcohol jugos cepitas manzanas 1000"
     },
     {
-        "variable": "cerveza__brahma__lata",
+        "variable": "cerveza__rubia__brahma__473",
         "categoria": "cervezas",
         "tipo": "CERVEZA RUBIA",
         "marca": "BRAHMA",
@@ -288,7 +288,7 @@
         "keywords": "cervezas rubias brahmas latas 473"
     },
     {
-        "variable": "espumante__extrabrut__chandon",
+        "variable": "espumante__extrabrut__chandon__750",
         "categoria": "vinos",
         "tipo": "EXTRA BRUT",
         "marca": "CHANDON",
@@ -300,7 +300,7 @@
         "keywords": "vinos espumantes extrabruts chandons 750"
     },
     {
-        "variable": "espumante__extrabrut__mumm",
+        "variable": "espumante__extrabrut__mumm__750",
         "categoria": "vinos",
         "tipo": "EXTRA BRUT",
         "marca": "MUMM",
@@ -312,7 +312,7 @@
         "keywords": "vinos espumantes extrabruts mumms 750"
     },
     {
-        "variable": "whisky__jack",
+        "variable": "whisky__jack__750",
         "categoria": "aguardientes",
         "tipo": "WHISKY",
         "marca": "JACK",
@@ -324,7 +324,7 @@
         "keywords": "aguardientes whiskys whiskeys jack daniel's daniels 750"
     },
     {
-        "variable": "cerveza__guinness",
+        "variable": "cerveza__negra__guinness__473",
         "categoria": "cervezas",
         "tipo": "CERVEZA NEGRA",
         "marca": "GUINNESS",
@@ -334,5 +334,149 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaNegraGuinness473.jpg",
         "keywords": "cervezas negras guinness latas 473"
+    },
+    {
+        "variable": "cerveza__ipa__patagonia__473",
+        "categoria": "cervezas",
+        "tipo": "CERVEZA IPA",
+        "marca": "PATAGONIA",
+        "contNeto": 473,
+        "precio": 120,
+        "id": 29,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/cervezaIpaPatagonia473.jpg",
+        "keywords": "cervezas rubias patagonias latas 473"
+    },
+    {
+        "variable": "cerveza__negra__andes__473",
+        "categoria": "cervezas",
+        "tipo": "CERVEZA NEGRA",
+        "marca": "ANDES",
+        "contNeto": 473,
+        "precio": 110,
+        "id": 30,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/cervezaNegraAndes473.jpg",
+        "keywords": "cervezas negras andes latas 473"
+    },
+    {
+        "variable": "cerveza__rubia__andes__473",
+        "categoria": "cervezas",
+        "tipo": "CERVEZA RUBIA",
+        "marca": "ANDES",
+        "contNeto": 473,
+        "precio": 110,
+        "id": 31,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/cervezaRubiaAndes473.jpg",
+        "keywords": "cervezas Rubias andes latas 473"
+    },
+    {
+        "variable": "cerveza__rubia__isenbeck__1000",
+        "categoria": "cervezas",
+        "tipo": "CERVEZA RUBIA",
+        "marca": "ISENBECK",
+        "contNeto": 1000,
+        "precio": 240,
+        "id": 32,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/cervezaRubiaisenbeck1000.jpg",
+        "keywords": "cervezas Rubias isenbecks 1000"
+    },
+    {
+        "variable": "cerveza__rubia__stella__330",
+        "categoria": "cervezas",
+        "tipo": "CERVEZA RUBIA",
+        "marca": "STELLA",
+        "contNeto": 330,
+        "precio": 90,
+        "id": 33,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/cervezaRubiaStella330.jpg",
+        "keywords": "cervezas Rubias stellas artois 330"
+    },
+    {
+        "variable": "cerveza__rubia__wars__1000",
+        "categoria": "cervezas",
+        "tipo": "CERVEZA RUBIA",
+        "marca": "WARS",
+        "contNeto": 1000,
+        "precio": 250,
+        "id": 34,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/cervezaRubiaWars1000.jpg",
+        "keywords": "cervezas Rubias warsteiners 1000"
+    },
+    {
+        "variable": "espumante__blue__frizze__1000",
+        "categoria": "vinos",
+        "tipo": "ESPUMANTE BLUE",
+        "marca": "FRIZZE",
+        "contNeto": 1000,
+        "precio": 300,
+        "id": 35,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/espumanteBluefrizze1000.jpg",
+        "keywords": "vinos espumantes frizzes 1000"
+    },
+    {
+        "variable": "espumante__limonata__frizze__1000",
+        "categoria": "vinos",
+        "tipo": "ESPUMANTE LIMONATA",
+        "marca": "FRIZZE",
+        "contNeto": 1000,
+        "precio": 300,
+        "id": 36,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/espumanteLimonatafrizze1000.jpg",
+        "keywords": "vinos espumantes frizzes 1000"
+    },
+    {
+        "variable": "licor__baileys__1000",
+        "categoria": "licores",
+        "tipo": "LICOR",
+        "marca": "BAILEYS",
+        "contNeto": 1000,
+        "precio": 2200,
+        "id": 37,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/licorBaileys750.jpg",
+        "keywords": "licores baileys 1000"
+    },
+    {
+        "variable": "licor__martini__1000",
+        "categoria": "licores",
+        "tipo": "APERITIVO",
+        "marca": "MARTINI",
+        "contNeto": 1000,
+        "precio": 2400,
+        "id": 38,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/aperitivoMartini1000.jpg",
+        "keywords": "licores aperitivos martinis 1000"
+    },
+    {
+        "variable": "vodka__absolut__750",
+        "categoria": "aguardientes",
+        "tipo": "VODKA",
+        "marca": "absolut",
+        "contNeto": 750,
+        "precio": 3400,
+        "id": 39,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/vodkaAbsolut750.jpg",
+        "keywords": "aguardientes vodkas absoluts 750"
+    },
+    {
+        "variable": "whisky__black__johnnie__750",
+        "categoria": "aguardientes",
+        "tipo": "WHISKY",
+        "marca": "JOHNNIE BLACK",
+        "contNeto": 750,
+        "precio": 3800,
+        "id": 40,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/whiskyJohnnieBlack750.jpg",
+        "keywords": "aguardientes whiskys whiskeys johnnies walkers 750"
     }
 ]

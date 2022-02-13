@@ -716,6 +716,7 @@ body {
   outline: 4px dashed var(--color-segundo-dark);
   -webkit-transition: outline-width 100ms;
   transition: outline-width 100ms;
+  overflow: hidden;
 }
 
 .productos__producto:hover, .productos__producto:focus, .productos__producto:focus-within {

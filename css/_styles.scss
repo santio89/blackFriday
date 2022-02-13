@@ -577,6 +577,7 @@ body{
         aspect-ratio: 3/5;
         outline: 4px dashed var(--color-segundo-dark);
         transition: outline-width 100ms;
+        overflow: hidden;
         
         &:hover, &:focus, &:focus-within{
         outline: 8px dashed var(--color-tercero);   

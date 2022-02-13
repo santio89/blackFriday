@@ -56,18 +56,18 @@ $.ajax({
             stock1.addStockItem(window[producto.variable]);
         })
 
-        stock1.addFeaturedItem(cerveza__heineken);
-        stock1.addFeaturedItem(fernet__branca);
-        stock1.addFeaturedItem(licor__jager);
-        stock1.addFeaturedItem(ron__morgan);
-        stock1.addFeaturedItem(whisky__vat);
-        stock1.addFeaturedItem(vodka__skyy);
-        stock1.addFeaturedItem(vino__rutini__malbec);
-        stock1.addFeaturedItem(cerveza__quilmes);
-        stock1.addFeaturedItem(cerveza__guinness);
-        stock1.addFeaturedItem(vodka__smirnoff);
-        stock1.addFeaturedItem(cerveza__corona);
-        stock1.addFeaturedItem(licor__campari);
+        stock1.addFeaturedItem(cerveza__rubia__heineken__1000);
+        stock1.addFeaturedItem(fernet__branca__1000);
+        stock1.addFeaturedItem(licor__jager__700);
+        stock1.addFeaturedItem(ron__morgan__750);
+        stock1.addFeaturedItem(whisky__vat__750);
+        stock1.addFeaturedItem(vodka__skyy__980);
+        stock1.addFeaturedItem(vino__malbec__rutini__750);
+        stock1.addFeaturedItem(cerveza__rubia__quilmes__1000);
+        stock1.addFeaturedItem(cerveza__negra__guinness__473);
+        stock1.addFeaturedItem(vodka__smirnoff__750);
+        stock1.addFeaturedItem(cerveza__rubia__corona__710);
+        stock1.addFeaturedItem(licor__campari__750);
 
         cards__productosFeatured();
         cards__productos();
