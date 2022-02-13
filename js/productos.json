@@ -177,7 +177,7 @@
         "id": 15,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/whiskyChivas12750.jpg",
-        "keywords": "aguardientes whiskys whiskeys chivas 750"
+        "keywords": "aguardientes whiskys whiskeys chivas 12 twelve years 12años 12years 750"
     },
     {
         "variable": "gin__larios__1000",
@@ -237,7 +237,7 @@
         "id": 20,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaIpaPatagonia473.jpg",
-        "keywords": "cervezas rubias patagonias latas 473"
+        "keywords": "cervezas ips patagonias latas 473"
     },
     {
         "variable": "agua__glaciar__1500",
@@ -297,7 +297,7 @@
         "id": 25,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteExtraBrutChandon750.jpg",
-        "keywords": "vinos espumantes extrabruts chandons 750"
+        "keywords": "vinos espumantes extrabruts extra brut extras bruts chandons 750"
     },
     {
         "variable": "espumante__extrabrut__mumm__750",
@@ -309,7 +309,7 @@
         "id": 26,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteExtraBrutMumm750.jpg",
-        "keywords": "vinos espumantes extrabruts mumms 750"
+        "keywords": "vinos espumantes extrabruts extra brut extras bruts mumms 750"
     },
     {
         "variable": "whisky__jack__750",
@@ -417,7 +417,7 @@
         "id": 35,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteBluefrizze1000.jpg",
-        "keywords": "vinos espumantes frizzes 1000"
+        "keywords": "vinos espumantes frizzes blues 1000"
     },
     {
         "variable": "espumante__limonata__frizze__1000",
@@ -429,7 +429,7 @@
         "id": 36,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteLimonatafrizze1000.jpg",
-        "keywords": "vinos espumantes frizzes 1000"
+        "keywords": "vinos espumantes frizzes limonatas 1000"
     },
     {
         "variable": "licor__baileys__1000",
@@ -501,7 +501,7 @@
         "id": 42,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/whiskyJohnnieBlack750.jpg",
-        "keywords": "aguardientes whiskys whiskeys johnnies walkers 750"
+        "keywords": "aguardientes whiskys whiskeys johnnies walkers blacks 750"
     },
     {
         "variable": "granadina__cusenier__1000",
@@ -526,5 +526,53 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/aperitivoGancia950.jpg",
         "keywords": "licores aperitivos gancias 950"
+    },
+    {
+        "variable": "gin__beefeater__1000",
+        "categoria": "aguardientes",
+        "tipo": "GIN",
+        "marca": "BEEFEATER",
+        "contNeto": 1000,
+        "precio": 4800,
+        "id": 45,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/ginBeefeater1000.jpg",
+        "keywords": "aguardientes gins beefeaters 1000"
+    },
+    {
+        "variable": "ron__bacardi__750",
+        "categoria": "aguardientes",
+        "tipo": "RON",
+        "marca": "BACARDI GOLD",
+        "contNeto": 750,
+        "precio": 1400,
+        "id": 46,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/ronBacardiGold750.jpg",
+        "keywords": "aguardientes rones bacardis golds 750"
+    },
+    {
+        "variable": "vino__sauvignon__latitud__750",
+        "categoria": "vinos",
+        "tipo": "VINO SAUVIGNON",
+        "marca": "LATITUD",
+        "contNeto": 750,
+        "precio": 460,
+        "id": 47,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/vinoSauvignonLatitud750.jpg",
+        "keywords": "vinos sauvignons latituds 33° 750"
+    },
+    {
+        "variable": "vino__malbec__latitud__750",
+        "categoria": "vinos",
+        "tipo": "VINO MALBEC",
+        "marca": "LATITUD",
+        "contNeto": 750,
+        "precio": 460,
+        "id": 48,
+        "stock": "isInfinity",
+        "imgUrl": "../img/stockPhotos/vinoMalbecLatitud750.jpg",
+        "keywords": "vinos malbecs latituds 33° 750"
     }
 ]
