@@ -3,7 +3,7 @@ class Combo{
         this.nombre = nombre;
         this.productos = productos;
         this.precioTotal = 0;
-        this.descuento = descuento;
+        this.descuento = descuento;  /* cada combo tiene la posibilidad de tener un descuento propio. sin embargo, para este simulador, puse todos en 20% */
         this.id = id; 
     }
 
