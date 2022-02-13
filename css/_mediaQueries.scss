@@ -29,7 +29,7 @@
 
 @media (max-width: 344px){
     .productos__producto::after{
-        font-size: unquote("clamp(.78em, .78em + .44vw, .88em)");
+        font-size: unquote("clamp(.78em, .78em + .44vw, .8em)");
     }
 }
 

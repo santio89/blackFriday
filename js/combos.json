@@ -23,14 +23,14 @@
     {
         "variable": "combo__4",
         "nombre": "4",
-        "items": ["vino__malbec__norton__750", "vino__malbec__rutini__750", "licor__campari__750", "vodka__smirnoff__750"],
+        "items": ["vino__malbec__norton__750", "vino__malbec__rutini__750", "aperitivo__campari__750", "vodka__smirnoff__750"],
         "descuento": 20,
         "id": 96
     },
     {
         "variable": "combo__5",
         "nombre": "5",
-        "items": ["whisky__chivas__750", "vino__malbec__rutini__750", "licor__jager__700", "licor__campari__750"],
+        "items": ["whisky__chivas__750", "vino__malbec__rutini__750", "licor__jager__700", "aperitivo__campari__750"],
         "descuento": 20,
         "id": 95
     },
@@ -58,14 +58,14 @@
     {
         "variable": "combo__9",
         "nombre": "9",
-        "items": ["fernet__branca__1000", "gaseosa__coca__1500", "vodka__smirnoff__750", "jugo__cepita__naranja__1000"],
+        "items": ["fernet__branca__1000", "gaseosa__coca__1500", "vodka__smirnoff__750", "jugo__naranja__cepita__1000"],
         "descuento": 20,
         "id": 91
     },
     {
         "variable": "combo__10",
         "nombre": "10",
-        "items": ["cerveza__rubia__heineken__1000", "cerveza__rubia__quilmes__1000", "ron__morgan__750", "jugo__cepita__manzana__1000"],
+        "items": ["cerveza__rubia__heineken__1000", "cerveza__rubia__quilmes__1000", "ron__morgan__750", "jugo__manzana__cepita__1000"],
         "descuento": 20,
         "id": 90
     },
@@ -79,7 +79,7 @@
     {
         "variable": "combo__12",
         "nombre": "12",
-        "items": ["gaseosa__coca__1500", "jugo__cepita__naranja__1000", "jugo__cepita__manzana__1000", "agua__glaciar__1500"],
+        "items": ["gaseosa__coca__1500", "jugo__naranja__cepita__1000", "jugo__manzana__cepita__1000", "agua__glaciar__1500"],
         "descuento": 20,
         "id": 88
     }

@@ -729,7 +729,6 @@ body {
   top: 0;
   bottom: 0;
   height: var(--products-info);
-  background: linear-gradient(45deg, var(--color-primero) 40%, var(--color-segundo) 40%);
   -webkit-transition: 100ms;
   transition: 100ms;
   overflow: hidden;
@@ -743,16 +742,16 @@ body {
       -ms-flex-align: center;
           align-items: center;
   white-space: pre;
-  font-size: clamp(.6em, .6em + .44vw, .88em);
+  text-shadow: 1px 1px 0 var(--color-primero);
+  font-size: clamp(.6em, .6em + .44vw, .8em);
+  background: rgba(var(--color-primero-rgb), 0.4);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
 }
 
-.productos__producto:hover, .productos__producto:focus, .productos__producto:focus-within {
+.productos__producto:hover, .productos__producto:focus-visible {
   outline: 8px dashed var(--color-tercero);
   z-index: 1;
-}
-
-.productos__producto:hover::after, .productos__producto:focus::after, .productos__producto:focus-within::after {
-  --products-info: 100%;
 }
 
 .productos__producto:hover p:nth-of-type(1), .productos__producto:focus p:nth-of-type(1), .productos__producto:focus-within p:nth-of-type(1) {
@@ -830,8 +829,8 @@ body {
   text-shadow: 2px 2px var(--color-primero);
 }
 
-.productos__producto__info__button--close {
-  display: none;
+.productos__producto__info__button:hover, .productos__producto__info__button:focus-visible {
+  color: var(--color-segundo);
 }
 
 .productos__producto__buttonContainer {
@@ -862,6 +861,14 @@ body {
 
 .productos__producto__buttonContainer button:hover, .productos__producto__buttonContainer button:focus {
   color: var(--color-tercero);
+}
+
+.productsInfoFull {
+  --products-info: 100%;
+}
+
+.infoButtonActive {
+  color: var(--color-segundo);
 }
 
 .ofertasPage, .productosPage {
@@ -1688,7 +1695,7 @@ body {
 
 @media (max-width: 344px) {
   .productos__producto::after {
-    font-size: clamp(.78em, .78em + .44vw, .88em);
+    font-size: clamp(.78em, .78em + .44vw, .8em);
   }
 }
 

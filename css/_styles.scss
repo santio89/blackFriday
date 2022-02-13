@@ -589,23 +589,21 @@ body{
             top: 0;
             bottom: 0;
             height: var(--products-info);
-            background: linear-gradient(45deg, var(--color-primero) 40%, var(--color-segundo) 40%);
             transition: 100ms;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             white-space: pre;
-            font-size: unquote("clamp(.6em, .6em + .44vw, .88em)");
+            text-shadow: 1px 1px 0 var(--color-primero);
+            font-size: unquote("clamp(.6em, .6em + .44vw, .8em)");
+            background: rgba(var(--color-primero-rgb), .4);
+            backdrop-filter: blur(3px);
         }
         
-        &:hover, &:focus, &:focus-within{
+        &:hover, &:focus-visible{
         outline: 8px dashed var(--color-tercero);   
         z-index: 1;     
-
-            &::after{
-                --products-info: 100%;
-            }
         }
 
         &:hover p:nth-of-type(1), &:focus p:nth-of-type(1), &:focus-within p:nth-of-type(1){
@@ -677,8 +675,8 @@ body{
                 color: var(--color-tercero);
                 text-shadow: 2px 2px var(--color-primero);
 
-                &--close{
-                    display: none;
+                &:hover, &:focus-visible{
+                    color: var(--color-segundo);
                 }
             }
         }
@@ -707,6 +705,14 @@ body{
         }
         
     }   
+}
+
+.productsInfoFull{
+    --products-info: 100%;
+}
+
+.infoButtonActive{
+    color: var(--color-segundo);
 }
 
 .ofertasPage, .productosPage{
