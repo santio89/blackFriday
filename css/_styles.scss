@@ -26,6 +26,7 @@
     --color-tercero-dark-rgb: 220, 220, 220;
     --font-primera: 'Bebas Neue', 'sans-serif';
     --stock-image: "none";
+    --products-info: 0%;
 }
 
 html{
@@ -578,10 +579,33 @@ body{
         outline: 4px dashed var(--color-segundo-dark);
         transition: outline-width 100ms;
         overflow: hidden;
+        position: relative;
+
+        &::after{
+            content: attr(data-info);
+            position:absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: var(--products-info);
+            background: linear-gradient(45deg, var(--color-primero) 40%, var(--color-segundo) 40%);
+            transition: 100ms;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            white-space: pre;
+            font-size: unquote("clamp(.6em, .6em + .44vw, .88em)");
+        }
         
         &:hover, &:focus, &:focus-within{
         outline: 8px dashed var(--color-tercero);   
         z-index: 1;     
+
+            &::after{
+                --products-info: 100%;
+            }
         }
 
         &:hover p:nth-of-type(1), &:focus p:nth-of-type(1), &:focus-within p:nth-of-type(1){
@@ -637,6 +661,26 @@ body{
             font-size: unquote("clamp(1rem, .1rem + 1vw, 2rem)");     
             line-height: .6;
             text-shadow: 1px 1px 1px var(--color-primero);
+        }
+
+        &__info{
+            &__button{
+                cursor: pointer;
+                z-index: 1;
+                width: fit-content;
+                position: absolute;
+                top: -2%;
+                right: 2%;
+                background: none;
+                border: none;
+                outline: none;
+                color: var(--color-tercero);
+                text-shadow: 2px 2px var(--color-primero);
+
+                &--close{
+                    display: none;
+                }
+            }
         }
         
         &__buttonContainer{           

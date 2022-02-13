@@ -27,11 +27,26 @@
 
 }
 
-@media (max-width: 274px){
+@media (max-width: 344px){
+    .productos__producto::after{
+        font-size: unquote("clamp(.78em, .78em + .44vw, .88em)");
+    }
+}
+
+@media (max-width: 282px){
     .nav__logo{
         font-size: .8em;
         top: .1rem;
         left: .1rem;
+    }
+
+    .nav__ul{
+        font-size: 1.2rem;
+
+        &__li__a{
+            padding-left: .2rem;
+            padding-right: .2rem;
+        }
     }
 }
 

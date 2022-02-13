@@ -48,10 +48,11 @@ $.ajax({
         productsObject = response;
 
         productsObject.forEach(producto=>{
+            producto.info = producto.info.replaceAll("!br", "\n")
             if (producto.stock == "isInfinity"){
-                window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, Infinity, producto.imgUrl, producto.keywords);
+                window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, Infinity, producto.imgUrl, producto.info, producto.keywords);
             } else{
-                window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, producto.stock, producto.imgUrl, producto.keywords);
+                window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, producto.stock, producto.imgUrl, producto.info, producto.keywords);
             }
             stock1.addStockItem(window[producto.variable]);
         })
@@ -135,6 +136,8 @@ function cards__productosFeatured (){
         let producto = document.createElement("div");
         producto.classList.add("productos__producto");
         producto.classList.add(`productoFeat--${bebidas.id}`);
+        producto.classList.add(`producto__info--${bebidas.id}`);
+        producto.setAttribute(`data-info`, `${bebidas.info}`);
 
         let stockText;
         if (bebidas.outOfStock()){
@@ -145,6 +148,7 @@ function cards__productosFeatured (){
 
         producto.innerHTML = `
         <p>${bebidas.tipo}</p>
+        <button class="productos__producto__info__button producto__info__button--${bebidas.id}" tabindex="0" aria-label="Toggle Product Info"><i class="bi bi-three-dots productos__producto__info__button--open producto__info__button--${bebidas.id}--open"></i><i class="bi bi-x productos__producto__info__button--close producto__info__button--${bebidas.id}--close"></i></button>
         <h2>${bebidas.marca}</h2>
         <p>${bebidas.contNeto}ml</p>
         <p class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__stock">${stockText}</p>    
@@ -404,6 +408,8 @@ function cards__productos(){
         let producto = document.createElement("div");
         producto.classList.add("productos__producto");
         producto.classList.add(`productoTotal--${bebidas.id}`);
+        producto.classList.add(`producto__info--${bebidas.id}`);
+        producto.setAttribute(`data-info`, `${bebidas.info}`);
 
         let stockText;
         if (bebidas.outOfStock()){
@@ -414,6 +420,7 @@ function cards__productos(){
 
         producto.innerHTML = `
         <p>${bebidas.tipo}</p>
+        <button class="productos__producto__info__button producto__info__button--${bebidas.id}" tabindex="0" aria-label="Toggle Product Info"><i class="bi bi-three-dots productos__producto__info__button--open producto__info__button--${bebidas.id}--open"></i><i class="bi bi-x productos__producto__info__button--close producto__info__button--${bebidas.id}--close"></i></button>
         <h2>${bebidas.marca}</h2>
         <p>${bebidas.contNeto}ml</p>
         <p class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__stock">${stockText}</p>    

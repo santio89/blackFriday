@@ -29,6 +29,7 @@
   --color-tercero-dark-rgb: 220, 220, 220;
   --font-primera: 'Bebas Neue', 'sans-serif';
   --stock-image: "none";
+  --products-info: 0%;
 }
 
 html {
@@ -717,11 +718,41 @@ body {
   -webkit-transition: outline-width 100ms;
   transition: outline-width 100ms;
   overflow: hidden;
+  position: relative;
+}
+
+.productos__producto::after {
+  content: attr(data-info);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: var(--products-info);
+  background: linear-gradient(45deg, var(--color-primero) 40%, var(--color-segundo) 40%);
+  -webkit-transition: 100ms;
+  transition: 100ms;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  white-space: pre;
+  font-size: clamp(.6em, .6em + .44vw, .88em);
 }
 
 .productos__producto:hover, .productos__producto:focus, .productos__producto:focus-within {
   outline: 8px dashed var(--color-tercero);
   z-index: 1;
+}
+
+.productos__producto:hover::after, .productos__producto:focus::after, .productos__producto:focus-within::after {
+  --products-info: 100%;
 }
 
 .productos__producto:hover p:nth-of-type(1), .productos__producto:focus p:nth-of-type(1), .productos__producto:focus-within p:nth-of-type(1) {
@@ -781,6 +812,26 @@ body {
   font-size: clamp(1rem, .1rem + 1vw, 2rem);
   line-height: .6;
   text-shadow: 1px 1px 1px var(--color-primero);
+}
+
+.productos__producto__info__button {
+  cursor: pointer;
+  z-index: 1;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: -2%;
+  right: 2%;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--color-tercero);
+  text-shadow: 2px 2px var(--color-primero);
+}
+
+.productos__producto__info__button--close {
+  display: none;
 }
 
 .productos__producto__buttonContainer {
@@ -1635,11 +1686,24 @@ body {
   }
 }
 
-@media (max-width: 274px) {
+@media (max-width: 344px) {
+  .productos__producto::after {
+    font-size: clamp(.78em, .78em + .44vw, .88em);
+  }
+}
+
+@media (max-width: 282px) {
   .nav__logo {
     font-size: .8em;
     top: .1rem;
     left: .1rem;
+  }
+  .nav__ul {
+    font-size: 1.2rem;
+  }
+  .nav__ul__li__a {
+    padding-left: .2rem;
+    padding-right: .2rem;
   }
 }
 
