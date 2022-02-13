@@ -1,3 +1,9 @@
+@media (max-width: 507px){
+    .productos__producto::after{
+        font-size: unquote("clamp(.42em, .42em + .88vw, .78em)");
+    }
+}
+
 @media (max-width: 409px){
 
     .nav__ul{
@@ -27,9 +33,9 @@
 
 }
 
-@media (max-width: 344px){
+@media (max-width: 343px){
     .productos__producto::after{
-        font-size: unquote("clamp(.78em, .78em + .44vw, .8em)");
+        font-size: unquote("clamp(.72em, .72em + .44vw, .78em)");
     }
 }
 

@@ -589,14 +589,14 @@ body{
             top: 0;
             bottom: 0;
             height: var(--products-info);
-            transition: 100ms;
+            transition: height 100ms;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             white-space: pre;
             text-shadow: 1px 1px 0 var(--color-primero);
-            font-size: unquote("clamp(.6em, .6em + .44vw, .8em)");
+            font-size: unquote("clamp(.4em, .4em + .8vw, .8em)");
             background: rgba(var(--color-primero-rgb), .4);
             backdrop-filter: blur(3px);
         }
