@@ -410,25 +410,25 @@
     {
         "variable": "espumante__blue__frizze__1000",
         "categoria": "vinos",
-        "tipo": "ESPUMANTE BLUE",
-        "marca": "FRIZZE",
+        "tipo": "ESPUMANTE",
+        "marca": "FRIZZE BLUE",
         "contNeto": 1000,
         "precio": 300,
         "id": 35,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/espumanteBlueFrizze1000.jpg",
+        "imgUrl": "../img/stockPhotos/espumanteFrizzeBlue1000.jpg",
         "keywords": "vinos espumantes frizzes blues 1000"
     },
     {
         "variable": "espumante__limonata__frizze__1000",
         "categoria": "vinos",
-        "tipo": "ESPUMANTE LIMONATA",
-        "marca": "FRIZZE",
+        "tipo": "ESPUMANTE",
+        "marca": "FRIZZE LIMONATA",
         "contNeto": 1000,
         "precio": 300,
         "id": 36,
         "stock": "isInfinity",
-        "imgUrl": "../img/stockPhotos/espumanteLimonataFrizze1000.jpg",
+        "imgUrl": "../img/stockPhotos/espumanteFrizzeLimonata1000.jpg",
         "keywords": "vinos espumantes frizzes limonatas 1000"
     },
     {
