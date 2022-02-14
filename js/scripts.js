@@ -405,9 +405,15 @@ function toggleProductos(){
     searchInput.value = "";
 
     let productosCards = document.querySelectorAll(".productos__producto");
+    let infoButtons = document.querySelectorAll(".productos__producto__info__button");
     productosCards.forEach((producto)=>{
         if(producto.classList.contains("productsInfoFull")){
             producto.classList.toggle("productsInfoFull", false);
+        } 
+    })
+    infoButtons.forEach((button)=>{
+        if(button.classList.contains("infoButtonActive")){
+            button.classList.toggle("infoButtonActive", false);
         } 
     })
 }
@@ -561,9 +567,16 @@ function toggleOfertas(){
 
  
     let productosCards = document.querySelectorAll(".productos__producto");
+    let infoButtons = document.querySelectorAll(".productos__producto__info__button");
     productosCards.forEach((producto)=>{
         if(producto.classList.contains("productsInfoFull")){
             producto.classList.toggle("productsInfoFull", false);
+        } 
+    })
+    infoButtons.forEach((button)=>{
+        console.log(button);
+        if(button.classList.contains("infoButtonActive")){
+            button.classList.toggle("infoButtonActive", false);
         } 
     })
 }
@@ -934,7 +947,7 @@ function cards__info(){
     infoButton.forEach((button)=>{
         button.addEventListener("click", (e)=>{
             e.target.parentNode.parentNode.classList.toggle("productsInfoFull");
-            e.target.classList.toggle("infoButtonActive");
+            e.target.parentNode.classList.toggle("infoButtonActive");
         })
     })
 }
