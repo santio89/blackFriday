@@ -36,7 +36,7 @@ class ShoppingCart{
         let shopList__precio = document.querySelector(`.shopList__precio__${id}`);
         let shopList__total = document.querySelector(".carrito__lista__total__number");
 
-        $(".carrito__total").finish().fadeIn(0).delay(2000).fadeOut("slow");
+        $(".carrito__total").finish().fadeIn(0).delay(3400).fadeOut("slow");
 
         for (const bebida of stock1.arrayBebidasTotal){
             if (id == bebida.id){
@@ -88,7 +88,7 @@ class ShoppingCart{
         let shopList__precio = document.querySelector(`.shopList__precio__${id}`);
         let shopList__total = document.querySelector(".carrito__lista__total__number");
         
-        $(".carrito__total").finish().fadeIn().delay(2000).fadeOut();
+        $(".carrito__total").finish().fadeIn(0).delay(3400).fadeOut("slow");
 
         for (const items in this.shopList){
             if (this.shopList[items] == id){
