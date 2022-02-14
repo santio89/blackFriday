@@ -728,7 +728,6 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-  height: 100%;
   opacity: var(--products-info);
   -webkit-transition: opacity 400ms;
   transition: opacity 400ms;
@@ -748,6 +747,7 @@ body {
   background: rgba(var(--color-primero-rgb), 0.4);
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
+  pointer-events: none;
 }
 
 .productos__producto:hover, .productos__producto:focus-visible {
@@ -828,6 +828,7 @@ body {
   outline: none;
   color: var(--color-tercero);
   text-shadow: 2px 2px var(--color-primero);
+  pointer-events: auto;
 }
 
 .productos__producto__info__button:hover, .productos__producto__info__button:focus-visible {
@@ -866,6 +867,7 @@ body {
 
 .productsInfoFull {
   --products-info: 100%;
+  pointer-events: none;
 }
 
 .infoButtonActive {

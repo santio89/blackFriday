@@ -588,7 +588,6 @@ body{
             right: 0;
             top: 0;
             bottom: 0;
-            height: 100%;
             opacity: var(--products-info);
             transition: opacity 400ms;
             overflow: hidden;
@@ -600,6 +599,7 @@ body{
             font-size: unquote("clamp(.4em, .4em + .8vw, .8em)");
             background: rgba(var(--color-primero-rgb), .4);
             backdrop-filter: blur(3px);
+            pointer-events: none;
         }
         
         &:hover, &:focus-visible{
@@ -675,6 +675,7 @@ body{
                 outline: none;
                 color: var(--color-tercero);
                 text-shadow: 2px 2px var(--color-primero);
+                pointer-events: auto;
 
                 &:hover, &:focus-visible{
                     color: var(--color-segundo);
@@ -710,6 +711,7 @@ body{
 
 .productsInfoFull{
     --products-info: 100%;
+    pointer-events: none;
 }
 
 .infoButtonActive{
