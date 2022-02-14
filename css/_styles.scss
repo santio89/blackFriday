@@ -668,7 +668,7 @@ body{
                 z-index: 1;
                 width: fit-content;
                 position: absolute;
-                top: -2%;
+                top: -2.4%;
                 right: 2%;
                 background: none;
                 border: none;
@@ -677,6 +677,7 @@ body{
                 text-shadow: 2px 2px var(--color-primero);
                 pointer-events: auto;
                 color: var(--color-segundo);
+                font-size: 1.04em;
             }
         }
         
