@@ -947,7 +947,7 @@ function cards__info(){
     infoButton.forEach((button)=>{
         button.addEventListener("click", (e)=>{
             e.target.parentNode.parentNode.classList.toggle("productsInfoFull");
-            e.target.parentNode.classList.toggle("infoButtonActive");
+            e.target.classList.toggle("infoButtonActive");
         })
     })
 }
