@@ -403,6 +403,13 @@ function toggleProductos(){
     filterInput.value = "todas"; 
     productFilter();
     searchInput.value = "";
+
+    let productosCards = document.querySelectorAll(".productos__producto");
+    productosCards.forEach((producto)=>{
+        if(producto.classList.contains("productsInfoFull")){
+            producto.classList.toggle("productsInfoFull", false);
+        } 
+    })
 }
 
 /* cards de la seccion productos */
@@ -548,6 +555,14 @@ function toggleOfertas(){
     filterInput.value = "todas"; 
     productFilter();
     searchInput.value = "";
+
+ 
+    let productosCards = document.querySelectorAll(".productos__producto");
+    productosCards.forEach((producto)=>{
+        if(producto.classList.contains("productsInfoFull")){
+            producto.classList.toggle("productsInfoFull", false);
+        } 
+    })
 }
 
 /* cards de la seccion ofertas/combos */
@@ -916,7 +931,6 @@ function cards__info(){
     infoButton.forEach((button)=>{
         button.addEventListener("click", (e)=>{
             e.target.parentNode.parentNode.classList.toggle("productsInfoFull");
-
             e.target.classList.toggle("infoButtonActive");
         })
     })
