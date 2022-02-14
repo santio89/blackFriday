@@ -755,7 +755,7 @@ body {
   z-index: 1;
 }
 
-.productos__producto:hover p:nth-of-type(1), .productos__producto:focus p:nth-of-type(1), .productos__producto:focus-within p:nth-of-type(1) {
+.productos__producto:hover p:nth-of-type(1), .productos__producto:focus-visible p:nth-of-type(1) {
   background: var(--color-tercero);
   color: var(--color-primero);
 }
@@ -833,6 +833,10 @@ body {
   font-size: 1.04em;
 }
 
+.productos__producto__info__button:focus-visible {
+  outline: 2px dashed var(--color-segundo-dark);
+}
+
 .productos__producto__buttonContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -868,6 +872,11 @@ body {
   pointer-events: none;
   outline: 8px dashed var(--color-tercero);
   z-index: 1;
+}
+
+.productsInfoFullCategory {
+  background: var(--color-tercero) !important;
+  color: var(--color-primero) !important;
 }
 
 .infoButtonActive {

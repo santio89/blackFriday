@@ -406,21 +406,25 @@ function toggleProductos(){
 
 
   /* cerrar info de productos si cambio de seccion */
-  let productosCards = document.querySelectorAll(".productos__producto");
-  let infoButtonsOpen = document.querySelectorAll(".productos__producto__info__button--open");
-  let infoButtonsClose = document.querySelectorAll(".productos__producto__info__button--close");
+    let productosCards = document.querySelectorAll(".productos__producto");
+    let infoButtonsOpen = document.querySelectorAll(".productos__producto__info__button--open");
+    let infoButtonsClose = document.querySelectorAll(".productos__producto__info__button--close");
+    let infoCategory = document.querySelectorAll(".productos__producto p:nth-of-type(1)");
 
-  productosCards.forEach((producto)=>{
-      if(producto.classList.contains("productsInfoFull")){
-          producto.classList.toggle("productsInfoFull", false);
-      } 
-  });
-  infoButtonsClose.forEach((button)=>{
-      button.classList.add("hideDisplay");
-  });
-  infoButtonsOpen.forEach((button)=>{
-      button.classList.remove("hideDisplay");
-  });
+    productosCards.forEach((producto)=>{
+        if(producto.classList.contains("productsInfoFull")){
+            producto.classList.toggle("productsInfoFull", false);
+        } 
+    });
+    infoButtonsClose.forEach((button)=>{
+        button.classList.add("hideDisplay");
+    });
+    infoButtonsOpen.forEach((button)=>{
+        button.classList.remove("hideDisplay");
+    });
+    infoCategory.forEach((category)=>{
+    category.classList.remove("productsInfoFullCategory");
+    });
 }
 
 /* cards de la seccion productos */
@@ -575,6 +579,7 @@ function toggleOfertas(){
     let productosCards = document.querySelectorAll(".productos__producto");
     let infoButtonsOpen = document.querySelectorAll(".productos__producto__info__button--open");
     let infoButtonsClose = document.querySelectorAll(".productos__producto__info__button--close");
+    let infoCategory = document.querySelectorAll(".productos__producto p:nth-of-type(1)");
 
     productosCards.forEach((producto)=>{
         if(producto.classList.contains("productsInfoFull")){
@@ -586,6 +591,9 @@ function toggleOfertas(){
     });
     infoButtonsOpen.forEach((button)=>{
         button.classList.remove("hideDisplay");
+    });
+    infoCategory.forEach((category)=>{
+        category.classList.remove("productsInfoFullCategory");
     });
 }
 
@@ -954,9 +962,9 @@ function cards__info(){
     
     infoButton.forEach((button)=>{
         button.addEventListener("click", (e)=>{
-            e.target.parentNode.parentNode.classList.toggle("productsInfoFull");
-            
-            Array.from(e.target.parentNode.children).forEach(button=>{
+            e.currentTarget.parentNode.classList.toggle("productsInfoFull");
+            e.currentTarget.parentNode.children[0].classList.toggle("productsInfoFullCategory");
+            Array.from(e.currentTarget.children).forEach(button=>{
                 button.classList.toggle("hideDisplay");
             })
         })
