@@ -481,6 +481,9 @@ function toggleOfertas(){
     if (ofertas.classList.contains("carrito__lista__translated")){
         ofertas.scrollTo(0,0);
     }
+
+    document.getElementById("productosPage__filter").value = "todas"; 
+    productFilter();
     
     let nav__ofertas = document.querySelector("#nav__ofertas");
     nav__ofertas.classList.toggle("active");
