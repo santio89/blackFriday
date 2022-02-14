@@ -829,9 +829,6 @@ body {
   color: var(--color-tercero);
   text-shadow: 2px 2px var(--color-primero);
   pointer-events: auto;
-}
-
-.productos__producto__info__button:hover, .productos__producto__info__button:focus-visible {
   color: var(--color-segundo);
 }
 
@@ -868,6 +865,8 @@ body {
 .productsInfoFull {
   --products-info: 100%;
   pointer-events: none;
+  outline: 8px dashed var(--color-tercero);
+  z-index: 1;
 }
 
 .infoButtonActive {

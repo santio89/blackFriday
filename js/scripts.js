@@ -404,18 +404,23 @@ function toggleProductos(){
     productFilter();
     searchInput.value = "";
 
-    let productosCards = document.querySelectorAll(".productos__producto");
-    let infoButtons = document.querySelectorAll(".productos__producto__info__button--open");
-    productosCards.forEach((producto)=>{
-        if(producto.classList.contains("productsInfoFull")){
-            producto.classList.toggle("productsInfoFull", false);
-        } 
-    })
-    infoButtons.forEach((button)=>{
-        if(button.classList.contains("infoButtonActive")){
-            button.classList.toggle("infoButtonActive", false);
-        } 
-    })
+
+  /* cerrar info de productos si cambio de seccion */
+  let productosCards = document.querySelectorAll(".productos__producto");
+  let infoButtonsOpen = document.querySelectorAll(".productos__producto__info__button--open");
+  let infoButtonsClose = document.querySelectorAll(".productos__producto__info__button--close");
+
+  productosCards.forEach((producto)=>{
+      if(producto.classList.contains("productsInfoFull")){
+          producto.classList.toggle("productsInfoFull", false);
+      } 
+  });
+  infoButtonsClose.forEach((button)=>{
+      button.classList.add("hideDisplay");
+  });
+  infoButtonsOpen.forEach((button)=>{
+      button.classList.remove("hideDisplay");
+  });
 }
 
 /* cards de la seccion productos */
@@ -565,20 +570,23 @@ function toggleOfertas(){
     productFilter();
     searchInput.value = "";
 
- 
+    
+    /* cerrar info de productos si cambio de seccion */
     let productosCards = document.querySelectorAll(".productos__producto");
-    let infoButtons = document.querySelectorAll(".productos__producto__info__button--open");
+    let infoButtonsOpen = document.querySelectorAll(".productos__producto__info__button--open");
+    let infoButtonsClose = document.querySelectorAll(".productos__producto__info__button--close");
+
     productosCards.forEach((producto)=>{
         if(producto.classList.contains("productsInfoFull")){
             producto.classList.toggle("productsInfoFull", false);
         } 
-    })
-    infoButtons.forEach((button)=>{
-        console.log(button);
-        if(button.classList.contains("infoButtonActive")){
-            button.classList.toggle("infoButtonActive", false);
-        } 
-    })
+    });
+    infoButtonsClose.forEach((button)=>{
+        button.classList.add("hideDisplay");
+    });
+    infoButtonsOpen.forEach((button)=>{
+        button.classList.remove("hideDisplay");
+    });
 }
 
 /* cards de la seccion ofertas/combos */
@@ -947,7 +955,10 @@ function cards__info(){
     infoButton.forEach((button)=>{
         button.addEventListener("click", (e)=>{
             e.target.parentNode.parentNode.classList.toggle("productsInfoFull");
-            e.target.classList.toggle("infoButtonActive");
+            
+            Array.from(e.target.parentNode.children).forEach(button=>{
+                button.classList.toggle("hideDisplay");
+            })
         })
     })
 }
