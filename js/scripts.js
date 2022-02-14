@@ -405,7 +405,7 @@ function toggleProductos(){
     searchInput.value = "";
 
     let productosCards = document.querySelectorAll(".productos__producto");
-    let infoButtons = document.querySelectorAll(".productos__producto__info__button");
+    let infoButtons = document.querySelectorAll(".productos__producto__info__button--open");
     productosCards.forEach((producto)=>{
         if(producto.classList.contains("productsInfoFull")){
             producto.classList.toggle("productsInfoFull", false);
@@ -567,7 +567,7 @@ function toggleOfertas(){
 
  
     let productosCards = document.querySelectorAll(".productos__producto");
-    let infoButtons = document.querySelectorAll(".productos__producto__info__button");
+    let infoButtons = document.querySelectorAll(".productos__producto__info__button--open");
     productosCards.forEach((producto)=>{
         if(producto.classList.contains("productsInfoFull")){
             producto.classList.toggle("productsInfoFull", false);
