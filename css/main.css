@@ -728,9 +728,10 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-  height: var(--products-info);
-  -webkit-transition: height 100ms;
-  transition: height 100ms;
+  height: 100%;
+  opacity: var(--products-info);
+  -webkit-transition: opacity 400ms;
+  transition: opacity 400ms;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;

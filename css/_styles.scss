@@ -588,8 +588,9 @@ body{
             right: 0;
             top: 0;
             bottom: 0;
-            height: var(--products-info);
-            transition: height 100ms;
+            height: 100%;
+            opacity: var(--products-info);
+            transition: opacity 400ms;
             overflow: hidden;
             display: flex;
             justify-content: center;
