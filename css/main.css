@@ -464,6 +464,12 @@ body {
   font-size: 3.2rem;
   font-weight: 700;
   text-shadow: 2px 2px 0 var(--color-segundo-dark);
+  width: 100%;
+  max-width: 1600px;
+  padding-left: clamp(0.8rem, 2vw, 2rem);
+  padding-right: clamp(0.8rem, 2vw, 2rem);
+  margin: auto;
+  text-align: left;
 }
 
 .featured--ofertasPage {
@@ -1831,6 +1837,7 @@ body {
   }
   .featured {
     padding-left: 4rem;
+    padding-right: 4rem;
     font-size: 3.8rem;
   }
   .featured--ofertasPage {
