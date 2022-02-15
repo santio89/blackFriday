@@ -462,6 +462,8 @@ body {
 .featured {
   padding-left: clamp(0.8rem, 2vw, 2rem);
   font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 0 var(--color-segundo);
 }
 
 .main {
@@ -669,7 +671,7 @@ body {
   width: 100%;
   max-width: 1000px;
   margin: auto;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 5.2rem;
   gap: 2rem;
 }
