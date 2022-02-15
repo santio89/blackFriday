@@ -390,9 +390,16 @@ body{
 
 .featured{
     padding-left: clamp(.8rem, 2vw, 2rem);
-    font-size: 4rem;
+    font-size: 3.2rem;
     font-weight: 700;
-    text-shadow: 2px 2px 0 var(--color-segundo);
+    text-shadow: 2px 2px 0 var(--color-segundo-dark);
+
+    &--ofertasPage{
+        padding-left: 0;
+        max-width: 1000px;
+        margin: auto;
+        text-align: left;
+    }
 }
 
 .main{

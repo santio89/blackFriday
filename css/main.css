@@ -461,9 +461,16 @@ body {
 
 .featured {
   padding-left: clamp(0.8rem, 2vw, 2rem);
-  font-size: 4rem;
+  font-size: 3.2rem;
   font-weight: 700;
-  text-shadow: 2px 2px 0 var(--color-segundo);
+  text-shadow: 2px 2px 0 var(--color-segundo-dark);
+}
+
+.featured--ofertasPage {
+  padding-left: 0;
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
 }
 
 .main {
@@ -1824,7 +1831,10 @@ body {
   }
   .featured {
     padding-left: 4rem;
-    font-size: 3.2rem;
+    font-size: 3.8rem;
+  }
+  .featured--ofertasPage {
+    padding-left: 0;
   }
   .main {
     -webkit-box-orient: horizontal;
@@ -1832,6 +1842,7 @@ body {
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
     padding: 4rem;
+    padding-top: 2rem;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;

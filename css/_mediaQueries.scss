@@ -155,11 +155,16 @@
     }
     .featured{
         padding-left: 4rem;
-        font-size: 3.2rem ;
+        font-size: 3.8rem ;
+
+        &--ofertasPage{
+            padding-left: 0;
+        }
     }
     .main{
         flex-flow: row wrap;
         padding: 4rem;
+        padding-top: 2rem;
         justify-content: center;
         align-items: start;
     }
