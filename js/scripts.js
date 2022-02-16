@@ -75,7 +75,6 @@ $.ajax({
         cards__info();
         productFilter();
         productSearch();
-        
 
         /* pongo la llamada ajax a combos dentro de la llamada ajax a productos, ya que los combos dependen del stock de productos. */
         $.ajax({
@@ -426,6 +425,8 @@ function toggleProductos(){
     infoCategory.forEach((category)=>{
     category.classList.remove("productsInfoFullCategory");
     });
+
+    filterLoop()
 }
 
 /* cards de la seccion productos */
@@ -534,7 +535,7 @@ function toggleOfertas(){
     }
     
 
-     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
+    /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
     
     let nav__ul = document.querySelector(".nav__ul");
     let carrito = document.querySelector(".carrito");
@@ -594,6 +595,8 @@ function toggleOfertas(){
     infoCategory.forEach((category)=>{
         category.classList.remove("productsInfoFullCategory");
     });
+
+    filterLoop()
 }
 
 /* cards de la seccion ofertas/combos */
@@ -658,38 +661,52 @@ cerrar__ofertas__title.onclick = toggleOfertas;
 function cards__ofertasFeatured(){
     let ofertasFeatured = document.querySelector(".ofertasFeatured__wrapper");
 
-for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
-    let combo = stock1.arrayCombosFeatured[i];
+    for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
+        let combo = stock1.arrayCombosFeatured[i];
 
-    let wrapper__item = document.createElement("div");
-    wrapper__item.classList.add("ofertasFeatured__wrapper__item");
+        let wrapper__item = document.createElement("div");
+        wrapper__item.classList.add("ofertasFeatured__wrapper__item");
 
-    wrapper__item.innerHTML = `
-    <h3><span>COMBO ${combo.nombre} &#8674; </span>$${combo.precioTotal}</h3>`;
+        wrapper__item.innerHTML = `
+        <h3><span>COMBO ${combo.nombre} &#8674; </span>$${combo.precioTotal}</h3>`;
 
-    for (let j=0; j<combo.productos.length;j++){
-        let combo__item = combo.productos[j];
+        for (let j=0; j<combo.productos.length;j++){
+            let combo__item = combo.productos[j];
+            wrapper__item.innerHTML += `
+            <p>${combo__item.tipo} ${combo__item.marca} ${combo__item.contNeto}ml</p>
+            `
+        }
+
         wrapper__item.innerHTML += `
-        <p>${combo__item.tipo} ${combo__item.marca} ${combo__item.contNeto}ml</p>
+        <div class="ofertasFeatured__wrapper__item__buttonContainer">
+        <button class="COMBO${combo.nombre.replace(/\s/g,"")}__menos__combosFeatured">-</button>
+        <button class="COMBO${combo.nombre.replace(/\s/g,"")}__mas__combosFeatured">+</button>
+        </div>
         `
+        
+        ofertasFeatured.appendChild(wrapper__item);
+
+        let combo__menos = document.querySelector(`.COMBO${combo.nombre.replace(/\s/g,"")}__menos__combosFeatured`);
+        let combo__mas = document.querySelector(`.COMBO${combo.nombre.replace(/\s/g,"")}__mas__combosFeatured`);
+        combo__menos.addEventListener("click", ()=>{shopCart1.removeItem(combo.id)});
+        combo__mas.addEventListener("click", ()=>{shopCart1.addItem(combo.id)});
     }
+}
 
-    wrapper__item.innerHTML += `
-    <div class="ofertasFeatured__wrapper__item__buttonContainer">
-    <button class="COMBO${combo.nombre.replace(/\s/g,"")}__menos__combosFeatured">-</button>
-    <button class="COMBO${combo.nombre.replace(/\s/g,"")}__mas__combosFeatured">+</button>
-    </div>
-    `
+/* cards info */
+function cards__info(){
+    let infoButton = document.querySelectorAll(".productos__producto__info__button");
     
-    ofertasFeatured.appendChild(wrapper__item);
-
-    let combo__menos = document.querySelector(`.COMBO${combo.nombre.replace(/\s/g,"")}__menos__combosFeatured`);
-    let combo__mas = document.querySelector(`.COMBO${combo.nombre.replace(/\s/g,"")}__mas__combosFeatured`);
-    combo__menos.addEventListener("click", ()=>{shopCart1.removeItem(combo.id)});
-    combo__mas.addEventListener("click", ()=>{shopCart1.addItem(combo.id)});
+    infoButton.forEach((button)=>{
+        button.addEventListener("click", (e)=>{
+            e.currentTarget.parentNode.classList.toggle("productsInfoFull");
+            e.currentTarget.parentNode.children[0].classList.toggle("productsInfoFullCategory");
+            Array.from(e.currentTarget.children).forEach(button=>{
+                button.classList.toggle("hideDisplay");
+            })
+        })
+    })
 }
-}
-
 
 
 /* validation */
@@ -824,10 +841,35 @@ darkMode.addEventListener("click", ()=>{
 
 
 /* filter productos*/
+function filterLoop(){
+    let filterInput = document.querySelector("#productosPage__filter");
+    let value = filterInput.value;
+    let productosSearch = productosTotal.children;
+    productsObject.forEach((bebida)=>{
+        let isVisible = bebida.tipo.toUpperCase().includes(value.toUpperCase()) || bebida.categoria.toUpperCase().includes(value.toUpperCase()) || bebida.marca.toUpperCase().includes(value.toUpperCase()) || bebida.keywords.toUpperCase().includes(value.toUpperCase());
+        productosSearch = Array.from(productosSearch);
+        
+        productosSearch.forEach((bebidaSearch)=>{
+            if (isVisible){
+                if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
+                    bebidaSearch.classList.toggle("hideDisplay", false);
+                }
+            } else{
+                if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
+                    bebidaSearch.classList.toggle("hideDisplay", true);
+                }
+            }
+        })
+    })
+}
+
 function productFilter(){
     let filterButton = document.querySelector(".productosPage__filterWrapper__filter ");
     let filterBar = document.querySelector(".productosPage__filter");
     let filterInput = document.querySelector("#productosPage__filter");
+    let searchButton = document.querySelector(".productosPage__filterWrapper__search");
+    let searchBar = document.querySelector(".productosPage__search");
+    let searchInput = document.querySelector("#productosPage__search");
     let productosTotal = document.querySelector("#productosTotal");
     let productosSearch = productosTotal.children;
     
@@ -838,12 +880,13 @@ function productFilter(){
         searchBar.style.display = "none";
         filterInput.value = "todas"; 
         searchInput.value = "";
+
+        filterLoop();
     })
 
 
     filterInput.addEventListener("change", (e)=>{
         let value = e.target.value;
-        
         productsObject.forEach((bebida)=>{
             let isVisible = bebida.tipo.toUpperCase().includes(value.toUpperCase()) || bebida.categoria.toUpperCase().includes(value.toUpperCase()) || bebida.marca.toUpperCase().includes(value.toUpperCase()) || bebida.keywords.toUpperCase().includes(value.toUpperCase());
             productosSearch = Array.from(productosSearch);
@@ -868,6 +911,9 @@ function productSearch(){
     let searchButton = document.querySelector(".productosPage__filterWrapper__search");
     let searchBar = document.querySelector(".productosPage__search");
     let searchInput = document.querySelector("#productosPage__search");
+    let filterButton = document.querySelector(".productosPage__filterWrapper__filter ");
+    let filterBar = document.querySelector(".productosPage__filter");
+    let filterInput = document.querySelector("#productosPage__filter");
     let productosTotal = document.querySelector("#productosTotal");
     let productosSearch = productosTotal.children;
     productosSearch = Array.from(productosSearch);
@@ -879,30 +925,110 @@ function productSearch(){
         filterBar.style.display = "none";
         filterInput.value = "todas"; 
         searchInput.value = "";
+
+        filterLoop();
     })
 
     searchInput.addEventListener("input", (e)=>{
         let value = e.target.value;
         value = value.trim();
 
-        productsObject.forEach((bebida)=>{
-            let isVisible = bebida.tipo.toUpperCase().includes(value.toUpperCase()) || bebida.categoria.toUpperCase().includes(value.toUpperCase()) || bebida.marca.toUpperCase().includes(value.toUpperCase()) || bebida.keywords.toUpperCase().includes(value.toUpperCase());
+        /* divido el input del search en palabras para hacer una busqueda mas amplia de los valores que se ingresen */
+        let valueWords = value.split(" ");
 
-            productosSearch.forEach((bebidaSearch)=>{
-                if (isVisible){
-                    if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
-                        bebidaSearch.classList.toggle("hideDisplay", false);
+        valueWords.forEach(value=>{
+            productsObject.forEach((bebida)=>{
+                let isVisible = bebida.tipo.toUpperCase().includes(value.toUpperCase()) || bebida.categoria.toUpperCase().includes(value.toUpperCase()) || bebida.marca.toUpperCase().includes(value.toUpperCase()) || bebida.keywords.toUpperCase().includes(value.toUpperCase());
+    
+                productosSearch.forEach((bebidaSearch)=>{
+                    if (isVisible){
+                        if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
+                            bebidaSearch.classList.toggle("hideDisplay", false);
+                            bebidaSearch.setAttribute("data-filter", "1");
+                        }
+                    } else{
+                        if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
+                            if (bebidaSearch.getAttribute("data-filter") != 1){
+                                bebidaSearch.classList.toggle("hideDisplay", true);
+                            } 
+                        }
                     }
-                } else{
-                    if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
-                        bebidaSearch.classList.toggle("hideDisplay", true);
-                    }
-                }
+                })
             })
         })
+
+        /* data-filter es un atributo temporal que uso (y luego elimino) para indicar si un producto ya fue encontrado en la busqueda (es util al buscar varias palabras) */
+        productosSearch.forEach((bebidaSearch)=>{
+            bebidaSearch.removeAttribute("data-filter");
+        });
     })
 }
- 
+
+
+
+/* ESTA OTRA OPCION PERMITE FILTRAR (O BUSCAR) PRODUCTOS, PERO EN VEZ DE CAMBIAR EL DISPLAY SEGUN EL CRITERIO DE BUSQUEDA (COMO LA OPCION QUE DEJE ACTIVA), LO QUE HACE ES BUSCAR EN EL ARRAY DE BEBIDAS Y LUEGO CREA OTRO ARRAY  CON LAS BEBIDAS QUE CUMPLAN EL CRITERIO, Y REESCRIBE EL DOM CON LOS PRODUCTOS DE ESTE NUEVO ARRAY. 
+EN UN PRINCIPIO USABA ESTA FORMA PERO DECIDI CAMBIAR YA QUE, AL NO HABER TANTOS PRODUCTOS, LOS MUESTRO TODOS DE UNA Y LUEGO CON EL OTRO FILTRO/BUSQUEDA CAMBIO EL DISPLAY, Y NO HAY QUE REESCRIBIR EL DOM POR TANTO ES MENOS INTENSIVO. PERO SI LOS PRODUCTOS FUERAN MAS Y TUVIERA QUE CONSULTAR UNA BASE DE DATOS CADA VEZ AL REALIZAR LA BUSQUEDA, ENTONCES ESTA OPCION IRIA MEJOR */
+/* 
+let filter = $("#productosPage__filter");
+$(document).ready(function () {
+    filter.on("change", productFilter); 
+});
+function productFilter(){
+    let arrayBebidasFilter = stock1.arrayBebidasTotal.filter(bebida=> bebida.categoria.toLowerCase() == filter.val());
+
+    if (filter.val() == "todas"){
+        arrayBebidasFilter = stock1.arrayBebidasTotal;
+    }
+
+    $("#productosTotal").html("");
+
+    arrayBebidasFilter.forEach(bebidas => {
+        let producto = document.createElement("div");
+        producto.classList.add("productos__producto");
+        producto.classList.add(`.productoTotal`);
+        producto.classList.add(`productoTotal--${bebidas.id}`);
+        producto.classList.add(`producto__info--${bebidas.id}`);
+        producto.setAttribute(`data-info`, `${bebidas.info}`);
+
+        let stockText;
+        if (bebidas.outOfStock()){
+            stockText = "Fuera de stock";
+        } else{
+            stockText = "En stock";
+        }
+
+        $("#productosTotal").append(producto);
+
+        $(`.productoTotal--${bebidas.id}`).html(`
+        <p>${bebidas.tipo}</p>
+        <button class="productos__producto__info__button producto__info__button--${bebidas.id}" tabindex="0" aria-label="Toggle Product Info">
+            <i class="bi bi-three-dots productos__producto__info__button--open producto__info__button--${bebidas.id}--open"></i>
+            <i class="bi bi-x productos__producto__info__button--close producto__info__button--${bebidas.id}--close hideDisplay"></i>
+        </button>
+        <h2>${bebidas.marca}</h2>
+        <p>${bebidas.contNeto}ml</p>
+        <p class="${bebidas.nombre.replace(/\s/g,"")}__stock">${stockText}</p>    
+        <h3>$${bebidas.precio}</h3>
+        <div class="productos__producto__buttonContainer">
+        <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsTotal">-</button>
+        <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsTotal">+</button>
+        </div>
+        `);
+
+        $(`.productoTotal--${bebidas.id}`).css(`--stock-image`, `${bebidas.img}`);
+        
+
+        let bebida__menos = $(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsTotal`);
+        let bebida__mas = $(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsTotal`);
+        bebida__menos.on("click", ()=>{shopCart1.removeItem(bebidas.id)});
+        bebida__mas.on("click", ()=>{shopCart1.addItem(bebidas.id)});
+    });
+
+    cards__info();
+} 
+*/
+
+
 
 /* header title animation - usando jquery y css*/
 $(document).ready(function () {
@@ -922,19 +1048,4 @@ function errorComponent(){
     window.location.href = "https://santio89.github.io/blackFriday/";
 }
 
-
-/* cards info */
-function cards__info(){
-    let infoButton = document.querySelectorAll(".productos__producto__info__button");
-    
-    infoButton.forEach((button)=>{
-        button.addEventListener("click", (e)=>{
-            e.currentTarget.parentNode.classList.toggle("productsInfoFull");
-            e.currentTarget.parentNode.children[0].classList.toggle("productsInfoFullCategory");
-            Array.from(e.currentTarget.children).forEach(button=>{
-                button.classList.toggle("hideDisplay");
-            })
-        })
-    })
-}
 
