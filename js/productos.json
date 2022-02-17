@@ -321,8 +321,8 @@
         "id": 25,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteExtraBrutChandon750.jpg",
-        "info": "categoria: vinos !brtipo: espumante !brmarca: chandon !brcont. neto: 750cc !brprecio: $1200",
-        "keywords": "todas todos vinos espumantes champagnes extrabruts extra brut extras bruts chandons 750"
+        "info": "categoria: vinos !brtipo: extra brut !brmarca: chandon !brcont. neto: 750cc !brprecio: $1200",
+        "keywords": "todas todos vinos espumantes espumosos champagnes extrabruts extra brut extras bruts chandons 750"
     },
     {
         "variable": "espumante__extrabrut__mumm__750",
@@ -334,8 +334,8 @@
         "id": 26,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteExtraBrutMumm750.jpg",
-        "info": "categoria: vinos !brtipo: espumante extra brut !brmarca: mumm !brcont. neto: 750cc !brprecio: $900",
-        "keywords": "todas todos vinos espumantes champagnes extrabruts extra brut extras bruts mumms 750"
+        "info": "categoria: vinos !brtipo: extra brut !brmarca: mumm !brcont. neto: 750cc !brprecio: $900",
+        "keywords": "todas todos vinos espumantes espumosos champagnes extrabruts extra brut extras bruts mumms 750"
     },
     {
         "variable": "whisky__jack__750",
@@ -452,7 +452,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteFrizzeBlue1000.jpg",
         "info": "categoria: vinos !brtipo: espumante !brmarca: frizze blue !brcont. neto: 1000cc !brprecio: $300",
-        "keywords": "todas todos vinos espumantes frizzes blues 1000"
+        "keywords": "todas todos vinos espumantes espumosos frizzes blues 1000"
     },
     {
         "variable": "espumante__limonata__frizze__1000",
@@ -465,7 +465,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteFrizzeLimonata1000.jpg",
         "info": "categoria: vinos !brtipo: espumante !brmarca: frizze limonata !brcont. neto: 1000cc !brprecio: $300",
-        "keywords": "todas todos vinos espumantes frizzes limonatas 1000"
+        "keywords": "todas todos vinos espumantes espumosos frizzes limonatas 1000"
     },
     {
         "variable": "licor__baileys__1000",
