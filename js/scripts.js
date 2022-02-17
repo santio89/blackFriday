@@ -426,6 +426,7 @@ function toggleProductos(){
     category.classList.remove("productsInfoFullCategory");
     });
 
+    cards__info__remove();
     filterLoop()
 }
 
@@ -596,6 +597,7 @@ function toggleOfertas(){
         category.classList.remove("productsInfoFullCategory");
     });
 
+    cards__info__remove();
     filterLoop()
 }
 
@@ -705,6 +707,17 @@ function cards__info(){
                 button.classList.toggle("hideDisplay");
             })
         })
+    })
+}
+
+function cards__info__remove(){
+    let infoButton = document.querySelectorAll(".productos__producto__info__button");
+    
+    infoButton.forEach((button)=>{
+        button.parentNode.classList.toggle("productsInfoFull", false);
+        button.parentNode.children[0].classList.toggle("productsInfoFullCategory", false);
+        button.children[0].classList.toggle("hideDisplay", false);
+        button.children[1].classList.toggle("hideDisplay", true);
     })
 }
 
@@ -881,11 +894,13 @@ function productFilter(){
         filterInput.value = "todas"; 
         searchInput.value = "";
 
+        cards__info__remove();
         filterLoop();
     })
 
 
     filterInput.addEventListener("change", (e)=>{
+        cards__info__remove();
         let value = e.target.value;
         productsObject.forEach((bebida)=>{
             let isVisible = bebida.tipo.toUpperCase().includes(value.toUpperCase()) || bebida.categoria.toUpperCase().includes(value.toUpperCase()) || bebida.marca.toUpperCase().includes(value.toUpperCase()) || bebida.keywords.toUpperCase().includes(value.toUpperCase());
@@ -926,10 +941,12 @@ function productSearch(){
         filterInput.value = "todas"; 
         searchInput.value = "";
 
+        cards__info__remove();
         filterLoop();
     })
 
     searchInput.addEventListener("input", (e)=>{
+        cards__info__remove();
         let value = e.target.value;
         value = value.trim();
 
