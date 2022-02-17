@@ -542,8 +542,8 @@
         "id": 42,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/whiskyJohnnieBlack750.jpg",
-        "info": "categoria: aguardientes !brtipo: whisky black !brmarca: johnnie walker !brcont. neto: 750cc !brprecio: $3800",
-        "keywords": "todas todos aguardientes whiskys whiskeys johnnies walkers blacks 750"
+        "info": "categoria: aguardientes !brtipo: whisky black label !brmarca: johnnie walker !brcont. neto: 750cc !brprecio: $3800",
+        "keywords": "todas todos aguardientes whiskys whiskeys johnnies walkers blacks labels 750"
     },
     {
         "variable": "granadina__cusenier__1000",
