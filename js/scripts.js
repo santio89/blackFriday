@@ -382,7 +382,7 @@ function toggleProductos(){
             productos.style.overflowY = "hidden";
             document.documentElement.style.marginRight = "0";
             nav__ul.style.marginRight = "0";
-            navMenu__button.style.marginRight = ".8rem";
+            navMenu__button.style.marginRight = ".2rem";
             navMenu.style.marginRight = "0";
             carrito.style.right = "10px";
             carrito__lista.style.right = "9vw";
@@ -568,7 +568,7 @@ function toggleOfertas(){
         document.documentElement.style.overflowY = "hidden";
         document.documentElement.style.marginRight = `${scrollbar__width}px`;
         nav__ul.style.marginRight = `${scrollbar__width}px`;
-        navMenu__button.style.marginRight = `calc(${scrollbar__width}px + .8rem)`;
+        navMenu__button.style.marginRight = `calc(${scrollbar__width}px + .2rem)`;
         navMenu.style.marginRight = `${scrollbar__width}px`;
         carrito.style.right = `${scrollbar__width + 10}px`;
         carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
