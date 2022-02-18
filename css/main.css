@@ -17,7 +17,7 @@
   --color-primero: rgb(20, 20, 20);
   --color-segundo: rgb(253, 46, 121);
   --color-tercero: rgb(255, 255, 255);
-  --color-cuarto: rgb(70, 0, 55);
+  --color-cuarto: rgb(90, 3, 71);
   --color-primero-rgb: 0, 0, 0;
   --color-segundo-rgb: 253, 46, 121;
   --color-tercero-rgb: 255, 255, 255;
@@ -138,6 +138,27 @@ body {
           flex-flow: column wrap;
   height: 100%;
   width: 100%;
+}
+
+.lightMode {
+  --color-background-segundo: rgb(20, 20, 20);
+  --color-background-primero: rgb(255, 255, 255);
+  --color-tercero: rgb(20, 20, 20);
+  --color-primero: rgb(255, 255, 255);
+  --color-tercero-rgb: 0, 0, 0;
+  --color-primero-rgb: 255, 255, 255;
+  --color-tercero-dark: rgb(0, 0, 0);
+  --color-primero-dark: rgb(220, 220, 220);
+  --color-tercero-dark-rgb: 0, 0, 0;
+  --color-primero-dark-rgb: 220, 220, 220;
+}
+
+.altMainColor {
+  --color-segundo: rgb(54, 95, 232);
+  --color-segundo-dark: rgb(35, 75, 206);
+  --color-segundo: rgb(42, 204, 209);
+  --color-segundo-dark: rgb(19, 157, 162);
+  --color-cuarto: rgb(3, 58, 60);
 }
 
 .validation {
@@ -400,11 +421,13 @@ body {
           align-items: stretch;
   font-size: 2rem;
   padding-left: 40px;
+  margin: auto;
+  width: 100%;
 }
 
 .nav__ul__li__a {
   color: var(--color-primero);
-  background: none;
+  background: var(--color-tercero);
   border: none;
   outline: none;
   padding-left: .8rem;
@@ -450,13 +473,79 @@ body {
   color: var(--color-segundo);
 }
 
+.nav__toggleLightDark__light:focus-visible, .nav__toggleLightDark__dark:focus-visible {
+  text-shadow: 0 0 4px var(--color-segundo);
+}
+
 .nav__toggleLightDark__dark {
   display: none;
+}
+
+.nav__toggleMainColor {
+  background: none;
+  outline: none;
+  border: none;
+  padding-left: .8rem;
+  padding-right: .8rem;
+  color: var(--color-segundo);
+}
+
+.nav__toggleMainColor:hover {
+  color: var(--color-segundo);
+}
+
+.nav__toggleMainColor:focus-visible {
+  text-shadow: 0 0 4px var(--color-segundo);
+}
+
+.navMenu {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  top: 100%;
+  right: 0;
+  background: var(--color-tercero);
+  padding: .4rem;
+  border-radius: 0 0 0 .28em;
+  display: none;
+}
+
+.navMenu__button {
+  position: absolute;
+  right: clamp(0.8rem, 2vw, 2rem);
+  top: 0;
+  margin-right: .2rem;
+  background: none;
+  border: none;
+  color: var(--color-primero);
+  font-size: 2rem;
+  -webkit-transition: -webkit-transform 280ms;
+  transition: -webkit-transform 280ms;
+  transition: transform 280ms;
+  transition: transform 280ms, -webkit-transform 280ms;
+}
+
+.navMenu__button:hover {
+  color: var(--color-segundo);
+}
+
+.navMenu__button__rotated {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 
 .active {
   color: var(--color-segundo);
   background: var(--color-primero);
+}
+
+.colorActive {
+  color: var(--color-segundo);
 }
 
 .featured {
@@ -1571,7 +1660,7 @@ body {
 }
 
 .footer__nav__ul__li {
-  text-align: left;
+  text-align: center;
 }
 
 .footer__nav__ul__li__a {
@@ -1705,7 +1794,14 @@ body {
 
 @media (max-width: 409px) {
   .nav__ul {
-    font-size: 1.6rem;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    margin-left: .84rem;
+  }
+  .nav__ul__li__a {
+    padding-left: .4rem;
+    padding-right: .4rem;
   }
   .ofertasPage__title, .productosPage__title {
     margin-top: 4rem;
@@ -1713,17 +1809,11 @@ body {
 }
 
 @media (max-width: 359px) {
-  .nav__ul {
-    font-size: 1.4rem;
-  }
-  .nav__ul__li__a {
-    padding-left: .4rem;
-    padding-right: .4rem;
-  }
-  .nav__toggleLightDark__light, .nav__toggleLightDark__dark {
-    padding-left: .4rem;
-    padding-right: .4rem;
-  }
+  /* 
+    .nav__toggleLightDark__light, .nav__toggleLightDark__dark{
+        padding-left: .4rem;
+        padding-right: .4rem;
+    } */
 }
 
 @media (max-width: 343px) {
@@ -1732,26 +1822,37 @@ body {
   }
 }
 
-@media (max-width: 282px) {
-  .nav__logo {
-    font-size: .8em;
-    top: .1rem;
-    left: .1rem;
+@media (max-width: 320px) {
+  .nav__ul {
+    font-size: 1.4rem;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
+    height: 48px;
   }
+  .nav__ul__li {
+    vertical-align: baseline;
+    height: 100%;
+  }
+  .nav__ul__li__a {
+    height: 100%;
+  }
+}
+
+@media (max-width: 282px) {
   .nav__ul {
     font-size: 1.2rem;
   }
-  .nav__ul__li__a {
-    padding-left: .2rem;
-    padding-right: .2rem;
+  .nav__ul .nav__ul__li:nth-of-type(2) {
+    margin-right: 44px;
   }
 }
 
 @media (max-width: 119px) {
-  .nav__ul {
-    margin-top: 40px;
-    padding-left: 0;
-  }
+  /*     .nav__ul{
+        margin-top: 40px;
+        padding-left: 0;
+    } */
 }
 
 @media (pointer: coarse) {
@@ -1776,21 +1877,35 @@ body {
   }
 }
 
-@media (min-width: 607px) {
-  .header__title__word {
-    display: inline-block;
-  }
-  .nav {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
+@media (min-width: 480px) {
   .nav__ul {
     padding-left: 0;
   }
   .nav__ul__li__a {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+  .nav__ul__li__whatsapp {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .nav__toggleLightDark__light {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .nav__toggleLightDark__dark {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .nav__toggleMainColor {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 607px) {
+  .header__title__word {
+    display: inline-block;
   }
   .ofertasFeatured__wrapper {
     min-width: 100%;
@@ -1817,6 +1932,26 @@ body {
   .productos--page {
     -ms-grid-columns: (minmax(194px, 1fr))[auto-fill];
         grid-template-columns: repeat(auto-fill, minmax(194px, 1fr));
+  }
+}
+
+@media (min-width: 760px) {
+  .navMenu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    right: clamp(0.8rem, 2vw, 2rem);
+    top: 0;
+    background: none;
+    padding: 0;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    flex-flow: row wrap;
+  }
+  .navMenu__button {
+    display: none;
   }
 }
 

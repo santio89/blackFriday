@@ -5,9 +5,14 @@
 }
 
 @media (max-width: 409px){
-
     .nav__ul{
-        font-size: 1.6rem;
+        justify-content: start;
+        margin-left: .84rem;
+
+        &__li__a{
+            padding-left: .4rem;
+            padding-right: .4rem;
+        }
     }
     .ofertasPage, .productosPage{
         &__title{
@@ -17,19 +22,11 @@
 }
 
 @media (max-width: 359px){
-    .nav__ul{
-        font-size: 1.4rem;
-
-        &__li__a{
-            padding-left: .4rem;
-            padding-right: .4rem;
-        }
-    }
-
+/* 
     .nav__toggleLightDark__light, .nav__toggleLightDark__dark{
         padding-left: .4rem;
         padding-right: .4rem;
-    }
+    } */
 
 }
 
@@ -39,28 +36,37 @@
     }
 }
 
-@media (max-width: 282px){
-    .nav__logo{
-        font-size: .8em;
-        top: .1rem;
-        left: .1rem;
-    }
-
+@media (max-width: 320px){
     .nav__ul{
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+        align-items: end;
+        height: 48px;
+        
+        &__li{
+            vertical-align: baseline;
+            height: 100%;
 
-        &__li__a{
-            padding-left: .2rem;
-            padding-right: .2rem;
+            &__a{
+                height: 100%;
+            }
         }
     }
 }
 
-@media (max-width: 119px){
+@media (max-width: 282px){
     .nav__ul{
+        font-size: 1.2rem;
+    }
+    .nav__ul .nav__ul__li:nth-of-type(2){
+        margin-right: 44px;
+    }
+}
+
+@media (max-width: 119px){
+/*     .nav__ul{
         margin-top: 40px;
         padding-left: 0;
-    }
+    } */
 }
 
 @media (pointer: coarse){
@@ -85,6 +91,35 @@
     }
 }
 
+@media (min-width: 480px){
+    .nav{
+        &__ul{
+            padding-left: 0;
+            &__li__a{
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            &__li__whatsapp{
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        &__toggleLightDark__light{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        &__toggleLightDark__dark{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        &__toggleMainColor{
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }  
+}
+
 @media (min-width: 607px){
     .header{
         &__title{
@@ -92,18 +127,7 @@
                 display: inline-block;
             }
         }
-    }
-    .nav{
-        justify-content: center;
-        
-        &__ul{
-            padding-left: 0;
-            &__li__a{
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-        }
-    }   
+    } 
     
     .ofertasFeatured{
         &__wrapper{
@@ -133,6 +157,22 @@
 
         &--page{
             grid-template-columns: repeat(auto-fill, minmax(194px, 1fr));
+        }
+    }
+}
+
+@media (min-width: 760px){
+    .navMenu{
+        flex-flow: row wrap;
+        right: clamp(.8rem, 2vw, 2rem);
+        top: 0;
+        background: none;
+        padding: 0;
+        display: flex !important;
+        flex-flow: row wrap;
+
+        &__button{
+            display: none;
         }
     }
 }

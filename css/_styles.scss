@@ -14,7 +14,7 @@
     --color-primero: rgb(20, 20, 20);
     --color-segundo: rgb(253, 46, 121);
     --color-tercero: rgb(255, 255, 255);
-    --color-cuarto: rgb(70, 0, 55);
+    --color-cuarto: rgb(90, 3, 71);
     --color-primero-rgb: 0, 0, 0;
     --color-segundo-rgb: 253, 46, 121;
     --color-tercero-rgb: 255, 255, 255;
@@ -133,6 +133,27 @@ body{
     flex-flow: column wrap;
     height: 100%;
     width: 100%;
+}
+
+.lightMode{
+    --color-background-segundo: rgb(20, 20, 20); 
+    --color-background-primero: rgb(255, 255, 255);
+    --color-tercero: rgb(20, 20, 20);
+    --color-primero: rgb(255, 255, 255);
+    --color-tercero-rgb: 0, 0, 0;
+    --color-primero-rgb: 255, 255, 255;
+    --color-tercero-dark: rgb(0, 0, 0);
+    --color-primero-dark: rgb(220, 220, 220);
+    --color-tercero-dark-rgb: 0, 0, 0;
+    --color-primero-dark-rgb: 220, 220, 220;
+}
+
+.altMainColor{
+    --color-segundo: rgb(54, 95, 232);
+    --color-segundo-dark: rgb(35, 75, 206);
+    --color-segundo: rgb(42, 204, 209);
+    --color-segundo-dark: rgb(19, 157, 162);
+    --color-cuarto: rgb(3, 58, 60);
 }
 
 .validation{
@@ -280,7 +301,6 @@ body{
                 text-rendering: optimizeLegibility; 
                 /* fin antialiasing */
             }
-          
         }
     }
 
@@ -289,7 +309,7 @@ body{
         font-size: 1.8rem;
         align-self: end;
         text-align: right;
-        border-bottom: 8px dashed var(--color-segundo);;
+        border-bottom: 8px dashed var(--color-segundo);
         line-height: 1.2;
     }
 }
@@ -331,11 +351,13 @@ body{
         align-items: stretch;
         font-size: 2rem;
         padding-left: 40px;
+        margin: auto;
+        width: 100%;
 
         &__li{
             &__a{
                 color: var(--color-primero);
-                background: none;
+                background: var(--color-tercero);
                 border: none;
                 outline: none;
                 padding-left: .8rem;
@@ -374,18 +396,74 @@ body{
             &:hover{
                 color: var(--color-segundo);
             }
+            
+            &:focus-visible{
+                text-shadow: 0 0 4px var(--color-segundo);
+            }
         }     
         
         &__dark{
             display: none;
         }
     } 
+
+    &__toggleMainColor{
+        background: none;
+        outline: none;
+        border: none;
+        padding-left: .8rem;
+        padding-right: .8rem;
+        color: var(--color-segundo);
+    
+        &:hover{
+            color: var(--color-segundo);
+        }
+
+        &:focus-visible{
+            text-shadow: 0 0 4px var(--color-segundo);
+        }
+    }
 }
 
+.navMenu{
+    position: absolute;
+    display: flex;
+    flex-flow: column wrap;
+    top: 100%;
+    right: 0;
+    background: var(--color-tercero);
+    padding: .4rem;
+    border-radius: 0 0 0 .28em;
+    display: none;
+
+    &__button{
+        position: absolute;
+        right: clamp(.8rem, 2vw, 2rem);
+        top: 0;
+        margin-right: .2rem;
+        background: none;
+        border: none;
+        color: var(--color-primero);
+        font-size: 2rem;
+        transition: transform 280ms;
+
+        &:hover{
+            color: var(--color-segundo);
+        }
+        
+        &__rotated{
+            transform: rotate(-90deg);
+        }
+    }
+}
 
 .active{
     color: var(--color-segundo);
     background: var(--color-primero);
+}
+
+.colorActive{
+    color: var(--color-segundo);
 }
 
 .featured{
@@ -1269,7 +1347,7 @@ body{
             font-size: 2rem;
 
             &__li{
-                text-align: left;
+                text-align: center;
                 
                 &__a{
                     color: var(--color-tercero);
@@ -1285,7 +1363,7 @@ body{
                 &__whatsapp{
                     text-shadow: 1px 1px 0 var(--color-segundo), 2px 2px 0 var(--color-primero);
                     color: green;
-                    
+
                     &:hover, &:focus{
                         color: var(--color-segundo);
                     }

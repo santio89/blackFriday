@@ -313,6 +313,7 @@ let carrito__checkout = document.querySelector(".carrito__lista__checkout");
 carrito__checkout.onclick = checkout;
 
 
+
 /* sección productos */
 
 function getScrollbarWidth() {
@@ -368,6 +369,8 @@ function toggleProductos(){
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
     
     let nav__ul = document.querySelector(".nav__ul");
+    let navMenu__button = document.querySelector(".navMenu__button");
+    let navMenu = document.querySelector(".navMenu");
     let carrito = document.querySelector(".carrito");
     let carrito__lista = document.querySelector(".carrito__lista");
     let scrollbar__width = getScrollbarWidth();
@@ -379,6 +382,8 @@ function toggleProductos(){
             productos.style.overflowY = "hidden";
             document.documentElement.style.marginRight = "0";
             nav__ul.style.marginRight = "0";
+            navMenu__button.style.marginRight = ".8rem";
+            navMenu.style.marginRight = "0";
             carrito.style.right = "10px";
             carrito__lista.style.right = "9vw";
         } 
@@ -386,6 +391,8 @@ function toggleProductos(){
         document.documentElement.style.overflowY = "hidden";
         document.documentElement.style.marginRight = `${scrollbar__width}px`;
         nav__ul.style.marginRight = `${scrollbar__width}px`;
+        navMenu__button.style.marginRight = `calc(${scrollbar__width}px + .2rem)`;
+        navMenu.style.marginRight = `${scrollbar__width}px`;
         carrito.style.right = `${scrollbar__width + 10}px`;
         carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
     }
@@ -539,6 +546,8 @@ function toggleOfertas(){
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
     
     let nav__ul = document.querySelector(".nav__ul");
+    let navMenu__button = document.querySelector(".navMenu__button");
+    let navMenu = document.querySelector(".navMenu");
     let carrito = document.querySelector(".carrito");
     let carrito__lista = document.querySelector(".carrito__lista");
     let scrollbar__width = getScrollbarWidth();
@@ -550,6 +559,8 @@ function toggleOfertas(){
             ofertas.style.overflowY = "hidden";
             document.documentElement.style.marginRight = "0";
             nav__ul.style.marginRight = "0";
+            navMenu__button.style.marginRight = ".2rem";
+            navMenu.style.marginRight = "0";
             carrito.style.right = "10px";
             carrito__lista.style.right = "9vw";
         } 
@@ -557,6 +568,8 @@ function toggleOfertas(){
         document.documentElement.style.overflowY = "hidden";
         document.documentElement.style.marginRight = `${scrollbar__width}px`;
         nav__ul.style.marginRight = `${scrollbar__width}px`;
+        navMenu__button.style.marginRight = `calc(${scrollbar__width}px + .8rem)`;
+        navMenu.style.marginRight = `${scrollbar__width}px`;
         carrito.style.right = `${scrollbar__width + 10}px`;
         carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
     }
@@ -768,29 +781,13 @@ validation__no.addEventListener("click", validationNo);
 /* toggle dark light mode */
 let lightMode = document.querySelector(".nav__toggleLightDark__light");
 let darkMode = document.querySelector(".nav__toggleLightDark__dark");
+let body = document.querySelector("body");
 
 let colorMode = localStorage.getItem("colorMode");
 if (colorMode){
     switch (colorMode) {
         case "light":
-            let tempPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-primero");
-            let tempTercero = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero");
-            let tempPrimeroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-dark");
-            let tempTerceroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-dark");
-            let tempPrimeroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-rgb");
-            let tempTerceroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-rgb");
-            let tempBackgroundPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-background-primero");
-            let tempBackgroundSegundo = getComputedStyle(document.documentElement).getPropertyValue("--color-background-segundo");
-           
-            
-            document.documentElement.style.setProperty("--color-primero", tempTercero);
-            document.documentElement.style.setProperty("--color-tercero", tempPrimero);
-            document.documentElement.style.setProperty("--color-primero-dark", tempTerceroDark);
-            document.documentElement.style.setProperty("--color-tercero-dark", tempPrimeroDark);
-            document.documentElement.style.setProperty("--color-primero-rgb", tempTerceroRgb);
-            document.documentElement.style.setProperty("--color-tercero-rgb", tempPrimeroRgb);
-            document.documentElement.style.setProperty("--color-background-primero", tempBackgroundSegundo);
-            document.documentElement.style.setProperty("--color-background-segundo", tempBackgroundPrimero);
+            body.classList.add("lightMode");
 
             lightMode.style.display = "none";
             darkMode.style.display = "inline-block";
@@ -802,55 +799,46 @@ if (colorMode){
 }
 
 lightMode.addEventListener("click", ()=>{
-    let tempPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-primero");
-    let tempTercero = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero");
-    let tempPrimeroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-dark");
-    let tempTerceroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-dark");
-    let tempPrimeroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-rgb");
-    let tempTerceroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-rgb");
-    let tempBackgroundPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-background-primero");
-    let tempBackgroundSegundo = getComputedStyle(document.documentElement).getPropertyValue("--color-background-segundo");
-   
-    
-    document.documentElement.style.setProperty("--color-primero", tempTercero);
-    document.documentElement.style.setProperty("--color-tercero", tempPrimero);
-    document.documentElement.style.setProperty("--color-primero-dark", tempTerceroDark);
-    document.documentElement.style.setProperty("--color-tercero-dark", tempPrimeroDark);
-    document.documentElement.style.setProperty("--color-primero-rgb", tempTerceroRgb);
-    document.documentElement.style.setProperty("--color-tercero-rgb", tempPrimeroRgb);
-    document.documentElement.style.setProperty("--color-background-primero", tempBackgroundSegundo);
-    document.documentElement.style.setProperty("--color-background-segundo", tempBackgroundPrimero);
-
+    body.classList.add("lightMode");
     lightMode.style.display = "none";
     darkMode.style.display = "inline-block";
     localStorage.setItem("colorMode", "light");
 })
 
 darkMode.addEventListener("click", ()=>{
-    let tempPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-primero");
-    let tempTercero = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero");
-    let tempPrimeroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-dark");
-    let tempTerceroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-dark");
-    let tempPrimeroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-primero-rgb");
-    let tempTerceroRgb = getComputedStyle(document.documentElement).getPropertyValue("--color-tercero-rgb");
-    let tempBackgroundPrimero = getComputedStyle(document.documentElement).getPropertyValue("--color-background-primero");
-    let tempBackgroundSegundo = getComputedStyle(document.documentElement).getPropertyValue("--color-background-segundo");
-   
-    
-    document.documentElement.style.setProperty("--color-primero", tempTercero);
-    document.documentElement.style.setProperty("--color-tercero", tempPrimero);
-    document.documentElement.style.setProperty("--color-primero-dark", tempTerceroDark);
-    document.documentElement.style.setProperty("--color-tercero-dark", tempPrimeroDark);
-    document.documentElement.style.setProperty("--color-primero-rgb", tempTerceroRgb);
-    document.documentElement.style.setProperty("--color-tercero-rgb", tempPrimeroRgb);
-    document.documentElement.style.setProperty("--color-background-primero", tempBackgroundSegundo);
-    document.documentElement.style.setProperty("--color-background-segundo", tempBackgroundPrimero);
-
+    body.classList.remove("lightMode");
     darkMode.style.display = "none";
     lightMode.style.display = "inline-block";
     localStorage.setItem("colorMode", "dark");
 })
 
+/* nav menu */
+let navMenuButton = document.querySelector(".navMenu__button");
+let navMenu = document.querySelector(".navMenu");
+
+navMenuButton.addEventListener("click", ()=>{
+    navMenuButton.classList.toggle("navMenu__button__rotated")
+    $(".navMenu").slideToggle(280);
+    navMenuButton.classList.toggle("colorActive");
+})
+
+/* main color toggle */
+let altColorActive = localStorage.getItem("altMainColor");
+if (altColorActive){
+    switch (altColorActive){
+        case "yes": 
+            body.classList.add("altMainColor");
+    }
+}
+
+let mainColorButton = document.querySelector(".nav__toggleMainColor")
+mainColorButton.addEventListener("click", ()=>{
+    body.classList.toggle("altMainColor");
+
+    if (body.classList.contains("altMainColor")){
+        localStorage.setItem("altMainColor", "yes");
+    }
+})
 
 
 /* filter productos*/
