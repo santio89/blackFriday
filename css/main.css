@@ -430,8 +430,8 @@ body {
   background: var(--color-tercero);
   border: none;
   outline: none;
-  padding-left: .8rem;
-  padding-right: .8rem;
+  padding-left: .4rem;
+  padding-right: .4rem;
 }
 
 .nav__ul__li__a:hover, .nav__ul__li__a:focus {
@@ -1793,30 +1793,18 @@ body {
 }
 
 @media (max-width: 409px) {
+  .ofertasPage__title, .productosPage__title {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 343px) {
   .nav__ul {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
     margin-left: .84rem;
   }
-  .nav__ul__li__a {
-    padding-left: .4rem;
-    padding-right: .4rem;
-  }
-  .ofertasPage__title, .productosPage__title {
-    margin-top: 4rem;
-  }
-}
-
-@media (max-width: 359px) {
-  /* 
-    .nav__toggleLightDark__light, .nav__toggleLightDark__dark{
-        padding-left: .4rem;
-        padding-right: .4rem;
-    } */
-}
-
-@media (max-width: 343px) {
   .productos__producto::after {
     font-size: clamp(.72em, .72em + .44vw, .78em);
   }

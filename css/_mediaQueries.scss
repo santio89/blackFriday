@@ -5,15 +5,6 @@
 }
 
 @media (max-width: 409px){
-    .nav__ul{
-        justify-content: start;
-        margin-left: .84rem;
-
-        &__li__a{
-            padding-left: .4rem;
-            padding-right: .4rem;
-        }
-    }
     .ofertasPage, .productosPage{
         &__title{
             margin-top: 4rem;
@@ -21,16 +12,11 @@
     }
 }
 
-@media (max-width: 359px){
-/* 
-    .nav__toggleLightDark__light, .nav__toggleLightDark__dark{
-        padding-left: .4rem;
-        padding-right: .4rem;
-    } */
-
-}
-
 @media (max-width: 343px){
+    .nav__ul{
+        justify-content: start;
+        margin-left: .84rem;
+    }
     .productos__producto::after{
         font-size: unquote("clamp(.72em, .72em + .44vw, .78em)");
     }
@@ -41,6 +27,7 @@
         font-size: 1.4rem;
         align-items: end;
         height: 48px;
+        
         
         &__li{
             vertical-align: baseline;
@@ -99,7 +86,6 @@
                 padding-left: 2rem;
                 padding-right: 2rem;
             }
-
             &__li__whatsapp{
                 padding-left: 1rem;
                 padding-right: 1rem;
