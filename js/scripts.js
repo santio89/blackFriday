@@ -828,6 +828,8 @@ if (altColorActive){
     switch (altColorActive){
         case "yes": 
             body.classList.add("altMainColor");
+        default:
+            break;
     }
 }
 
@@ -837,6 +839,8 @@ mainColorButton.addEventListener("click", ()=>{
 
     if (body.classList.contains("altMainColor")){
         localStorage.setItem("altMainColor", "yes");
+    } else{
+        localStorage.setItem("altMainColor", "no");
     }
 })
 
