@@ -431,7 +431,6 @@ body {
   background: var(--color-primero);
   height: 0;
   border: none;
-  border-bottom: 0px dashed var(--color-segundo);
   outline: none;
   padding-left: .4rem;
   padding-right: .4rem;
@@ -605,7 +604,6 @@ body {
 .active {
   color: var(--color-segundo);
   height: 48px;
-  border-bottom: 2px dashed var(--color-segundo);
 }
 
 .featured {
