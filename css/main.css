@@ -444,6 +444,7 @@ body {
 .nav__ul__li__whatsapp {
   text-shadow: 1px 1px 0 var(--color-segundo), 2px 2px 0 var(--color-primero);
   color: green;
+  background: transparent;
 }
 
 .nav--footer {
