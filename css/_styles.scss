@@ -360,10 +360,11 @@ body{
                 background: var(--color-primero);
                 height: 0;
                 border: none;
+                border-bottom: 0px dashed var(--color-tercero);
                 outline: none;
                 padding-left: .4rem;
                 padding-right: .4rem;
-                transition: height 400ms;
+                transition: height 400ms, border-bottom 400ms;
                 
                 &:hover, &:focus{
                     color: var(--color-segundo);
