@@ -814,12 +814,12 @@ darkMode.addEventListener("click", ()=>{
 
 /* nav menu */
 let navMenuButton = document.querySelector(".navMenu__button");
+let navMenuButtonIcon = document.querySelector(".navMenu__button__icon")
 let navMenu = document.querySelector(".navMenu");
 
 navMenuButton.addEventListener("click", ()=>{
-    navMenuButton.classList.toggle("navMenu__button__rotated")
+    navMenuButtonIcon.classList.toggle("navMenu__button__icon__open")
     $(".navMenu").slideToggle(280);
-    navMenuButton.classList.toggle("colorActive");
 })
 
 /* main color toggle */

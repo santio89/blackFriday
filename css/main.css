@@ -519,6 +519,8 @@ body {
   position: absolute;
   right: clamp(0.8rem, 2vw, 2rem);
   top: 0;
+  width: 48px;
+  height: 48px;
   margin-right: .2rem;
   background: none;
   border: none;
@@ -528,24 +530,79 @@ body {
   transition: -webkit-transform 280ms;
   transition: transform 280ms;
   transition: transform 280ms, -webkit-transform 280ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navMenu__button:hover {
   color: var(--color-segundo);
 }
 
-.navMenu__button__rotated {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+.navMenu__button:hover .navMenu__button__icon, .navMenu__button:hover .navMenu__button__icon::before, .navMenu__button:hover .navMenu__button__icon::after {
+  background: var(--color-segundo);
+}
+
+.navMenu__button__icon {
+  width: 30px;
+  height: 3px;
+  background: var(--color-primero);
+  border-radius: 8px;
+  position: relative;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+}
+
+.navMenu__button__icon::before, .navMenu__button__icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primero);
+  border-radius: 8px;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+}
+
+.navMenu__button__icon::before {
+  -webkit-transform: translateY(-12px);
+          transform: translateY(-12px);
+}
+
+.navMenu__button__icon::after {
+  -webkit-transform: translateY(12px);
+          transform: translateY(12px);
+}
+
+.navMenu__button__icon__open {
+  -webkit-transform: translate(60px);
+          transform: translate(60px);
+  background: transparent !important;
+}
+
+.navMenu__button__icon__open::before {
+  -webkit-transform: rotate(45deg) translate(-45px, 45px);
+          transform: rotate(45deg) translate(-45px, 45px);
+  background: var(--color-segundo);
+}
+
+.navMenu__button__icon__open::after {
+  -webkit-transform: rotate(-45deg) translate(-45px, -45px);
+          transform: rotate(-45deg) translate(-45px, -45px);
+  background: var(--color-segundo);
 }
 
 .active {
   color: var(--color-segundo);
   background: var(--color-primero);
-}
-
-.colorActive {
-  color: var(--color-segundo);
 }
 
 .featured {
