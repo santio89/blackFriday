@@ -531,10 +531,6 @@ body {
   border: none;
   color: var(--color-primero);
   font-size: 2rem;
-  -webkit-transition: -webkit-transform 280ms;
-  transition: -webkit-transform 280ms;
-  transition: transform 280ms;
-  transition: transform 280ms, -webkit-transform 280ms;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
