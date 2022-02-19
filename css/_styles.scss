@@ -357,11 +357,13 @@ body{
         &__li{
             &__a{
                 color: var(--color-primero);
-                background: var(--color-tercero);
+                background: var(--color-primero);
+                height: 0;
                 border: none;
                 outline: none;
                 padding-left: .4rem;
                 padding-right: .4rem;
+                transition: height 400ms;
                 
                 &:hover, &:focus{
                     color: var(--color-segundo);
@@ -507,7 +509,8 @@ body{
 
 .active{
     color: var(--color-segundo);
-    background: var(--color-primero);
+    height: 100%;
+    border-bottom: 2px dashed var(--color-segundo);
 }
 
 .featured{
