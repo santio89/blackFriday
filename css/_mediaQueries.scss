@@ -5,6 +5,10 @@
 }
 
 @media (max-width: 409px){
+    .nav__ul{
+        justify-content: start;
+        margin-left: .84rem;
+    }
     .ofertasPage, .productosPage{
         &__title{
             margin-top: 4rem;
@@ -13,36 +17,22 @@
 }
 
 @media (max-width: 343px){
-    .nav__ul{
-        justify-content: start;
-        margin-left: .84rem;
-    }
     .productos__producto::after{
         font-size: unquote("clamp(.72em, .72em + .44vw, .78em)");
     }
 }
 
-@media (max-width: 320px){
+@media (max-width: 323px){
     .nav__ul{
         font-size: 1.4rem;
-        align-items: end;
-        height: 48px;
-        
-        
-        &__li{
-            vertical-align: baseline;
-            height: 100%;
-
-            &__a{
-                height: 100%;
-            }
-        }
+        line-height: 2.2;
     }
 }
 
 @media (max-width: 282px){
     .nav__ul{
         font-size: 1.2rem;
+        line-height: 2.6;
     }
     .nav__ul .nav__ul__li:nth-of-type(2){
         margin-right: 44px;
@@ -82,26 +72,16 @@
     .nav{
         &__ul{
             padding-left: 0;
+
             &__li__a{
                 padding-left: 2rem;
                 padding-right: 2rem;
             }
+
             &__li__whatsapp{
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
-        }
-        &__toggleLightDark__light{
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-        &__toggleLightDark__dark{
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-        &__toggleMainColor{
-            padding-left: 1rem;
-            padding-right: 1rem;
         }
     }  
 }
