@@ -153,6 +153,7 @@ body{
     --color-segundo-dark: rgb(35, 75, 206);
     --color-segundo: rgb(42, 204, 209);
     --color-segundo-dark: rgb(19, 157, 162);
+    --color-segundo-rgb: 42, 204, 209;
     --color-cuarto: rgb(3, 58, 60);
 }
 
@@ -364,8 +365,8 @@ body{
                 outline: none;
                 padding-left: .4rem;
                 padding-right: .4rem;
-                transition: height 400ms, border-bottom 400ms, color 400ms;
-                
+                transition: height 400ms, color 400ms;
+        
                 &:hover, &:focus{
                     color: var(--color-segundo);
                 }

@@ -334,6 +334,7 @@ function toggleProductos(){
 
     let nav__productos = document.querySelector("#nav__productos");
     nav__productos.classList.toggle("active");
+    
     if (!nav__productos.classList.contains("active")){
         nav__productos.style.color = "var(--color-primero)";
     } else{
