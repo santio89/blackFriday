@@ -344,6 +344,7 @@ function toggleProductos(){
     let nav__ofertas = document.querySelector("#nav__ofertas");
     if (nav__ofertas.classList.contains("active")){
         nav__ofertas.classList.toggle("active");
+        nav__ofertas.style.color = "var(--color-primero)"
     }
 
     if (productos.classList.contains("visible")){
@@ -526,7 +527,8 @@ function toggleOfertas(){
     let nav__productos = document.querySelector("#nav__productos");
     if (nav__productos.classList.contains("active")){
         nav__productos.classList.toggle("active");
-    }
+        nav__productos.style.color = "var(--color-primero)"
+    } 
 
     if (ofertas.classList.contains("visible")){
         location.hash = "/";
