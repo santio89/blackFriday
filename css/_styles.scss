@@ -356,6 +356,9 @@ body{
         width: 100%;
 
         &__li{
+            height: 48px;
+            background: var(--color-tercero);
+
             &__a{
                 color: var(--color-primero);
                 background: var(--color-primero);
