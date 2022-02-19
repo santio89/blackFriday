@@ -435,8 +435,8 @@ body {
   outline: none;
   padding-left: .4rem;
   padding-right: .4rem;
-  -webkit-transition: height 400ms, color 400ms;
-  transition: height 400ms, color 400ms;
+  -webkit-transition: height 400ms, color 400ms, border-bottom 400ms;
+  transition: height 400ms, color 400ms, border-bottom 400ms;
 }
 
 .nav__ul__li__a:hover, .nav__ul__li__a:focus {
