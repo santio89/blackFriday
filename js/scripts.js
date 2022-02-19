@@ -334,6 +334,11 @@ function toggleProductos(){
 
     let nav__productos = document.querySelector("#nav__productos");
     nav__productos.classList.toggle("active");
+    if (!nav__productos.classList.contains("active")){
+        nav__productos.style.color = "var(--color-primero)";
+    } else{
+        nav__productos.style.color = "var(--color-segundo)";
+    }
 
     let nav__ofertas = document.querySelector("#nav__ofertas");
     if (nav__ofertas.classList.contains("active")){
@@ -511,6 +516,11 @@ function toggleOfertas(){
     
     let nav__ofertas = document.querySelector("#nav__ofertas");
     nav__ofertas.classList.toggle("active");
+    if (!nav__ofertas.classList.contains("active")){
+        nav__ofertas.style.color = "var(--color-primero)";
+    } else{
+        nav__ofertas.style.color = "var(--color-segundo)";
+    }
 
     let nav__productos = document.querySelector("#nav__productos");
     if (nav__productos.classList.contains("active")){

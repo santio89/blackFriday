@@ -364,7 +364,7 @@ body{
                 outline: none;
                 padding-left: .4rem;
                 padding-right: .4rem;
-                transition: height 400ms, border-bottom 400ms;
+                transition: height 400ms, border-bottom 400ms, color 400ms;
                 
                 &:hover, &:focus{
                     color: var(--color-segundo);
