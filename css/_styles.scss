@@ -366,7 +366,7 @@ body{
                 padding-right: .4rem;
                 transition: height 400ms, color 400ms, border-bottom 400ms;
         
-                &:hover, &:focus{
+                &:hover, &:focus-visible{
                     color: var(--color-segundo);
                 }
 
@@ -512,15 +512,6 @@ body{
 .active{
     color: var(--color-segundo);
     height: 48px;
-}
-
-/* pequeño fix usado en los botones de seccion para que el estado de hover no persista al cerrar la seccion */
-.unselected{
-    color: var(--color-primero) !important;
-
-    &:hover{
-        color: var(--color-segundo) !important;
-    }
 }
 
 .featured{
