@@ -606,6 +606,15 @@ body {
   height: 48px;
 }
 
+/* pequeño fix usado en los botones de seccion para que el estado de hover no persista al cerrar la seccion */
+.unselected {
+  color: var(--color-primero) !important;
+}
+
+.unselected:hover {
+  color: var(--color-segundo) !important;
+}
+
 .featured {
   padding-left: clamp(0.8rem, 2vw, 2rem);
   font-size: 3.2rem;

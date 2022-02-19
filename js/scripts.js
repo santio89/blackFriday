@@ -336,15 +336,15 @@ function toggleProductos(){
     nav__productos.classList.toggle("active");
     
     if (!nav__productos.classList.contains("active")){
-        nav__productos.style.color = "var(--color-primero)";
+        nav__productos.classList.add("unselected");
     } else{
-        nav__productos.style.color = "var(--color-segundo)";
+        nav__productos.classList.remove("unselected");
     }
 
     let nav__ofertas = document.querySelector("#nav__ofertas");
     if (nav__ofertas.classList.contains("active")){
         nav__ofertas.classList.toggle("active");
-        nav__ofertas.style.color = "var(--color-primero)"
+        nav__ofertas.classList.add("unselected");
     }
 
     if (productos.classList.contains("visible")){
@@ -519,15 +519,15 @@ function toggleOfertas(){
     let nav__ofertas = document.querySelector("#nav__ofertas");
     nav__ofertas.classList.toggle("active");
     if (!nav__ofertas.classList.contains("active")){
-        nav__ofertas.style.color = "var(--color-primero)";
+        nav__ofertas.classList.add("unselected");
     } else{
-        nav__ofertas.style.color = "var(--color-segundo)";
+        nav__ofertas.classList.remove("unselected");
     }
 
     let nav__productos = document.querySelector("#nav__productos");
     if (nav__productos.classList.contains("active")){
         nav__productos.classList.toggle("active");
-        nav__productos.style.color = "var(--color-primero)"
+        nav__productos.classList.add("unselected");
     } 
 
     if (ofertas.classList.contains("visible")){
