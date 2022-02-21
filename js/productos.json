@@ -262,7 +262,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaHeineken473.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: heineken !brcont. neto: 473cc !brprecio: $220",
-        "relevance": 8.4,
+        "relevance": 8.2,
         "keywords": "todas todos cervezas rubias heinekens latas 473"
     },
     {
@@ -458,7 +458,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaStella330.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: stella artois !brcont. neto: 330cc !brprecio: $140",
-        "relevance": 8,
+        "relevance": 8.6,
         "keywords": "todas todos cervezas Rubias stellas artois 330"
     },
     {
