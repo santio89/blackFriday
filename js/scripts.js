@@ -75,6 +75,7 @@ $.ajax({
         cards__info();
         productFilter();
         productSearch();
+        productSort();
 
         /* pongo la llamada ajax a combos dentro de la llamada ajax a productos, ya que los combos dependen del stock de productos. */
         $.ajax({
@@ -1036,6 +1037,126 @@ function productFilter(){
     cards__info();
 } 
 */
+
+function productSort(){
+    let button = document.querySelector("#sortProducts");
+    let buttonMenor = document.querySelector("#sortProductsDown");
+    let buttonMayor = document.querySelector("#sortProductsUp");
+    let buttonMenorContainer = document.querySelector(".productosPage__sort__wrapper__options__menor");
+    let buttonMayorContainer = document.querySelector(".productosPage__sort__wrapper__options__mayor");
+    let container = document.querySelector(".productosPage__sort__wrapper__options");
+
+    button.addEventListener("click", ()=>{
+        container.classList.toggle("visible");
+        button.classList.toggle("borderRadiusNone");
+    })
+
+    buttonMenor.addEventListener("click", ()=>{
+        let productsTotal = document.querySelector("#productosTotal");
+        let products = productsTotal.children;
+        let arrayNodes = [];
+        let id;
+        let flag;
+        buttonMenorContainer.classList.add("filterActive");
+        buttonMayorContainer.classList.remove("filterActive");
+        container.classList.toggle("visible");
+        button.classList.toggle("borderRadiusNone");
+        
+        products = Array.from(products);
+        
+        products.forEach(product => {
+            arrayNodes.push(product);
+            product.remove();
+        })
+        
+        arrayNodes.forEach(node=>{
+            flag = 0;
+            if (node.classList.contains("hideDisplay")){
+                node.classList.remove("hideDisplay");
+                flag = 1;
+            }
+            
+            id = node.className;
+            id = id.split(" ");
+            id.shift();
+            id.shift();
+            id.pop();
+            
+            id = id.toString();
+            id = id.replace("productoTotal--", "");
+            stock1.arrayBebidasTotal.forEach(producto=>{
+                if(id == producto.id){
+                    node.precio = producto.precio;
+                }
+            })
+
+            if (flag ==1){
+                node.classList.add("hideDisplay");
+            }
+        })
+        
+        arrayNodes.sort((a,b)=>{
+            return a.precio - b.precio;
+        })
+    
+        arrayNodes.forEach(node=>{
+            productsTotal.appendChild(node);
+        })
+    })
+
+    buttonMayor.addEventListener("click", ()=>{
+        let productsTotal = document.querySelector("#productosTotal");
+        let products = productsTotal.children;
+        let arrayNodes = [];
+        let id;
+        let flag;
+        buttonMayorContainer.classList.add("filterActive");
+        buttonMenorContainer.classList.remove("filterActive");
+        container.classList.toggle("visible");
+        button.classList.toggle("borderRadiusNone");
+        
+        products = Array.from(products);
+        
+        products.forEach(product => {
+            arrayNodes.push(product);
+            product.remove();
+        })
+        
+        arrayNodes.forEach(node=>{
+            flag = 0;
+            if (node.classList.contains("hideDisplay")){
+                node.classList.remove("hideDisplay");
+                flag = 1;
+            }
+            
+            id = node.className;
+            id = id.split(" ");
+            id.shift();
+            id.shift();
+            id.pop();
+            
+            id = id.toString();
+            id = id.replace("productoTotal--", "");
+            stock1.arrayBebidasTotal.forEach(producto=>{
+                if(id == producto.id){
+                    node.precio = producto.precio;
+                }
+            })
+
+            if (flag ==1){
+                node.classList.add("hideDisplay");
+            }
+        })
+        
+        arrayNodes.sort((a,b)=>{
+            return b.precio - a.precio;
+        })
+    
+        arrayNodes.forEach(node=>{
+            productsTotal.appendChild(node);
+        })
+    })
+}
 
 
 

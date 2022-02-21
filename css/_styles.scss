@@ -106,6 +106,9 @@ button, input, textarea, select{
     
 button{
     cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
 }
 
 .img-fluid{
@@ -979,10 +982,18 @@ body{
         align-items: center;
         border: none;
         outline: none;
+        color: var(--color-tercero);
 
         &:hover{
             background: var(--color-segundo);
         }
+    }
+
+    &__filter{
+        border-radius: .2em 0 0 0;
+    }
+    &__search{
+        border-radius: 0 .2em 0 0;
     }
 }
 
@@ -994,8 +1005,7 @@ body{
 }
 
 .productosPage__filter{
-    position:sticky;
-    top: 0;
+    position: relative;
     width: 84%;
     max-width: 1000px;
     margin: auto;
@@ -1006,13 +1016,14 @@ body{
     z-index: 3;
     
     &__select{
-        color: var(--color-primero);
+        color: var(--color-tercero);
         border: none;
         outline: none;
         background: var(--color-segundo);
         padding: .18rem;
         height: 48px;
         padding-left: 2.8rem;
+        border-radius: 0 .2em .2em 0;
         cursor: pointer;
     }
 
@@ -1029,8 +1040,7 @@ body{
 }
 
 .productosPage__search{
-    position:sticky;
-    top: 0;
+    position: relative;
     width: 84%;
     max-width: 1000px;
     margin: auto;
@@ -1042,7 +1052,7 @@ body{
     display: none;
 
     &__input{
-        color: var(--color-primero);
+        color: var(--color-tecero);
         border: none;
         outline: none;
         background: var(--color-segundo);
@@ -1053,6 +1063,7 @@ body{
         max-width: 100%;
         padding-left: 2.8rem;
         padding-right: 1.8rem;
+        border-radius: 0 .2em .2em 0;
     }
 
     &__icon{
@@ -1065,6 +1076,63 @@ body{
         opacity: .24;
         line-height: 1;
     }
+}
+
+.productosPage__sort{
+    position:sticky;
+    top: 0;
+    width: 84%;
+    max-width: 1000px;
+    font-size: .78em;
+    display: flex;
+    margin: auto;
+    line-height: 1;
+    justify-content: start;
+    z-index: 3;
+
+    &__wrapper{
+        &__button{
+            width: 100%;
+            color: var(--color-tercero);
+            background: var(--color-segundo);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: .2em;
+            border-radius: 0 0 .2em .2em;
+
+            &:focus-visible{
+                outline: 2px dashed var(--color-cuarto);
+            }
+        }
+
+        &__options{
+            visibility: hidden;
+
+            &__menor, &__mayor{
+                cursor: pointer;
+                padding: .2em;
+                background: var(--color-segundo-dark);
+
+                &:hover, &:focus{
+                    background: var(--color-segundo);
+                }
+
+                &__button{
+                    color: var(--color-tercero);
+                }
+            }
+
+            &__mayor{
+                border-radius: 0 0 .2em .2em;
+            }
+          
+        }
+    }
+}
+
+.borderRadiusNone{
+    border-radius: 0;
 }
 
 .filterActive{
