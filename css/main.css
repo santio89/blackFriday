@@ -1378,6 +1378,7 @@ body {
   cursor: pointer;
   padding: .2em;
   background: var(--color-segundo-dark);
+  text-align: center;
 }
 
 .productosPage__sort__wrapper__options__relevancia__button, .productosPage__sort__wrapper__options__menor__button, .productosPage__sort__wrapper__options__mayor__button {
