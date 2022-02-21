@@ -76,6 +76,7 @@ $.ajax({
         productFilter();
         productSearch();
         productSort();
+        initialSort()
 
         /* pongo la llamada ajax a combos dentro de la llamada ajax a productos, ya que los combos dependen del stock de productos. */
         $.ajax({
@@ -1057,8 +1058,11 @@ function productSort(){
         let arrayNodes = [];
         let id;
         let flag;
+
         buttonMenorContainer.classList.add("filterActive");
+        buttonMenor.classList.add("sortOptionActive");
         buttonMayorContainer.classList.remove("filterActive");
+        buttonMayor.classList.remove("sortOptionActive");
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
         
@@ -1111,7 +1115,9 @@ function productSort(){
         let id;
         let flag;
         buttonMayorContainer.classList.add("filterActive");
+        buttonMayor.classList.add("sortOptionActive");
         buttonMenorContainer.classList.remove("filterActive");
+        buttonMenor.classList.remove("sortOptionActive");
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
         
@@ -1158,7 +1164,16 @@ function productSort(){
     })
 }
 
+function initialSort(){
+    let button = document.querySelector("#sortProducts");
+    let buttonMenor = document.querySelector("#sortProductsDown");
+    let container = document.querySelector(".productosPage__sort__wrapper__options");
+    let event = new Event("click");
 
+    buttonMenor.dispatchEvent(event);
+    container.classList.toggle("visible");
+    button.classList.toggle("borderRadiusNone");
+}
 
 /* header title animation - usando jquery y css*/
 $(document).ready(function () {

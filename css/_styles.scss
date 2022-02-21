@@ -992,6 +992,7 @@ body{
     &__filter{
         border-radius: .2em 0 0 0;
     }
+
     &__search{
         border-radius: 0 .2em 0 0;
     }
@@ -1064,6 +1065,11 @@ body{
         padding-left: 2.8rem;
         padding-right: 1.8rem;
         border-radius: 0 .2em .2em 0;
+   
+        &::placeholder{
+            font-size: .8em;
+            color: var(--color-segundo-dark);
+        }  
     }
 
     &__icon{
@@ -1114,12 +1120,16 @@ body{
                 padding: .2em;
                 background: var(--color-segundo-dark);
 
-                &:hover, &:focus{
-                    background: var(--color-segundo);
+                &__button{
+                    color: darkgray;
+
+                    &:hover{
+                        color: var(--color-tercero);
+                    }
                 }
 
-                &__button{
-                    color: var(--color-tercero);
+                &:hover, &:focus{
+                    background: var(--color-segundo);
                 }
             }
 
@@ -1133,6 +1143,10 @@ body{
 
 .borderRadiusNone{
     border-radius: 0;
+}
+
+.sortOptionActive{
+    color: var(--color-tercero);
 }
 
 .filterActive{
