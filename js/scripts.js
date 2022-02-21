@@ -35,6 +35,49 @@ $(window).on('hashchange', function () {
     router()
 })
 
+/* validation */
+if (localStorage.getItem("validation")){
+    if (localStorage.getItem("validation") == 1){
+        let validation = document.querySelector(".validation");
+        validation.classList.add("validation__translated");
+        validation.style.display = "none";
+        document.documentElement.style.overflowY = "scroll";
+
+        setTimeout(rubberBandOnce, 100);
+    }
+}
+
+function validationYes(){
+    localStorage.setItem("validation", 1);
+    let validation = document.querySelector(".validation");
+
+    validation.classList.add("validation__translated");
+    document.documentElement.style.overflowY = "scroll";
+
+    /* al aparecer el scroll que estaba escondido, ajusto la posicion de los elementos de esta placa acordes al tamaño de la scrolbar para que no parezca que se mueven */
+    let validation__header__info = document.getElementById("validation__header__info");
+    let validation__age = document.querySelector(".validation__age");
+    let scrollbar__width = getScrollbarWidth();
+    validation__header__info.style.marginLeft = `${scrollbar__width}px`;
+    validation__age.style.marginLeft = `${scrollbar__width}px`;
+    
+    setTimeout(()=>validation.style.display = "none", 800);
+    setTimeout(rubberBandOnce, 900);
+}
+
+function validationNo(){
+    localStorage.setItem("validation", 0);
+    $(".validation__denied").finish().css("visibility", "visible").delay(2400).fadeOut("slow", function(){
+        $(this).css({"display": "block", "visibility": "hidden"});
+    });
+}
+
+let validation__yes = document.querySelector(".validation__age__yes");
+let validation__no = document.querySelector(".validation__age__no");
+validation__yes.addEventListener("click", validationYes);
+validation__no.addEventListener("click", validationNo);
+
+
 /* agregar bebidas al stock. saco los datos desde productos.json/combos.json (que simularia la respuesta de una base de datos de los productos y ofertas que hay en stock) */
 const shopCart1 = new ShoppingCart(new Date(), 001);
 const stock1 = new Stock(new Date(), 001);
@@ -735,49 +778,6 @@ function cards__info__remove(){
         button.children[1].classList.toggle("hideDisplay", true);
     })
 }
-
-
-/* validation */
-if (localStorage.getItem("validation")){
-    if (localStorage.getItem("validation") == 1){
-        let validation = document.querySelector(".validation");
-        validation.classList.add("validation__translated");
-        validation.style.display = "none";
-        document.documentElement.style.overflowY = "scroll";
-
-        setTimeout(rubberBandOnce, 100);
-    }
-}
-
-function validationYes(){
-    localStorage.setItem("validation", 1);
-    let validation = document.querySelector(".validation");
-
-    validation.classList.add("validation__translated");
-    document.documentElement.style.overflowY = "scroll";
-
-    /* al aparecer el scroll que estaba escondido, ajusto la posicion de los elementos de esta placa acordes al tamaño de la scrolbar para que no parezca que se mueven */
-    let validation__header__info = document.getElementById("validation__header__info");
-    let validation__age = document.querySelector(".validation__age");
-    let scrollbar__width = getScrollbarWidth();
-    validation__header__info.style.marginLeft = `${scrollbar__width}px`;
-    validation__age.style.marginLeft = `${scrollbar__width}px`;
-    
-    setTimeout(()=>validation.style.display = "none", 800);
-    setTimeout(rubberBandOnce, 900);
-}
-
-function validationNo(){
-    localStorage.setItem("validation", 0);
-    $(".validation__denied").finish().css("visibility", "visible").delay(2400).fadeOut("slow", function(){
-        $(this).css({"display": "block", "visibility": "hidden"});
-    });
-}
-
-let validation__yes = document.querySelector(".validation__age__yes");
-let validation__no = document.querySelector(".validation__age__no");
-validation__yes.addEventListener("click", validationYes);
-validation__no.addEventListener("click", validationNo);
 
 
 /* toggle dark light mode */
