@@ -982,10 +982,11 @@ body{
         align-items: center;
         border: none;
         outline: none;
-        color: var(--color-tercero);
+        color: darkgray;
 
         &:hover{
             background: var(--color-segundo);
+            color: var(--color-tercero);
         }
     }
 
@@ -1097,6 +1098,7 @@ body{
     z-index: 3;
 
     &__wrapper{
+        position: relative;
         &__button{
             width: 100%;
             color: var(--color-tercero);
@@ -1137,9 +1139,6 @@ body{
                 }
             }
 
-            &__menor{
-                border-radius: 0 .2em 0 0;
-            }
             &__mayor{
                 border-radius: 0 0 .2em .2em;
             }
@@ -1158,6 +1157,7 @@ body{
 
 .filterActive{
     background: var(--color-segundo);
+    color: var(--color-tercero);
 }
 
 .hideDisplay{

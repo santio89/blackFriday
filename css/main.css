@@ -1186,11 +1186,12 @@ body {
           align-items: center;
   border: none;
   outline: none;
-  color: var(--color-tercero);
+  color: darkgray;
 }
 
 .productosPage__filterWrapper__filter:hover, .productosPage__filterWrapper__search:hover {
   background: var(--color-segundo);
+  color: var(--color-tercero);
 }
 
 .productosPage__filterWrapper__filter {
@@ -1341,6 +1342,10 @@ body {
   z-index: 3;
 }
 
+.productosPage__sort__wrapper {
+  position: relative;
+}
+
 .productosPage__sort__wrapper__button {
   width: 100%;
   color: var(--color-tercero);
@@ -1387,10 +1392,6 @@ body {
   background: var(--color-segundo);
 }
 
-.productosPage__sort__wrapper__options__menor {
-  border-radius: 0 .2em 0 0;
-}
-
 .productosPage__sort__wrapper__options__mayor {
   border-radius: 0 0 .2em .2em;
 }
@@ -1405,6 +1406,7 @@ body {
 
 .filterActive {
   background: var(--color-segundo);
+  color: var(--color-tercero);
 }
 
 .hideDisplay {
