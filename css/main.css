@@ -1359,6 +1359,14 @@ body {
 
 .productosPage__sort__wrapper__options {
   visibility: hidden;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
 }
 
 .productosPage__sort__wrapper__options__menor, .productosPage__sort__wrapper__options__mayor {
@@ -1377,6 +1385,10 @@ body {
 
 .productosPage__sort__wrapper__options__menor:hover, .productosPage__sort__wrapper__options__menor:focus, .productosPage__sort__wrapper__options__mayor:hover, .productosPage__sort__wrapper__options__mayor:focus {
   background: var(--color-segundo);
+}
+
+.productosPage__sort__wrapper__options__menor {
+  border-radius: 0 .2em 0 0;
 }
 
 .productosPage__sort__wrapper__options__mayor {
