@@ -36,6 +36,7 @@ $(window).on('hashchange', function () {
 })
 
 /* validation */
+/* llamada ajax para carga de productos se realiza si la validación se comprueba */
 if (localStorage.getItem("validation")){
     if (localStorage.getItem("validation") == 1){
         let validation = document.querySelector(".validation");
@@ -44,6 +45,8 @@ if (localStorage.getItem("validation")){
         document.documentElement.style.overflowY = "scroll";
 
         setTimeout(rubberBandOnce, 100);
+
+        ajaxInit();
     }
 }
 
@@ -63,6 +66,8 @@ function validationYes(){
     
     setTimeout(()=>validation.style.display = "none", 800);
     setTimeout(rubberBandOnce, 900);
+
+    ajaxInit();
 }
 
 function validationNo(){
@@ -84,82 +89,83 @@ const stock1 = new Stock(new Date(), 001);
 let productsObject;
 let combosObject;
 
-$.ajax({
-    type: "GET",
-    url: "./js/productos.json",
-    success: function (response) {
-        productsObject = response;
-
-        productsObject.forEach(producto=>{
-            producto.info = producto.info.replaceAll("!br", "\n")
-            if (producto.stock == "isInfinity"){
-                window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, Infinity, producto.imgUrl, producto.info, producto.keywords);
-            } else{
-                window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, producto.stock, producto.imgUrl, producto.info, producto.keywords);
-            }
-            stock1.addStockItem(window[producto.variable]);
-        })
-
-        stock1.addFeaturedItem(cerveza__rubia__heineken__1000);
-        stock1.addFeaturedItem(fernet__branca__1000);
-        stock1.addFeaturedItem(licor__jager__700);
-        stock1.addFeaturedItem(ron__morgan__750);
-        stock1.addFeaturedItem(whisky__vat__750);
-        stock1.addFeaturedItem(vodka__skyy__980);
-        stock1.addFeaturedItem(vino__malbec__rutini__750);
-        stock1.addFeaturedItem(cerveza__rubia__quilmes__1000);
-        stock1.addFeaturedItem(cerveza__negra__guinness__473);
-        stock1.addFeaturedItem(vodka__smirnoff__750);
-        stock1.addFeaturedItem(cerveza__rubia__corona__710);
-        stock1.addFeaturedItem(aperitivo__campari__750);
-
-        cards__productosFeatured();
-        cards__productos();
-        cards__info();
-        productFilter();
-        productSearch();
-        productSort();
-        initialSort()
-
-        /* pongo la llamada ajax a combos dentro de la llamada ajax a productos, ya que los combos dependen del stock de productos. */
-        $.ajax({
-            type: "GET",
-            url: "./js/combos.json",
-            success: function (response) {
-                combosObject = response;
-        
-                combosObject.forEach(combo=>{
-                    for(i=0; i<combo.items.length;i++){
-                        let comboItem = combo.items[i];
-                        combo.items[i] = window[comboItem]
-                    }
-                        
-                    window[combo.variable] = new Combo(combo.nombre, combo.items, combo.descuento, combo.id);
-                    
-                    stock1.addComboTotal(window[combo.variable]);
-                })
-                
-                stock1.arrayCombosTotal.forEach(combo => combo.calcPrecioTotal());
-                stock1.addFeaturedCombo(combo__1);
-                stock1.addFeaturedCombo(combo__2);
-                stock1.addFeaturedCombo(combo__3);
-                stock1.addFeaturedCombo(combo__4);
-        
-                cards__ofertasFeatured();
-                cards__ofertas();
-            },
+function ajaxInit(){
+    $.ajax({
+        type: "GET",
+        url: "./js/productos.json",
+        success: function (response) {
+            productsObject = response;
+    
+            productsObject.forEach(producto=>{
+                producto.info = producto.info.replaceAll("!br", "\n")
+                if (producto.stock == "isInfinity"){
+                    window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, Infinity, producto.imgUrl, producto.info, producto.keywords);
+                } else{
+                    window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, producto.stock, producto.imgUrl, producto.info, producto.keywords);
+                }
+                stock1.addStockItem(window[producto.variable]);
+            })
+    
+            stock1.addFeaturedItem(cerveza__rubia__heineken__1000);
+            stock1.addFeaturedItem(fernet__branca__1000);
+            stock1.addFeaturedItem(licor__jager__700);
+            stock1.addFeaturedItem(ron__morgan__750);
+            stock1.addFeaturedItem(whisky__vat__750);
+            stock1.addFeaturedItem(vodka__skyy__980);
+            stock1.addFeaturedItem(vino__malbec__rutini__750);
+            stock1.addFeaturedItem(cerveza__rubia__quilmes__1000);
+            stock1.addFeaturedItem(cerveza__negra__guinness__473);
+            stock1.addFeaturedItem(vodka__smirnoff__750);
+            stock1.addFeaturedItem(cerveza__rubia__corona__710);
+            stock1.addFeaturedItem(aperitivo__campari__750);
+    
+            cards__productosFeatured();
+            cards__productos();
+            cards__info();
+            productFilter();
+            productSearch();
+            productSort();
+            initialSort()
+    
+            /* pongo la llamada ajax a combos dentro de la llamada ajax a productos, ya que los combos dependen del stock de productos. */
+            $.ajax({
+                type: "GET",
+                url: "./js/combos.json",
+                success: function (response) {
+                    combosObject = response;
             
-            error: function () {
-                console.log("Error retrieving productos (combos)");
-            }
-        });
-    },
-
-    error: function () {
-        console.log("Error retrieving products (products)");
-    }
-});
-
+                    combosObject.forEach(combo=>{
+                        for(i=0; i<combo.items.length;i++){
+                            let comboItem = combo.items[i];
+                            combo.items[i] = window[comboItem]
+                        }
+                            
+                        window[combo.variable] = new Combo(combo.nombre, combo.items, combo.descuento, combo.id);
+                        
+                        stock1.addComboTotal(window[combo.variable]);
+                    })
+                    
+                    stock1.arrayCombosTotal.forEach(combo => combo.calcPrecioTotal());
+                    stock1.addFeaturedCombo(combo__1);
+                    stock1.addFeaturedCombo(combo__2);
+                    stock1.addFeaturedCombo(combo__3);
+                    stock1.addFeaturedCombo(combo__4);
+            
+                    cards__ofertasFeatured();
+                    cards__ofertas();
+                },
+                
+                error: function () {
+                    console.log("Error retrieving productos (combos)");
+                }
+            });
+        },
+    
+        error: function () {
+            console.log("Error retrieving products (products)");
+        }
+    });
+}
 
 
 
