@@ -1189,7 +1189,7 @@ body {
   color: darkgray;
 }
 
-.productosPage__filterWrapper__filter:hover, .productosPage__filterWrapper__search:hover {
+.productosPage__filterWrapper__filter:hover, .productosPage__filterWrapper__filter:focus-visible, .productosPage__filterWrapper__search:hover, .productosPage__filterWrapper__search:focus-visible {
   background: var(--color-segundo);
   color: var(--color-tercero);
 }
@@ -1384,11 +1384,11 @@ body {
   color: darkgray;
 }
 
-.productosPage__sort__wrapper__options__menor__button:hover, .productosPage__sort__wrapper__options__mayor__button:hover {
+.productosPage__sort__wrapper__options__menor__button:hover, .productosPage__sort__wrapper__options__menor__button:focus, .productosPage__sort__wrapper__options__mayor__button:hover, .productosPage__sort__wrapper__options__mayor__button:focus {
   color: var(--color-tercero);
 }
 
-.productosPage__sort__wrapper__options__menor:hover, .productosPage__sort__wrapper__options__menor:focus, .productosPage__sort__wrapper__options__mayor:hover, .productosPage__sort__wrapper__options__mayor:focus {
+.productosPage__sort__wrapper__options__menor:hover, .productosPage__sort__wrapper__options__menor:focus-within, .productosPage__sort__wrapper__options__mayor:hover, .productosPage__sort__wrapper__options__mayor:focus-within {
   background: var(--color-segundo);
 }
 

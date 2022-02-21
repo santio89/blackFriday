@@ -984,7 +984,7 @@ body{
         outline: none;
         color: darkgray;
 
-        &:hover{
+        &:hover, &:focus-visible{
             background: var(--color-segundo);
             color: var(--color-tercero);
         }
@@ -1129,12 +1129,12 @@ body{
                 &__button{
                     color: darkgray;
 
-                    &:hover{
+                    &:hover, &:focus{
                         color: var(--color-tercero);
                     }
                 }
 
-                &:hover, &:focus{
+                &:hover, &:focus-within{
                     background: var(--color-segundo);
                 }
             }
