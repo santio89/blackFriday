@@ -4,6 +4,7 @@
         "nombre": "1",
         "items": ["cerveza__rubia__quilmes__1000", "cerveza__rubia__heineken__1000", "fernet__branca__1000", "whisky__vat__750"],
         "descuento": 20,
+        "relevance": 9,
         "id": 99
     },
     {
@@ -11,6 +12,7 @@
         "nombre": "2",
         "items": ["cerveza__rubia__corona__710", "cerveza__rubia__heineken__1000", "whisky__vat__750", "vodka__skyy__980"],
         "descuento": 20,
+        "relevance": 8.5,
         "id": 98
     },
     {
@@ -18,6 +20,7 @@
         "nombre": "3",
         "items": ["whisky__chivas__750", "whisky__vat__750", "vodka__skyy__980", "vodka__smirnoff__750"],
         "descuento": 20,
+        "relevance": 8,
         "id": 97
     },
     {
@@ -25,6 +28,7 @@
         "nombre": "4",
         "items": ["vino__malbec__norton__750", "vino__malbec__rutini__750", "aperitivo__campari__750", "vodka__smirnoff__750"],
         "descuento": 20,
+        "relevance": 7.8,
         "id": 96
     },
     {
@@ -32,6 +36,7 @@
         "nombre": "5",
         "items": ["whisky__chivas__750", "vino__malbec__rutini__750", "licor__jager__700", "aperitivo__campari__750"],
         "descuento": 20,
+        "relevance": 6,
         "id": 95
     },
     {
@@ -39,6 +44,7 @@
         "nombre": "6",
         "items": ["licor__jager__700", "cerveza__rubia__heineken__1000", "ron__morgan__750", "whisky__vat__750"],
         "descuento": 20,
+        "relevance": 5.8,
         "id": 94
     },
     {
@@ -46,6 +52,7 @@
         "nombre": "7",
         "items": ["vino__malbec__rutini__750", "vino__malbec__norton__750", "espumante__extrabrut__chandon__750", "espumante__extrabrut__mumm__750"],
         "descuento": 20,
+        "relevance": 5,
         "id": 93
     },
     {
@@ -53,6 +60,7 @@
         "nombre": "8",
         "items": ["cerveza__negra__guinness__473", "whisky__jack__750", "vodka__smirnoff__750", "ron__morgan__750"],
         "descuento": 20,
+        "relevance": 4.2,
         "id": 92
     },
     {
@@ -60,6 +68,7 @@
         "nombre": "9",
         "items": ["fernet__branca__1000", "gaseosa__coca__1500", "vodka__smirnoff__750", "jugo__naranja__cepita__1000"],
         "descuento": 20,
+        "relevance": 4.1,
         "id": 91
     },
     {
@@ -67,6 +76,7 @@
         "nombre": "10",
         "items": ["cerveza__rubia__heineken__1000", "cerveza__rubia__quilmes__1000", "ron__morgan__750", "jugo__manzana__cepita__1000"],
         "descuento": 20,
+        "relevance": 3.7,
         "id": 90
     },
     {
@@ -74,6 +84,7 @@
         "nombre": "11",
         "items": ["cerveza__rubia__quilmes__1000", "cerveza__rubia__brahma__1000", "cerveza__rubia__heineken__1000", "cerveza__rubia__corona__710"],
         "descuento": 20,
+        "relevance": 2,
         "id": 89
     },
     {
@@ -81,6 +92,7 @@
         "nombre": "12",
         "items": ["gaseosa__coca__1500", "jugo__naranja__cepita__1000", "jugo__manzana__cepita__1000", "agua__glaciar__1500"],
         "descuento": 20,
+        "relevance": 1.4,
         "id": 88
     }
 ]

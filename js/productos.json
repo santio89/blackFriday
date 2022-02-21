@@ -10,6 +10,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaQuilmes1000.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: quilmes !brcont. neto: 1000cc !brprecio: $240",
+        "relevance": 7.4,
         "keywords": "todas todos cervezas rubias quilmes 1000"
     },
     {
@@ -23,6 +24,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaBrahma1000.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: brahma !brcont. neto: 1000cc !brprecio: $220",
+        "relevance": 4.3,
         "keywords": "todas todos cervezas rubias brahmas 1000"
     },
     {
@@ -36,6 +38,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaHeineken1000.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: heineken !brcont. neto: 1000cc !brprecio: $280",
+        "relevance": 9.1,
         "keywords": "todas todos cervezas rubias heinekens 1000"
     },
     {
@@ -49,6 +52,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/vodkaSmirnoff750.jpg",
         "info": "categoria: aguardientes !brtipo: vodka !brmarca: skyy !brcont. neto: 750cc !brprecio: $900",
+        "relevance": 8.3,
         "keywords": "todas todos aguardientes vodkas smirnoffs 750"
     },
     {
@@ -62,20 +66,22 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/whiskyVat750.jpg",
         "info": "categoria: aguardientes !brtipo: whisky !brmarca: vat 69 !brcont. neto: 750cc !brprecio: $1000",
+        "relevance": 6.9,
         "keywords": "todas todos aguardientes whiskys whiskeys vats 750"
     },
     {
         "variable": "ron__morgan__750",
         "categoria": "aguardientes",
-        "tipo": "RON",
+        "tipo": "RON GOLD",
         "marca": "MORGAN",
         "contNeto": 750,
         "precio": 1000,
         "id": 6,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/ronMorgan750.jpg",
-        "info": "categoria: aguardientes !brtipo: ron !brmarca: captain morgan !brcont. neto: 750cc !brprecio: $1000",
-        "keywords": "todas todos aguardientes rones captains morgans 750"
+        "info": "categoria: aguardientes !brtipo: ron gold !brmarca: captain morgan !brcont. neto: 750cc !brprecio: $1000",
+        "relevance": 6.5,
+        "keywords": "todas todos aguardientes rones golds captains morgans 750"
     },
     {
         "variable": "fernet__branca__1000",
@@ -88,6 +94,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/fernetBranca1000.jpg",
         "info": "categoria: licores !brtipo: fernet !brmarca: branca !brcont. neto: 1000cc !brprecio: $1100",
+        "relevance": 9.1,
         "keywords": "todas todos licores fernets brancas 1000"
     },
     {
@@ -101,6 +108,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/tequilaAzteca1000.jpg",
         "info": "categoria: aguardientes !brtipo: tequila !brmarca: sol azteca !brcont. neto: 1000cc !brprecio: $800",
+        "relevance": 3.2,
         "keywords": "todas todos aguardientes tequilas soles aztecas 1000"
     },
     {
@@ -114,6 +122,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/vodkaSkyy750.jpg",
         "info": "categoria: aguardientes !brtipo: vodka !brmarca: skyy !brcont. neto: 980cc !brprecio: $1100",
+        "relevance": 8.6,
         "keywords": "todas todos aguardientes vodkas skyys 980"
     },
     {
@@ -127,6 +136,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/vinoMalbecNorton750.jpg",
         "info": "categoria: vinos !brtipo: malbec !brmarca: norton !brcont. neto: 750cc !brprecio: $500",
+        "relevance": 7.9,
         "keywords": "todas todos vinos tintos malbecs nortons 750"
     },
     {
@@ -140,6 +150,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/licorJager750.jpg",
         "info": "categoria: licores !brtipo: licor herbal !brmarca: jägermeister !brcont. neto: 700cc !brprecio: $3200",
+        "relevance": 8.8,
         "keywords": "todas todos licores jägermeisters jagermeisters 700"
     },
     {
@@ -153,6 +164,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/aperitivoCampari750.jpg",
         "info": "categoria: licores !brtipo: aperitivo vermouth !brmarca: campari !brcont. neto: 750cc !brprecio: $800",
+        "relevance": 9,
         "keywords": "todas todos licores aperitivos vermouths vermouts vermuts camparis 750"
     },
     {
@@ -166,6 +178,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/vinoMalbecRutini750.jpg",
         "info": "categoria: vinos !brtipo: malbec !brmarca: rutini !brcont. neto: 750cc !brprecio: $2000",
+        "relevance": 4.2,
         "keywords": "todas todos vinos tintos malbecs rutinis 750"
     },
     {
@@ -179,6 +192,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaCorona710.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: corona !brcont. neto: 710cc !brprecio: $380",
+        "relevance": 9.2,
         "keywords": "todas todos cervezas rubias coronas 710"
     },
     {
@@ -192,6 +206,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/whiskyChivas12750.jpg",
         "info": "categoria: aguardientes !brtipo: whisky 12 años !brmarca: chivas !brcont. neto: 750cc !brprecio: $3400",
+        "relevance": 8.5,
         "keywords": "todas todos aguardientes whiskys whiskeys chivas 12 twelve years 12años 12years 750"
     },
     {
@@ -205,6 +220,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/ginLarios1000.jpg",
         "info": "categoria: aguardientes !brtipo: gin !brmarca: larios !brcont. neto: 1000cc !brprecio: $2100",
+        "relevance": 5,
         "keywords": "todas todos aguardientes gins larios 1000"
     },
     {
@@ -218,6 +234,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/aperitivoCinzano950.jpg",
         "info": "categoria: licores !brtipo: aperitivo vermouth !brmarca: cinzano !brcont. neto: 950cc !brprecio: $800",
+        "relevance": 8.3,
         "keywords": "todas todos licores aperitivos vermouths vermouts vermuts cinzanos 950"
     },
     {
@@ -231,6 +248,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaQuilmes473.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: quilmes !brcont. neto: 473cc !brprecio: $140",
+        "relevance": 8.2,
         "keywords": "todas todos cervezas rubias quilmes latas 473"
     },
     {
@@ -244,6 +262,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaHeineken473.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: heineken !brcont. neto: 473cc !brprecio: $220",
+        "relevance": 8.4,
         "keywords": "todas todos cervezas rubias heinekens latas 473"
     },
     {
@@ -257,6 +276,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaIpaPatagonia473.jpg",
         "info": "categoria: cervezas !brtipo: cerveza ipa !brmarca: patagonia !brcont. neto: 473cc !brprecio: $180",
+        "relevance": 8.6,
         "keywords": "todas todos cervezas ips patagonias latas 473"
     },
     {
@@ -270,6 +290,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/aguaGlaciar1000.jpg",
         "info": "categoria: sin alcohol !brtipo: agua !brmarca: glaciar !brcont. neto: 1500cc !brprecio: $120",
+        "relevance": 2,
         "keywords": "todas todos sinalcohol aguas glaciares 1500"
     },
     {
@@ -283,6 +304,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/jugoNaranjaCepita1000.jpg",
         "info": "categoria: sin alcohol !brtipo: jugo naranja !brmarca: cepita !brcont. neto: 1000cc !brprecio: $130",
+        "relevance": 3.2,
         "keywords": "todas todos sinalcohol jugos cepitas naranjas 1000"
     },
     {
@@ -296,6 +318,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/jugoManzanaCepita1000.jpg",
         "info": "categoria: sin alcohol !brtipo: jugo manzana !brmarca: cepita !brcont. neto: 1000cc !brprecio: $130",
+        "relevance": 3.2,
         "keywords": "todas todos sinalcohol jugos cepitas manzanas 1000"
     },
     {
@@ -309,6 +332,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaBrahma473.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: brahma !brcont. neto: 473cc !brprecio: $130",
+        "relevance": 5.1,
         "keywords": "todas todos cervezas rubias brahmas latas 473"
     },
     {
@@ -322,6 +346,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteExtraBrutChandon750.jpg",
         "info": "categoria: vinos !brtipo: extra brut !brmarca: chandon !brcont. neto: 750cc !brprecio: $1300",
+        "relevance": 8.7,
         "keywords": "todas todos vinos espumantes espumosos champagnes extrabruts extra brut extras bruts chandons 750"
     },
     {
@@ -335,6 +360,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteExtraBrutMumm750.jpg",
         "info": "categoria: vinos !brtipo: extra brut !brmarca: mumm !brcont. neto: 750cc !brprecio: $900",
+        "relevance": 7,
         "keywords": "todas todos vinos espumantes espumosos champagnes extrabruts extra brut extras bruts mumms 750"
     },
     {
@@ -348,6 +374,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/whiskyJack750.jpg",
         "info": "categoria: aguardientes !brtipo: tennessee whisky !brmarca: jack daniel's !brcont. neto: 750cc !brprecio: $4400",
+        "relevance": 8.3,
         "keywords": "todas todos aguardientes whiskys whiskeys jack daniel's daniels 750"
     },
     {
@@ -361,6 +388,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaNegraGuinness473.jpg",
         "info": "categoria: cervezas !brtipo: cerveza negra !brmarca: guinness !brcont. neto: 473cc !brprecio: $240",
+        "relevance": 8.4,
         "keywords": "todas todos cervezas negras guinness latas 473"
     },
     {
@@ -374,6 +402,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/licorCurasaoCusenier700.jpg",
         "info": "categoria: licores !brtipo: blue curaçao !brmarca: cusenier !brcont. neto: 700cc !brprecio: $520",
+        "relevance": 2.7,
         "keywords": "todas todos licores blues curasaos curaçaos curazaos 700"
     },
     {
@@ -387,6 +416,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaNegraAndes473.jpg",
         "info": "categoria: cervezas !brtipo: cerveza negra !brmarca: andes !brcont. neto: 473cc !brprecio: $150",
+        "relevance": 7.5,
         "keywords": "todas todos cervezas negras andes latas 473"
     },
     {
@@ -400,6 +430,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaAndes473.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: andes !brcont. neto: 473cc !brprecio: $150",
+        "relevance": 7.5,
         "keywords": "todas todos cervezas Rubias andes latas 473"
     },
     {
@@ -413,6 +444,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaIsenbeck1000.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: isenbeck !brcont. neto: 1000cc !brprecio: $220",
+        "relevance": 7.2,
         "keywords": "todas todos cervezas Rubias isenbecks 1000"
     },
     {
@@ -426,6 +458,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaStella330.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: stella artois !brcont. neto: 330cc !brprecio: $140",
+        "relevance": 8,
         "keywords": "todas todos cervezas Rubias stellas artois 330"
     },
     {
@@ -439,6 +472,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaWars1000.jpg",
         "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: warsteiner !brcont. neto: 1000cc !brprecio: $270",
+        "relevance": 8.4,
         "keywords": "todas todos cervezas Rubias warsteiners 1000"
     },
     {
@@ -452,6 +486,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteFrizzeBlue1000.jpg",
         "info": "categoria: vinos !brtipo: espumante !brmarca: frizze blue !brcont. neto: 1000cc !brprecio: $310",
+        "relevance": 5,
         "keywords": "todas todos vinos espumantes espumosos frizzes blues 1000"
     },
     {
@@ -465,6 +500,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/espumanteFrizzeLimonata1000.jpg",
         "info": "categoria: vinos !brtipo: espumante !brmarca: frizze limonata !brcont. neto: 1000cc !brprecio: $310",
+        "relevance": 5,
         "keywords": "todas todos vinos espumantes espumosos frizzes limonatas 1000"
     },
     {
@@ -478,6 +514,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/licorBaileys750.jpg",
         "info": "categoria: licores !brtipo: irish cream !brmarca: baileys !brcont. neto: 1000cc !brprecio: $2400",
+        "relevance": 6,
         "keywords": "todas todos licores irish creams baileys 1000"
     },
     {
@@ -491,6 +528,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/aperitivoMartini1000.jpg",
         "info": "categoria: licores !brtipo: aperitivo !brmarca: martini !brcont. neto: 1000cc !brprecio: $2400",
+        "relevance": 7.2,
         "keywords": "todas todos licores aperitivos martinis 1000"
     },
     {
@@ -504,6 +542,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/gaseosaSprite1500.jpg",
         "info": "categoria: sin alcohol !brtipo: gaseosa !brmarca: sprite !brcont. neto: 1500cc !brprecio: $180",
+        "relevance": 6.7,
         "keywords": "todas todos sinalcohol gaseosas sprites 1500"
     },
     {
@@ -517,6 +556,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/gaseosaCoca1500.jpg",
         "info": "categoria: sin alcohol !brtipo: gaseosa !brmarca: coca-cola !brcont. neto: 1500cc !brprecio: $180",
+        "relevance": 6.8,
         "keywords": "todas todos sinalcohol gaseosas cocas colas coca-cola 1500"
     },
     {
@@ -530,6 +570,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/vodkaAbsolut750.jpg",
         "info": "categoria: aguardientes !brtipo: vodka !brmarca: absolut !brcont. neto: 750cc !brprecio: $2500",
+        "relevance": 8.3,
         "keywords": "todas todos aguardientes vodkas absoluts 750"
     },
     {
@@ -543,6 +584,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/whiskyJohnnieBlack750.jpg",
         "info": "categoria: aguardientes !brtipo: whisky black label !brmarca: johnnie walker !brcont. neto: 750cc !brprecio: $4400",
+        "relevance": 7,
         "keywords": "todas todos aguardientes whiskys whiskeys johnnies walkers blacks labels 750"
     },
     {
@@ -556,6 +598,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/granadinaCusenier1000.jpg",
         "info": "categoria: sin alcohol !brtipo: granadina !brmarca: cusenier !brcont. neto: 1000cc !brprecio: $480",
+        "relevance": 1.9,
         "keywords": "todas todos sinalcohol granadinas cuseniers 1000"
     },
     {
@@ -569,6 +612,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/aperitivoGancia950.jpg",
         "info": "categoria: licores !brtipo: aperitivo !brmarca: gancia !brcont. neto: 950cc !brprecio: $700",
+        "relevance": 7.8,
         "keywords": "todas todos licores aperitivos gancias 950"
     },
     {
@@ -582,19 +626,21 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/ginBeefeater1000.jpg",
         "info": "categoria: aguardientes !brtipo: gin !brmarca: beefeater !brcont. neto: 1000cc !brprecio: $3100",
+        "relevance": 8,
         "keywords": "todas todos aguardientes gins beefeaters 1000"
     },
     {
         "variable": "ron__bacardi__750",
         "categoria": "aguardientes",
-        "tipo": "RON",
-        "marca": "BACARDI GOLD",
+        "tipo": "RON GOLD",
+        "marca": "BACARDI",
         "contNeto": 750,
         "precio": 1800,
         "id": 46,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/ronBacardiGold750.jpg",
-        "info": "categoria: aguardientes !brtipo: ron !brmarca: bacardi gold !brcont. neto: 750cc !brprecio: $1800",
+        "info": "categoria: aguardientes !brtipo: ron gold !brmarca: bacardi !brcont. neto: 750cc !brprecio: $1800",
+        "relevance": 9,
         "keywords": "todas todos aguardientes rones bacardis golds 750"
     },
     {
@@ -608,6 +654,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/vinoSauvignonLatitud750.jpg",
         "info": "categoria: vinos !brtipo: sauvignon blanc !brmarca: latitud 33° !brcont. neto: 750cc !brprecio: $520",
+        "relevance": 7,
         "keywords": "todas todos vinos blancos sauvignons latituds 33° 750"
     },
     {
@@ -621,6 +668,7 @@
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/vinoMalbecLatitud750.jpg",
         "info": "categoria: vinos !brtipo: malbec !brmarca: latitud 33° !brcont. neto: 750cc !brprecio: $520",
+        "relevance": 7,
         "keywords": "todas todos vinos tintos malbecs latituds 33° 750"
     }
 ]

@@ -1374,21 +1374,21 @@ body {
           flex-flow: column wrap;
 }
 
-.productosPage__sort__wrapper__options__menor, .productosPage__sort__wrapper__options__mayor {
+.productosPage__sort__wrapper__options__relevancia, .productosPage__sort__wrapper__options__menor, .productosPage__sort__wrapper__options__mayor {
   cursor: pointer;
   padding: .2em;
   background: var(--color-segundo-dark);
 }
 
-.productosPage__sort__wrapper__options__menor__button, .productosPage__sort__wrapper__options__mayor__button {
+.productosPage__sort__wrapper__options__relevancia__button, .productosPage__sort__wrapper__options__menor__button, .productosPage__sort__wrapper__options__mayor__button {
   color: darkgray;
 }
 
-.productosPage__sort__wrapper__options__menor__button:hover, .productosPage__sort__wrapper__options__menor__button:focus, .productosPage__sort__wrapper__options__mayor__button:hover, .productosPage__sort__wrapper__options__mayor__button:focus {
+.productosPage__sort__wrapper__options__relevancia__button:hover, .productosPage__sort__wrapper__options__relevancia__button:focus, .productosPage__sort__wrapper__options__menor__button:hover, .productosPage__sort__wrapper__options__menor__button:focus, .productosPage__sort__wrapper__options__mayor__button:hover, .productosPage__sort__wrapper__options__mayor__button:focus {
   color: var(--color-tercero);
 }
 
-.productosPage__sort__wrapper__options__menor:hover, .productosPage__sort__wrapper__options__menor:focus-within, .productosPage__sort__wrapper__options__mayor:hover, .productosPage__sort__wrapper__options__mayor:focus-within {
+.productosPage__sort__wrapper__options__relevancia:hover, .productosPage__sort__wrapper__options__relevancia:focus-within, .productosPage__sort__wrapper__options__menor:hover, .productosPage__sort__wrapper__options__menor:focus-within, .productosPage__sort__wrapper__options__mayor:hover, .productosPage__sort__wrapper__options__mayor:focus-within {
   background: var(--color-segundo);
 }
 

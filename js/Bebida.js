@@ -1,5 +1,5 @@
 class Bebida{
-    constructor(categoria, tipo, marca, contNeto, precio, id, stock, img, info, keywords){
+    constructor(categoria, tipo, marca, contNeto, precio, id, stock, img, info, relevance, keywords){
         this.categoria = categoria;
         this.tipo = tipo;
         this.marca = marca;
@@ -10,6 +10,7 @@ class Bebida{
         this.stock = stock;
         this.img = `url("${img}")`;
         this.info = info;
+        this.relevance = relevance;    /* relevance es un valor (recibido desde un backend por ej) que define que tan visto/comprado es un producto. por defecto ordeno segun relevancia */
         this.keywords = keywords;
     }
     

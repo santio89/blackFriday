@@ -1121,7 +1121,7 @@ body{
             display: flex;
             flex-flow: column wrap;
 
-            &__menor, &__mayor{
+            &__relevancia, &__menor, &__mayor{
                 cursor: pointer;
                 padding: .2em;
                 background: var(--color-segundo-dark);

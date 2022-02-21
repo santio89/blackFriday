@@ -1,9 +1,10 @@
 class Combo{
-    constructor(nombre, productos, descuento, id){
+    constructor(nombre, productos, descuento, relevance, id){
         this.nombre = nombre;
         this.productos = productos;
         this.precioTotal = 0;
-        this.descuento = descuento;  /* cada combo tiene la posibilidad de tener un descuento propio. sin embargo, para este simulador, puse todos en 20% */
+        this.descuento = descuento;    /* cada combo tiene la posibilidad de tener un descuento propio. sin embargo, para este simulador, puse todos en 20% */
+        this.relevance = relevance;    /* relevance es un valor (recibido desde un backend por ej) que define que tan visto/comprado es un producto. por defecto ordeno segun relevancia */
         this.id = id; 
     }
 

@@ -99,26 +99,14 @@ function ajaxInit(){
             productsObject.forEach(producto=>{
                 producto.info = producto.info.replaceAll("!br", "\n")
                 if (producto.stock == "isInfinity"){
-                    window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, Infinity, producto.imgUrl, producto.info, producto.keywords);
+                    window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, Infinity, producto.imgUrl, producto.info, producto.relevance, producto.keywords);
                 } else{
-                    window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, producto.stock, producto.imgUrl, producto.info, producto.keywords);
+                    window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, producto.stock, producto.imgUrl, producto.info, producto.relevance, producto.keywords);
                 }
                 stock1.addStockItem(window[producto.variable]);
             })
-    
-            stock1.addFeaturedItem(cerveza__rubia__heineken__1000);
-            stock1.addFeaturedItem(fernet__branca__1000);
-            stock1.addFeaturedItem(licor__jager__700);
-            stock1.addFeaturedItem(ron__morgan__750);
-            stock1.addFeaturedItem(whisky__vat__750);
-            stock1.addFeaturedItem(vodka__skyy__980);
-            stock1.addFeaturedItem(vino__malbec__rutini__750);
-            stock1.addFeaturedItem(cerveza__rubia__quilmes__1000);
-            stock1.addFeaturedItem(cerveza__negra__guinness__473);
-            stock1.addFeaturedItem(vodka__smirnoff__750);
-            stock1.addFeaturedItem(cerveza__rubia__corona__710);
-            stock1.addFeaturedItem(aperitivo__campari__750);
-    
+
+            addFeaturedItems();
             cards__productosFeatured();
             cards__productos();
             cards__info();
@@ -140,16 +128,13 @@ function ajaxInit(){
                             combo.items[i] = window[comboItem]
                         }
                             
-                        window[combo.variable] = new Combo(combo.nombre, combo.items, combo.descuento, combo.id);
+                        window[combo.variable] = new Combo(combo.nombre, combo.items, combo.descuento, combo.relevance, combo.id);
                         
                         stock1.addComboTotal(window[combo.variable]);
                     })
                     
                     stock1.arrayCombosTotal.forEach(combo => combo.calcPrecioTotal());
-                    stock1.addFeaturedCombo(combo__1);
-                    stock1.addFeaturedCombo(combo__2);
-                    stock1.addFeaturedCombo(combo__3);
-                    stock1.addFeaturedCombo(combo__4);
+                    addFeaturedCombos();
             
                     cards__ofertasFeatured();
                     cards__ofertas();
@@ -182,9 +167,29 @@ if (localStorage.getItem("shopList")){
     shopCart1.subTotalCalc();
 } 
 
+/* ordenar los productos/combos según relevancia y definir los productos/combos destacados según los más relevantes (hasta 12 productos/4 combos según el diseño actual) */
+function addFeaturedItems(){
+    stock1.arrayBebidasTotal.sort((a,b)=>{
+        return b.relevance - a.relevance;
+    })
+    for (i=0; i<12; i++){
+        stock1.addFeaturedItem(stock1.arrayBebidasTotal[i]);
+    }
+}
+
+function addFeaturedCombos(){
+    stock1.arrayCombosTotal.sort((a,b)=>{
+        return b.relevance - a.relevance;
+    })
+    
+    for (i=0; i<4; i++){
+        stock1.addFeaturedCombo(stock1.arrayCombosTotal[i]);
+    }
+}
+
 
 /* agregar las cards de productos featured al html, según los productos que hayan en el inventario (uso forEach en vez de map, ya que no necesito retornar nada) */
-function cards__productosFeatured (){
+function cards__productosFeatured(){
     let productosFeatured = document.getElementById("productosFeatured");
     stock1.arrayBebidasFeatured.forEach(bebidas => {
         let producto = document.createElement("div");
@@ -1047,8 +1052,10 @@ function productFilter(){
 
 function productSort(){
     let button = document.querySelector("#sortProducts");
+    let buttonRelevance = document.querySelector("#sortProductsRelevance");
     let buttonMenor = document.querySelector("#sortProductsDown");
     let buttonMayor = document.querySelector("#sortProductsUp");
+    let buttonRelevanceContainer = document.querySelector(".productosPage__sort__wrapper__options__relevancia");
     let buttonMenorContainer = document.querySelector(".productosPage__sort__wrapper__options__menor");
     let buttonMayorContainer = document.querySelector(".productosPage__sort__wrapper__options__mayor");
     let container = document.querySelector(".productosPage__sort__wrapper__options");
@@ -1069,6 +1076,8 @@ function productSort(){
         buttonMenor.classList.add("sortOptionActive");
         buttonMayorContainer.classList.remove("filterActive");
         buttonMayor.classList.remove("sortOptionActive");
+        buttonRelevanceContainer.classList.remove("filterActive");
+        buttonRelevance.classList.remove("sortOptionActive");
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
         
@@ -1124,6 +1133,8 @@ function productSort(){
         buttonMayor.classList.add("sortOptionActive");
         buttonMenorContainer.classList.remove("filterActive");
         buttonMenor.classList.remove("sortOptionActive");
+        buttonRelevanceContainer.classList.remove("filterActive");
+        buttonRelevance.classList.remove("sortOptionActive");
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
         
@@ -1168,11 +1179,68 @@ function productSort(){
             productsTotal.appendChild(node);
         })
     })
+
+    buttonRelevance.addEventListener("click", ()=>{
+        let productsTotal = document.querySelector("#productosTotal");
+        let products = productsTotal.children;
+        let arrayNodes = [];
+        let id;
+        let flag;
+        buttonRelevanceContainer.classList.add("filterActive");
+        buttonRelevance.classList.add("sortOptionActive");
+        buttonMayorContainer.classList.remove("filterActive");
+        buttonMayor.classList.remove("sortOptionActive");
+        buttonMenorContainer.classList.remove("filterActive");
+        buttonMenor.classList.remove("sortOptionActive");
+        container.classList.toggle("visible");
+        button.classList.toggle("borderRadiusNone");
+        
+        products = Array.from(products);
+        
+        products.forEach(product => {
+            arrayNodes.push(product);
+            product.remove();
+        })
+        
+        arrayNodes.forEach(node=>{
+            flag = 0;
+            if (node.classList.contains("hideDisplay")){
+                node.classList.remove("hideDisplay");
+                flag = 1;
+            }
+            
+            id = node.className;
+            id = id.split(" ");
+            id.shift();
+            id.shift();
+            id.pop();
+            
+            id = id.toString();
+            id = id.replace("productoTotal--", "");
+            stock1.arrayBebidasTotal.forEach(producto=>{
+                if(id == producto.id){
+                    node.relevance = producto.relevance;
+                }
+            })
+
+            if (flag ==1){
+                node.classList.add("hideDisplay");
+            }
+        })
+        
+        arrayNodes.sort((a,b)=>{
+            return b.relevance - a.relevance;
+        })
+    
+        arrayNodes.forEach(node=>{
+            productsTotal.appendChild(node);
+        })
+    })
 }
 
 function initialSort(){
     let button = document.querySelector("#sortProducts");
-    let buttonMenor = document.querySelector("#sortProductsDown");
+    let buttonMenor = document.querySelector("#sortProductsRelevance");
     let container = document.querySelector(".productosPage__sort__wrapper__options");
     let event = new Event("click");
 
