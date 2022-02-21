@@ -83,7 +83,7 @@ validation__yes.addEventListener("click", validationYes);
 validation__no.addEventListener("click", validationNo);
 
 
-/* agregar bebidas al stock. saco los datos desde productos.json/combos.json (que simularia la respuesta de una base de datos de los productos y ofertas que hay en stock) */
+/* agregar bebidas al stock. saco los datos, mediante ajax, desde productos.json/combos.json (que simularia la respuesta de una base de datos de los productos y ofertas que hay en stock) */
 const shopCart1 = new ShoppingCart(new Date(), 001);
 const stock1 = new Stock(new Date(), 001);
 let productsObject;
