@@ -63,6 +63,7 @@ function validationYes(){
     let scrollbar__width = getScrollbarWidth();
     validation__header__info.style.marginLeft = `${scrollbar__width}px`;
     validation__age.style.marginLeft = `${scrollbar__width}px`;
+    validation.style.overflow = "hidden"
     
     setTimeout(()=>validation.style.display = "none", 800);
     setTimeout(rubberBandOnce, 900);
@@ -151,7 +152,6 @@ function ajaxInit(){
         }
     });
 }
-
 
 
 /* cargar shopList, si existe, del storage */
@@ -825,16 +825,6 @@ darkMode.addEventListener("click", ()=>{
     localStorage.setItem("colorMode", "dark");
 })
 
-/* nav menu */
-let navMenuButton = document.querySelector(".navMenu__button");
-let navMenuButtonIcon = document.querySelector(".navMenu__button__icon")
-let navMenu = document.querySelector(".navMenu");
-
-navMenuButton.addEventListener("click", ()=>{
-    navMenuButtonIcon.classList.toggle("navMenu__button__icon__open")
-    $(".navMenu").slideToggle(280);
-})
-
 /* main color toggle */
 let altColorActive = localStorage.getItem("altMainColor");
 if (altColorActive){
@@ -855,6 +845,16 @@ mainColorButton.addEventListener("click", ()=>{
     } else{
         localStorage.setItem("altMainColor", "no");
     }
+})
+
+/* nav menu */
+let navMenuButton = document.querySelector(".navMenu__button");
+let navMenuButtonIcon = document.querySelector(".navMenu__button__icon")
+let navMenu = document.querySelector(".navMenu");
+
+navMenuButton.addEventListener("click", ()=>{
+    navMenuButtonIcon.classList.toggle("navMenu__button__icon__open")
+    $(".navMenu").slideToggle(280);
 })
 
 
