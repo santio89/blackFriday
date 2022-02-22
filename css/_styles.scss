@@ -364,8 +364,6 @@ body{
             height: 48px;
 
             &__a{
-                max-width: 100%;
-                max-height: 100%;
                 color: var(--color-primero);
                 background-image: linear-gradient(to bottom, var(--color-tercero) 50%, var(--color-primero) 50%);
                 background-size: 100% 200%;
@@ -374,7 +372,6 @@ body{
                 padding-left: .4rem;
                 padding-right: .4rem;
                 transition: background-position 400ms, color 400ms;
-                line-height: 1.6;
         
                 &:hover, &:focus-visible{
                     color: var(--color-segundo);

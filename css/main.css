@@ -437,8 +437,6 @@ body {
 }
 
 .nav__ul__li__a {
-  max-width: 100%;
-  max-height: 100%;
   color: var(--color-primero);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, var(--color-tercero)), color-stop(50%, var(--color-primero)));
   background-image: linear-gradient(to bottom, var(--color-tercero) 50%, var(--color-primero) 50%);
@@ -449,7 +447,6 @@ body {
   padding-right: .4rem;
   -webkit-transition: background-position 400ms, color 400ms;
   transition: background-position 400ms, color 400ms;
-  line-height: 1.6;
 }
 
 .nav__ul__li__a:hover, .nav__ul__li__a:focus-visible {
