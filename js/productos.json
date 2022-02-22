@@ -187,11 +187,11 @@
         "tipo": "CERVEZA RUBIA",
         "marca": "CORONA",
         "contNeto": 710,
-        "precio": 380,
+        "precio": 340,
         "id": 14,
         "stock": "isInfinity",
         "imgUrl": "../img/stockPhotos/cervezaRubiaCorona710.jpg",
-        "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: corona !brcont. neto: 710cc !brprecio: $380",
+        "info": "categoria: cervezas !brtipo: cerveza rubia !brmarca: corona !brcont. neto: 710cc !brprecio: $340",
         "relevance": 9.2,
         "keywords": "todas todos cervezas rubias coronas 710"
     },
