@@ -1381,21 +1381,23 @@ body {
 
 .productosPage__sort__wrapper__options__relevancia, .productosPage__sort__wrapper__options__menor, .productosPage__sort__wrapper__options__mayor {
   cursor: pointer;
-  padding: .2em;
   background: var(--color-segundo-dark);
   text-align: center;
+  border-left: 4px solid darkgray;
 }
 
 .productosPage__sort__wrapper__options__relevancia__button, .productosPage__sort__wrapper__options__menor__button, .productosPage__sort__wrapper__options__mayor__button {
   color: darkgray;
+  padding: .2em;
 }
 
 .productosPage__sort__wrapper__options__relevancia__button:hover, .productosPage__sort__wrapper__options__relevancia__button:focus, .productosPage__sort__wrapper__options__menor__button:hover, .productosPage__sort__wrapper__options__menor__button:focus, .productosPage__sort__wrapper__options__mayor__button:hover, .productosPage__sort__wrapper__options__mayor__button:focus {
   color: var(--color-tercero);
 }
 
-.productosPage__sort__wrapper__options__relevancia:hover, .productosPage__sort__wrapper__options__relevancia:focus-within, .productosPage__sort__wrapper__options__menor:hover, .productosPage__sort__wrapper__options__menor:focus-within, .productosPage__sort__wrapper__options__mayor:hover, .productosPage__sort__wrapper__options__mayor:focus-within {
+.productosPage__sort__wrapper__options__relevancia:hover, .productosPage__sort__wrapper__options__relevancia:focus-visible, .productosPage__sort__wrapper__options__menor:hover, .productosPage__sort__wrapper__options__menor:focus-visible, .productosPage__sort__wrapper__options__mayor:hover, .productosPage__sort__wrapper__options__mayor:focus-visible {
   background: var(--color-segundo);
+  border-left: 4px solid var(--color-tercero);
 }
 
 .productosPage__sort__wrapper__options__mayor {
@@ -1413,6 +1415,12 @@ body {
 .filterActive {
   background: var(--color-segundo);
   color: var(--color-tercero);
+}
+
+.filterActiveOptions {
+  background: var(--color-segundo);
+  color: var(--color-tercero);
+  border-left: 4px solid var(--color-tercero);
 }
 
 .hideDisplay {

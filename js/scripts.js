@@ -1072,11 +1072,11 @@ function productSort(){
         let id;
         let flag;
 
-        buttonMenorContainer.classList.add("filterActive");
+        buttonMenorContainer.classList.add("filterActiveOptions");
         buttonMenor.classList.add("sortOptionActive");
-        buttonMayorContainer.classList.remove("filterActive");
+        buttonMayorContainer.classList.remove("filterActiveOptions");
         buttonMayor.classList.remove("sortOptionActive");
-        buttonRelevanceContainer.classList.remove("filterActive");
+        buttonRelevanceContainer.classList.remove("filterActiveOptions");
         buttonRelevance.classList.remove("sortOptionActive");
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
@@ -1129,11 +1129,11 @@ function productSort(){
         let arrayNodes = [];
         let id;
         let flag;
-        buttonMayorContainer.classList.add("filterActive");
+        buttonMayorContainer.classList.add("filterActiveOptions");
         buttonMayor.classList.add("sortOptionActive");
-        buttonMenorContainer.classList.remove("filterActive");
+        buttonMenorContainer.classList.remove("filterActiveOptions");
         buttonMenor.classList.remove("sortOptionActive");
-        buttonRelevanceContainer.classList.remove("filterActive");
+        buttonRelevanceContainer.classList.remove("filterActiveOptions");
         buttonRelevance.classList.remove("sortOptionActive");
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
@@ -1186,11 +1186,11 @@ function productSort(){
         let arrayNodes = [];
         let id;
         let flag;
-        buttonRelevanceContainer.classList.add("filterActive");
+        buttonRelevanceContainer.classList.add("filterActiveOptions");
         buttonRelevance.classList.add("sortOptionActive");
-        buttonMayorContainer.classList.remove("filterActive");
+        buttonMayorContainer.classList.remove("filterActiveOptions");
         buttonMayor.classList.remove("sortOptionActive");
-        buttonMenorContainer.classList.remove("filterActive");
+        buttonMenorContainer.classList.remove("filterActiveOptions");
         buttonMenor.classList.remove("sortOptionActive");
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
