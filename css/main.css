@@ -1989,9 +1989,9 @@ body {
 @media (max-width: 343px) {
   .nav__ul {
     font-size: 1.4rem;
+  }
+  .nav__ul__li__a {
     line-height: 2.2;
-    -webkit-transform: translateY(-1px);
-            transform: translateY(-1px);
   }
   .productos__producto::after {
     font-size: clamp(.72em, .72em + .44vw, .78em);

@@ -19,8 +19,10 @@
 @media (max-width: 343px){
     .nav__ul{
         font-size: 1.4rem;
-        line-height: 2.2;
-        transform: translateY(-1px);
+
+        &__li__a{
+            line-height: 2.2;
+        }
     }
     .productos__producto::after{
         font-size: unquote("clamp(.72em, .72em + .44vw, .78em)");
