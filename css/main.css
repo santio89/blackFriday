@@ -438,14 +438,13 @@ body {
 
 .nav__ul__li__a {
   color: var(--color-primero);
-  background: var(--color-primero);
-  height: 0;
+  background: rgba(var(--color-primero-rgb), 0);
   border: none;
   outline: none;
   padding-left: .4rem;
   padding-right: .4rem;
-  -webkit-transition: height 400ms, color 400ms, border-bottom 400ms;
-  transition: height 400ms, color 400ms, border-bottom 400ms;
+  -webkit-transition: background-color 400ms, color 400ms;
+  transition: background-color 400ms, color 400ms;
   line-height: 1.6;
 }
 
@@ -615,7 +614,7 @@ body {
 
 .active {
   color: var(--color-segundo);
-  height: 48px;
+  background: rgba(var(--color-primero-rgb), 1);
 }
 
 .featured {
