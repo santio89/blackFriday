@@ -1052,6 +1052,7 @@ function productFilter(){
 
 function productSort(){
     let button = document.querySelector("#sortProducts");
+    let buttonIcon = document.querySelector(".productosPage__sort__wrapper__button__icon");
     let buttonRelevance = document.querySelector("#sortProductsRelevance");
     let buttonMenor = document.querySelector("#sortProductsDown");
     let buttonMayor = document.querySelector("#sortProductsUp");
@@ -1059,10 +1060,22 @@ function productSort(){
     let buttonMenorContainer = document.querySelector(".productosPage__sort__wrapper__options__menor");
     let buttonMayorContainer = document.querySelector(".productosPage__sort__wrapper__options__mayor");
     let container = document.querySelector(".productosPage__sort__wrapper__options");
+    
+    const closeOptions = (e)=>{       
+        if (e.target != button && e.target != buttonIcon){
+            container.classList.toggle("visible");
+            button.classList.toggle("borderRadiusNone");
+            document.removeEventListener("click", closeOptions);
+        }
+    }
 
     button.addEventListener("click", ()=>{
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
+
+        if (container.classList.contains("visible")){
+            document.addEventListener("click", closeOptions) 
+        } 
     })
 
     buttonMenor.addEventListener("click", ()=>{
@@ -1071,7 +1084,7 @@ function productSort(){
         let arrayNodes = [];
         let id;
         let flag;
-
+        
         buttonMenorContainer.classList.add("filterActiveOptions");
         buttonMenor.classList.add("sortOptionActive");
         buttonMayorContainer.classList.remove("filterActiveOptions");
@@ -1080,6 +1093,7 @@ function productSort(){
         buttonRelevance.classList.remove("sortOptionActive");
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
+        document.removeEventListener("click", closeOptions);
         
         products = Array.from(products);
         
@@ -1137,6 +1151,7 @@ function productSort(){
         buttonRelevance.classList.remove("sortOptionActive");
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
+        document.removeEventListener("click", closeOptions);
         
         products = Array.from(products);
         
@@ -1194,6 +1209,7 @@ function productSort(){
         buttonMenor.classList.remove("sortOptionActive");
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
+        document.removeEventListener("click", closeOptions);
         
         products = Array.from(products);
         
