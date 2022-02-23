@@ -984,6 +984,13 @@ function productSearch(){
             bebidaSearch.removeAttribute("data-filter");
         });
     })
+
+    searchInput.addEventListener("keydown", (e)=>{
+        let searchInput = document.querySelector("#productosPage__search");
+        if (e.keyCode == 13){
+            searchInput.blur();
+        }
+    });
 }
 
 
