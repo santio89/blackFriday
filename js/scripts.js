@@ -429,6 +429,7 @@ function toggleProductos(){
     let navMenu = document.querySelector(".navMenu");
     let carrito = document.querySelector(".carrito");
     let carrito__lista = document.querySelector(".carrito__lista");
+    let checkout = document.querySelector(".checkoutConfirmation");
     let scrollbar__width = getScrollbarWidth();
 
     if(document.documentElement.style.overflowY == "hidden"){
@@ -442,6 +443,7 @@ function toggleProductos(){
             navMenu.style.marginRight = "0";
             carrito.style.right = "10px";
             carrito__lista.style.right = "9vw";
+            checkout.style.left = "50%";
         } 
     } else{
         document.documentElement.style.overflowY = "hidden";
@@ -451,6 +453,7 @@ function toggleProductos(){
         navMenu.style.marginRight = `${scrollbar__width}px`;
         carrito.style.right = `${scrollbar__width + 10}px`;
         carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
+        checkout.style.left = `calc(50% - ${scrollbar__width/2}px)`;
     }
 
     /* reset filter button */
@@ -606,6 +609,7 @@ function toggleOfertas(){
     let navMenu = document.querySelector(".navMenu");
     let carrito = document.querySelector(".carrito");
     let carrito__lista = document.querySelector(".carrito__lista");
+    let checkout = document.querySelector(".checkoutConfirmation");
     let scrollbar__width = getScrollbarWidth();
     
     if(document.documentElement.style.overflowY == "hidden"){
@@ -619,6 +623,7 @@ function toggleOfertas(){
             navMenu.style.marginRight = "0";
             carrito.style.right = "10px";
             carrito__lista.style.right = "9vw";
+            checkout.style.left = "50%";
         } 
     } else{
         document.documentElement.style.overflowY = "hidden";
@@ -628,6 +633,7 @@ function toggleOfertas(){
         navMenu.style.marginRight = `${scrollbar__width}px`;
         carrito.style.right = `${scrollbar__width + 10}px`;
         carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
+        checkout.style.left = `calc(50% - ${scrollbar__width/2}px)`;
     }
 
     /* reset filter button */
