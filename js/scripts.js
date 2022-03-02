@@ -899,6 +899,11 @@ function productFilter(){
         filterInput.value = "todas"; 
         searchInput.value = "";
 
+        let notFoundContainer = document.querySelector(".productos__notFound");
+        if (notFoundContainer){
+            notFoundContainer.remove();
+        }
+
         cards__info__remove();
         filterLoop();
     })
@@ -946,6 +951,11 @@ function productSearch(){
         filterInput.value = "todas"; 
         searchInput.value = "";
 
+        let notFoundContainer = document.querySelector(".productos__notFound");
+        if (notFoundContainer){
+            notFoundContainer.remove();
+        }
+
         cards__info__remove();
         filterLoop();
     })
@@ -954,6 +964,11 @@ function productSearch(){
         cards__info__remove();
         let value = e.target.value;
         value = value.trim();
+        
+        let notFoundContainer = document.querySelector(".productos__notFound");
+        if (notFoundContainer){
+            notFoundContainer.remove();
+        }
 
         /* divido el input del search en palabras para hacer una busqueda mas amplia de los valores que se ingresen */
         let valueWords = value.split(" ");
@@ -983,6 +998,21 @@ function productSearch(){
         productosSearch.forEach((bebidaSearch)=>{
             bebidaSearch.removeAttribute("data-filter");
         });
+
+        let notFound = document.createElement("div");
+        let found = 0;
+        notFound.classList.add("productos__notFound");
+        notFound.textContent = "No se encontraron resultados.";
+
+        productosSearch.forEach(producto=>{
+            if (!producto.classList.contains("hideDisplay")){
+                found = 1;
+            }
+        });
+
+        if (found == 0){
+            productosTotal.append(notFound);
+        }
     })
 
     searchInput.addEventListener("keydown", (e)=>{

@@ -1044,6 +1044,10 @@ body {
   color: var(--color-tercero);
 }
 
+.productos__notFound {
+  position: absolute;
+}
+
 .productsInfoFull {
   --products-info: 100%;
   pointer-events: none;

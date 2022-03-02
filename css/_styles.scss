@@ -860,6 +860,10 @@ body{
         }
         
     }   
+
+    &__notFound{
+        position: absolute; 
+    }
 }
 
 .productsInfoFull{
