@@ -382,6 +382,11 @@ function toggleProductos(){
     productos.style.overflowY = "scroll";
     productos.classList.toggle("toggleZ");
 
+    let notFoundContainer = document.querySelector(".productos__notFound");
+    if (notFoundContainer){
+        notFoundContainer.remove();
+    }
+
     if (productos.classList.contains("carrito__lista__translated")){
         productos.scrollTo(0,0);
     }
@@ -561,6 +566,11 @@ function toggleOfertas(){
     ofertas.classList.toggle("carrito__lista__translated");
     ofertas.style.overflowY = "scroll";
     ofertas.classList.toggle("toggleZ");
+
+    let notFoundContainer = document.querySelector(".productos__notFound");
+    if (notFoundContainer){
+        notFoundContainer.remove();
+    }
 
     if (ofertas.classList.contains("carrito__lista__translated")){
         ofertas.scrollTo(0,0);
