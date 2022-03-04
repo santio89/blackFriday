@@ -393,12 +393,47 @@ function toggleProductos(){
 
     document.getElementById("productosPage__filter").value = "todas"; 
 
+    /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
+    let nav__ul = document.querySelector(".nav__ul");
+    let navMenu__button = document.querySelector(".navMenu__button");
+    let navMenu = document.querySelector(".navMenu");
+    let carrito = document.querySelector(".carrito");
+    let carrito__lista = document.querySelector(".carrito__lista");
+    let checkout = document.querySelector(".checkoutConfirmation");
+    let scrollbar__width = getScrollbarWidth();
+
+    if(document.documentElement.style.overflowY == "hidden"){
+        let ofertasPage = document.querySelector(".ofertasPage");
+        if (!ofertasPage.classList.contains("carrito__lista__translated")){
+            document.documentElement.style.overflowY = "scroll";
+            productos.style.overflowY = "hidden";
+            document.documentElement.style.marginRight = "0";
+            nav__ul.style.marginRight = "0";
+            navMenu__button.style.marginRight = "0";
+            navMenu.style.marginRight = "0";
+            carrito.style.right = "10px";
+            carrito__lista.style.right = "9vw";
+            checkout.style.left = "50%";
+            console.log("test")
+        } 
+    } else{
+        document.documentElement.style.overflowY = "hidden";
+        document.documentElement.style.marginRight = `${scrollbar__width}px`;
+        nav__ul.style.marginRight = `${scrollbar__width}px`;
+        navMenu__button.style.marginRight = `${scrollbar__width}px`;
+        navMenu.style.marginRight = `${scrollbar__width}px`;
+        carrito.style.right = `${scrollbar__width + 10}px`;
+        carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
+        checkout.style.left = `calc(50% - ${scrollbar__width/2}px)`;
+    }
+    /* fin esconder overflow */
+
     let nav__productos = document.querySelector("#nav__productos");
     nav__productos.classList.toggle("active");
 
     let nav__ofertas = document.querySelector("#nav__ofertas");
     if (nav__ofertas.classList.contains("active")){
-        nav__ofertas.classList.toggle("active");
+        nav__ofertas.classList.toggle("active", false);
     }
 
     if (productos.classList.contains("visible")){
@@ -416,7 +451,7 @@ function toggleProductos(){
 
     let ofertas = document.querySelector(".ofertasPage");
     if (ofertas.classList.contains("carrito__lista__translated")){
-        ofertas.classList.toggle("carrito__lista__translated");
+        ofertas.classList.toggle("carrito__lista__translated", false);
         ofertas.classList.toggle("toggleZ");
         setTimeout(()=>{
             if (!ofertas.classList.contains("carrito__lista__translated")){
@@ -425,41 +460,7 @@ function toggleProductos(){
             }
         }, 400);
     }
-
-
-    /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
     
-    let nav__ul = document.querySelector(".nav__ul");
-    let navMenu__button = document.querySelector(".navMenu__button");
-    let navMenu = document.querySelector(".navMenu");
-    let carrito = document.querySelector(".carrito");
-    let carrito__lista = document.querySelector(".carrito__lista");
-    let checkout = document.querySelector(".checkoutConfirmation");
-    let scrollbar__width = getScrollbarWidth();
-
-    if(document.documentElement.style.overflowY == "hidden"){
-        let ofertasPage = document.querySelector(".ofertasPage");
-        if (!ofertasPage.classList.contains("visible")){
-            document.documentElement.style.overflowY = "scroll";
-            productos.style.overflowY = "hidden";
-            document.documentElement.style.marginRight = "0";
-            nav__ul.style.marginRight = "0";
-            navMenu__button.style.marginRight = "0";
-            navMenu.style.marginRight = "0";
-            carrito.style.right = "10px";
-            carrito__lista.style.right = "9vw";
-            checkout.style.left = "50%";
-        } 
-    } else{
-        document.documentElement.style.overflowY = "hidden";
-        document.documentElement.style.marginRight = `${scrollbar__width}px`;
-        nav__ul.style.marginRight = `${scrollbar__width}px`;
-        navMenu__button.style.marginRight = `${scrollbar__width}px`;
-        navMenu.style.marginRight = `${scrollbar__width}px`;
-        carrito.style.right = `${scrollbar__width + 10}px`;
-        carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
-        checkout.style.left = `calc(50% - ${scrollbar__width/2}px)`;
-    }
 
     /* reset filter button */
     let filterButton = document.querySelector(".productosPage__filterWrapper__filter ");
@@ -577,43 +578,8 @@ function toggleOfertas(){
     }
 
     document.getElementById("productosPage__filter").value = "todas"; 
-    
-    let nav__ofertas = document.querySelector("#nav__ofertas");
-    nav__ofertas.classList.toggle("active");
-
-    let nav__productos = document.querySelector("#nav__productos");
-    if (nav__productos.classList.contains("active")){
-        nav__productos.classList.toggle("active");
-    } 
-
-    if (ofertas.classList.contains("visible")){
-        location.hash = "/";
-        setTimeout(()=>{
-            if (!ofertas.classList.contains("carrito__lista__translated")){
-                ofertas.classList.remove("visible"); 
-                ofertas.scrollTo(0,0);
-            }           
-        }, 400);
-    } else{
-        ofertas.classList.add("visible");
-        location.hash = "combos";
-    }
-
-    let productos = document.querySelector(".productosPage");
-    if (productos.classList.contains("carrito__lista__translated")){
-        productos.classList.toggle("carrito__lista__translated");
-        productos.classList.toggle("toggleZ");
-        setTimeout(()=>{
-            if (!productos.classList.contains("carrito__lista__translated")){
-                productos.classList.remove("visible"); 
-                productos.scrollTo(0,0);
-            }
-        }, 400);
-    }
-    
 
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
-    
     let nav__ul = document.querySelector(".nav__ul");
     let navMenu__button = document.querySelector(".navMenu__button");
     let navMenu = document.querySelector(".navMenu");
@@ -624,7 +590,7 @@ function toggleOfertas(){
     
     if(document.documentElement.style.overflowY == "hidden"){
         let productosPage = document.querySelector(".productosPage");
-        if (!productosPage.classList.contains("visible")){
+        if (!productosPage.classList.contains("carrito__lista__translated")){
             document.documentElement.style.overflowY = "scroll";
             ofertas.style.overflowY = "hidden";
             document.documentElement.style.marginRight = "0";
@@ -645,6 +611,41 @@ function toggleOfertas(){
         carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
         checkout.style.left = `calc(50% - ${scrollbar__width/2}px)`;
     }
+    /* fin esconder overflow */
+    
+    let nav__ofertas = document.querySelector("#nav__ofertas");
+    nav__ofertas.classList.toggle("active");
+
+    let nav__productos = document.querySelector("#nav__productos");
+    if (nav__productos.classList.contains("active")){
+        nav__productos.classList.toggle("active", false);
+    } 
+
+    if (ofertas.classList.contains("visible")){
+        location.hash = "/";
+        setTimeout(()=>{
+            if (!ofertas.classList.contains("carrito__lista__translated")){
+                ofertas.classList.remove("visible"); 
+                ofertas.scrollTo(0,0);
+            }           
+        }, 400);
+    } else{
+        ofertas.classList.add("visible");
+        location.hash = "combos";
+    }
+
+    let productos = document.querySelector(".productosPage");
+    if (productos.classList.contains("carrito__lista__translated")){
+        productos.classList.toggle("carrito__lista__translated", false);
+        productos.classList.toggle("toggleZ");
+        setTimeout(()=>{
+            if (!productos.classList.contains("carrito__lista__translated")){
+                productos.classList.remove("visible"); 
+                productos.scrollTo(0,0);
+            }
+        }, 400);
+    }
+    
 
     /* reset filter button */
     let filterButton = document.querySelector(".productosPage__filterWrapper__filter ");
