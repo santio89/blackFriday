@@ -252,6 +252,7 @@ function toggleLista(){
     let cerrar = document.querySelectorAll(".carrito__lista__cerrar");
     let productosPage__filter = document.querySelector(".productosPage__filter");
     let header__title = document.querySelectorAll(".header__title");
+    let checkout = $(".checkoutConfirmation");
     carrito.classList.toggle("carritoActive");
     carrito__lista.classList.toggle("carrito__lista__translated");
     ofertasMain.classList.toggle("noPointer");
@@ -261,6 +262,8 @@ function toggleLista(){
     productosPage__filter.classList.toggle("noPointer");
     cerrar.forEach(cerrarButton =>{cerrarButton.style.pointerEvents = "auto";});
     header__title.forEach(headerTitle =>{headerTitle.classList.toggle("noPointer")});
+
+    $(".checkoutConfirmation").finish().slideUp();
 
     function toggleLista__escEvent(e){
         if (e.key == "Escape" && carrito__lista.classList.contains("carrito__lista__translated")){
