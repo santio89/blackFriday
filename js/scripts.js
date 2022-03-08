@@ -244,6 +244,7 @@ carrito__total.innerHTML = `$${shopCart1.subTotal}`;
 function toggleLista(){
     let carrito = document.querySelector(".carrito");
     let carrito__lista = document.querySelector(".carrito__lista");
+    let carrito__lista__content = document.querySelector(".carrito__lista__content");
     let ofertasMain = document.querySelector(".ofertasFeatured");
     let productosMain = document.querySelector(".productos");
     let ofertasPage = document.querySelector(".ofertas--page");
@@ -272,6 +273,7 @@ function toggleLista(){
     /* cambio la visibilidad al togglear la lista para facilitar navegacion por teclado cuando la lista esta cerrada */
     /* este timeout se repite tambien para las secciones de ofertas/combos y productos. sirve para esconder la visibilidad del container luego del translate. hay una doble verificacion if (una inicial y otra luego del timeout) para que no se buggee al spammear el boton */
     if (carrito__lista.classList.contains("visible")){
+        carrito__lista__content.scrollTop = 0;
         document.removeEventListener("keydown", toggleLista__escEvent);
         setTimeout(()=>{
             if (!carrito__lista.classList.contains("carrito__lista__translated")){
