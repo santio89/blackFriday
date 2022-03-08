@@ -23,6 +23,10 @@
         &__li__a{
             line-height: 2.2;
         }
+
+        &__li__whatsapp{
+            line-height: 48px;
+        }
     }
     .productos__producto::after{
         font-size: unquote("clamp(.72em, .72em + .44vw, .78em)");
