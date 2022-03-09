@@ -427,7 +427,7 @@ function toggleProductos(){
         nav__ul.style.marginRight = `${scrollbar__width}px`;
         navMenu__button.style.marginRight = `${scrollbar__width}px`;
         navMenu.style.marginRight = `${scrollbar__width}px`;
-        carrito.style.right = `${scrollbar__width + 10}px`;
+        carrito.style.right = `18px`;
         carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
         checkout.style.left = `calc(50% - ${scrollbar__width/2}px)`;
     }
@@ -612,7 +612,7 @@ function toggleOfertas(){
         nav__ul.style.marginRight = `${scrollbar__width}px`;
         navMenu__button.style.marginRight = `${scrollbar__width}px`;
         navMenu.style.marginRight = `${scrollbar__width}px`;
-        carrito.style.right = `${scrollbar__width + 10}px`;
+        carrito.style.right = `18px`;
         carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
         checkout.style.left = `calc(50% - ${scrollbar__width/2}px)`;
     }
