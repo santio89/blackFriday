@@ -84,6 +84,12 @@
             }
         }
     }  
+
+    .footer{
+        &__santi{
+            text-align: center;
+        }
+    }
 }
 
 @media (min-width: 607px){

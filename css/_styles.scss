@@ -1557,4 +1557,27 @@ body{
             }
         }
     }
+
+    &__santi{
+        margin-top: 2rem;
+        text-align: left;
+        font-size: .92em;
+        line-height: 1;
+
+        a{  
+            font-weight: 600;
+            color: var(--color-segundo-dark);
+            text-shadow: 2px 2px var(--color-primero);
+            padding: .1em;
+
+            &:hover, &:focus{
+                color: var(--color-segundo);
+            }
+
+            &:focus-visible{
+                outline: 2px dashed var(--color-segundo);
+            }
+        }
+        
+    }
 }
