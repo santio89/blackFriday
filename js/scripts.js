@@ -419,7 +419,6 @@ function toggleProductos(){
             carrito.style.right = "10px";
             carrito__lista.style.right = "9vw";
             checkout.style.left = "50%";
-            console.log("test")
         } 
     } else{
         document.documentElement.style.overflowY = "hidden";
