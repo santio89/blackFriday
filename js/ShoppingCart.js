@@ -59,7 +59,7 @@ class ShoppingCart{
                     
                     bebida.stock--;
 
-                    localStorage.setItem("shopList", JSON.stringify(this.shopList));
+                    localStorage.setItem("bfShopList", JSON.stringify(this.shopList));
                     break;
                 }
             }
@@ -77,7 +77,7 @@ class ShoppingCart{
                     shopList__total.textContent = `$${this.subTotal}`;
                     }
                     
-                    localStorage.setItem("shopList", JSON.stringify(this.shopList));
+                    localStorage.setItem("bfShopList", JSON.stringify(this.shopList));
                     break;
             }
         }
@@ -123,7 +123,7 @@ class ShoppingCart{
                     }
                 }  
 
-                localStorage.setItem("shopList", JSON.stringify(this.shopList));               
+                localStorage.setItem("bfShopList", JSON.stringify(this.shopList));               
                 break;
             }
         }  

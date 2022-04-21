@@ -155,8 +155,8 @@ function ajaxInit(){
 
 
 /* cargar shopList, si existe, del storage */
-if (localStorage.getItem("shopList")){
-    shopCart1.shopList = JSON.parse(localStorage.getItem("shopList"));
+if (localStorage.getItem("bfShopList")){
+    shopCart1.shopList = JSON.parse(localStorage.getItem("bfShopList"));
     for (const element of shopCart1.shopList){
         for (const bebida of stock1.arrayBebidasTotal){
             if (element == bebida.id){
