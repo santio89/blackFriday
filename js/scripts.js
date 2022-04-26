@@ -167,6 +167,7 @@ if (localStorage.getItem("bfShopList")){
     shopCart1.subTotalCalc();
 } 
 
+
 /* ordenar los productos/combos según relevancia y definir los productos/combos destacados según los más relevantes (hasta 12 productos/4 combos según el diseño actual) */
 function addFeaturedItems(){
     stock1.arrayBebidasTotal.sort((a,b)=>{
@@ -351,7 +352,7 @@ carrito__cerrar.onclick = toggleLista;
 
 /* carrito - vaciar */
 function vaciarCompra(){
-    localStorage.removeItem("shopList");
+    localStorage.removeItem("bfShopList");
     window.location.reload();
 }
 
