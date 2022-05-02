@@ -38,7 +38,7 @@ html {
   scroll-behavior: smooth;
   /* scrollbar standard */
   scrollbar-width: thin;
-  scrollbar-color: var(--color-segundo) var(--color-background-primero);
+  scrollbar-color: var(--color-tercero) var(--color-background-primero);
   /* scrollbar webkit */
   /* width */
   /* track */
@@ -142,8 +142,6 @@ body {
 }
 
 .altMainColor {
-  --color-segundo: rgb(54, 95, 232);
-  --color-segundo-dark: rgb(35, 75, 206);
   --color-segundo: rgb(42, 204, 209);
   --color-segundo-dark: rgb(19, 157, 162);
   --color-segundo-rgb: 42, 204, 209;
