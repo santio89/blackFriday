@@ -1373,7 +1373,7 @@ body{
             color: var(--color-primero);
             box-shadow: 2.8px 2.8px 0 0 var(--color-primero), 4.8px 4.8px 0 0 var(--color-segundo);
             margin-bottom: 1rem;
-            
+
             &:hover, &:focus{ 
                 text-shadow: 2px 2px 0 var(--color-tercero), 3px 3px 0 var(--color-segundo);
                 transform: translate(2px, 2px);
@@ -1447,25 +1447,19 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 180px;
-    padding: .4em;
-    background: var(--color-tercero);
-    color: var(--color-primero);
-    font-size: unquote("clamp(1rem, 1rem + 1vw, 2rem)");
+    padding: 2em;
+    background: linear-gradient(45deg, var(--color-segundo-dark) 50%, var(--color-tercero) 50%);
+    font-size: unquote("clamp(1.4rem, 1.4rem + 1vw, 2.8rem)");
+    font-weight: 800;
     outline: 4px dashed var(--color-segundo);
     border-radius: .2em;
     z-index: 3;
     display: none;
+    text-shadow: 1px 1px 0 var(--color-primero);
 
     h3{
         font-size: 1.12em;
         color: var(--color-segundo);
-    }
-
-    p{
-        font-size: 1em;
-        span{
-            color: var(--color-segundo-dark);
-        }
     }
 }
 

@@ -362,13 +362,18 @@ carrito__vaciar.onclick = vaciarCompra;
 
 /* carrito - checkout */
 function checkout(){
-    $(".checkoutConfirmation").html(`
-        <h3>TOTAL: $${shopCart1.subTotal}</h3>
-        <p><span>➞ </span>Envío</p>
-        <p><span>➞ </span>Medios de pago</p>
-        <p><span>➞ </span>Confirmación</p>
-    `);
-    $(".checkoutConfirmation").finish().slideDown().delay(2800).slideUp();
+    if (shopCart1.shopList.length === 0){
+        return
+    } else{
+        $(".checkoutConfirmation").html(`
+            <h3>GRACIAS POR SU COMPRA!</h3>
+        `);
+        $(".checkoutConfirmation").finish().slideDown().delay(2800).slideUp();
+    
+        setTimeout(() => {
+            vaciarCompra();
+        }, 2000);
+    }
 }
 
 let carrito__checkout = document.querySelector(".carrito__lista__checkout");
