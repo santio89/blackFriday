@@ -1,6 +1,6 @@
 const router = () => {
     const path = location.hash.slice(1).toLocaleLowerCase();
-    
+
     switch (path) {
         case '':
             break;
@@ -10,13 +10,13 @@ const router = () => {
             location.hash = "/";
             break;
         case 'combos':
-            if($('.ofertasPage').hasClass("visible")){
+            if ($('.ofertasPage').hasClass("visible")) {
                 break;
             }
             toggleOfertas();
             break;
         case 'bebidas':
-            if($('.productosPage').hasClass("visible")){
+            if ($('.productosPage').hasClass("visible")) {
                 break;
             }
             toggleProductos();
@@ -37,8 +37,8 @@ $(window).on('hashchange', function () {
 
 /* validation */
 /* llamada ajax para carga de productos se realiza si la validación se comprueba */
-if (localStorage.getItem("validation")){
-    if (localStorage.getItem("validation") == 1){
+if (localStorage.getItem("validation")) {
+    if (localStorage.getItem("validation") == 1) {
         let validation = document.querySelector(".validation");
         validation.classList.add("validation__translated");
         validation.style.display = "none";
@@ -50,7 +50,7 @@ if (localStorage.getItem("validation")){
     }
 }
 
-function validationYes(){
+function validationYes() {
     localStorage.setItem("validation", 1);
     let validation = document.querySelector(".validation");
 
@@ -64,17 +64,17 @@ function validationYes(){
     validation__header__info.style.marginLeft = `${scrollbar__width}px`;
     validation__age.style.marginLeft = `${scrollbar__width}px`;
     validation.style.overflow = "hidden"
-    
-    setTimeout(()=>validation.style.display = "none", 800);
+
+    setTimeout(() => validation.style.display = "none", 800);
     setTimeout(rubberBandOnce, 900);
 
     ajaxInit();
 }
 
-function validationNo(){
+function validationNo() {
     localStorage.setItem("validation", 0);
-    $(".validation__denied").finish().css("visibility", "visible").delay(2400).fadeOut("slow", function(){
-        $(this).css({"display": "block", "visibility": "hidden"});
+    $(".validation__denied").finish().css("visibility", "visible").delay(2400).fadeOut("slow", function () {
+        $(this).css({ "display": "block", "visibility": "hidden" });
     });
 }
 
@@ -90,18 +90,18 @@ const stock1 = new Stock(new Date(), 001);
 let productsObject;
 let combosObject;
 
-function ajaxInit(){
+function ajaxInit() {
     $.ajax({
         type: "GET",
         url: "./js/productos.json",
         success: function (response) {
             productsObject = response;
-    
-            productsObject.forEach(producto=>{
+
+            productsObject.forEach(producto => {
                 producto.info = producto.info.replaceAll("!br", "\n")
-                if (producto.stock == "isInfinity"){
+                if (producto.stock == "isInfinity") {
                     window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, Infinity, producto.imgUrl, producto.info, producto.relevance, producto.keywords);
-                } else{
+                } else {
                     window[producto.variable] = new Bebida(producto.categoria, producto.tipo, producto.marca, producto.contNeto, producto.precio, producto.id, producto.stock, producto.imgUrl, producto.info, producto.relevance, producto.keywords);
                 }
                 stock1.addStockItem(window[producto.variable]);
@@ -115,38 +115,38 @@ function ajaxInit(){
             productSearch();
             productSort();
             initialSort()
-    
+
             /* pongo la llamada ajax a combos dentro de la llamada ajax a productos, ya que los combos dependen del stock de productos. */
             $.ajax({
                 type: "GET",
                 url: "./js/combos.json",
                 success: function (response) {
                     combosObject = response;
-            
-                    combosObject.forEach(combo=>{
-                        for(i=0; i<combo.items.length;i++){
+
+                    combosObject.forEach(combo => {
+                        for (i = 0; i < combo.items.length; i++) {
                             let comboItem = combo.items[i];
                             combo.items[i] = window[comboItem]
                         }
-                            
+
                         window[combo.variable] = new Combo(combo.nombre, combo.items, combo.descuento, combo.relevance, combo.id);
-                        
+
                         stock1.addComboTotal(window[combo.variable]);
                     })
-                    
+
                     stock1.arrayCombosTotal.forEach(combo => combo.calcPrecioTotal());
                     addFeaturedCombos();
-            
+
                     cards__ofertasFeatured();
                     cards__ofertas();
                 },
-                
+
                 error: function () {
                     console.log("Error retrieving productos (combos)");
                 }
             });
         },
-    
+
         error: function () {
             console.log("Error retrieving products (products)");
         }
@@ -155,42 +155,42 @@ function ajaxInit(){
 
 
 /* cargar shopList, si existe, del storage */
-if (localStorage.getItem("bfShopList")){
+if (localStorage.getItem("bfShopList")) {
     shopCart1.shopList = JSON.parse(localStorage.getItem("bfShopList"));
-    for (const element of shopCart1.shopList){
-        for (const bebida of stock1.arrayBebidasTotal){
-            if (element == bebida.id){
+    for (const element of shopCart1.shopList) {
+        for (const bebida of stock1.arrayBebidasTotal) {
+            if (element == bebida.id) {
                 bebida.stock--;
             }
         }
     }
     shopCart1.subTotalCalc();
-} 
+}
 
 
 /* ordenar los productos/combos según relevancia y definir los productos/combos destacados según los más relevantes (hasta 12 productos/4 combos según el diseño actual) */
-function addFeaturedItems(){
-    stock1.arrayBebidasTotal.sort((a,b)=>{
+function addFeaturedItems() {
+    stock1.arrayBebidasTotal.sort((a, b) => {
         return b.relevance - a.relevance;
     })
-    for (i=0; i<12; i++){
+    for (i = 0; i < 12; i++) {
         stock1.addFeaturedItem(stock1.arrayBebidasTotal[i]);
     }
 }
 
-function addFeaturedCombos(){
-    stock1.arrayCombosTotal.sort((a,b)=>{
+function addFeaturedCombos() {
+    stock1.arrayCombosTotal.sort((a, b) => {
         return b.relevance - a.relevance;
     })
-    
-    for (i=0; i<4; i++){
+
+    for (i = 0; i < 4; i++) {
         stock1.addFeaturedCombo(stock1.arrayCombosTotal[i]);
     }
 }
 
 
 /* agregar las cards de productos featured al html, según los productos que hayan en el inventario (uso forEach en vez de map, ya que no necesito retornar nada) */
-function cards__productosFeatured(){
+function cards__productosFeatured() {
     let productosFeatured = document.getElementById("productosFeatured");
     stock1.arrayBebidasFeatured.forEach(bebidas => {
         let producto = document.createElement("div");
@@ -200,9 +200,9 @@ function cards__productosFeatured(){
         producto.setAttribute(`data-info`, `${bebidas.info}`);
 
         let stockText;
-        if (bebidas.outOfStock()){
+        if (bebidas.outOfStock()) {
             stockText = "Fuera de stock";
-        } else{
+        } else {
             stockText = "En stock";
         }
 
@@ -214,22 +214,22 @@ function cards__productosFeatured(){
         </button>
         <h2>${bebidas.marca}</h2>
         <p>${bebidas.contNeto}ml</p>
-        <p class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__stock">${stockText}</p>    
+        <p class="${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__stock">${stockText}</p>    
         <h3>$${bebidas.precio}</h3>
         <div class="productos__producto__buttonContainer">
-        <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsFeatured">-</button>
-        <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsFeatured">+</button>
+        <button class="${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__menos__productsFeatured">-</button>
+        <button class="${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__mas__productsFeatured">+</button>
         </div>
         `;
-        
+
         producto.style.setProperty("--stock-image", bebidas.img);
         productosFeatured.appendChild(producto);
-        
-        let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsFeatured`);
-        let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsFeatured`);
-        bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
-        bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
-    }); 
+
+        let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__menos__productsFeatured`);
+        let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__mas__productsFeatured`);
+        bebida__menos.addEventListener("click", () => { shopCart1.removeItem(bebidas.id) });
+        bebida__mas.addEventListener("click", () => { shopCart1.addItem(bebidas.id) });
+    });
 }
 
 
@@ -242,7 +242,7 @@ carrito__total.innerHTML = `$${shopCart1.subTotal}`;
 
 /* carrito - lista de compras */
 
-function toggleLista(){
+function toggleLista() {
     let carrito = document.querySelector(".carrito");
     let carrito__lista = document.querySelector(".carrito__lista");
     let carrito__lista__content = document.querySelector(".carrito__lista__content");
@@ -261,13 +261,13 @@ function toggleLista(){
     ofertasPage.classList.toggle("noPointer");
     productosPage.classList.toggle("noPointer");
     productosPage__filter.classList.toggle("noPointer");
-    cerrar.forEach(cerrarButton =>{cerrarButton.style.pointerEvents = "auto";});
-    header__title.forEach(headerTitle =>{headerTitle.classList.toggle("noPointer")});
+    cerrar.forEach(cerrarButton => { cerrarButton.style.pointerEvents = "auto"; });
+    header__title.forEach(headerTitle => { headerTitle.classList.toggle("noPointer") });
 
     $(".checkoutConfirmation").finish().slideUp();
 
-    function toggleLista__escEvent(e){
-        if (e.key == "Escape" && carrito__lista.classList.contains("carrito__lista__translated")){
+    function toggleLista__escEvent(e) {
+        if (e.key == "Escape" && carrito__lista.classList.contains("carrito__lista__translated")) {
             toggleLista();
         }
     }
@@ -276,63 +276,63 @@ function toggleLista(){
 
     /* cambio la visibilidad al togglear la lista para facilitar navegacion por teclado cuando la lista esta cerrada */
     /* este timeout se repite tambien para las secciones de ofertas/combos y productos. sirve para esconder la visibilidad del container luego del translate. hay una doble verificacion if (una inicial y otra luego del timeout) para que no se buggee al spammear el boton */
-    if (carrito__lista.classList.contains("visible")){
+    if (carrito__lista.classList.contains("visible")) {
         carrito__lista__content.scrollTop = 0;
         document.removeEventListener("keydown", toggleLista__escEvent);
-        setTimeout(()=>{
-            if (!carrito__lista.classList.contains("carrito__lista__translated")){
+        setTimeout(() => {
+            if (!carrito__lista.classList.contains("carrito__lista__translated")) {
                 carrito__lista.classList.remove("visible");
             }
         }, 400);
-    } else{
+    } else {
         carrito__lista.classList.add("visible");
     }
-    
+
     let carrito__lista__ul = document.querySelector(".carrito__lista__ul");
     carrito__lista__ul.innerHTML = "";
-    let shopListWithoutDuplicates = new Set (shopCart1.shopList);
+    let shopListWithoutDuplicates = new Set(shopCart1.shopList);
     shopListWithoutDuplicates = Array.from(shopListWithoutDuplicates);
-    
-    for (const items of shopListWithoutDuplicates){
-        for (const bebidas of stock1.arrayBebidasTotal){
-            if (items == bebidas.id){
+
+    for (const items of shopListWithoutDuplicates) {
+        for (const bebidas of stock1.arrayBebidasTotal) {
+            if (items == bebidas.id) {
                 let carrito__newLi = document.createElement("li");
                 carrito__newLi.innerHTML = `
                 <span>${bebidas.tipo}<br>${bebidas.marca}</span>
                 <span>${bebidas.contNeto}ml</span>
                 <span>$${bebidas.precio}</span>
-                <span><div class="shopList__cantidad__${bebidas.id}">(x${bebidas.inShopList()})</div><div class="buttonContainer__shopList"><button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__shopList">-</button>
-                <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__shopList">+</button></div></span>
+                <span><div class="shopList__cantidad__${bebidas.id}">(x${bebidas.inShopList()})</div><div class="buttonContainer__shopList"><button class="${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__menos__shopList">-</button>
+                <button class="${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__mas__shopList">+</button></div></span>
                 <span class="shopList__precio__${bebidas.id}">$${bebidas.precio * bebidas.inShopList()}</span>
                 `;
-                
+
                 carrito__lista__ul.appendChild(carrito__newLi);
 
-                let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__shopList`);
-                let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__shopList`);
-                bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
-                bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
+                let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__menos__shopList`);
+                let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__mas__shopList`);
+                bebida__menos.addEventListener("click", () => { shopCart1.removeItem(bebidas.id) });
+                bebida__mas.addEventListener("click", () => { shopCart1.addItem(bebidas.id) });
             }
         }
 
-        for (const combos of stock1.arrayCombosTotal){
-            if (items == combos.id){
+        for (const combos of stock1.arrayCombosTotal) {
+            if (items == combos.id) {
                 let carrito__newLi = document.createElement("li");
                 carrito__newLi.innerHTML = `
                 <span>COMBO<br>${combos.nombre}</span>
                 <span>-</span>
                 <span>$${combos.precioTotal}</span>
-                <span><div class="shopList__cantidad__${combos.id}">(x${combos.inShopList()})</div><div class="buttonContainer__shopList"><button class="combo${combos.nombre.replace(/\s/g,"")}__menos__shopList">-</button>
-                <button class="combo${combos.nombre.replace(/\s/g,"")}__mas__shopList">+</button></div></span>
+                <span><div class="shopList__cantidad__${combos.id}">(x${combos.inShopList()})</div><div class="buttonContainer__shopList"><button class="combo${combos.nombre.replace(/\s/g, "")}__menos__shopList">-</button>
+                <button class="combo${combos.nombre.replace(/\s/g, "")}__mas__shopList">+</button></div></span>
                 <span class="shopList__precio__${combos.id}">$${combos.precioTotal * combos.inShopList()}</span>
                 `;
 
                 carrito__lista__ul.appendChild(carrito__newLi);
 
-                let combo__menos = document.querySelector(`.combo${combos.nombre.replace(/\s/g,"")}__menos__shopList`);
-                let combo__mas = document.querySelector(`.combo${combos.nombre.replace(/\s/g,"")}__mas__shopList`);
-                combo__menos.addEventListener("click", ()=>{shopCart1.removeItem(combos.id)});
-                combo__mas.addEventListener("click", ()=>{shopCart1.addItem(combos.id)});
+                let combo__menos = document.querySelector(`.combo${combos.nombre.replace(/\s/g, "")}__menos__shopList`);
+                let combo__mas = document.querySelector(`.combo${combos.nombre.replace(/\s/g, "")}__mas__shopList`);
+                combo__menos.addEventListener("click", () => { shopCart1.removeItem(combos.id) });
+                combo__mas.addEventListener("click", () => { shopCart1.addItem(combos.id) });
             }
         }
     }
@@ -344,14 +344,14 @@ function toggleLista(){
 
 /* carrito evento - toggle list */
 let carrito = document.querySelector(".carrito");
-carrito.addEventListener("keydown", (e)=>{if(e.keyCode == 13){toggleLista()}});
+carrito.addEventListener("keydown", (e) => { if (e.keyCode == 13) { toggleLista() } });
 carrito.addEventListener("click", toggleLista);
 let carrito__cerrar = document.querySelector(".carrito__lista__cerrar");
 carrito__cerrar.onclick = toggleLista;
 
 
 /* carrito - vaciar */
-function vaciarCompra(){
+function vaciarCompra() {
     localStorage.removeItem("bfShopList");
     window.location.reload();
 }
@@ -361,15 +361,15 @@ carrito__vaciar.onclick = vaciarCompra;
 
 
 /* carrito - checkout */
-function checkout(){
-    if (shopCart1.shopList.length === 0){
+function checkout() {
+    if (shopCart1.shopList.length === 0) {
         return
-    } else{
+    } else {
         $(".checkoutConfirmation").html(`
             <h3>GRACIAS POR SU COMPRA!</h3>
         `);
         $(".checkoutConfirmation").finish().slideDown().delay(2800).slideUp();
-    
+
         setTimeout(() => {
             vaciarCompra();
         }, 2000);
@@ -387,22 +387,22 @@ function getScrollbarWidth() {
     return window.innerWidth - document.documentElement.clientWidth;
 }
 
-function toggleProductos(){
+function toggleProductos() {
     let productos = document.querySelector(".productosPage");
     productos.classList.toggle("carrito__lista__translated");
     productos.style.overflowY = "scroll";
     productos.classList.toggle("toggleZ");
 
     let notFoundContainer = document.querySelector(".productos__notFound");
-    if (notFoundContainer){
+    if (notFoundContainer) {
         notFoundContainer.remove();
     }
 
-    if (productos.classList.contains("carrito__lista__translated")){
-        productos.scrollTo(0,0);
+    if (productos.classList.contains("carrito__lista__translated")) {
+        productos.scrollTo(0, 0);
     }
 
-    document.getElementById("productosPage__filter").value = "todas"; 
+    document.getElementById("productosPage__filter").value = "todas";
 
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
     let nav__ul = document.querySelector(".nav__ul");
@@ -413,9 +413,9 @@ function toggleProductos(){
     let checkout = document.querySelector(".checkoutConfirmation");
     let scrollbar__width = getScrollbarWidth();
 
-    if(document.documentElement.style.overflowY == "hidden"){
+    if (document.documentElement.style.overflowY == "hidden") {
         let ofertasPage = document.querySelector(".ofertasPage");
-        if (!ofertasPage.classList.contains("carrito__lista__translated")){
+        if (!ofertasPage.classList.contains("carrito__lista__translated")) {
             document.documentElement.style.overflowY = "scroll";
             productos.style.overflowY = "hidden";
             document.documentElement.style.marginRight = "0";
@@ -425,8 +425,8 @@ function toggleProductos(){
             carrito.style.right = "10px";
             carrito__lista.style.right = "9vw";
             checkout.style.left = "50%";
-        } 
-    } else{
+        }
+    } else {
         document.documentElement.style.overflowY = "hidden";
         document.documentElement.style.marginRight = `${scrollbar__width}px`;
         nav__ul.style.marginRight = `${scrollbar__width}px`;
@@ -434,7 +434,7 @@ function toggleProductos(){
         navMenu.style.marginRight = `${scrollbar__width}px`;
         carrito.style.right = `${scrollbar__width + 10}px`;
         carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
-        checkout.style.left = `calc(50% - ${scrollbar__width/2}px)`;
+        checkout.style.left = `calc(50% - ${scrollbar__width / 2}px)`;
     }
     /* fin esconder overflow */
 
@@ -442,35 +442,35 @@ function toggleProductos(){
     nav__productos.classList.toggle("active");
 
     let nav__ofertas = document.querySelector("#nav__ofertas");
-    if (nav__ofertas.classList.contains("active")){
+    if (nav__ofertas.classList.contains("active")) {
         nav__ofertas.classList.toggle("active", false);
     }
 
-    if (productos.classList.contains("visible")){
+    if (productos.classList.contains("visible")) {
         location.hash = "/";
-        setTimeout(()=>{
-            if (!productos.classList.contains("carrito__lista__translated")){
-                productos.classList.remove("visible"); 
-                productos.scrollTo(0,0);
-            }           
+        setTimeout(() => {
+            if (!productos.classList.contains("carrito__lista__translated")) {
+                productos.classList.remove("visible");
+                productos.scrollTo(0, 0);
+            }
         }, 400);
-    } else{
+    } else {
         productos.classList.add("visible");
         location.hash = "bebidas";
     }
 
     let ofertas = document.querySelector(".ofertasPage");
-    if (ofertas.classList.contains("carrito__lista__translated")){
+    if (ofertas.classList.contains("carrito__lista__translated")) {
         ofertas.classList.toggle("carrito__lista__translated", false);
         ofertas.classList.toggle("toggleZ");
-        setTimeout(()=>{
-            if (!ofertas.classList.contains("carrito__lista__translated")){
-                ofertas.classList.remove("visible"); 
-                ofertas.scrollTo(0,0);
+        setTimeout(() => {
+            if (!ofertas.classList.contains("carrito__lista__translated")) {
+                ofertas.classList.remove("visible");
+                ofertas.scrollTo(0, 0);
             }
         }, 400);
     }
-    
+
 
     /* reset filter button */
     let filterButton = document.querySelector(".productosPage__filterWrapper__filter ");
@@ -483,29 +483,29 @@ function toggleProductos(){
     searchButton.classList.remove("filterActive");
     filterBar.style.display = "flex";
     searchBar.style.display = "none";
-    filterInput.value = "todas"; 
+    filterInput.value = "todas";
     searchInput.value = "";
 
 
-  /* cerrar info de productos si cambio de seccion */
+    /* cerrar info de productos si cambio de seccion */
     let productosCards = document.querySelectorAll(".productos__producto");
     let infoButtonsOpen = document.querySelectorAll(".productos__producto__info__button--open");
     let infoButtonsClose = document.querySelectorAll(".productos__producto__info__button--close");
     let infoCategory = document.querySelectorAll(".productos__producto p:nth-of-type(1)");
 
-    productosCards.forEach((producto)=>{
-        if(producto.classList.contains("productsInfoFull")){
+    productosCards.forEach((producto) => {
+        if (producto.classList.contains("productsInfoFull")) {
             producto.classList.toggle("productsInfoFull", false);
-        } 
+        }
     });
-    infoButtonsClose.forEach((button)=>{
+    infoButtonsClose.forEach((button) => {
         button.classList.add("hideDisplay");
     });
-    infoButtonsOpen.forEach((button)=>{
+    infoButtonsOpen.forEach((button) => {
         button.classList.remove("hideDisplay");
     });
-    infoCategory.forEach((category)=>{
-    category.classList.remove("productsInfoFullCategory");
+    infoCategory.forEach((category) => {
+        category.classList.remove("productsInfoFullCategory");
     });
 
     cards__info__remove();
@@ -513,7 +513,7 @@ function toggleProductos(){
 }
 
 /* cards de la seccion productos */
-function cards__productos(){
+function cards__productos() {
     let productos = document.getElementById("productosTotal");
     stock1.arrayBebidasTotal.forEach(bebidas => {
         let producto = document.createElement("div");
@@ -524,9 +524,9 @@ function cards__productos(){
         producto.setAttribute(`data-info`, `${bebidas.info}`);
 
         let stockText;
-        if (bebidas.outOfStock()){
+        if (bebidas.outOfStock()) {
             stockText = "Fuera de stock";
-        } else{
+        } else {
             stockText = "En stock";
         }
 
@@ -538,22 +538,22 @@ function cards__productos(){
         </button>
         <h2>${bebidas.marca}</h2>
         <p>${bebidas.contNeto}ml</p>
-        <p class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__stock">${stockText}</p>    
+        <p class="${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__stock">${stockText}</p>    
         <h3>$${bebidas.precio}</h3>
         <div class="productos__producto__buttonContainer">
-        <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsTotal">-</button>
-        <button class="${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsTotal">+</button>
+        <button class="${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__menos__productsTotal">-</button>
+        <button class="${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__mas__productsTotal">+</button>
         </div>
         `;
 
         producto.style.setProperty("--stock-image", bebidas.img);
         productos.appendChild(producto);
 
-        let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__menos__productsTotal`);
-        let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g,"")}${bebidas.contNeto}__mas__productsTotal`);
-        bebida__menos.addEventListener("click", ()=>{shopCart1.removeItem(bebidas.id)});
-        bebida__mas.addEventListener("click", ()=>{shopCart1.addItem(bebidas.id)});
-    }); 
+        let bebida__menos = document.querySelector(`.${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__menos__productsTotal`);
+        let bebida__mas = document.querySelector(`.${bebidas.nombre.replace(/\s/g, "")}${bebidas.contNeto}__mas__productsTotal`);
+        bebida__menos.addEventListener("click", () => { shopCart1.removeItem(bebidas.id) });
+        bebida__mas.addEventListener("click", () => { shopCart1.addItem(bebidas.id) });
+    });
 }
 
 
@@ -572,22 +572,22 @@ cerrar__productos__title.onclick = toggleProductos;
 
 
 /* sección ofertas/combos */
-function toggleOfertas(){
+function toggleOfertas() {
     let ofertas = document.querySelector(".ofertasPage");
     ofertas.classList.toggle("carrito__lista__translated");
     ofertas.style.overflowY = "scroll";
     ofertas.classList.toggle("toggleZ");
 
     let notFoundContainer = document.querySelector(".productos__notFound");
-    if (notFoundContainer){
+    if (notFoundContainer) {
         notFoundContainer.remove();
     }
 
-    if (ofertas.classList.contains("carrito__lista__translated")){
-        ofertas.scrollTo(0,0);
+    if (ofertas.classList.contains("carrito__lista__translated")) {
+        ofertas.scrollTo(0, 0);
     }
 
-    document.getElementById("productosPage__filter").value = "todas"; 
+    document.getElementById("productosPage__filter").value = "todas";
 
     /* al abrir la seccion, esconder el overflow del body y compensar con margen por el ancho de la scrollbar (que desaparece) */
     let nav__ul = document.querySelector(".nav__ul");
@@ -597,10 +597,10 @@ function toggleOfertas(){
     let carrito__lista = document.querySelector(".carrito__lista");
     let checkout = document.querySelector(".checkoutConfirmation");
     let scrollbar__width = getScrollbarWidth();
-    
-    if(document.documentElement.style.overflowY == "hidden"){
+
+    if (document.documentElement.style.overflowY == "hidden") {
         let productosPage = document.querySelector(".productosPage");
-        if (!productosPage.classList.contains("carrito__lista__translated")){
+        if (!productosPage.classList.contains("carrito__lista__translated")) {
             document.documentElement.style.overflowY = "scroll";
             ofertas.style.overflowY = "hidden";
             document.documentElement.style.marginRight = "0";
@@ -610,8 +610,8 @@ function toggleOfertas(){
             carrito.style.right = "10px";
             carrito__lista.style.right = "9vw";
             checkout.style.left = "50%";
-        } 
-    } else{
+        }
+    } else {
         document.documentElement.style.overflowY = "hidden";
         document.documentElement.style.marginRight = `${scrollbar__width}px`;
         nav__ul.style.marginRight = `${scrollbar__width}px`;
@@ -619,43 +619,43 @@ function toggleOfertas(){
         navMenu.style.marginRight = `${scrollbar__width}px`;
         carrito.style.right = `${scrollbar__width + 10}px`;
         carrito__lista.style.right = `calc(${scrollbar__width}px + 9vw)`;
-        checkout.style.left = `calc(50% - ${scrollbar__width/2}px)`;
+        checkout.style.left = `calc(50% - ${scrollbar__width / 2}px)`;
     }
     /* fin esconder overflow */
-    
+
     let nav__ofertas = document.querySelector("#nav__ofertas");
     nav__ofertas.classList.toggle("active");
 
     let nav__productos = document.querySelector("#nav__productos");
-    if (nav__productos.classList.contains("active")){
+    if (nav__productos.classList.contains("active")) {
         nav__productos.classList.toggle("active", false);
-    } 
+    }
 
-    if (ofertas.classList.contains("visible")){
+    if (ofertas.classList.contains("visible")) {
         location.hash = "/";
-        setTimeout(()=>{
-            if (!ofertas.classList.contains("carrito__lista__translated")){
-                ofertas.classList.remove("visible"); 
-                ofertas.scrollTo(0,0);
-            }           
+        setTimeout(() => {
+            if (!ofertas.classList.contains("carrito__lista__translated")) {
+                ofertas.classList.remove("visible");
+                ofertas.scrollTo(0, 0);
+            }
         }, 400);
-    } else{
+    } else {
         ofertas.classList.add("visible");
         location.hash = "combos";
     }
 
     let productos = document.querySelector(".productosPage");
-    if (productos.classList.contains("carrito__lista__translated")){
+    if (productos.classList.contains("carrito__lista__translated")) {
         productos.classList.toggle("carrito__lista__translated", false);
         productos.classList.toggle("toggleZ");
-        setTimeout(()=>{
-            if (!productos.classList.contains("carrito__lista__translated")){
-                productos.classList.remove("visible"); 
-                productos.scrollTo(0,0);
+        setTimeout(() => {
+            if (!productos.classList.contains("carrito__lista__translated")) {
+                productos.classList.remove("visible");
+                productos.scrollTo(0, 0);
             }
         }, 400);
     }
-    
+
 
     /* reset filter button */
     let filterButton = document.querySelector(".productosPage__filterWrapper__filter ");
@@ -668,28 +668,28 @@ function toggleOfertas(){
     searchButton.classList.remove("filterActive");
     filterBar.style.display = "flex";
     searchBar.style.display = "none";
-    filterInput.value = "todas"; 
+    filterInput.value = "todas";
     searchInput.value = "";
 
-    
+
     /* cerrar info de productos si cambio de seccion */
     let productosCards = document.querySelectorAll(".productos__producto");
     let infoButtonsOpen = document.querySelectorAll(".productos__producto__info__button--open");
     let infoButtonsClose = document.querySelectorAll(".productos__producto__info__button--close");
     let infoCategory = document.querySelectorAll(".productos__producto p:nth-of-type(1)");
 
-    productosCards.forEach((producto)=>{
-        if(producto.classList.contains("productsInfoFull")){
+    productosCards.forEach((producto) => {
+        if (producto.classList.contains("productsInfoFull")) {
             producto.classList.toggle("productsInfoFull", false);
-        } 
+        }
     });
-    infoButtonsClose.forEach((button)=>{
+    infoButtonsClose.forEach((button) => {
         button.classList.add("hideDisplay");
     });
-    infoButtonsOpen.forEach((button)=>{
+    infoButtonsOpen.forEach((button) => {
         button.classList.remove("hideDisplay");
     });
-    infoCategory.forEach((category)=>{
+    infoCategory.forEach((category) => {
         category.classList.remove("productsInfoFullCategory");
     });
 
@@ -698,7 +698,7 @@ function toggleOfertas(){
 }
 
 /* cards de la seccion ofertas/combos */
-function cards__ofertas(){
+function cards__ofertas() {
     let ofertas = document.getElementById("ofertas");
     stock1.arrayCombosTotal.forEach(combos => {
         let wrapper__item = document.createElement("div");
@@ -707,7 +707,7 @@ function cards__ofertas(){
         wrapper__item.innerHTML = `
         <h3><span>COMBO ${combos.nombre} &#8674; </span>$${combos.precioTotal}</h3>`;
 
-        for (let j=0; j<combos.productos.length;j++){
+        for (let j = 0; j < combos.productos.length; j++) {
             let combos__item = combos.productos[j];
             wrapper__item.innerHTML += `
             <p>${combos__item.tipo} ${combos__item.marca} ${combos__item.contNeto}ml</p>
@@ -716,27 +716,27 @@ function cards__ofertas(){
 
         wrapper__item.innerHTML += `
         <div class="ofertasFeatured__wrapper__item__buttonContainer">
-        <button class="COMBO${combos.nombre.replace(/\s/g,"")}__menos__combosTotal">-</button>
-        <button class="COMBO${combos.nombre.replace(/\s/g,"")}__mas__combosTotal">+</button>
+        <button class="COMBO${combos.nombre.replace(/\s/g, "")}__menos__combosTotal">-</button>
+        <button class="COMBO${combos.nombre.replace(/\s/g, "")}__mas__combosTotal">+</button>
         </div>
         `
-    
+
         ofertas.appendChild(wrapper__item);
 
-        let combo__menos = document.querySelector(`.COMBO${combos.nombre.replace(/\s/g,"")}__menos__combosTotal`);
-        let combo__mas = document.querySelector(`.COMBO${combos.nombre.replace(/\s/g,"")}__mas__combosTotal`);
-        combo__menos.addEventListener("click", ()=>{shopCart1.removeItem(combos.id)});
-        combo__mas.addEventListener("click", ()=>{shopCart1.addItem(combos.id)});
-    }); 
+        let combo__menos = document.querySelector(`.COMBO${combos.nombre.replace(/\s/g, "")}__menos__combosTotal`);
+        let combo__mas = document.querySelector(`.COMBO${combos.nombre.replace(/\s/g, "")}__mas__combosTotal`);
+        combo__menos.addEventListener("click", () => { shopCart1.removeItem(combos.id) });
+        combo__mas.addEventListener("click", () => { shopCart1.addItem(combos.id) });
+    });
 }
 
 let productosScrollUp = document.querySelector(".productosPage__scrollUp");
 let ofertasScrollUp = document.querySelector(".ofertasPage__scrollUp");
-productosScrollUp.addEventListener("click", ()=>{
+productosScrollUp.addEventListener("click", () => {
     let productosPage = document.querySelector(".productosPage");
     productosPage.scrollTop = 0;
 });
-ofertasScrollUp.addEventListener("click", ()=>{
+ofertasScrollUp.addEventListener("click", () => {
     let ofertasPage = document.querySelector(".ofertasPage");
     ofertasPage.scrollTop = 0;
 })
@@ -756,10 +756,10 @@ cerrar__ofertas__title.onclick = toggleOfertas;
 
 
 /* cards de la seccion ofertasFeatured */
-function cards__ofertasFeatured(){
+function cards__ofertasFeatured() {
     let ofertasFeatured = document.querySelector(".ofertasFeatured__wrapper");
 
-    for (let i=0; i<stock1.arrayCombosFeatured.length; i++){
+    for (let i = 0; i < stock1.arrayCombosFeatured.length; i++) {
         let combo = stock1.arrayCombosFeatured[i];
 
         let wrapper__item = document.createElement("div");
@@ -768,7 +768,7 @@ function cards__ofertasFeatured(){
         wrapper__item.innerHTML = `
         <h3><span>COMBO ${combo.nombre} &#8674; </span>$${combo.precioTotal}</h3>`;
 
-        for (let j=0; j<combo.productos.length;j++){
+        for (let j = 0; j < combo.productos.length; j++) {
             let combo__item = combo.productos[j];
             wrapper__item.innerHTML += `
             <p>${combo__item.tipo} ${combo__item.marca} ${combo__item.contNeto}ml</p>
@@ -777,39 +777,39 @@ function cards__ofertasFeatured(){
 
         wrapper__item.innerHTML += `
         <div class="ofertasFeatured__wrapper__item__buttonContainer">
-        <button class="COMBO${combo.nombre.replace(/\s/g,"")}__menos__combosFeatured">-</button>
-        <button class="COMBO${combo.nombre.replace(/\s/g,"")}__mas__combosFeatured">+</button>
+        <button class="COMBO${combo.nombre.replace(/\s/g, "")}__menos__combosFeatured">-</button>
+        <button class="COMBO${combo.nombre.replace(/\s/g, "")}__mas__combosFeatured">+</button>
         </div>
         `
-        
+
         ofertasFeatured.appendChild(wrapper__item);
 
-        let combo__menos = document.querySelector(`.COMBO${combo.nombre.replace(/\s/g,"")}__menos__combosFeatured`);
-        let combo__mas = document.querySelector(`.COMBO${combo.nombre.replace(/\s/g,"")}__mas__combosFeatured`);
-        combo__menos.addEventListener("click", ()=>{shopCart1.removeItem(combo.id)});
-        combo__mas.addEventListener("click", ()=>{shopCart1.addItem(combo.id)});
+        let combo__menos = document.querySelector(`.COMBO${combo.nombre.replace(/\s/g, "")}__menos__combosFeatured`);
+        let combo__mas = document.querySelector(`.COMBO${combo.nombre.replace(/\s/g, "")}__mas__combosFeatured`);
+        combo__menos.addEventListener("click", () => { shopCart1.removeItem(combo.id) });
+        combo__mas.addEventListener("click", () => { shopCart1.addItem(combo.id) });
     }
 }
 
 /* cards info */
-function cards__info(){
+function cards__info() {
     let infoButton = document.querySelectorAll(".productos__producto__info__button");
-    
-    infoButton.forEach((button)=>{
-        button.addEventListener("click", (e)=>{
+
+    infoButton.forEach((button) => {
+        button.addEventListener("click", (e) => {
             e.currentTarget.parentNode.classList.toggle("productsInfoFull");
             e.currentTarget.parentNode.children[0].classList.toggle("productsInfoFullCategory");
-            Array.from(e.currentTarget.children).forEach(button=>{
+            Array.from(e.currentTarget.children).forEach(button => {
                 button.classList.toggle("hideDisplay");
             })
         })
     })
 }
 
-function cards__info__remove(){
+function cards__info__remove() {
     let infoButton = document.querySelectorAll(".productos__producto__info__button");
-    
-    infoButton.forEach((button)=>{
+
+    infoButton.forEach((button) => {
         button.parentNode.classList.toggle("productsInfoFull", false);
         button.parentNode.children[0].classList.toggle("productsInfoFullCategory", false);
         button.children[0].classList.toggle("hideDisplay", false);
@@ -824,7 +824,7 @@ let darkMode = document.querySelector(".nav__toggleLightDark__dark");
 let body = document.querySelector("body");
 
 let colorMode = localStorage.getItem("colorMode");
-if (colorMode){
+if (colorMode) {
     switch (colorMode) {
         case "light":
             body.classList.add("lightMode");
@@ -832,20 +832,20 @@ if (colorMode){
             lightMode.style.display = "none";
             darkMode.style.display = "inline-block";
             break;
-    
+
         default:
             break;
     }
 }
 
-lightMode.addEventListener("click", ()=>{
+lightMode.addEventListener("click", () => {
     body.classList.add("lightMode");
     lightMode.style.display = "none";
     darkMode.style.display = "inline-block";
     localStorage.setItem("colorMode", "light");
 })
 
-darkMode.addEventListener("click", ()=>{
+darkMode.addEventListener("click", () => {
     body.classList.remove("lightMode");
     darkMode.style.display = "none";
     lightMode.style.display = "inline-block";
@@ -854,9 +854,9 @@ darkMode.addEventListener("click", ()=>{
 
 /* main color toggle */
 let altColorActive = localStorage.getItem("altMainColor");
-if (altColorActive){
-    switch (altColorActive){
-        case "yes": 
+if (altColorActive) {
+    switch (altColorActive) {
+        case "yes":
             body.classList.add("altMainColor");
         default:
             break;
@@ -864,12 +864,12 @@ if (altColorActive){
 }
 
 let mainColorButton = document.querySelector(".nav__toggleMainColor")
-mainColorButton.addEventListener("click", ()=>{
+mainColorButton.addEventListener("click", () => {
     body.classList.toggle("altMainColor");
 
-    if (body.classList.contains("altMainColor")){
+    if (body.classList.contains("altMainColor")) {
         localStorage.setItem("altMainColor", "yes");
-    } else{
+    } else {
         localStorage.setItem("altMainColor", "no");
     }
 })
@@ -879,28 +879,28 @@ let navMenuButton = document.querySelector(".navMenu__button");
 let navMenuButtonIcon = document.querySelector(".navMenu__button__icon")
 let navMenu = document.querySelector(".navMenu");
 
-navMenuButton.addEventListener("click", ()=>{
+navMenuButton.addEventListener("click", () => {
     navMenuButtonIcon.classList.toggle("navMenu__button__icon__open")
     $(".navMenu").slideToggle(280);
 })
 
 
 /* filter productos*/
-function filterLoop(){
+function filterLoop() {
     let filterInput = document.querySelector("#productosPage__filter");
     let value = filterInput.value;
     let productosSearch = productosTotal.children;
-    productsObject.forEach((bebida)=>{
+    productsObject.forEach((bebida) => {
         let isVisible = bebida.tipo.toUpperCase().includes(value.toUpperCase()) || bebida.categoria.toUpperCase().includes(value.toUpperCase()) || bebida.marca.toUpperCase().includes(value.toUpperCase()) || bebida.keywords.toUpperCase().includes(value.toUpperCase());
         productosSearch = Array.from(productosSearch);
-        
-        productosSearch.forEach((bebidaSearch)=>{
-            if (isVisible){
-                if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
+
+        productosSearch.forEach((bebidaSearch) => {
+            if (isVisible) {
+                if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)) {
                     bebidaSearch.classList.toggle("hideDisplay", false);
                 }
-            } else{
-                if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
+            } else {
+                if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)) {
                     bebidaSearch.classList.toggle("hideDisplay", true);
                 }
             }
@@ -908,7 +908,7 @@ function filterLoop(){
     })
 }
 
-function productFilter(){
+function productFilter() {
     let filterButton = document.querySelector(".productosPage__filterWrapper__filter ");
     let filterBar = document.querySelector(".productosPage__filter");
     let filterInput = document.querySelector("#productosPage__filter");
@@ -917,17 +917,17 @@ function productFilter(){
     let searchInput = document.querySelector("#productosPage__search");
     let productosTotal = document.querySelector("#productosTotal");
     let productosSearch = productosTotal.children;
-    
-    filterButton.addEventListener("click", ()=>{
+
+    filterButton.addEventListener("click", () => {
         filterButton.classList.add("filterActive");
         searchButton.classList.remove("filterActive");
         filterBar.style.display = "flex";
         searchBar.style.display = "none";
-        filterInput.value = "todas"; 
+        filterInput.value = "todas";
         searchInput.value = "";
 
         let notFoundContainer = document.querySelector(".productos__notFound");
-        if (notFoundContainer){
+        if (notFoundContainer) {
             notFoundContainer.remove();
         }
 
@@ -936,20 +936,20 @@ function productFilter(){
     })
 
 
-    filterInput.addEventListener("change", (e)=>{
+    filterInput.addEventListener("change", (e) => {
         cards__info__remove();
         let value = e.target.value;
-        productsObject.forEach((bebida)=>{
+        productsObject.forEach((bebida) => {
             let isVisible = bebida.tipo.toUpperCase().includes(value.toUpperCase()) || bebida.categoria.toUpperCase().includes(value.toUpperCase()) || bebida.marca.toUpperCase().includes(value.toUpperCase()) || bebida.keywords.toUpperCase().includes(value.toUpperCase());
             productosSearch = Array.from(productosSearch);
-            
-            productosSearch.forEach((bebidaSearch)=>{
-                if (isVisible){
-                    if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
+
+            productosSearch.forEach((bebidaSearch) => {
+                if (isVisible) {
+                    if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)) {
                         bebidaSearch.classList.toggle("hideDisplay", false);
                     }
-                } else{
-                    if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
+                } else {
+                    if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)) {
                         bebidaSearch.classList.toggle("hideDisplay", true);
                     }
                 }
@@ -959,7 +959,7 @@ function productFilter(){
 }
 
 /* search productos */
-function productSearch(){
+function productSearch() {
     let searchButton = document.querySelector(".productosPage__filterWrapper__search");
     let searchBar = document.querySelector(".productosPage__search");
     let searchInput = document.querySelector("#productosPage__search");
@@ -970,16 +970,16 @@ function productSearch(){
     let productosSearch = productosTotal.children;
     productosSearch = Array.from(productosSearch);
 
-    searchButton.addEventListener("click", ()=>{
+    searchButton.addEventListener("click", () => {
         searchButton.classList.add("filterActive");
         filterButton.classList.remove("filterActive");
         searchBar.style.display = "flex";
         filterBar.style.display = "none";
-        filterInput.value = "todas"; 
+        filterInput.value = "todas";
         searchInput.value = "";
 
         let notFoundContainer = document.querySelector(".productos__notFound");
-        if (notFoundContainer){
+        if (notFoundContainer) {
             notFoundContainer.remove();
         }
 
@@ -987,34 +987,34 @@ function productSearch(){
         filterLoop();
     })
 
-    searchInput.addEventListener("input", (e)=>{
+    searchInput.addEventListener("input", (e) => {
         cards__info__remove();
         let value = e.target.value;
         value = value.trim();
-        
+
         let notFoundContainer = document.querySelector(".productos__notFound");
-        if (notFoundContainer){
+        if (notFoundContainer) {
             notFoundContainer.remove();
         }
 
         /* divido el input del search en palabras para hacer una busqueda mas amplia de los valores que se ingresen */
         let valueWords = value.split(" ");
 
-        valueWords.forEach(value=>{
-            productsObject.forEach((bebida)=>{
+        valueWords.forEach(value => {
+            productsObject.forEach((bebida) => {
                 let isVisible = bebida.tipo.toUpperCase().includes(value.toUpperCase()) || bebida.categoria.toUpperCase().includes(value.toUpperCase()) || bebida.marca.toUpperCase().includes(value.toUpperCase()) || bebida.keywords.toUpperCase().includes(value.toUpperCase());
-    
-                productosSearch.forEach((bebidaSearch)=>{
-                    if (isVisible){
-                        if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
+
+                productosSearch.forEach((bebidaSearch) => {
+                    if (isVisible) {
+                        if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)) {
                             bebidaSearch.classList.toggle("hideDisplay", false);
                             bebidaSearch.setAttribute("data-filter", "1");
                         }
-                    } else{
-                        if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)){
-                            if (bebidaSearch.getAttribute("data-filter") != 1){
+                    } else {
+                        if (bebidaSearch.classList.contains(`productoTotal--${bebida.id}`)) {
+                            if (bebidaSearch.getAttribute("data-filter") != 1) {
                                 bebidaSearch.classList.toggle("hideDisplay", true);
-                            } 
+                            }
                         }
                     }
                 })
@@ -1022,7 +1022,7 @@ function productSearch(){
         })
 
         /* data-filter es un atributo temporal que uso (y luego elimino) para indicar si un producto ya fue encontrado en la busqueda (es util al buscar varias palabras) */
-        productosSearch.forEach((bebidaSearch)=>{
+        productosSearch.forEach((bebidaSearch) => {
             bebidaSearch.removeAttribute("data-filter");
         });
 
@@ -1031,20 +1031,20 @@ function productSearch(){
         notFound.classList.add("productos__notFound");
         notFound.textContent = "No se encontraron resultados.";
 
-        productosSearch.forEach(producto=>{
-            if (!producto.classList.contains("hideDisplay")){
+        productosSearch.forEach(producto => {
+            if (!producto.classList.contains("hideDisplay")) {
                 found = 1;
             }
         });
 
-        if (found == 0){
+        if (found == 0) {
             productosTotal.append(notFound);
         }
     })
 
-    searchInput.addEventListener("keydown", (e)=>{
+    searchInput.addEventListener("keydown", (e) => {
         let searchInput = document.querySelector("#productosPage__search");
-        if (e.keyCode == 13){
+        if (e.keyCode == 13) {
             searchInput.blur();
         }
     });
@@ -1114,7 +1114,7 @@ function productFilter(){
 } 
 */
 
-function productSort(){
+function productSort() {
     let button = document.querySelector("#sortProducts");
     let buttonIcon = document.querySelector(".productosPage__sort__wrapper__button__icon");
     let buttonRelevance = document.querySelector("#sortProductsRelevance");
@@ -1124,31 +1124,31 @@ function productSort(){
     let buttonMenorContainer = document.querySelector(".productosPage__sort__wrapper__options__menor");
     let buttonMayorContainer = document.querySelector(".productosPage__sort__wrapper__options__mayor");
     let container = document.querySelector(".productosPage__sort__wrapper__options");
-    
-    const closeOptions = (e)=>{       
-        if (e.target != button && e.target != buttonIcon){
+
+    const closeOptions = (e) => {
+        if (e.target != button && e.target != buttonIcon) {
             container.classList.toggle("visible");
             button.classList.toggle("borderRadiusNone");
             document.removeEventListener("click", closeOptions);
         }
     }
 
-    button.addEventListener("click", ()=>{
+    button.addEventListener("click", () => {
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
 
-        if (container.classList.contains("visible")){
-            document.addEventListener("click", closeOptions) 
-        } 
+        if (container.classList.contains("visible")) {
+            document.addEventListener("click", closeOptions)
+        }
     })
 
-    buttonMenor.addEventListener("click", ()=>{
+    buttonMenor.addEventListener("click", () => {
         let productsTotal = document.querySelector("#productosTotal");
         let products = productsTotal.children;
         let arrayNodes = [];
         let id;
         let flag;
-        
+
         buttonMenorContainer.classList.add("filterActiveOptions");
         buttonMenor.classList.add("sortOptionActive");
         buttonMayorContainer.classList.remove("filterActiveOptions");
@@ -1158,50 +1158,50 @@ function productSort(){
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
         document.removeEventListener("click", closeOptions);
-        
+
         products = Array.from(products);
-        
+
         products.forEach(product => {
             arrayNodes.push(product);
             product.remove();
         })
-        
-        arrayNodes.forEach(node=>{
+
+        arrayNodes.forEach(node => {
             flag = 0;
-            if (node.classList.contains("hideDisplay")){
+            if (node.classList.contains("hideDisplay")) {
                 node.classList.remove("hideDisplay");
                 flag = 1;
             }
-            
+
             id = node.className;
             id = id.split(" ");
             id.shift();
             id.shift();
             id.pop();
-            
+
             id = id.toString();
             id = id.replace("productoTotal--", "");
-            stock1.arrayBebidasTotal.forEach(producto=>{
-                if(id == producto.id){
+            stock1.arrayBebidasTotal.forEach(producto => {
+                if (id == producto.id) {
                     node.precio = producto.precio;
                 }
             })
 
-            if (flag ==1){
+            if (flag == 1) {
                 node.classList.add("hideDisplay");
             }
         })
-        
-        arrayNodes.sort((a,b)=>{
+
+        arrayNodes.sort((a, b) => {
             return a.precio - b.precio;
         })
-    
-        arrayNodes.forEach(node=>{
+
+        arrayNodes.forEach(node => {
             productsTotal.appendChild(node);
         })
     })
 
-    buttonMayor.addEventListener("click", ()=>{
+    buttonMayor.addEventListener("click", () => {
         let productsTotal = document.querySelector("#productosTotal");
         let products = productsTotal.children;
         let arrayNodes = [];
@@ -1216,50 +1216,50 @@ function productSort(){
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
         document.removeEventListener("click", closeOptions);
-        
+
         products = Array.from(products);
-        
+
         products.forEach(product => {
             arrayNodes.push(product);
             product.remove();
         })
-        
-        arrayNodes.forEach(node=>{
+
+        arrayNodes.forEach(node => {
             flag = 0;
-            if (node.classList.contains("hideDisplay")){
+            if (node.classList.contains("hideDisplay")) {
                 node.classList.remove("hideDisplay");
                 flag = 1;
             }
-            
+
             id = node.className;
             id = id.split(" ");
             id.shift();
             id.shift();
             id.pop();
-            
+
             id = id.toString();
             id = id.replace("productoTotal--", "");
-            stock1.arrayBebidasTotal.forEach(producto=>{
-                if(id == producto.id){
+            stock1.arrayBebidasTotal.forEach(producto => {
+                if (id == producto.id) {
                     node.precio = producto.precio;
                 }
             })
 
-            if (flag ==1){
+            if (flag == 1) {
                 node.classList.add("hideDisplay");
             }
         })
-        
-        arrayNodes.sort((a,b)=>{
+
+        arrayNodes.sort((a, b) => {
             return b.precio - a.precio;
         })
-    
-        arrayNodes.forEach(node=>{
+
+        arrayNodes.forEach(node => {
             productsTotal.appendChild(node);
         })
     })
 
-    buttonRelevance.addEventListener("click", ()=>{
+    buttonRelevance.addEventListener("click", () => {
         let productsTotal = document.querySelector("#productosTotal");
         let products = productsTotal.children;
         let arrayNodes = [];
@@ -1274,51 +1274,51 @@ function productSort(){
         container.classList.toggle("visible");
         button.classList.toggle("borderRadiusNone");
         document.removeEventListener("click", closeOptions);
-        
+
         products = Array.from(products);
-        
+
         products.forEach(product => {
             arrayNodes.push(product);
             product.remove();
         })
-        
-        arrayNodes.forEach(node=>{
+
+        arrayNodes.forEach(node => {
             flag = 0;
-            if (node.classList.contains("hideDisplay")){
+            if (node.classList.contains("hideDisplay")) {
                 node.classList.remove("hideDisplay");
                 flag = 1;
             }
-            
+
             id = node.className;
             id = id.split(" ");
             id.shift();
             id.shift();
             id.pop();
-            
+
             id = id.toString();
             id = id.replace("productoTotal--", "");
-            stock1.arrayBebidasTotal.forEach(producto=>{
-                if(id == producto.id){
+            stock1.arrayBebidasTotal.forEach(producto => {
+                if (id == producto.id) {
                     node.relevance = producto.relevance;
                 }
             })
 
-            if (flag ==1){
+            if (flag == 1) {
                 node.classList.add("hideDisplay");
             }
         })
-        
-        arrayNodes.sort((a,b)=>{
+
+        arrayNodes.sort((a, b) => {
             return b.relevance - a.relevance;
         })
-    
-        arrayNodes.forEach(node=>{
+
+        arrayNodes.forEach(node => {
             productsTotal.appendChild(node);
         })
     })
 }
 
-function initialSort(){
+function initialSort() {
     let button = document.querySelector("#sortProducts");
     let buttonMenor = document.querySelector("#sortProductsRelevance");
     let container = document.querySelector(".productosPage__sort__wrapper__options");
@@ -1332,17 +1332,17 @@ function initialSort(){
 /* header title animation - usando jquery y css*/
 $(document).ready(function () {
     let header__logo = $(".header__title h1 span");
-    header__logo.on("mouseenter", (e)=>e.target.classList.add("rubberBand"));
-    header__logo.on("animationend webkitAnimationEnd oAnimationEnd", (e)=>e.target.classList.remove("rubberBand"));
+    header__logo.on("mouseenter", (e) => e.target.classList.add("rubberBand"));
+    header__logo.on("animationend webkitAnimationEnd oAnimationEnd", (e) => e.target.classList.remove("rubberBand"));
 });
 
-function rubberBandOnce(){
+function rubberBandOnce() {
     let header__title = $(".header__title h1 span");
     header__title.addClass("rubberBand");
-    header__title.on("animationend webkitAnimationEnd oAnimationEnd", (e)=>e.target.classList.remove("rubberBand"));
+    header__title.on("animationend webkitAnimationEnd oAnimationEnd", (e) => e.target.classList.remove("rubberBand"));
 }
 
-function errorComponent(){
+function errorComponent() {
     /* si se ingresa un hash incorrecto, se redirige al home. en cambio, si se ingresa una pagina incorrecta, se mostraria la pagina 404 */
     window.location.href = "https://santio89.github.io/blackFriday/";
 }
